@@ -24,19 +24,20 @@ public class Player : MonoBehaviour
         
     }
 
-    public void Jump()
+    public void Jump(bool isLeft)
     {
-        SwitchDir();
+        E_Direction dir = isLeft ? E_Direction.Left : E_Direction.Right;
+        SwitchDir(dir);
     }
 
-    private void SwitchDir()
+    private void SwitchDir(E_Direction dir)
     {
-        if (Dir == E_Direction.Right) 
+        if (dir == E_Direction.Left && Dir == E_Direction.Right) 
         {
             Dir= E_Direction.Left;
             transform.DOMoveX(LeftLoc.x, 0.15f).SetEase(ease); 
         }
-        else
+        else if (dir == E_Direction.Right && Dir == E_Direction.Left)
         {
             Dir=E_Direction.Right;
             transform.DOMoveX(RightLoc.x, 0.15f).SetEase(ease);
