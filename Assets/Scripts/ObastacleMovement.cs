@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObastacleMovement : MonoBehaviour
 {
     private float ObstacleMoveSpeed;
-
+    Vector3 rotationDirection = Vector3.zero;
 
     private void Start()
     {
@@ -16,6 +16,18 @@ public class ObastacleMovement : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(0f, 1f, 0f) * ObstacleMoveSpeed * Time.deltaTime;
-        transform.Rotate(new Vector3(0f , 0f, -2f));
+        transform.Rotate(rotationDirection);
+    }
+
+    public void SetRotateDirection(E_Direction dir)
+    {
+        if (dir == E_Direction.Left)
+        {
+            rotationDirection = new Vector3(0, 0, 2f);
+        }
+        else
+        {
+            rotationDirection = new Vector3(0, 0, -2f);
+        }
     }
 }
