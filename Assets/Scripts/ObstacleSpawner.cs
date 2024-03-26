@@ -26,7 +26,6 @@ public class ObstacleSpawner : MonoBehaviour
         if(CurrentTime >= MaxTime)
         {
             int res = Random.Range(0, 3);
-            print(res);
             if(res == 0 ) // spawn left
             {
                 Obstacle = Instantiate(ObstaclePrefab);                                 //TODO : change to ObjectPool
