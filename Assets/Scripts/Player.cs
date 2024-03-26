@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
 {
 
     private E_Direction Dir = E_Direction.Right;
-    private Vector3 LeftLoc = new Vector3(-1.6f,3,0);
-    private Vector3 RightLoc = new Vector3(1.6f,3,0);
+    private Vector3 LeftLoc = new Vector3(-1.53f,3,0);
+    private Vector3 RightLoc = new Vector3(1.53f,3,0);
     private const float JumpTime = 0.15f;
     public Ease ease = Ease.Linear;
 
@@ -43,6 +43,15 @@ public class Player : MonoBehaviour
         {
             Dir=E_Direction.Right;
             transform.DOMoveX(RightLoc.x, JumpTime).SetEase(ease);
+        }
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Obstacle"))
+        {
+            print("Tag is Obstacle");             // TODO : GameOver
         }
     }
 
