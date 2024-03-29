@@ -14,10 +14,14 @@ public class Player : MonoBehaviour
     private const float JumpTime = 0.15f;
     public Ease ease = Ease.Linear;
 
+    public float PlayerYSize;
+    public float PlayerYLoc;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerYSize = transform.localScale.y;
+        PlayerYLoc = transform.position.y;
     }
 
     // Update is called once per frame

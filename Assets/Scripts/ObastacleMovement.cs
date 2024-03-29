@@ -9,7 +9,7 @@ public class ObastacleMovement : MonoBehaviour
 
     private void Start()
     {
-        ObstacleMoveSpeed = Camera.main.orthographicSize * 2 / 5f;
+        ObstacleMoveSpeed = Camera.main.orthographicSize *2 / 5f;
     }
 
     // Update is called once per frame
