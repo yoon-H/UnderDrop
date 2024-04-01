@@ -57,6 +57,11 @@ public class Player : MonoBehaviour
         {
             print("Tag is Obstacle");             // TODO : GameOver
         }
+
+        if(collision.CompareTag("Monster"))
+        {
+            print("Tag is Monster");             // TODO : GameOver
+        }
     }
 
 }

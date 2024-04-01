@@ -19,8 +19,6 @@ public class MonsterMovement : MonoBehaviour
         float PlayerLoc = PlayerRef.transform.position.y + PlayerRef.transform.localScale.y / 2;
 
         MonsterMoveSpeed = (MonsterLoc - PlayerLoc) / 10;
-
-        print(MonsterMoveSpeed);
     }
 
     // Update is called once per frame
