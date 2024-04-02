@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     public float PlayerYSize;
     public float PlayerYLoc;
 
+    public GameObject BulletRef;
+    public GameObject Bullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +65,39 @@ public class Player : MonoBehaviour
         {
             print("Tag is Monster");             // TODO : GameOver
         }
+    }
+
+    public void Shoot()
+    {
+        List<GameObject> Targets = new List<GameObject>(GameObject.FindGameObjectsWithTag("Monster"));
+        GameObject Target = null;
+
+        double dist = double.MaxValue;
+        foreach (var item in Targets)
+        {
+            if(Target == null)
+            {
+                Target = item;
+                dist = Vector3.Distance(Target.transform.position, transform.position);
+            }
+            else
+            {
+                double itemDist = Vector3.Distance(item.transform.position, transform.position);
+                if(itemDist <= dist)
+                {
+                    Target = item;
+                    dist = itemDist;
+                }
+            }
+        }
+        
+
+        // Loop
+        Bullet = Instantiate(BulletRef);
+        Bullet bullet = Bullet.GetComponent<Bullet>();
+        bullet.SetBulletInfo(Target);
+        
+
     }
 
 }
