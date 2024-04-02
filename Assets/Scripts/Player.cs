@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using DG.Tweening;
 using static UnityEngine.GraphicsBuffer;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -19,18 +20,35 @@ public class Player : MonoBehaviour
 
     public GameObject BulletRef;
     public GameObject Bullet;
+    GameObject Target = null;
+    public int MaxBulletNum = 30;
+    public int CurBulletNum;
+    public float ReloadTime = 1.5f;
+
+    public GameObject BulletBar;
+    private ProgressBar Bar;
+
+    [SerializeField]
+    private bool CanShoot = false;
+    [SerializeField]
+    private bool Reloading = false;
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerYSize = transform.localScale.y;
         PlayerYLoc = transform.position.y;
+
+        CurBulletNum = MaxBulletNum;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //if(CanShoot && !Reloading)
+        //{
+        //    Shoot();
+        //}
     }
 
     public void Jump(bool isLeft)
@@ -69,13 +87,57 @@ public class Player : MonoBehaviour
 
     public void Shoot()
     {
+        if(Target == null)
+        {
+            SearchTarget();
+        }
+
+        if (Bar == null)
+        {
+            Bar = BulletBar.GetComponent<ProgressBar>();
+        }
+        Bar.SetActiveProgress(true);
+
+        // Loop
+        if(Target != null)
+        {
+            Bullet = Instantiate(BulletRef);
+            Bullet.transform.position = transform.position;
+            Bullet bullet = Bullet.GetComponent<Bullet>();
+            bullet.SetBulletInfo(Target);
+            UseBullet();
+        }
+        
+    }
+    public void SetCanShoot(bool flag)
+    {
+        if(flag)
+        {
+            CanShoot = true;
+
+            if(!Reloading)
+            {
+                StartCoroutine(IE_ShootBullet());
+            }
+        }
+        else
+        {
+            CanShoot = false;
+
+            StopCoroutine(IE_ShootBullet());
+            CancelTarget();
+        }
+    }
+
+    private void SearchTarget()
+    {
         List<GameObject> Targets = new List<GameObject>(GameObject.FindGameObjectsWithTag("Monster"));
-        GameObject Target = null;
+
 
         double dist = double.MaxValue;
         foreach (var item in Targets)
         {
-            if(Target == null)
+            if (Target == null)
             {
                 Target = item;
                 dist = Vector3.Distance(Target.transform.position, transform.position);
@@ -83,20 +145,60 @@ public class Player : MonoBehaviour
             else
             {
                 double itemDist = Vector3.Distance(item.transform.position, transform.position);
-                if(itemDist <= dist)
+                if (itemDist <= dist)
                 {
                     Target = item;
                     dist = itemDist;
                 }
             }
         }
-        
+    }
 
-        // Loop
-        Bullet = Instantiate(BulletRef);
-        Bullet bullet = Bullet.GetComponent<Bullet>();
-        bullet.SetBulletInfo(Target);
+    public void CancelTarget()
+    {
+        Target = null;
+    }
+
+    private void UseBullet()
+    {
+        CurBulletNum -= 1;
+
+        Bar.Value = CurBulletNum;
+
+        if(CurBulletNum <=0 )
+        {
+            Reloading = true;
+
+            Bar.SetActiveProgress(false);
+
+            StopCoroutine(IE_ShootBullet());
+            StartCoroutine(IE_ReloadBullet());
+        }
+    }
+
+    IEnumerator IE_ShootBullet()
+    {
+        while(CanShoot && !Reloading)
+        {
+            yield return new WaitForSeconds(0.1f);
+            Shoot();
+        }
         
+    }
+
+    IEnumerator IE_ReloadBullet()
+    {
+        yield return new WaitForSeconds(ReloadTime);
+
+        Reloading = false;
+        Bar.SetActiveProgress(true);
+        Bar.Value = MaxBulletNum;
+        CurBulletNum = MaxBulletNum;
+
+        if(CanShoot) 
+        {
+            StartCoroutine(IE_ShootBullet());
+        }
 
     }
 

@@ -7,16 +7,16 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
 
-    public Int32 Maxvalue = 30;
-    public Int32 Minvalue = 0;
-    public Int32 Value;
+    public int Maxvalue = 30;
+    public int Minvalue = 0;
+    public int Value;
     public GameObject Bar;
 
     public Image Fill;
     private float MaxWidth;
 
-    public Int32 InActiveOpacity = 40;
-    public Int32 ActiveOpacity = 255;
+    public int InActiveOpacity = 40;
+    public int ActiveOpacity = 255;
 
 
     // Start is called before the first frame update

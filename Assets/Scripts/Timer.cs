@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
 
     private bool IsPaused = false;
 
-    public Int32 Score = 0;
+    public int Score = 0;
 
     
 

@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
 
     private Vector3 MoveVector = Vector3.zero;
 
-    public Int32 Damage = 20;
+    public int Damage = 20;
 
 
     // Start is called before the first frame update
@@ -38,6 +38,7 @@ public class Bullet : MonoBehaviour
     {
         if(collision.CompareTag("Monster"))
         {
+            print("Collision!!!!");
             Monster.TakeDamage(Damage);
             Destroy(gameObject);
         }

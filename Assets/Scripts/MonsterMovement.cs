@@ -13,8 +13,8 @@ public class MonsterMovement : MonoBehaviour
     public GameObject PlayerRef;
 
     [SerializeField]
-    private Int32 CurHp;
-    private Int32 MaxHp = 100;
+    private int CurHp;
+    private int MaxHp = 100;
 
     public E_Direction Direction;
 
