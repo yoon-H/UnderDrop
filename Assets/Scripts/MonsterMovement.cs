@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MonsterMovement : MonoBehaviour
@@ -14,6 +15,13 @@ public class MonsterMovement : MonoBehaviour
     [SerializeField]
     private Int32 CurHp;
     private Int32 MaxHp = 100;
+
+    public E_Direction Direction;
+
+    public GameObject LifeBarRef;
+    private ProgressBar LifeBar;
+
+    public MonsterSpawner Spawner;
 
     // Start is called before the first frame update
     void Start()
@@ -40,16 +48,34 @@ public class MonsterMovement : MonoBehaviour
     public void TakeDamage(int amount)
     {
         CurHp -= amount;
-        
-        //TODO : Set UI
+
+        LifeBar.Value = CurHp;
+        LifeBar.SetWidth();
 
         if(CurHp <= 0)
         {
             // Monster died
+            LifeBar.Value = LifeBar.Maxvalue;
+            LifeBar.SetWidth();
+            LifeBar.SetActiveProgress(false);
+            Spawner.SetDestroyedMonster(Direction);
+
             Destroy(gameObject);
-
-            //TODO : Turn Off the UI
-
         }
+    }
+
+    public void SetMonsterInfo(GameObject player, E_Direction direction, GameObject lifeBar, GameObject monsterSpawner)
+    {
+        PlayerRef = player;
+        Direction = direction;
+        Spawner = monsterSpawner.GetComponent<MonsterSpawner>();
+        LifeBarRef = lifeBar;
+
+
+        LifeBar = LifeBarRef.GetComponent<ProgressBar>();
+        LifeBar.SetActiveProgress(true);
+        LifeBar.Maxvalue = MaxHp;
+        LifeBar.Value = MaxHp;
+        LifeBar.SetWidth();
     }
 }

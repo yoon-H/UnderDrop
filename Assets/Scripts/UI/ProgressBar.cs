@@ -10,9 +10,13 @@ public class ProgressBar : MonoBehaviour
     public Int32 Maxvalue = 30;
     public Int32 Minvalue = 0;
     public Int32 Value;
+    public GameObject Bar;
 
     public Image Fill;
     private float MaxWidth;
+
+    public Int32 InActiveOpacity = 40;
+    public Int32 ActiveOpacity = 255;
 
 
     // Start is called before the first frame update
@@ -20,6 +24,7 @@ public class ProgressBar : MonoBehaviour
     {
         Value = Maxvalue;
         MaxWidth = Fill.transform.localScale.x;
+        SetTransparency(InActiveOpacity);
     }
 
     // Update is called once per frame
@@ -33,5 +38,31 @@ public class ProgressBar : MonoBehaviour
         float percentage = (float) Value / (float) Maxvalue;
         float width = MaxWidth * percentage;
         Fill.transform.localScale = new Vector3(width, Fill.transform.localScale.y, Fill.transform.localScale.z);
+    }
+
+
+    public void SetActiveProgress(bool isActive)
+    {
+        if(isActive) 
+        {
+            SetTransparency(ActiveOpacity);
+        }
+        else
+        {
+            SetTransparency(InActiveOpacity);
+        }
+    }
+
+    public void SetTransparency(Int32 value)
+    {
+        Component[] images = GetComponentsInChildren<Image>();
+
+        foreach (var image in images)
+        {
+            Color color = image.GetComponent<Image>().color;
+            color.a = (float) value / 255f;
+            image.GetComponent<Image>().color = color;
+        }
+
     }
 }
