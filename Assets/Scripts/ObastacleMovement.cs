@@ -15,8 +15,8 @@ public class ObastacleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0f, 1f, 0f) * ObstacleMoveSpeed * Time.deltaTime;
-        transform.Rotate(rotationDirection);
+            transform.position += new Vector3(0f, 1f, 0f) * ObstacleMoveSpeed * Time.deltaTime;
+            transform.Rotate(rotationDirection);
     }
 
     public void SetRotateDirection(E_Direction dir)
@@ -30,4 +30,5 @@ public class ObastacleMovement : MonoBehaviour
             rotationDirection = new Vector3(0, 0, -2f);
         }
     }
+
 }
