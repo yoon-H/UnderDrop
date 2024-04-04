@@ -15,6 +15,9 @@ public class MonsterSpawner : MonoBehaviour
     private bool LeftIsExisted = false;
     private bool RightIsExisted = false;
 
+    public GameObject LeftEnemyBar;
+    public GameObject RightEnemyBar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +38,10 @@ public class MonsterSpawner : MonoBehaviour
             if (!LeftIsExisted)
             {
                 Monster = Instantiate(MonsterPrefab);                                 //TODO : change to ObjectPool
+                if (!Monster) return;
                 MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
-                mon.PlayerRef = Player;
+                if (!mon) return;
+                mon.SetMonsterInfo(Player, E_Direction.Left, LeftEnemyBar, gameObject);
                 Monster.transform.position = new Vector3(-SpawnLocDx, transform.position.y, 0);
                 LeftIsExisted = true;
             }
@@ -47,12 +52,26 @@ public class MonsterSpawner : MonoBehaviour
             if (!RightIsExisted)
             {
                 Monster = Instantiate(MonsterPrefab);
+                if (!Monster) return;
                 MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
-                mon.PlayerRef = Player;
+                if (!mon) return;
+                mon.SetMonsterInfo(Player, E_Direction.Right, RightEnemyBar, gameObject);
                 Monster.transform.position = new Vector3(SpawnLocDx, transform.position.y, 0);
                 RightIsExisted = true;
             }
 
+        }
+    }
+
+    public void SetDestroyedMonster(E_Direction dir)
+    {
+        if(dir == E_Direction.Left)
+        {
+            LeftIsExisted = false;
+        }
+        else
+        {
+            RightIsExisted = false;
         }
     }
 }

@@ -15,7 +15,7 @@ public class SwitchButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Image = gameObject.GetComponent<Image>();
+        Image = GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class SwitchButton : MonoBehaviour
 
     public void SwitchFlag()
     {
+        if (!Image) return;
         if (Flag)
         { 
             Flag = false;

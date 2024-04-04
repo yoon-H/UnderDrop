@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)    // Singleton pattern
+        if(!Instance)    // Singleton pattern
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);  

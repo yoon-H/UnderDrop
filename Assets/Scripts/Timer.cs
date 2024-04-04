@@ -22,14 +22,15 @@ public class Timer : MonoBehaviour
 
     private bool IsPaused = false;
 
-    public Int32 Score = 0;
+    public int Score = 0;
 
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
+        MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
     }
 
     // Update is called once per frame
@@ -39,17 +40,14 @@ public class Timer : MonoBehaviour
         MonsterSpawnCounter += Time.deltaTime;
         ScoreCounter += Time.deltaTime;
 
-        if(ScoreText != null) 
+        if(ScoreText) 
         {
             Score = (int)(ScoreCounter / 0.2);
             ScoreText.text = Score + "m";
         }
-       
 
-        if (ObstacleSpawner == null)
-        {
-            ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
-        }
+
+        if (!ObstacleSpawner) return;
 
         if (ObstacleSpawnCounter >= ObstacleSpawnTime)
         {
@@ -57,10 +55,7 @@ public class Timer : MonoBehaviour
             ObstacleSpawner.SpawnObstacle();
         }
 
-        if (MonsterSpawner == null)
-        {
-            MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
-        }
+        if (!MonsterSpawner) return;
 
         if (MonsterSpawnCounter >= MonsterSpawnTime)
         {
