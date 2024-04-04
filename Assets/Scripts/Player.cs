@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
 
         CurBulletNum = MaxBulletNum;
 
-        Bar = GetComponent<ProgressBar>();
+        Bar = BulletBar.GetComponent<ProgressBar>();
     }
 
     // Update is called once per frame
@@ -82,7 +82,6 @@ public class Player : MonoBehaviour
     public void Shoot()
     {
         if (!Bar) { return; }
-
         Bar.SetActiveProgress(true);
 
         if (!Target)
