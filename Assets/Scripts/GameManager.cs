@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
+    public int BestScore = 0;
 
     private void Awake()
     {
@@ -36,4 +37,5 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
 }

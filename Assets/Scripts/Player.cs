@@ -28,6 +28,9 @@ public class Player : MonoBehaviour
     public GameObject BulletBar;
     private ProgressBar Bar;
 
+    public GameObject TimerRef;
+    private Timer Timer;
+
     [SerializeField]
     private bool CanShoot = false;
 
@@ -43,6 +46,7 @@ public class Player : MonoBehaviour
         CurBulletNum = MaxBulletNum;
 
         Bar = BulletBar.GetComponent<ProgressBar>();
+        Timer = TimerRef.GetComponent<Timer>();
     }
 
     // Update is called once per frame
@@ -68,14 +72,11 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Obstacle"))
+        if(collision.CompareTag("Obstacle") || collision.CompareTag("Monster"))
         {
-            //print("Tag is Obstacle");             // TODO : GameOver
-        }
+            if (!Timer) return;
+            Timer.GameOver();
 
-        if(collision.CompareTag("Monster"))
-        {
-            //print("Tag is Monster");             // TODO : GameOver
         }
     }
 
