@@ -9,11 +9,12 @@ public class LongClick : MonoBehaviour
     private float ClickCounter = 0f;
 
     public GameObject PlayerRef;
+    private Player Player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = PlayerRef.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -25,8 +26,7 @@ public class LongClick : MonoBehaviour
 
             if (ClickCounter >= ClickTime)
             {
-                Player player = PlayerRef.GetComponent<Player>();
-                player.SetCanShoot(true);
+                Player.SetCanShoot(true);
             }
         }
         else
@@ -44,8 +44,7 @@ public class LongClick : MonoBehaviour
     public void ButtonUp()
     {
         IsClicked=false;
-        Player player = PlayerRef.GetComponent<Player>();
-        player.SetCanShoot(false);
+        Player.SetCanShoot(false);
     }   
 
 }

@@ -35,10 +35,9 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {   
         if(collision.CompareTag("Monster"))
         {
-            print("Collision!!!!");
             Monster.TakeDamage(Damage);
             Destroy(gameObject);
         }
@@ -47,5 +46,6 @@ public class Bullet : MonoBehaviour
     public void SetBulletInfo(GameObject monster)
     {
         MonsterRef = monster;
+        Monster = MonsterRef.GetComponent<MonsterMovement>();
     }
 }

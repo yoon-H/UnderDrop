@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private bool CanShoot = false;
+
     [SerializeField]
     private bool Reloading = false;
 
@@ -40,6 +41,8 @@ public class Player : MonoBehaviour
         PlayerYLoc = transform.position.y;
 
         CurBulletNum = MaxBulletNum;
+
+        Bar = GetComponent<ProgressBar>();
     }
 
     // Update is called once per frame
@@ -76,12 +79,12 @@ public class Player : MonoBehaviour
     {
         if(collision.CompareTag("Obstacle"))
         {
-            print("Tag is Obstacle");             // TODO : GameOver
+            //print("Tag is Obstacle");             // TODO : GameOver
         }
 
         if(collision.CompareTag("Monster"))
         {
-            print("Tag is Monster");             // TODO : GameOver
+            //print("Tag is Monster");             // TODO : GameOver
         }
     }
 
@@ -111,16 +114,15 @@ public class Player : MonoBehaviour
     }
     public void SetCanShoot(bool flag)
     {
-        if(flag)
+        if(flag && CanShoot != flag)
         {
             CanShoot = true;
-
             if(!Reloading)
             {
                 StartCoroutine(IE_ShootBullet());
             }
         }
-        else
+        else if(!flag && CanShoot != flag)
         {
             CanShoot = false;
 

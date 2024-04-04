@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5372100478019773769}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.53, y: 5.8, z: -0.055385895}
+  m_LocalPosition: {x: 1.53, y: 5.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -47,6 +47,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerRef: {fileID: 0}
+  CurHp: 0
+  Direction: 0
+  LifeBarRef: {fileID: 0}
+  Spawner: {fileID: 0}
 --- !u!58 &3944437597959339034
 CircleCollider2D:
   m_ObjectHideFlags: 0
