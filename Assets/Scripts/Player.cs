@@ -81,20 +81,18 @@ public class Player : MonoBehaviour
 
     public void Shoot()
     {
-        if(Target == null)
+        if (!Bar) { return; }
+
+        Bar.SetActiveProgress(true);
+
+        if (!Target)
         {
             SearchTarget();
         }
-
-        if (Bar == null)
-        {
-            Bar = BulletBar.GetComponent<ProgressBar>();
-        }
-        Bar.SetActiveProgress(true);
-
-        if(Target != null)
+        else
         {
             Bullet = Instantiate(BulletRef);
+            if(!Bullet) { return; }
             Bullet.transform.position = transform.position;
             Bullet bullet = Bullet.GetComponent<Bullet>();
             bullet.SetBulletInfo(Target);
@@ -129,7 +127,7 @@ public class Player : MonoBehaviour
         double dist = double.MaxValue;
         foreach (var item in Targets)
         {
-            if (Target == null)
+            if (!Target)
             {
                 Target = item;
                 dist = Vector3.Distance(Target.transform.position, transform.position);
@@ -155,6 +153,7 @@ public class Player : MonoBehaviour
     {
         CurBulletNum -= 1;
 
+        if (!Bar) { return; }
         Bar.Value = CurBulletNum;
 
         if(CurBulletNum <=0 )
@@ -183,6 +182,7 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(ReloadTime);
 
         Reloading = false;
+        if (!Bar) { yield break; }
         Bar.SetActiveProgress(true);
         Bar.Value = MaxBulletNum;
         CurBulletNum = MaxBulletNum;

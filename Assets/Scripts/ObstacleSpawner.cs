@@ -29,7 +29,9 @@ public class ObstacleSpawner : MonoBehaviour
         if (res == 0) // spawn left
         {
             Obstacle = Instantiate(ObstaclePrefab);                                 //TODO : change to ObjectPool
+            if (!Obstacle) return;
             ObastacleMovement obs = Obstacle.GetComponent<ObastacleMovement>();
+            if (!obs) return;
             obs.SetRotateDirection(E_Direction.Left);
 
             Obstacle.transform.position = new Vector3(-SpawnLocDx, transform.position.y, 0);
@@ -37,7 +39,9 @@ public class ObstacleSpawner : MonoBehaviour
         else if (res == 1) // spawn right
         {
             Obstacle = Instantiate(ObstaclePrefab);
+            if (!Obstacle) return;
             ObastacleMovement obs = Obstacle.GetComponent<ObastacleMovement>();
+            if (!obs) return;
             obs.SetRotateDirection(E_Direction.Right);
             Obstacle.transform.position = new Vector3(SpawnLocDx, transform.position.y, 0);
         }

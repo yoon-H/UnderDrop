@@ -48,7 +48,7 @@ public class MonsterMovement : MonoBehaviour
     public void TakeDamage(int amount)
     {
         CurHp -= amount;
-
+        if (!LifeBar) return;
         LifeBar.Value = CurHp;
         LifeBar.SetWidth();
 
@@ -58,6 +58,7 @@ public class MonsterMovement : MonoBehaviour
             LifeBar.Value = LifeBar.Maxvalue;
             LifeBar.SetWidth();
             LifeBar.SetActiveProgress(false);
+            if (!Spawner) return;
             Spawner.SetDestroyedMonster(Direction);
 
             Destroy(gameObject);
@@ -71,8 +72,9 @@ public class MonsterMovement : MonoBehaviour
         Spawner = monsterSpawner.GetComponent<MonsterSpawner>();
         LifeBarRef = lifeBar;
 
-
+        if (!LifeBarRef) return;
         LifeBar = LifeBarRef.GetComponent<ProgressBar>();
+        if (!LifeBar) return;
         LifeBar.SetActiveProgress(true);
         LifeBar.Maxvalue = MaxHp;
         LifeBar.Value = MaxHp;

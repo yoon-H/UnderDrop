@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,6 +24,7 @@ public class ProgressBar : MonoBehaviour
     void Start()
     {
         Value = Maxvalue;
+        if (!Fill) return;
         MaxWidth = Fill.transform.localScale.x;
         SetTransparency(InActiveOpacity);
     }
@@ -37,6 +39,7 @@ public class ProgressBar : MonoBehaviour
     {
         float percentage = (float) Value / (float) Maxvalue;
         float width = MaxWidth * percentage;
+        if (!Fill) return;
         Fill.transform.localScale = new Vector3(width, Fill.transform.localScale.y, Fill.transform.localScale.z);
     }
 
@@ -55,11 +58,12 @@ public class ProgressBar : MonoBehaviour
 
     public void SetTransparency(Int32 value)
     {
-        Component[] images = GetComponentsInChildren<Image>();
+        Image[] images = GetComponentsInChildren<Image>();
 
         foreach (var image in images)
         {
-            Color color = image.GetComponent<Image>().color;
+            Color color = image.color;
+            if (color == null) return;
             color.a = (float) value / 255f;
             image.GetComponent<Image>().color = color;
         }

@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(MonsterRef == null)
+        if(!MonsterRef)
         {
             Destroy(gameObject);
             return;
@@ -44,6 +44,7 @@ public class Bullet : MonoBehaviour
     {   
         if(collision.CompareTag("Monster"))
         {
+            if (!Monster) return;
             Monster.TakeDamage(Damage);
             Destroy(gameObject);
         }
@@ -52,6 +53,7 @@ public class Bullet : MonoBehaviour
     public void SetBulletInfo(GameObject monster)
     {
         MonsterRef = monster;
+        if (!MonsterRef) return;
         Monster = MonsterRef.GetComponent<MonsterMovement>();
     }
 }

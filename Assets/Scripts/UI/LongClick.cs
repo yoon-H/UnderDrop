@@ -28,6 +28,7 @@ public class LongClick : MonoBehaviour
 
             if (ClickCounter >= ClickTime)
             {
+                if (!Player) { return; }
                 Player.SetCanShoot(true);
             }
         }
@@ -41,12 +42,14 @@ public class LongClick : MonoBehaviour
     public void ButtonDown()
     {
         IsClicked = true;
+        if(!Player) { return; }
         Player.SwitchDir(Dir);
     }
     
     public void ButtonUp()
     {
         IsClicked=false;
+        if (!Player) { return; }
         Player.SetCanShoot(false);
     }   
 
