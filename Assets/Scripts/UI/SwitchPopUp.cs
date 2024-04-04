@@ -22,12 +22,10 @@ public class SwitchPopUp : MonoBehaviour
         if (isVisible) 
         {
             gameObject.SetActive(true);
-            //TODO : Stop time
         }
         else
         {
             gameObject.SetActive(false);
-            //TODO : Resume game
         }
     }
 }
