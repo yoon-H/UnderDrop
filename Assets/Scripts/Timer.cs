@@ -22,6 +22,10 @@ public class Timer : MonoBehaviour
 
     private bool IsPaused = false;
 
+    public GameObject GameOverPanel;
+    private SwitchPopUp GameOverPopUp;
+    private ScoreBoard ScoreBoard;
+
     public int Score = 0;
 
     
@@ -31,6 +35,9 @@ public class Timer : MonoBehaviour
     {
         ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
         MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
+
+        GameOverPopUp = GameOverPanel.GetComponent<SwitchPopUp>();
+        ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>();
     }
 
     // Update is called once per frame
@@ -77,5 +84,24 @@ public class Timer : MonoBehaviour
             IsPaused = false;
             Time.timeScale = 1;
         }
+    }
+
+    public void GameOver()
+    {
+        
+        //SetScoreText
+        int bestscore = GameManager.Instance.BestScore;
+        if(Score > bestscore)
+        {
+            GameManager.Instance.BestScore = Score;
+        }
+        ScoreBoard.SetText(Score);
+
+        //Show PopUp
+        GameOverPopUp.SwitchFlag(true);
+
+        //Stop Game
+        SetIsPaused(true);
+
     }
 }
