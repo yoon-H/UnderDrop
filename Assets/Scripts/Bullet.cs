@@ -18,19 +18,25 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(MonsterRef == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         // MoveSpeed
         Vector3 vec = MonsterRef.transform.position - transform.position;
         float dist = Vector3.Distance(MonsterRef.transform.position, transform.position);
         vec.Normalize();
 
         MoveSpeed = dist * 10f;
-
         MoveVector = vec;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
         transform.position += MoveVector * MoveSpeed * Time.deltaTime;
     }
 
