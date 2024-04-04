@@ -675,19 +675,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 453182686}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1674651877}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &453182686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,6 +739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerRef: {fileID: 1674651875}
+  Dir: 0
 --- !u!114 &453182690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1549,19 +1538,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 816729839}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1674651877}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: Jump
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &816729839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1670,6 +1647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerRef: {fileID: 1674651875}
+  Dir: 1
 --- !u!1 &817989342
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class LongClick : MonoBehaviour
     public GameObject PlayerRef;
     private Player Player;
 
+    public E_Direction Dir;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,7 @@ public class LongClick : MonoBehaviour
     public void ButtonDown()
     {
         IsClicked = true;
+        Player.SwitchDir(Dir);
     }
     
     public void ButtonUp()

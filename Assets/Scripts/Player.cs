@@ -48,19 +48,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(CanShoot && !Reloading)
-        //{
-        //    Shoot();
-        //}
+
     }
 
-    public void Jump(bool isLeft)
-    {
-        E_Direction dir = isLeft ? E_Direction.Left : E_Direction.Right;
-        SwitchDir(dir);
-    }
-
-    private void SwitchDir(E_Direction dir)
+    public void SwitchDir(E_Direction dir)
     {
         if (dir == E_Direction.Left && Dir == E_Direction.Right) 
         {
@@ -101,7 +92,6 @@ public class Player : MonoBehaviour
         }
         Bar.SetActiveProgress(true);
 
-        // Loop
         if(Target != null)
         {
             Bullet = Instantiate(BulletRef);
