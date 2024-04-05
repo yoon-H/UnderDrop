@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
 
 public class SwitchButton : MonoBehaviour
 {
@@ -11,11 +12,14 @@ public class SwitchButton : MonoBehaviour
     public Sprite OffImage;
 
     private Image Image;
+    public E_SettingType Type;
 
     // Start is called before the first frame update
     void Start()
     {
         Image = GetComponent<Image>();
+
+        InitSettingImage();
     }
 
     // Update is called once per frame
@@ -31,20 +35,57 @@ public class SwitchButton : MonoBehaviour
         { 
             Flag = false;
             Image.sprite = OffImage;
-            SwitchSetting();
-            print("False");
+            SwitchSetting(false);
         }
         else 
         { 
             Flag = true;
             Image.sprite = OnImage;
-            SwitchSetting();
-            print("True");
+            SwitchSetting(true);
         }
     }
 
-    protected virtual void SwitchSetting()
+    private void SwitchSetting(bool flag)
     {
+        switch (Type)
+        {
+            case E_SettingType.Music:
+                GameManager.Instance.OnMusic = flag;
+                break;
+            case E_SettingType.Sound:
+                GameManager.Instance.OnSound = flag;
+                break;
+            case E_SettingType.Vibration:
+                GameManager.Instance.OnVib = flag;
+                break;
+        }
+    }
 
+    private void InitSettingImage()
+    {
+        bool flag = true;
+        switch (Type)
+        {
+            case E_SettingType.Music:
+                flag = GameManager.Instance.OnMusic;
+                break;
+            case E_SettingType.Sound:
+                flag = GameManager.Instance.OnSound;
+                break;
+            case E_SettingType.Vibration:
+                flag = GameManager.Instance.OnVib;
+                break;
+        }
+
+        Flag = flag;
+
+        if(flag)
+        {
+            Image.sprite = OnImage;
+        }
+        else
+        {
+            Image.sprite = OffImage;
+        }    
     }
 }

@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
 
     public void SwitchDir(E_Direction dir)
     {
+        if (!transform) return;
         if (dir == E_Direction.Left && Dir == E_Direction.Right) 
         {
             Dir= E_Direction.Left;

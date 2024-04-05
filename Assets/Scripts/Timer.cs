@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
     public float ObstacleSpawnTime = 1f;
     public float MonsterSpawnTime = 4f;
 
-    private bool IsPaused = false;
+    //private bool IsPaused = false;
 
     public GameObject GameOverPanel;
     private SwitchPopUp GameOverPopUp;
@@ -38,6 +38,8 @@ public class Timer : MonoBehaviour
 
         GameOverPopUp = GameOverPanel.GetComponent<SwitchPopUp>();
         ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>();
+
+        SetIsPaused(false);
     }
 
     // Update is called once per frame
@@ -76,12 +78,12 @@ public class Timer : MonoBehaviour
     {
         if(flag)
         {
-            IsPaused = true;
+            //IsPaused = true;
             Time.timeScale = 0;
         }
         else
         {
-            IsPaused = false;
+            //IsPaused = false;
             Time.timeScale = 1;
         }
     }

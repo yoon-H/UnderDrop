@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
     public int BestScore = 0;
+    public bool OnMusic = true;
+    public bool OnSound = true;
+    public bool OnVib = true;
 
     private void Awake()
     {
