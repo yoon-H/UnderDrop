@@ -22,7 +22,7 @@ public class ScoreBoard : MonoBehaviour
 
     public void SetText(int score)
     {
-        ScoreText.text = GameManager.Instance.BestScore.ToString() + "km";
-        BestText.text = "BEST " + score.ToString();
+        ScoreText.text = score.ToString() + "km";
+        BestText.text = "BEST " + GameManager.Instance.BestScore.ToString();
     }
 }

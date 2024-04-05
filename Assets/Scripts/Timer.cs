@@ -38,6 +38,8 @@ public class Timer : MonoBehaviour
 
         GameOverPopUp = GameOverPanel.GetComponent<SwitchPopUp>();
         ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>();
+
+        SetIsPaused(false);
     }
 
     // Update is called once per frame
