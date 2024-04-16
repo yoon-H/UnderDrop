@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,7 +29,6 @@ public class MonsterMovement : MonoBehaviour
         // MoveSpeed
         MonsterYSize = transform.localScale.y;
         float MonsterLoc = Camera.main.orthographicSize - MonsterYSize / 2;
-
         float PlayerLoc = PlayerRef.transform.position.y + PlayerRef.transform.localScale.y / 2;
 
         MonsterMoveSpeed = (MonsterLoc - PlayerLoc) / 10;

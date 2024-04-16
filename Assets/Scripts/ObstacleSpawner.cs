@@ -9,7 +9,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     GameObject Obstacle;
 
-    private float SpawnLocDx = 1.934f;
+    private float SpawnLocDx = 1.8f;
 
     // Start is called before the first frame update
     void Start()

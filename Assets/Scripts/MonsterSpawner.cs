@@ -10,7 +10,7 @@ public class MonsterSpawner : MonoBehaviour
 
     GameObject Monster;
 
-    private float SpawnLocDx = 1.53f;
+    private float SpawnLocDx = 1.4f;
 
     private bool LeftIsExisted = false;
     private bool RightIsExisted = false;
