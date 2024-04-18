@@ -7,9 +7,11 @@ public class ObastacleMovement : MonoBehaviour
     private float ObstacleMoveSpeed;
     Vector3 rotationDirection = Vector3.zero;
 
+    private float TimeForArrival;
+
     private void Start()
     {
-        ObstacleMoveSpeed = Camera.main.orthographicSize *2 / 5f;
+        ObstacleMoveSpeed = Camera.main.orthographicSize *2 / TimeForArrival;
     }
 
     // Update is called once per frame
@@ -29,6 +31,11 @@ public class ObastacleMovement : MonoBehaviour
         {
             rotationDirection = new Vector3(0, 0, -2f);
         }
+    }
+
+    public void SetTimeForArrival(float value)
+    {
+        TimeForArrival = value;
     }
 
 }

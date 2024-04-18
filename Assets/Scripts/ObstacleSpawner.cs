@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,10 +12,15 @@ public class ObstacleSpawner : MonoBehaviour
 
     private float SpawnLocDx = 1.8f;
 
+    public float MaxTimeForArrival = 5f;
+    private float CurTimeForArrival;
+    public float MinTimeForArrival = 3.6f;
+    public float TimeForArrivalReducingAmount = 0.2f;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        CurTimeForArrival = MaxTimeForArrival;
     }
 
     // Update is called once per frame
@@ -25,7 +31,8 @@ public class ObstacleSpawner : MonoBehaviour
 
     public void SpawnObstacle()
     {
-        int res = Random.Range(0, 3);
+        System.Random rand = new System.Random();
+        int res = rand.Next(0, 3);
         if (res == 0) // spawn left
         {
             Obstacle = Instantiate(ObstaclePrefab);                                 //TODO : change to ObjectPool
@@ -33,6 +40,7 @@ public class ObstacleSpawner : MonoBehaviour
             ObastacleMovement obs = Obstacle.GetComponent<ObastacleMovement>();
             if (!obs) return;
             obs.SetRotateDirection(E_Direction.Left);
+            obs.SetTimeForArrival(CurTimeForArrival);
 
             Obstacle.transform.position = new Vector3(-SpawnLocDx, transform.position.y, 0);
         }
@@ -43,9 +51,20 @@ public class ObstacleSpawner : MonoBehaviour
             ObastacleMovement obs = Obstacle.GetComponent<ObastacleMovement>();
             if (!obs) return;
             obs.SetRotateDirection(E_Direction.Right);
+            obs.SetTimeForArrival(CurTimeForArrival);
+
             Obstacle.transform.position = new Vector3(SpawnLocDx, transform.position.y, 0);
         }
 
         Destroy(Obstacle, 8f);
+    }
+
+    public void ReduceTimeForArrival()
+    {
+        if (CurTimeForArrival > MinTimeForArrival)
+        {
+            CurTimeForArrival = Mathf.Round((CurTimeForArrival - TimeForArrivalReducingAmount) / 0.1f) * 0.1f;
+            print("Obstacle Reduce TimeForArrival : " + CurTimeForArrival);
+        }
     }
 }

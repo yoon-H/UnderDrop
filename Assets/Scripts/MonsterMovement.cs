@@ -16,6 +16,8 @@ public class MonsterMovement : MonoBehaviour
     private int CurHp;
     private int MaxHp = 100;
 
+    private float TimeForArrival;
+
     public E_Direction Direction;
 
     public GameObject LifeBarRef;
@@ -31,10 +33,12 @@ public class MonsterMovement : MonoBehaviour
         float MonsterLoc = Camera.main.orthographicSize - MonsterYSize / 2;
         float PlayerLoc = PlayerRef.transform.position.y + PlayerRef.transform.localScale.y / 2;
 
-        MonsterMoveSpeed = (MonsterLoc - PlayerLoc) / 10;
+        MonsterMoveSpeed = (MonsterLoc - PlayerLoc) / TimeForArrival;
 
         //Hp Initialize
         CurHp = MaxHp;
+
+        //Initialize time for arrival
     }
 
     // Update is called once per frame
@@ -64,12 +68,13 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 
-    public void SetMonsterInfo(GameObject player, E_Direction direction, GameObject lifeBar, GameObject monsterSpawner)
+    public void SetMonsterInfo(GameObject player, E_Direction direction, GameObject lifeBar, GameObject monsterSpawner, float timeForArrival)
     {
         PlayerRef = player;
         Direction = direction;
         Spawner = monsterSpawner.GetComponent<MonsterSpawner>();
         LifeBarRef = lifeBar;
+        TimeForArrival = timeForArrival;
 
         if (!LifeBarRef) return;
         LifeBar = LifeBarRef.GetComponent<ProgressBar>();
@@ -79,4 +84,5 @@ public class MonsterMovement : MonoBehaviour
         LifeBar.Value = MaxHp;
         LifeBar.SetWidth();
     }
+
 }
