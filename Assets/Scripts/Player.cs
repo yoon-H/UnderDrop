@@ -81,23 +81,25 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Shoot()
+    public bool Shoot()
     {
-        if (!Bar) { return; }
+        if (!Bar) { return false; }
         Bar.SetActiveProgress(true);
 
         if (!Target)
         {
-            SearchTarget();
+            bool hasTarget = SearchTarget();
+            return hasTarget;
         }
         else
         {
             Bullet = Instantiate(BulletRef);
-            if(!Bullet) { return; }
+            if(!Bullet) { return false; }
             Bullet.transform.position = transform.position;
             Bullet bullet = Bullet.GetComponent<Bullet>();
             bullet.SetBulletInfo(Target);
             UseBullet();
+            return true;
         }
         
     }
@@ -120,10 +122,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void SearchTarget()
+    private bool SearchTarget()
     {
         List<GameObject> Targets = new List<GameObject>(GameObject.FindGameObjectsWithTag("Monster"));
-
+        bool flag = false;
 
         double dist = double.MaxValue;
         foreach (var item in Targets)
@@ -132,6 +134,7 @@ public class Player : MonoBehaviour
             {
                 Target = item;
                 dist = Vector3.Distance(Target.transform.position, transform.position);
+                flag = true;
             }
             else
             {
@@ -143,6 +146,8 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+        return flag;
     }
 
     public void CancelTarget()
@@ -173,7 +178,8 @@ public class Player : MonoBehaviour
         while(CanShoot && !Reloading)
         {
             yield return new WaitForSeconds(0.1f);
-            Shoot();
+            bool flag = Shoot();
+            if(!flag) break;
         }
         
     }
