@@ -18,10 +18,15 @@ public class MonsterSpawner : MonoBehaviour
     public GameObject LeftEnemyBar;
     public GameObject RightEnemyBar;
 
+    public float MaxTimeForArrival = 10f;
+    private float CurTimeForArrival;
+    public float MinTimeForArrival = 8.6f;
+    public float TimeForArrivalReducingAmount = 0.2f;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        CurTimeForArrival = MaxTimeForArrival;
     }
 
     // Update is called once per frame
@@ -41,7 +46,7 @@ public class MonsterSpawner : MonoBehaviour
                 if (!Monster) return;
                 MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
                 if (!mon) return;
-                mon.SetMonsterInfo(Player, E_Direction.Left, LeftEnemyBar, gameObject);
+                mon.SetMonsterInfo(Player, E_Direction.Left, LeftEnemyBar, gameObject, CurTimeForArrival);
                 Monster.transform.position = new Vector3(-SpawnLocDx, transform.position.y, 0);
                 LeftIsExisted = true;
             }
@@ -55,7 +60,7 @@ public class MonsterSpawner : MonoBehaviour
                 if (!Monster) return;
                 MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
                 if (!mon) return;
-                mon.SetMonsterInfo(Player, E_Direction.Right, RightEnemyBar, gameObject);
+                mon.SetMonsterInfo(Player, E_Direction.Right, RightEnemyBar, gameObject, CurTimeForArrival);
                 Monster.transform.position = new Vector3(SpawnLocDx, transform.position.y, 0);
                 RightIsExisted = true;
             }
@@ -72,6 +77,14 @@ public class MonsterSpawner : MonoBehaviour
         else
         {
             RightIsExisted = false;
+        }
+    }
+
+    public void ReduceTimeForArrival()
+    {
+        if(CurTimeForArrival > MinTimeForArrival)
+        {
+            CurTimeForArrival -= TimeForArrivalReducingAmount;
         }
     }
 }

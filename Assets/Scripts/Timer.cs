@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
@@ -17,8 +18,22 @@ public class Timer : MonoBehaviour
     private float MonsterSpawnCounter = 0f;
     public float ScoreCounter = 0f;
 
-    public float ObstacleSpawnTime = 1f;
-    public float MonsterSpawnTime = 4f;
+    public float MaxObstacleSpawnTime = 3f;
+    private float CurObstacleSpawnTime;
+    public float MinObstacleSpawnTime = 2f;
+    public float ObstacleSpawnTimeReducingAmount = 0.2f;
+
+    public float MaxMonsterSpawnTime = 4f;
+    private float CurMonsterSpawnTime;
+    public float MinMonsterSpawnTime = 3f;
+    public float MonsterSpawnTimeReducingAmount = 0.2f;
+
+    public int FixedSpeedPeriod = 100;
+    private int CurSpeedPeriod;
+
+
+    private int CurSpawnPeriod;
+    public int FixedSpawnPeriod = 300;
 
     //private bool IsPaused = false;
 
@@ -40,6 +55,12 @@ public class Timer : MonoBehaviour
         ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>();
 
         SetIsPaused(false);
+
+        CurMonsterSpawnTime = MaxMonsterSpawnTime;
+        CurObstacleSpawnTime = MaxObstacleSpawnTime;
+
+        CurSpeedPeriod = FixedSpeedPeriod;
+        CurSpawnPeriod = FixedSpawnPeriod;
     }
 
     // Update is called once per frame
@@ -51,24 +72,47 @@ public class Timer : MonoBehaviour
 
         if(ScoreText) 
         {
-            Score = (int)(ScoreCounter / 0.2);
+            Score = (int)(ScoreCounter / 0.2f);
             ScoreText.text = Score + "m";
+        }
+
+        if(Score >= CurSpeedPeriod)
+        {
+            CurSpeedPeriod += FixedSpeedPeriod;
+
+            ObstacleSpawner.ReduceTimeForArrival();
+            MonsterSpawner.ReduceTimeForArrival();
+        }
+
+        if(Score >= CurSpawnPeriod)
+        {
+            CurSpawnPeriod += FixedSpawnPeriod;
+            if(CurObstacleSpawnTime > MinObstacleSpawnTime)
+            {
+                CurObstacleSpawnTime -= ObstacleSpawnTimeReducingAmount;
+            }
+            
+            if(CurMonsterSpawnTime > MinMonsterSpawnTime)
+            {
+                CurMonsterSpawnTime -= MonsterSpawnTimeReducingAmount;
+            }
+            
         }
 
 
         if (!ObstacleSpawner) return;
 
-        if (ObstacleSpawnCounter >= ObstacleSpawnTime)
+        if (ObstacleSpawnCounter >= CurObstacleSpawnTime)
         {
-            ObstacleSpawnCounter -= ObstacleSpawnTime;
+            ObstacleSpawnCounter -= CurObstacleSpawnTime;
             ObstacleSpawner.SpawnObstacle();
         }
 
         if (!MonsterSpawner) return;
 
-        if (MonsterSpawnCounter >= MonsterSpawnTime)
+        if (MonsterSpawnCounter >= CurMonsterSpawnTime)
         {
-            MonsterSpawnCounter -= MonsterSpawnTime;
+            MonsterSpawnCounter -= CurMonsterSpawnTime;
             MonsterSpawner.SpawnMonster();
         }
 

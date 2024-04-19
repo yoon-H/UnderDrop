@@ -5,7 +5,7 @@ using UnityEngine;
 public class LongClick : MonoBehaviour
 {
     private bool IsClicked = false;
-    private float ClickTime = 1f;
+    private float ClickTime = 0.6f;
     private float ClickCounter = 0f;
 
     public GameObject PlayerRef;
