@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -180,6 +180,7 @@ public class Player : MonoBehaviour
 
     IEnumerator IE_ReloadBullet()
     {
+        CancelTarget();
         yield return new WaitForSeconds(ReloadTime);
 
         Reloading = false;
