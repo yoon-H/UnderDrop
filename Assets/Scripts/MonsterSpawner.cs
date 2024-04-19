@@ -84,9 +84,7 @@ public class MonsterSpawner : MonoBehaviour
     {
         if(CurTimeForArrival > MinTimeForArrival)
         {
-            CurTimeForArrival = Mathf.Round((CurTimeForArrival - TimeForArrivalReducingAmount) / 0.1f) * 0.1f;
-
-            print("Monster Reduce TimeForArrival : " + CurTimeForArrival);
+            CurTimeForArrival -= TimeForArrivalReducingAmount;
         }
     }
 }

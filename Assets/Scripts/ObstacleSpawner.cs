@@ -63,8 +63,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         if (CurTimeForArrival > MinTimeForArrival)
         {
-            CurTimeForArrival = Mathf.Round((CurTimeForArrival - TimeForArrivalReducingAmount) / 0.1f) * 0.1f;
-            print("Obstacle Reduce TimeForArrival : " + CurTimeForArrival);
+            CurTimeForArrival -= TimeForArrivalReducingAmount;
         }
     }
 }

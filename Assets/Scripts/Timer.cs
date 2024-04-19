@@ -89,15 +89,13 @@ public class Timer : MonoBehaviour
             CurSpawnPeriod += FixedSpawnPeriod;
             if(CurObstacleSpawnTime > MinObstacleSpawnTime)
             {
-                CurObstacleSpawnTime =  Mathf.Round((CurObstacleSpawnTime - ObstacleSpawnTimeReducingAmount)/0.1f)*0.1f;
+                CurObstacleSpawnTime -= ObstacleSpawnTimeReducingAmount;
             }
             
             if(CurMonsterSpawnTime > MinMonsterSpawnTime)
             {
-                CurMonsterSpawnTime = Mathf.Round((CurMonsterSpawnTime - MonsterSpawnTimeReducingAmount) / 0.1f) * 0.1f;
+                CurMonsterSpawnTime -= MonsterSpawnTimeReducingAmount;
             }
-
-            print("Reduce SpawnTime :: Obstacle : " + CurObstacleSpawnTime + " / Monster : " + CurMonsterSpawnTime);
             
         }
 
