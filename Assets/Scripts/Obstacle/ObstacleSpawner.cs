@@ -8,6 +8,9 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField]
     private GameObject ObstaclePrefab;
 
+    public GameObject TimerRef;
+    private Timer Timer;
+
     GameObject Obstacle;
 
     private float SpawnLocDx = 1.8f;
@@ -21,6 +24,9 @@ public class ObstacleSpawner : MonoBehaviour
     void Start()
     {
         CurTimeForArrival = MaxTimeForArrival;
+        
+        // Timer Initializing
+        Timer = TimerRef.GetComponent<Timer>();
     }
 
     // Update is called once per frame
@@ -37,10 +43,13 @@ public class ObstacleSpawner : MonoBehaviour
         {
             Obstacle = Instantiate(ObstaclePrefab);                                 //TODO : change to ObjectPool
             if (!Obstacle) return;
-            ObastacleMovement obs = Obstacle.GetComponent<ObastacleMovement>();
-            if (!obs) return;
-            obs.SetRotateDirection(E_Direction.Left);
-            obs.SetTimeForArrival(CurTimeForArrival);
+            ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
+            SawTooth tooth = Obstacle.GetComponent<SawTooth>();
+            if (!obj) return;
+            if(!tooth) return;
+            obj.SetTimeForArrival(CurTimeForArrival);
+            tooth.InitializeObstacleStats(Timer);
+            tooth.SetRotateDirection(E_Direction.Left);
 
             Obstacle.transform.position = new Vector3(-SpawnLocDx, transform.position.y, 0);
         }
@@ -48,10 +57,13 @@ public class ObstacleSpawner : MonoBehaviour
         {
             Obstacle = Instantiate(ObstaclePrefab);
             if (!Obstacle) return;
-            ObastacleMovement obs = Obstacle.GetComponent<ObastacleMovement>();
-            if (!obs) return;
-            obs.SetRotateDirection(E_Direction.Right);
-            obs.SetTimeForArrival(CurTimeForArrival);
+            ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
+            SawTooth tooth = Obstacle.GetComponent<SawTooth>();
+            if (!obj) return;
+            if (!tooth) return;
+            obj.SetTimeForArrival(CurTimeForArrival);
+            tooth.InitializeObstacleStats(Timer);
+            tooth.SetRotateDirection(E_Direction.Right);
 
             Obstacle.transform.position = new Vector3(SpawnLocDx, transform.position.y, 0);
         }

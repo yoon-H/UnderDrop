@@ -219,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObstaclePrefab: {fileID: 3421529210351211702, guid: 6cf42fc63d6ffe243b8e2d229b67eec8, type: 3}
+  TimerRef: {fileID: 381403812}
   MaxTimeForArrival: 5
   MinTimeForArrival: 3.6
   TimeForArrivalReducingAmount: 0.2
