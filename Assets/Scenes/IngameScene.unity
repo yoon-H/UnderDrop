@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da107dd840fd24d48a4081c685888eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstaclePrefab: {fileID: 3421529210351211702, guid: 6cf42fc63d6ffe243b8e2d229b67eec8, type: 3}
+  ObstaclePrefab: {fileID: 7275304128627813810, guid: 576a0548e395c2f4fbf53b74c03c54ef, type: 3}
   TimerRef: {fileID: 381403812}
   MaxTimeForArrival: 5
   MinTimeForArrival: 3.6
@@ -1217,6 +1217,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1128775766720772239, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128775766720772239, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1291788647
+      objectReference: {fileID: 0}
     - target: {fileID: 4747683333596818295, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
       propertyPath: TimerRef
       value: 
@@ -1225,6 +1233,10 @@ PrefabInstance:
       propertyPath: BulletBar
       value: 
       objectReference: {fileID: 1519930017}
+    - target: {fileID: 4747683333596818295, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
+      propertyPath: Reloading
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8506029482992050123, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.402

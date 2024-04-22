@@ -8,12 +8,14 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField]
     private GameObject ObstaclePrefab;
 
+
     public GameObject TimerRef;
     private Timer Timer;
 
     GameObject Obstacle;
 
-    private float SpawnLocDx = 1.8f;
+    private float ToothSpawnLocDx = 1.8f;
+    private float ButtonTypeSpawnLocDx = 1.5f;
 
     public float MaxTimeForArrival = 5f;
     private float CurTimeForArrival;
@@ -44,6 +46,24 @@ public class ObstacleSpawner : MonoBehaviour
             Obstacle = Instantiate(ObstaclePrefab);                                 //TODO : change to ObjectPool
             if (!Obstacle) return;
             ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
+            ButtonTypeObstacle bto = Obstacle.GetComponent<ButtonTypeObstacle>();
+            if (!obj) return;
+            if (!bto) return;
+
+            obj.SetTimeForArrival(CurTimeForArrival);
+            
+            Obstacle.transform.position = new Vector3(0, transform.position.y, 0);
+            if (!bto.LaserButtonRef) return;
+            bto.LaserButtonRef.gameObject.transform.position = new Vector3(-ButtonTypeSpawnLocDx, transform.position.y, 0);
+            if(!bto.LaserObstacleRef) return;
+            Obstacle obs = bto.LaserObstacleRef.GetComponent<Obstacle>();
+            if (!obs) return;
+            obs.InitializeObstacleStats(Timer);
+
+            /*
+            Obstacle = Instantiate(ObstaclePrefab);                                 //TODO : change to ObjectPool
+            if (!Obstacle) return;
+            ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
             SawTooth tooth = Obstacle.GetComponent<SawTooth>();
             if (!obj) return;
             if(!tooth) return;
@@ -52,9 +72,28 @@ public class ObstacleSpawner : MonoBehaviour
             tooth.SetRotateDirection(E_Direction.Left);
 
             Obstacle.transform.position = new Vector3(-SpawnLocDx, transform.position.y, 0);
+            */
         }
         else if (res == 1) // spawn right
         {
+            Obstacle = Instantiate(ObstaclePrefab);                                 //TODO : change to ObjectPool
+            if (!Obstacle) return;
+            ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
+            ButtonTypeObstacle bto = Obstacle.GetComponent<ButtonTypeObstacle>();
+            if (!obj) return;
+            if (!bto) return;
+
+            obj.SetTimeForArrival(CurTimeForArrival);
+            
+            Obstacle.transform.position = new Vector3(0, transform.position.y, 0);
+            if (!bto.LaserButtonRef) return;
+            bto.LaserButtonRef.gameObject.transform.position = new Vector3(ButtonTypeSpawnLocDx, transform.position.y, 0);
+            if (!bto.LaserObstacleRef) return;
+            Obstacle obs = bto.LaserObstacleRef.GetComponent<Obstacle>();
+            if (!obs) return;
+            obs.InitializeObstacleStats(Timer);
+            
+            /*
             Obstacle = Instantiate(ObstaclePrefab);
             if (!Obstacle) return;
             ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
@@ -66,6 +105,7 @@ public class ObstacleSpawner : MonoBehaviour
             tooth.SetRotateDirection(E_Direction.Right);
 
             Obstacle.transform.position = new Vector3(SpawnLocDx, transform.position.y, 0);
+            */
         }
 
         Destroy(Obstacle, 8f);
