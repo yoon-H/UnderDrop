@@ -41,7 +41,6 @@ public class Monster : MonoBehaviour, IHittable
         //if (!LifeBar) return;
         //LifeBar.Value = CurHp;
         //LifeBar.SetWidth();
-        print(CurHp);
 
         if (CurHp <= 0)
         {

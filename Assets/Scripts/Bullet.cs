@@ -47,7 +47,6 @@ public class Bullet : MonoBehaviour
             if (!Monster) return;
             Monster.TakeDamage(Damage);
             Destroy(gameObject);
-            print("aaaaaaaaaa");
         }
     }
 
