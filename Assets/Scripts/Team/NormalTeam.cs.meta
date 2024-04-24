@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 52249f8d79c223d4da2480a3d03159cf
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ThornObstacleRef: {fileID: 8878505011092517734, guid: 8d97efc8c72e58d4b804748c4ac39ebf, type: 3}
+  - SawToothObstacleRef: {fileID: 3421529210351211702, guid: 6cf42fc63d6ffe243b8e2d229b67eec8, type: 3}
+  - ButtonTypeObstacleRef: {fileID: 7275304128627813810, guid: 576a0548e395c2f4fbf53b74c03c54ef, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -12,18 +12,7 @@ public class MonsterMovement : MonoBehaviour
 
     public GameObject PlayerRef;
 
-    [SerializeField]
-    private int CurHp;
-    private int MaxHp = 100;
-
     private float TimeForArrival;
-
-    public E_Direction Direction;
-
-    public GameObject LifeBarRef;
-    private ProgressBar LifeBar;
-
-    public MonsterSpawner Spawner;
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +23,6 @@ public class MonsterMovement : MonoBehaviour
         float PlayerLoc = PlayerRef.transform.position.y + PlayerRef.transform.localScale.y / 2;
 
         MonsterMoveSpeed = (MonsterLoc - PlayerLoc) / TimeForArrival;
-
-        //Hp Initialize
-        CurHp = MaxHp;
-
-        //Initialize time for arrival
     }
 
     // Update is called once per frame
@@ -48,41 +32,12 @@ public class MonsterMovement : MonoBehaviour
     }
 
 
-    public void TakeDamage(int amount)
-    {
-        CurHp -= amount;
-        if (!LifeBar) return;
-        LifeBar.Value = CurHp;
-        LifeBar.SetWidth();
+    
 
-        if(CurHp <= 0)
-        {
-            // Monster died
-            LifeBar.Value = LifeBar.Maxvalue;
-            LifeBar.SetWidth();
-            LifeBar.SetActiveProgress(false);
-            if (!Spawner) return;
-            Spawner.SetDestroyedMonster(Direction);
-
-            Destroy(gameObject);
-        }
-    }
-
-    public void SetMonsterInfo(GameObject player, E_Direction direction, GameObject lifeBar, GameObject monsterSpawner, float timeForArrival)
+    public void SetMonsterMovementInfo(GameObject player, float timeForArrival)
     {
         PlayerRef = player;
-        Direction = direction;
-        Spawner = monsterSpawner.GetComponent<MonsterSpawner>();
-        LifeBarRef = lifeBar;
         TimeForArrival = timeForArrival;
-
-        if (!LifeBarRef) return;
-        LifeBar = LifeBarRef.GetComponent<ProgressBar>();
-        if (!LifeBar) return;
-        LifeBar.SetActiveProgress(true);
-        LifeBar.Maxvalue = MaxHp;
-        LifeBar.Value = MaxHp;
-        LifeBar.SetWidth();
     }
 
 }

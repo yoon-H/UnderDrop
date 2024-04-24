@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -26,7 +26,7 @@ public class ProgressBar : MonoBehaviour
         Value = Maxvalue;
         if (!Fill) return;
         MaxWidth = Fill.transform.localScale.x;
-        SetTransparency(InActiveOpacity);
+        SetTransparency(ActiveOpacity);
     }
 
     // Update is called once per frame

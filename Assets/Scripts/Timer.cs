@@ -43,7 +43,11 @@ public class Timer : MonoBehaviour
 
     public int Score = 0;
 
-    
+    //TeamRegion
+
+    public NormalTeam NormalTeam;
+
+
 
     // Start is called before the first frame update
     void Start()

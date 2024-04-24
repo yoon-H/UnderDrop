@@ -73,12 +73,19 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Obstacle") || collision.CompareTag("Monster"))
-        {
-            if (!Timer) return;
-            Timer.GameOver();
+        //if(collision.CompareTag("Monster"))
+        //{
+        //    if (!Timer) return;
+        //    Timer.GameOver();
 
+        //}
+
+        IHittable hittable = collision.gameObject.GetComponent<IHittable>();
+        if(hittable != null)
+        {
+            hittable.OnHit();
         }
+    
     }
 
     public bool Shoot()

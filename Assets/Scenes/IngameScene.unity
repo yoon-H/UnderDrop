@@ -167,13 +167,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 909cb800a10ac3c44b50090d5f12f577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterPrefab: {fileID: 5372100478019773769, guid: c2e737009f7731040ad3b744e016039c, type: 3}
-  Player: {fileID: 1674651875}
   LeftEnemyBar: {fileID: 1049249637}
   RightEnemyBar: {fileID: 525498927}
   MaxTimeForArrival: 10
   MinTimeForArrival: 8.6
   TimeForArrivalReducingAmount: 0.2
+  TimerRef: {fileID: 381403812}
+  PlayerRef: {fileID: 1674651875}
 --- !u!1 &251865899
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da107dd840fd24d48a4081c685888eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstaclePrefab: {fileID: 3421529210351211702, guid: 6cf42fc63d6ffe243b8e2d229b67eec8, type: 3}
+  TimerRef: {fileID: 381403812}
   MaxTimeForArrival: 5
   MinTimeForArrival: 3.6
   TimeForArrivalReducingAmount: 0.2
@@ -232,6 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 381403814}
   - component: {fileID: 381403813}
+  - component: {fileID: 381403815}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -265,6 +266,7 @@ MonoBehaviour:
   FixedSpawnPeriod: 300
   GameOverPanel: {fileID: 734402315}
   Score: 0
+  NormalTeam: {fileID: 381403815}
 --- !u!4 &381403814
 Transform:
   m_ObjectHideFlags: 0
@@ -280,6 +282,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &381403815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381403812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52249f8d79c223d4da2480a3d03159cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThornObstacleRef: {fileID: 8878505011092517734, guid: 8d97efc8c72e58d4b804748c4ac39ebf, type: 3}
+  SawToothObstacleRef: {fileID: 3421529210351211702, guid: 6cf42fc63d6ffe243b8e2d229b67eec8, type: 3}
+  ButtonTypeObstacleRef: {fileID: 7275304128627813810, guid: 576a0548e395c2f4fbf53b74c03c54ef, type: 3}
+  LowHpMonsterRef: {fileID: 8074002197908988790, guid: 6b9d4ade3fd4774499815edca1bc149d, type: 3}
+  MiddleHpMonsterRef: {fileID: 1097566171872308261, guid: e28a2189370127d49ae05f838fb24c61, type: 3}
+  HighHpMonsterRef: {fileID: 5623326487096990421, guid: 25289868efe906b4eadd6b2be34cdeec, type: 3}
 --- !u!1 &453182683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,6 +1236,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1128775766720772239, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1128775766720772239, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1291788647
+      objectReference: {fileID: 0}
     - target: {fileID: 4747683333596818295, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
       propertyPath: TimerRef
       value: 
@@ -1224,6 +1252,10 @@ PrefabInstance:
       propertyPath: BulletBar
       value: 
       objectReference: {fileID: 1519930017}
+    - target: {fileID: 4747683333596818295, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
+      propertyPath: Reloading
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8506029482992050123, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.402

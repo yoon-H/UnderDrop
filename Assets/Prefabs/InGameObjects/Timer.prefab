@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8060112486869602541
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2386375974583984735}
+  - component: {fileID: 2078557891727680749}
+  - component: {fileID: 2030821613357264063}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2386375974583984735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8060112486869602541}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2078557891727680749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8060112486869602541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a569499fbfe77f542ad5376d2346e873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstacleSpawnerRef: {fileID: 0}
+  MonsterSpawnerRef: {fileID: 0}
+  ScoreText: {fileID: 0}
+  ScoreCounter: 0
+  MaxObstacleSpawnTime: 3
+  MinObstacleSpawnTime: 2
+  ObstacleSpawnTimeReducingAmount: 0.2
+  MaxMonsterSpawnTime: 4
+  MinMonsterSpawnTime: 3
+  MonsterSpawnTimeReducingAmount: 0.2
+  FixedSpeedPeriod: 100
+  FixedSpawnPeriod: 300
+  GameOverPanel: {fileID: 0}
+  Score: 0
+  NormalTeam: {fileID: 2030821613357264063}
+--- !u!114 &2030821613357264063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8060112486869602541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52249f8d79c223d4da2480a3d03159cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThornObstacleRef: {fileID: 8878505011092517734, guid: 8d97efc8c72e58d4b804748c4ac39ebf, type: 3}
+  SawToothObstacleRef: {fileID: 3421529210351211702, guid: 6cf42fc63d6ffe243b8e2d229b67eec8, type: 3}
+  ButtonTypeObstacleRef: {fileID: 7275304128627813810, guid: 576a0548e395c2f4fbf53b74c03c54ef, type: 3}
+  LowHpMonsterRef: {fileID: 8074002197908988790, guid: 6b9d4ade3fd4774499815edca1bc149d, type: 3}
+  MiddleHpMonsterRef: {fileID: 1097566171872308261, guid: e28a2189370127d49ae05f838fb24c61, type: 3}
+  HighHpMonsterRef: {fileID: 5623326487096990421, guid: 25289868efe906b4eadd6b2be34cdeec, type: 3}
