@@ -46,7 +46,7 @@ public class MonsterSpawner : MonoBehaviour
                 if (!Monster) return;
                 MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
                 if (!mon) return;
-                mon.SetMonsterInfo(Player, E_Direction.Left, LeftEnemyBar, gameObject, CurTimeForArrival);
+                mon.SetMonsterMovementInfo(Player, CurTimeForArrival);
                 Monster.transform.position = new Vector3(-SpawnLocDx, transform.position.y, 0);
                 LeftIsExisted = true;
             }
@@ -60,7 +60,7 @@ public class MonsterSpawner : MonoBehaviour
                 if (!Monster) return;
                 MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
                 if (!mon) return;
-                mon.SetMonsterInfo(Player, E_Direction.Right, RightEnemyBar, gameObject, CurTimeForArrival);
+                mon.SetMonsterMovementInfo(Player, CurTimeForArrival);
                 Monster.transform.position = new Vector3(SpawnLocDx, transform.position.y, 0);
                 RightIsExisted = true;
             }
