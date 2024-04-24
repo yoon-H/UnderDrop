@@ -20,7 +20,8 @@ public class Monster : MonoBehaviour, IHittable
     // Start is called before the first frame update
     void Start()
     {
-
+        //if(!LifeBarRef) return;
+        //LifeBar = LifeBarRef.GetComponent<ProgressBar>();
     }
 
     // Update is called once per frame
@@ -37,16 +38,17 @@ public class Monster : MonoBehaviour, IHittable
     public void TakeDamage(int amount)
     {
         CurHp -= amount;
-        if (!LifeBar) return;
-        LifeBar.Value = CurHp;
-        LifeBar.SetWidth();
+        //if (!LifeBar) return;
+        //LifeBar.Value = CurHp;
+        //LifeBar.SetWidth();
+        print(CurHp);
 
         if (CurHp <= 0)
         {
             // Monster died
-            LifeBar.Value = LifeBar.Maxvalue;
-            LifeBar.SetWidth();
-            LifeBar.SetActiveProgress(false);
+            //LifeBar.Value = LifeBar.Maxvalue;
+            //LifeBar.SetWidth();
+            //LifeBar.SetActiveProgress(false);
             if (!Spawner) return;
             Spawner.SetDestroyedMonster(Direction);
 
@@ -54,20 +56,24 @@ public class Monster : MonoBehaviour, IHittable
         }
     }
 
-    public void SetMonsterInfo(E_Direction direction, GameObject lifeBar, GameObject monsterSpawner, int maxHp, Timer timer)
+    public void SetMonsterInfo(E_Direction direction, GameObject monsterSpawner, int maxHp, Timer timer)
     {
         Direction = direction;
         Spawner = monsterSpawner.GetComponent<MonsterSpawner>();
-        LifeBarRef = lifeBar;
         MaxHp = maxHp;
         CurHp = MaxHp;
         Timer = timer;
 
+        InitializeLifeBar();
+    }
+
+    private void InitializeLifeBar()
+    {
         //Initialize LifeBar
-        if (!LifeBarRef) return;
+        if(!LifeBarRef) return;
         LifeBar = LifeBarRef.GetComponent<ProgressBar>();
         if (!LifeBar) return;
-        LifeBar.SetActiveProgress(true);
+        //LifeBar.SetActiveProgress(true);
         LifeBar.Maxvalue = MaxHp;
         LifeBar.Value = MaxHp;
         LifeBar.SetWidth();

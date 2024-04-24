@@ -6,13 +6,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private GameObject MonsterRef;
-    private MonsterMovement Monster;
+    private Monster Monster;
 
     private float MoveSpeed;
 
     private Vector3 MoveVector = Vector3.zero;
 
-    public int Damage = 20;
+    public const int Damage = 20;
 
 
     // Start is called before the first frame update
@@ -47,6 +47,7 @@ public class Bullet : MonoBehaviour
             if (!Monster) return;
             Monster.TakeDamage(Damage);
             Destroy(gameObject);
+            print("aaaaaaaaaa");
         }
     }
 
@@ -54,6 +55,6 @@ public class Bullet : MonoBehaviour
     {
         MonsterRef = monster;
         if (!MonsterRef) return;
-        Monster = MonsterRef.GetComponent<MonsterMovement>();
+        Monster = MonsterRef.GetComponent<Monster>();
     }
 }

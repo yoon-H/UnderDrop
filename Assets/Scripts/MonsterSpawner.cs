@@ -4,14 +4,6 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject MonsterPrefab;
-    public GameObject Player;
-
-    GameObject Monster;
-
-    private float SpawnLocDx = 1.4f;
-
     private bool LeftIsExisted = false;
     private bool RightIsExisted = false;
 
@@ -23,10 +15,18 @@ public class MonsterSpawner : MonoBehaviour
     public float MinTimeForArrival = 8.6f;
     public float TimeForArrivalReducingAmount = 0.2f;
 
+    public GameObject TimerRef;
+    private Timer Timer;
+
+    public GameObject PlayerRef;
+
     // Start is called before the first frame update
     void Start()
     {
         CurTimeForArrival = MaxTimeForArrival;
+
+        if (!TimerRef) return;
+        Timer = TimerRef.GetComponent<Timer>();
     }
 
     // Update is called once per frame
@@ -42,12 +42,14 @@ public class MonsterSpawner : MonoBehaviour
         {
             if (!LeftIsExisted)
             {
-                Monster = Instantiate(MonsterPrefab);                                 //TODO : change to ObjectPool
-                if (!Monster) return;
-                MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
-                if (!mon) return;
-                mon.SetMonsterMovementInfo(Player, CurTimeForArrival);
-                Monster.transform.position = new Vector3(-SpawnLocDx, transform.position.y, 0);
+                if (!Timer) return;
+                Timer.NormalTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
+                //Monster = Instantiate(MonsterPrefab);                                 //TODO : change to ObjectPool
+                //if (!Monster) return;
+                //MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
+                //if (!mon) return;
+                //mon.SetMonsterMovementInfo(Player, CurTimeForArrival);
+                //Monster.transform.position = new Vector3(-SpawnLocDx, transform.position.y, 0);
                 LeftIsExisted = true;
             }
 
@@ -56,12 +58,13 @@ public class MonsterSpawner : MonoBehaviour
         {
             if (!RightIsExisted)
             {
-                Monster = Instantiate(MonsterPrefab);
-                if (!Monster) return;
-                MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
-                if (!mon) return;
-                mon.SetMonsterMovementInfo(Player, CurTimeForArrival);
-                Monster.transform.position = new Vector3(SpawnLocDx, transform.position.y, 0);
+                Timer.NormalTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
+                //Monster = Instantiate(MonsterPrefab);
+                //if (!Monster) return;
+                //MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
+                //if (!mon) return;
+                //mon.SetMonsterMovementInfo(Player, CurTimeForArrival);
+                //Monster.transform.position = new Vector3(SpawnLocDx, transform.position.y, 0);
                 RightIsExisted = true;
             }
 
