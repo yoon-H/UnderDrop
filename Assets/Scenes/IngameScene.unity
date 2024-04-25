@@ -299,6 +299,7 @@ GameObject:
   - component: {fileID: 381403814}
   - component: {fileID: 381403813}
   - component: {fileID: 381403815}
+  - component: {fileID: 381403816}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -333,6 +334,7 @@ MonoBehaviour:
   GameOverPanel: {fileID: 734402315}
   Score: 0
   NormalTeam: {fileID: 381403815}
+  WeaselTeam: {fileID: 381403816}
 --- !u!4 &381403814
 Transform:
   m_ObjectHideFlags: 0
@@ -366,6 +368,20 @@ MonoBehaviour:
   LowHpMonsterRef: {fileID: 8074002197908988790, guid: 6b9d4ade3fd4774499815edca1bc149d, type: 3}
   MiddleHpMonsterRef: {fileID: 1097566171872308261, guid: e28a2189370127d49ae05f838fb24c61, type: 3}
   HighHpMonsterRef: {fileID: 5623326487096990421, guid: 25289868efe906b4eadd6b2be34cdeec, type: 3}
+--- !u!114 &381403816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381403812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6178832db8629e4eaac656ee8b69542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BambooObstacleRef: {fileID: 6795462152882908697, guid: f9e3dae9544ec9a4fb30a3a772904941, type: 3}
+  DartObstacleRef: {fileID: 248230822583104538, guid: 4652c35e9dbef6d4d9fcda4e431cdae7, type: 3}
 --- !u!1 &453182683
 GameObject:
   m_ObjectHideFlags: 0

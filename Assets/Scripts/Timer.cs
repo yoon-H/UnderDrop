@@ -46,6 +46,7 @@ public class Timer : MonoBehaviour
     //TeamRegion
 
     public NormalTeam NormalTeam;
+    public WeaselTeam WeaselTeam;
 
 
 
