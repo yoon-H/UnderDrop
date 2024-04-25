@@ -68,8 +68,7 @@ public class Knock : Player
     private void SpawnShield()
     {
         System.Random rand = new System.Random();
-        int res = 0;
-            //rand.Next(2);
+        int res = rand.Next(2);
         if(res == 0)
         {
             SetIsShield(true);
