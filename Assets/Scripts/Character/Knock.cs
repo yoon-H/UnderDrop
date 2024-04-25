@@ -73,7 +73,6 @@ public class Knock : Player
         if(res == 0)
         {
             SetIsShield(true);
-            print("zzzzzzzzzzzzzzz");
         }
     }
 }
