@@ -34,16 +34,16 @@ public class Player : MonoBehaviour
 
 
     public GameObject BulletBar;
-    private ProgressBar Bar;
+    protected ProgressBar Bar;
 
     public GameObject TimerRef;
     private Timer Timer;
 
     [SerializeField]
-    private bool CanShoot = false;
+    protected bool CanShoot = false;
 
     [SerializeField]
-    private bool Reloading = false;
+    protected bool Reloading = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -79,15 +79,8 @@ public class Player : MonoBehaviour
     }
 
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        //if(collision.CompareTag("Monster"))
-        //{
-        //    if (!Timer) return;
-        //    Timer.GameOver();
-
-        //}
-
         IHittable hittable = collision.gameObject.GetComponent<IHittable>();
         if(hittable != null)
         {
@@ -188,7 +181,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    IEnumerator IE_ShootBullet()
+    protected IEnumerator IE_ShootBullet()
     {
         while(CanShoot && !Reloading)
         {
@@ -199,7 +192,7 @@ public class Player : MonoBehaviour
         
     }
 
-    IEnumerator IE_ReloadBullet()
+    protected virtual IEnumerator IE_ReloadBullet()
     {
         CancelTarget();
         yield return new WaitForSeconds(ReloadTime);
