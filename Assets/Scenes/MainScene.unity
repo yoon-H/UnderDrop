@@ -429,7 +429,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1260, y: 2940}
+  m_ReferenceResolution: {x: 1440, y: 2960}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -748,6 +748,10 @@ PrefabInstance:
     - target: {fileID: 3555930405054926199, guid: cab9fccb910f2494db012dac495172be, type: 3}
       propertyPath: m_Name
       value: CharacterPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3555930405054926199, guid: cab9fccb910f2494db012dac495172be, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4514930844272310474, guid: cab9fccb910f2494db012dac495172be, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1123,6 +1127,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4813483355704177020, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
+      propertyPath: m_Spacing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813483355704177020, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
+      propertyPath: m_Padding.m_Left
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813483355704177020, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
+      propertyPath: m_Padding.m_Right
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813483355704177020, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
+      propertyPath: m_ChildForceExpandWidth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4942978203026160440, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1179,6 +1199,10 @@ PrefabInstance:
     - target: {fileID: 4604561083275722147, guid: 46082b2adad485c42a9389597595696f, type: 3}
       propertyPath: m_Name
       value: BackGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979393251368470070, guid: 46082b2adad485c42a9389597595696f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2875
       objectReference: {fileID: 0}
     - target: {fileID: 5979393251368470070, guid: 46082b2adad485c42a9389597595696f, type: 3}
       propertyPath: m_LocalPosition.x
