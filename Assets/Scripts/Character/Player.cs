@@ -21,9 +21,17 @@ public class Player : MonoBehaviour
     public GameObject BulletRef;
     public GameObject Bullet;
     GameObject Target = null;
-    public int MaxBulletNum = 30;
+    
     public int CurBulletNum;
+    
+
+    //Character Stat
+    public int MaxBulletNum = 30;
     public float ReloadTime = 1.5f;
+    public float AttackTime = 0.1f;
+    public int Damage = 20;
+
+
 
     public GameObject BulletBar;
     private ProgressBar Bar;
@@ -38,7 +46,7 @@ public class Player : MonoBehaviour
     private bool Reloading = false;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         PlayerYSize = transform.localScale.y;
         PlayerYLoc = transform.position.y;
@@ -71,7 +79,7 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         //if(collision.CompareTag("Monster"))
         //{
@@ -104,7 +112,7 @@ public class Player : MonoBehaviour
             if(!Bullet) { return false; }
             Bullet.transform.position = transform.position;
             Bullet bullet = Bullet.GetComponent<Bullet>();
-            bullet.SetBulletInfo(Target);
+            bullet.SetBulletInfo(Target, Damage);
             UseBullet();
             return true;
         }
@@ -129,7 +137,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private bool SearchTarget()
+    protected bool SearchTarget()
     {
         List<GameObject> Targets = new List<GameObject>(GameObject.FindGameObjectsWithTag("Monster"));
         bool flag = false;
@@ -162,7 +170,7 @@ public class Player : MonoBehaviour
         Target = null;
     }
 
-    private void UseBullet()
+    protected void UseBullet()
     {
         CurBulletNum -= 1;
 
@@ -184,7 +192,7 @@ public class Player : MonoBehaviour
     {
         while(CanShoot && !Reloading)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(AttackTime);
             bool flag = Shoot();
             if(!flag) break;
         }

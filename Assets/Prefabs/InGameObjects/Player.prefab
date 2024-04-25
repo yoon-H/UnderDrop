@@ -93,9 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8506029482992050123}
-  - component: {fileID: 4747683333596818295}
   - component: {fileID: 4636399665494773992}
   - component: {fileID: 176598024845540061}
+  - component: {fileID: 7589925032916792199}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -119,30 +119,6 @@ Transform:
   - {fileID: 380036317562526115}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4747683333596818295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9180869430347643085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a270287a353786342a00b7e368b7561b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ease: 1
-  PlayerYSize: 0
-  PlayerYLoc: 0
-  BulletRef: {fileID: 1297338020777488507, guid: f57443e364d441d46bf49c7d97d7c8dd, type: 3}
-  Bullet: {fileID: 0}
-  MaxBulletNum: 30
-  CurBulletNum: 0
-  ReloadTime: 1.5
-  BulletBar: {fileID: 0}
-  TimerRef: {fileID: 0}
-  CanShoot: 0
-  Reloading: 0
 --- !u!61 &4636399665494773992
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -215,3 +191,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &7589925032916792199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9180869430347643085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e1fd37310662814ab0a46fec4e10bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ease: 1
+  PlayerYSize: 0
+  PlayerYLoc: 0
+  BulletRef: {fileID: 1297338020777488507, guid: f57443e364d441d46bf49c7d97d7c8dd, type: 3}
+  Bullet: {fileID: 0}
+  CurBulletNum: 0
+  MaxBulletNum: 30
+  ReloadTime: 1.5
+  AttackTime: 0.1
+  Damage: 20
+  BulletBar: {fileID: 0}
+  TimerRef: {fileID: 0}
+  CanShoot: 0
+  Reloading: 0
+  _MaxBulletNum: 30
+  _ReloadTime: 1.2
+  _AttackTime: 0.05
+  _Damage: 7

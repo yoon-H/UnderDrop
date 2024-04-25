@@ -40,7 +40,7 @@ public class ObstacleSpawner : MonoBehaviour
         }
         else if (res == 1) // spawn right
         {
-            Obstacle = Timer.NormalTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival, transform.position.y);
+            Obstacle = Timer.NormalTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival, transform.position.y);
         }
 
         Destroy(Obstacle, 8f);

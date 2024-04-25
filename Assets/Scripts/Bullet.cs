@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
 
     private Vector3 MoveVector = Vector3.zero;
 
-    public const int Damage = 20;
+    public int Damage = 20;
 
 
     // Start is called before the first frame update
@@ -50,10 +50,12 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void SetBulletInfo(GameObject monster)
+    public void SetBulletInfo(GameObject monster, int damage)
     {
         MonsterRef = monster;
         if (!MonsterRef) return;
         Monster = MonsterRef.GetComponent<Monster>();
+
+        Damage = damage;
     }
 }

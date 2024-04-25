@@ -1256,6 +1256,14 @@ PrefabInstance:
       propertyPath: Reloading
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7589925032916792199, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
+      propertyPath: TimerRef
+      value: 
+      objectReference: {fileID: 381403812}
+    - target: {fileID: 7589925032916792199, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
+      propertyPath: BulletBar
+      value: 
+      objectReference: {fileID: 1519930017}
     - target: {fileID: 8506029482992050123, guid: 7dfc445c06518f641a689f9cb65b794d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.402
