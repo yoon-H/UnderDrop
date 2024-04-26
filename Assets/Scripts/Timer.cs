@@ -9,7 +9,7 @@ using UnityEngine.UIElements;
 public class Timer : MonoBehaviour
 {
     public GameObject ObstacleSpawnerRef;
-    private ObstacleSpawner ObstacleSpawner;
+    public ObstacleSpawner ObstacleSpawner;
     public GameObject MonsterSpawnerRef;
     private MonsterSpawner MonsterSpawner;
     public Text ScoreText;
@@ -46,6 +46,7 @@ public class Timer : MonoBehaviour
     //TeamRegion
 
     public NormalTeam NormalTeam;
+    public WeaselTeam WeaselTeam;
 
 
 

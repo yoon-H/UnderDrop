@@ -43,13 +43,7 @@ public class MonsterSpawner : MonoBehaviour
             if (!LeftIsExisted)
             {
                 if (!Timer) return;
-                Timer.NormalTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
-                //Monster = Instantiate(MonsterPrefab);                                 //TODO : change to ObjectPool
-                //if (!Monster) return;
-                //MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
-                //if (!mon) return;
-                //mon.SetMonsterMovementInfo(Player, CurTimeForArrival);
-                //Monster.transform.position = new Vector3(-SpawnLocDx, transform.position.y, 0);
+                Timer.WeaselTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
                 LeftIsExisted = true;
             }
 
@@ -58,13 +52,7 @@ public class MonsterSpawner : MonoBehaviour
         {
             if (!RightIsExisted)
             {
-                Timer.NormalTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
-                //Monster = Instantiate(MonsterPrefab);
-                //if (!Monster) return;
-                //MonsterMovement mon = Monster.GetComponent<MonsterMovement>();
-                //if (!mon) return;
-                //mon.SetMonsterMovementInfo(Player, CurTimeForArrival);
-                //Monster.transform.position = new Vector3(SpawnLocDx, transform.position.y, 0);
+                Timer.WeaselTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
                 RightIsExisted = true;
             }
 

@@ -1,10 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Monster : MonoBehaviour, IHittable
 {
-    Timer Timer;
+    protected Timer Timer;
 
     [SerializeField]
     private int CurHp;
@@ -44,14 +44,7 @@ public class Monster : MonoBehaviour, IHittable
 
         if (CurHp <= 0)
         {
-            // Monster died
-            //LifeBar.Value = LifeBar.Maxvalue;
-            //LifeBar.SetWidth();
-            //LifeBar.SetActiveProgress(false);
-            if (!Spawner) return;
-            Spawner.SetDestroyedMonster(Direction);
-
-            Destroy(gameObject);
+            DeadTask();
         }
     }
 
@@ -76,5 +69,17 @@ public class Monster : MonoBehaviour, IHittable
         LifeBar.Maxvalue = MaxHp;
         LifeBar.Value = MaxHp;
         LifeBar.SetWidth();
+    }
+
+    protected virtual void DeadTask()
+    {
+        // Monster died
+        //LifeBar.Value = LifeBar.Maxvalue;
+        //LifeBar.SetWidth();
+        //LifeBar.SetActiveProgress(false);
+        if (!Spawner) return;
+        Spawner.SetDestroyedMonster(Direction);
+
+        Destroy(gameObject);
     }
 }
