@@ -11,7 +11,7 @@ public class ObstacleSpawner : MonoBehaviour
     GameObject Obstacle;
 
     public float MaxTimeForArrival = 5f;
-    private float CurTimeForArrival;
+    public float CurTimeForArrival;
     public float MinTimeForArrival = 3.6f;
     public float TimeForArrivalReducingAmount = 0.2f;
 
@@ -36,11 +36,11 @@ public class ObstacleSpawner : MonoBehaviour
         int res = rand.Next(0, 3);
         if (res == 0) // spawn left
         {
-            Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival, transform.position.y);
+            Obstacle = Timer.NormalTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival, transform.position.y);
         }
         else if (res == 1) // spawn right
         {
-            Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival, transform.position.y);
+            Obstacle = Timer.NormalTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival, transform.position.y);
         }
 
         Destroy(Obstacle, 8f);

@@ -14,18 +14,18 @@ public class WeaselTeam : TeamRegion
     private GameObject Obstacle;
 
 
-    //[Header("Monster")]
-    //public GameObject LowHpMonsterRef;
-    //public GameObject MiddleHpMonsterRef;
-    //public GameObject HighHpMonsterRef;
+    [Header("Monster")]
+    public GameObject NormalMonsterRef;
+    public GameObject ObstacleMonsterRef;
 
-    //private const float MonsterSpawnLocDx = 1.4f;
+    private const float MonsterSpawnLocDx = 1.4f;
 
-    //private const int LowHp = 50;
-    //private const int MiddleHp = 70;
-    //private const int HighHp = 100;
+    private const int NormalHp = 60;
+    private const int HighHp = 110;
 
-    //private GameObject Monster;
+    private GameObject Monster;
+
+    private bool IsObstaclMonsterSpawned = false;
 
     public override GameObject SpawnObstacle(E_Direction dir, Timer timer, float timeForArrival, float locY)
     {
@@ -46,21 +46,24 @@ public class WeaselTeam : TeamRegion
 
     public override void SpawnMonster(E_Direction dir, GameObject player, GameObject spawner, Timer timer, float timeForArrival, float locY)
     {
-        //    System.Random rand = new System.Random();
-        //    int res = rand.Next(100);
-        //    if (res <= 39)
-        //    {
-        //        SpawnLowHpMonster(dir, player, spawner, timer, timeForArrival, locY);
-        //    }
-        //    else if (res <= 79)
-        //    {
-        //        SpawnMiddleHpMonster(dir, player, spawner, timer, timeForArrival, locY);
-        //    }
-        //    else
-        //    {
-        //        SpawnHighHpMonster(dir, player, spawner, timer, timeForArrival, locY);
-
-        //    }
+        System.Random rand = new System.Random();
+        int res = rand.Next(100);
+        if(IsObstaclMonsterSpawned)
+        {
+            SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
+        }
+        else
+        {
+            if (res <= 64)
+            {
+                SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
+            }
+            else
+            {
+                SpawnObstacleMonster(dir, player, spawner, timer, timeForArrival, locY);
+            }
+        }
+        
     }
 
 
@@ -114,5 +117,66 @@ public class WeaselTeam : TeamRegion
 
         //Set Location
         Obstacle.transform.position = new Vector3(locX, locY, 0);
+    }
+
+    // Monster
+    private void SpawnNormalMonster(E_Direction dir, GameObject player, GameObject spawner, Timer timer, float timeForArrival, float locY)
+    {
+        //Set LocX
+        float locX;
+        if (E_Direction.Left == dir) { locX = -MonsterSpawnLocDx; }
+        else locX = MonsterSpawnLocDx;
+
+        //Spawn Moster
+        Monster = Instantiate(NormalMonsterRef);                                 //TODO : change to ObjectPool
+
+
+        if (!Monster) return;
+        MonsterMovement movement = Monster.GetComponent<MonsterMovement>();
+        Monster mon = Monster.GetComponent<Monster>();
+
+        //Set Movement variables
+        if (!movement) return;
+        movement.SetMonsterMovementInfo(player, timeForArrival);
+
+        if (!mon) return;
+        mon.SetMonsterInfo(dir, spawner, NormalHp, timer);
+
+        //Set location
+        Monster.transform.position = new Vector3(locX, locY, 0);
+    }
+
+    private void SpawnObstacleMonster(E_Direction dir, GameObject player, GameObject spawner, Timer timer, float timeForArrival, float locY)
+    {
+        IsObstaclMonsterSpawned = true;
+        //Set LocX
+        float locX;
+        if (E_Direction.Left == dir) { locX = -MonsterSpawnLocDx; }
+        else locX = MonsterSpawnLocDx;
+
+        //Spawn Moster
+        Monster = Instantiate(ObstacleMonsterRef);                                 //TODO : change to ObjectPool
+
+
+        if (!Monster) return;
+        MonsterMovement movement = Monster.GetComponent<MonsterMovement>();
+        WeaselObstacleMonster wMon = Monster.GetComponent<WeaselObstacleMonster>();
+
+        //Set Movement variables
+        if (!movement) return;
+        movement.SetMonsterMovementInfo(player, timeForArrival);
+
+
+        if (!wMon) return;
+        wMon.SetMonsterInfo(dir, spawner, HighHp, timer);
+        wMon.SetTeam(this);
+
+        //Set location
+        Monster.transform.position = new Vector3(locX, locY, 0);
+    }
+
+    public void SetIsObstacleMonsterSpawned(bool flag)
+    {
+        IsObstaclMonsterSpawned = flag;
     }
 }

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObstacleSpawnerRef: {fileID: 0}
+  ObstacleSpawner: {fileID: 0}
   MonsterSpawnerRef: {fileID: 0}
   ScoreText: {fileID: 0}
   ScoreCounter: 0
@@ -94,3 +95,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BambooObstacleRef: {fileID: 6795462152882908697, guid: f9e3dae9544ec9a4fb30a3a772904941, type: 3}
   DartObstacleRef: {fileID: 248230822583104538, guid: 4652c35e9dbef6d4d9fcda4e431cdae7, type: 3}
+  NormalMonsterRef: {fileID: 8186947535803924099, guid: 559681fa4d652224784bbf6a845e632e, type: 3}
+  ObstacleMonsterRef: {fileID: 3293482773338002329, guid: 46fca548842a1cd4e9d86f828ad0d540, type: 3}
