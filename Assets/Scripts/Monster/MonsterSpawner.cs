@@ -43,7 +43,7 @@ public class MonsterSpawner : MonoBehaviour
             if (!LeftIsExisted)
             {
                 if (!Timer) return;
-                Timer.WeaselTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
+                Timer.NormalTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
                 LeftIsExisted = true;
             }
 
@@ -52,7 +52,7 @@ public class MonsterSpawner : MonoBehaviour
         {
             if (!RightIsExisted)
             {
-                Timer.WeaselTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
+                Timer.NormalTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
                 RightIsExisted = true;
             }
 

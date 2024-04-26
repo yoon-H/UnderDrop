@@ -28,7 +28,10 @@ public class MonsterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0f, -1f, 0f) * MonsterMoveSpeed * Time.deltaTime;
+        if(transform.position.y >= PlayerRef.transform.position.y)
+        {
+            transform.position += new Vector3(0f, -1f, 0f) * MonsterMoveSpeed * Time.deltaTime;
+        }
     }
 
 
