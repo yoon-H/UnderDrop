@@ -38,14 +38,14 @@ public class DartObstacle : Obstacle
     {
         while(true)
         {
-            yield return new WaitForSeconds(CountTime);
             System.Random rand = new System.Random();
             int res = rand.Next(2);
-            if(res ==0)
+            if (res == 0)
             {
                 IsRotating = true;
                 break;
             }
+            yield return new WaitForSeconds(CountTime);
         }
 
         StartCoroutine(IE_Rotate());
