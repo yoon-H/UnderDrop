@@ -30,17 +30,32 @@ public class ObstacleSpawner : MonoBehaviour
 
     }
 
-    public void SpawnObstacle()
+    public void SpawnObstacle(bool isRaid)
     {
         System.Random rand = new System.Random();
         int res = rand.Next(0, 3);
         if (res == 0) // spawn left
         {
-            Obstacle = Timer.NormalTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival, transform.position.y);
+            if(isRaid)
+            {
+                Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival, transform.position.y);
+            }
+            else
+            {
+                Obstacle = Timer.NormalTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival, transform.position.y);
+            }
+            
         }
         else if (res == 1) // spawn right
         {
-            Obstacle = Timer.NormalTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival, transform.position.y);
+            if (isRaid)
+            {
+                Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival, transform.position.y);
+            }
+            else
+            {
+                Obstacle = Timer.NormalTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival, transform.position.y);
+            }
         }
 
         Destroy(Obstacle, 8f);

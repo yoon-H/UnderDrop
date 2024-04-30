@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MonsterSpawner : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class MonsterSpawner : MonoBehaviour
 
     }
 
-    public void SpawnMonster()
+    public void SpawnMonster(bool isRaid)
     {
         int res = Random.Range(0, 3);
         if (res == 0) // spawn left
@@ -43,7 +44,16 @@ public class MonsterSpawner : MonoBehaviour
             if (!LeftIsExisted)
             {
                 if (!Timer) return;
-                Timer.NormalTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
+                if (isRaid)
+                {
+                    Timer.WeaselTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
+                }
+                else
+                {
+                    Timer.NormalTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
+                }
+
+                
                 LeftIsExisted = true;
             }
 
@@ -52,7 +62,14 @@ public class MonsterSpawner : MonoBehaviour
         {
             if (!RightIsExisted)
             {
-                Timer.NormalTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
+                if (isRaid)
+                {
+                    Timer.WeaselTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
+                }
+                else
+                {
+                    Timer.NormalTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
+                }
                 RightIsExisted = true;
             }
 
