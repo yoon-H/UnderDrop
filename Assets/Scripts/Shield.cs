@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
+    public Knock Knock;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,18 @@ public class Shield : MonoBehaviour
         {
             Obstacle obstacle = collision.gameObject.GetComponent<Obstacle>();
             if(obstacle != null)
+            {
                 obstacle.SetInActive();
+                print("Shield");
+                Knock.SetIsShield(false);
+                print(obstacle.gameObject.GetComponent<Collider2D>().isActiveAndEnabled);
+            }
+                
         }
+    }
+
+    public void SetKnock(Knock knock)
+    {
+        Knock = knock;
     }
 }

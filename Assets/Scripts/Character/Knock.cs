@@ -25,7 +25,30 @@ public class Knock : Player
         Damage = _Damage;
 
         Shield = ShieldRef.GetComponent<Shield>();
+        Shield.SetKnock(this);
         SetIsShield(false);
+    }
+
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        IHittable hittable = collision.gameObject.GetComponent<IHittable>();
+        if (hittable != null)
+        {
+            if (IsShield && collision.CompareTag("Obstacle") )
+            {
+                return;
+            }
+            else
+            {
+                if (!collision.gameObject.GetComponent<Collider2D>().isActiveAndEnabled)
+                {
+                    return;
+                }
+
+                hittable.OnHit();
+            }
+            
+        }
     }
 
     public void SetIsShield(bool flag)
