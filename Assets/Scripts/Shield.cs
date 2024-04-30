@@ -26,9 +26,7 @@ public class Shield : MonoBehaviour
             if(obstacle != null)
             {
                 obstacle.SetInActive();
-                print("Shield");
                 Knock.SetIsShield(false);
-                print(obstacle.gameObject.GetComponent<Collider2D>().isActiveAndEnabled);
             }
                 
         }
