@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
@@ -11,8 +11,8 @@ public class NormalTeam : TeamRegion
     public GameObject SawToothObstacleRef;
     public GameObject ButtonTypeObstacleRef;
 
-    private const float ToothSpawnLocDx = 1.8f;
-    private const float ButtonTypeSpawnLocDx = 1.4f;
+    private const float ToothSpawnLocDx = 1.94f;
+    private const float ButtonTypeSpawnLocDx = 1.55f;
 
     private GameObject Obstacle;
 
@@ -22,7 +22,7 @@ public class NormalTeam : TeamRegion
     public GameObject MiddleHpMonsterRef;
     public GameObject HighHpMonsterRef;
 
-    private const float MonsterSpawnLocDx = 1.4f;
+    private const float MonsterSpawnLocDx = 1.55f;
 
     private const int LowHp = 50;
     private const int MiddleHp = 70;

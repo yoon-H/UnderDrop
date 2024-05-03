@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +8,7 @@ public class WeaselTeam : TeamRegion
     public GameObject BambooObstacleRef;
     public GameObject DartObstacleRef;
 
-    private const float BambooSpawnLocDx = 1.4f;
+    private const float BambooSpawnLocDx = 1.55f;
     //private const float DartSpawnLocDx = 1.4f;
 
     private GameObject Obstacle;
@@ -18,7 +18,7 @@ public class WeaselTeam : TeamRegion
     public GameObject NormalMonsterRef;
     public GameObject ObstacleMonsterRef;
 
-    private const float MonsterSpawnLocDx = 1.4f;
+    private const float MonsterSpawnLocDx = 1.55f;
 
     private const int NormalHp = 60;
     private const int HighHp = 110;

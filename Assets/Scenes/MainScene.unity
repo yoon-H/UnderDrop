@@ -335,6 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265346949}
   - component: {fileID: 1265346950}
+  - component: {fileID: 1265346951}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -373,6 +374,20 @@ MonoBehaviour:
   OnMusic: 1
   OnSound: 1
   OnVib: 1
+--- !u!114 &1265346951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265346948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7db01b852fdfa45990d8f883752f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Width: 1440
+  Height: 2560
 --- !u!224 &1396539932 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2042502595645401571, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
@@ -429,8 +444,8 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1440, y: 2960}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1440, y: 2560}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1202,15 +1217,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5979393251368470070, guid: 46082b2adad485c42a9389597595696f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2875
+      value: 1.5289062
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979393251368470070, guid: 46082b2adad485c42a9389597595696f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.225
       objectReference: {fileID: 0}
     - target: {fileID: 5979393251368470070, guid: 46082b2adad485c42a9389597595696f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.0059627
       objectReference: {fileID: 0}
     - target: {fileID: 5979393251368470070, guid: 46082b2adad485c42a9389597595696f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.059423
       objectReference: {fileID: 0}
     - target: {fileID: 5979393251368470070, guid: 46082b2adad485c42a9389597595696f, type: 3}
       propertyPath: m_LocalPosition.z
