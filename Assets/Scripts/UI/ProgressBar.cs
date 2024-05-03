@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
 
-    public int Maxvalue = 30;
-    public int Minvalue = 0;
-    public int Value;
+    public float Maxvalue = 30;
+    public float Minvalue = 0;
+    public float Value;
     public GameObject Bar;
 
     public Image Fill;

@@ -35,6 +35,17 @@ public class Timer : MonoBehaviour
     private int CurSpawnPeriod;
     public int FixedSpawnPeriod = 300;
 
+    //Raid Event
+    public float RaidSpawnTime = 20f;
+    private float RaidSpawnCounter = 0f;
+    public float RaidRemainTime = 15f;
+    private float RaidRemainCounter = 0f;
+
+    private bool IsRaidExisted = false;
+
+    public RaidEvent RaidEvent;
+
+
     //private bool IsPaused = false;
 
     public GameObject GameOverPanel;
@@ -66,6 +77,9 @@ public class Timer : MonoBehaviour
 
         CurSpeedPeriod = FixedSpeedPeriod;
         CurSpawnPeriod = FixedSpawnPeriod;
+
+        //RaidEvent
+        RaidEvent.SetTimer(this);
     }
 
     // Update is called once per frame
@@ -74,6 +88,31 @@ public class Timer : MonoBehaviour
         ObstacleSpawnCounter += Time.deltaTime;
         MonsterSpawnCounter += Time.deltaTime;
         ScoreCounter += Time.deltaTime;
+
+        //Raid Counter
+        if(IsRaidExisted)
+        {
+            RaidRemainCounter += Time.deltaTime;
+            RaidEvent.Bar.Value = RaidRemainTime - RaidRemainCounter;
+            if(RaidRemainCounter >= RaidRemainTime)
+            {
+                IsRaidExisted = false;
+                RaidRemainCounter = 0;
+                RaidEvent.RaidBar.SetActive(false);
+            }
+        }
+        else
+        {
+            RaidSpawnCounter += Time.deltaTime;
+            if (RaidSpawnCounter >= RaidSpawnTime)
+            {
+                StartCoroutine(RaidEvent.IE_Warning());
+                
+                RaidSpawnCounter = 0;
+            }
+        }
+        
+
 
         if(ScoreText) 
         {
@@ -104,13 +143,18 @@ public class Timer : MonoBehaviour
             
         }
 
+        if(RaidRemainCounter >= RaidRemainTime)
+        {
+            IsRaidExisted = false;
+        }
+
 
         if (!ObstacleSpawner) return;
 
         if (ObstacleSpawnCounter >= CurObstacleSpawnTime)
         {
             ObstacleSpawnCounter -= CurObstacleSpawnTime;
-            ObstacleSpawner.SpawnObstacle();
+            ObstacleSpawner.SpawnObstacle(IsRaidExisted);
         }
 
         if (!MonsterSpawner) return;
@@ -118,7 +162,7 @@ public class Timer : MonoBehaviour
         if (MonsterSpawnCounter >= CurMonsterSpawnTime)
         {
             MonsterSpawnCounter -= CurMonsterSpawnTime;
-            MonsterSpawner.SpawnMonster();
+            MonsterSpawner.SpawnMonster(IsRaidExisted);
         }
 
     }
@@ -154,5 +198,10 @@ public class Timer : MonoBehaviour
         //Stop Game
         SetIsPaused(true);
 
+    }
+
+    public void SetIsRaidExisted(bool flag)
+    {
+        IsRaidExisted = flag;
     }
 }
