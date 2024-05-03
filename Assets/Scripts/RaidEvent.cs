@@ -10,10 +10,18 @@ public class RaidEvent : MonoBehaviour
 
     public GameObject WarningPanel;
 
+    public GameObject RaidBar;
+    public ProgressBar Bar;
+
     // Start is called before the first frame update
     void Start()
     {
         WarningPanel.SetActive(false);
+
+        //RaidBar
+        Bar = RaidBar.GetComponent<ProgressBar>();
+        RaidBar.SetActive(false);
+        
     }
 
     // Update is called once per frame
@@ -30,11 +38,13 @@ public class RaidEvent : MonoBehaviour
         yield return new WaitForSeconds(WarningTime);
         Timer.SetIsRaidExisted(true);
         WarningPanel.SetActive(false);
+        RaidBar.SetActive(true);
         Time.timeScale = 1f;
     }
 
     public void SetTimer(Timer timer)
     {
         Timer = timer;
+        Bar.Maxvalue = Timer.RaidRemainTime;
     }
 }

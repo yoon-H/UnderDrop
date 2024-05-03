@@ -93,11 +93,12 @@ public class Timer : MonoBehaviour
         if(IsRaidExisted)
         {
             RaidRemainCounter += Time.deltaTime;
+            RaidEvent.Bar.Value = RaidRemainTime - RaidRemainCounter;
             if(RaidRemainCounter >= RaidRemainTime)
             {
                 IsRaidExisted = false;
                 RaidRemainCounter = 0;
-                print("Raid End");
+                RaidEvent.RaidBar.SetActive(false);
             }
         }
         else
@@ -105,7 +106,6 @@ public class Timer : MonoBehaviour
             RaidSpawnCounter += Time.deltaTime;
             if (RaidSpawnCounter >= RaidSpawnTime)
             {
-                print("Raid Begin");
                 StartCoroutine(RaidEvent.IE_Warning());
                 
                 RaidSpawnCounter = 0;
