@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RaidEvent : MonoBehaviour
 {
-    public float WarningTime = 1f;
+    public float WarningTime = 3f;
 
     Timer Timer;
 
@@ -33,7 +33,7 @@ public class RaidEvent : MonoBehaviour
     public IEnumerator IE_Warning()
     {
         // Warning Animation
-        Time.timeScale = 0.5f;
+        Time.timeScale = 0.3f;
         WarningPanel.SetActive(true);
         yield return new WaitForSeconds(WarningTime);
         Timer.SetIsRaidExisted(true);
