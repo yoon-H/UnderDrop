@@ -5,7 +5,7 @@ using UnityEngine;
 public class WeaselObstacleMonster : Monster
 {
     public float LifeTime = 2f;
-    public float WarningTime = 1f;
+    public float WarningTime = 3f;
 
     public GameObject FogRef;
 

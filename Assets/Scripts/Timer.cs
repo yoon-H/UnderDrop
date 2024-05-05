@@ -36,10 +36,12 @@ public class Timer : MonoBehaviour
     public int FixedSpawnPeriod = 300;
 
     //Raid Event
-    public float RaidSpawnTime = 20f;
+    public float RaidSpawnTime = 30f;
     private float RaidSpawnCounter = 0f;
     public float RaidRemainTime = 15f;
     private float RaidRemainCounter = 0f;
+
+    private int RaidMissedCount = 0;
 
     private bool IsRaidExisted = false;
 
@@ -106,8 +108,27 @@ public class Timer : MonoBehaviour
             RaidSpawnCounter += Time.deltaTime;
             if (RaidSpawnCounter >= RaidSpawnTime)
             {
-                StartCoroutine(RaidEvent.IE_Warning());
+                if(RaidMissedCount >= 2)
+                {
+                    StartCoroutine(RaidEvent.IE_Warning());
+                    RaidMissedCount = 0;
+                }
+                else
+                {
+                    System.Random rand = new System.Random();
+                    int res = rand.Next(2);
+
+                    if (res == 0)
+                    {
+                        StartCoroutine(RaidEvent.IE_Warning());
+                    }
+                    else
+                    {
+                        RaidMissedCount++;
+                    }
+                }
                 
+
                 RaidSpawnCounter = 0;
             }
         }
