@@ -20,8 +20,8 @@ public class Monster : MonoBehaviour, IHittable
     // Start is called before the first frame update
     void Start()
     {
-        //if(!LifeBarRef) return;
-        //LifeBar = LifeBarRef.GetComponent<ProgressBar>();
+        if(!LifeBarRef) return;
+        LifeBar = LifeBarRef.GetComponent<ProgressBar>();
     }
 
     // Update is called once per frame
@@ -38,9 +38,9 @@ public class Monster : MonoBehaviour, IHittable
     public void TakeDamage(int amount)
     {
         CurHp -= amount;
-        //if (!LifeBar) return;
-        //LifeBar.Value = CurHp;
-        //LifeBar.SetWidth();
+        if (!LifeBar) return;
+        LifeBar.Value = CurHp;
+        LifeBar.SetWidth();
 
         if (CurHp <= 0)
         {
@@ -65,18 +65,18 @@ public class Monster : MonoBehaviour, IHittable
         if(!LifeBarRef) return;
         LifeBar = LifeBarRef.GetComponent<ProgressBar>();
         if (!LifeBar) return;
-        //LifeBar.SetActiveProgress(true);
+        LifeBar.SetActiveProgress(true);
         LifeBar.Maxvalue = MaxHp;
         LifeBar.Value = MaxHp;
-        LifeBar.SetWidth();
+        LifeBar.InitProgressBar();
     }
 
     protected virtual void DeadTask()
     {
         // Monster died
-        //LifeBar.Value = LifeBar.Maxvalue;
-        //LifeBar.SetWidth();
-        //LifeBar.SetActiveProgress(false);
+        LifeBar.Value = LifeBar.Maxvalue;
+        LifeBar.SetWidth();
+        LifeBar.SetActiveProgress(false);
         if (!Spawner) return;
         Spawner.SetDestroyedMonster(Direction);
 
