@@ -5,6 +5,7 @@ using UnityEngine;
 public class SawTooth : Obstacle
 {
     Vector3 rotationDirection = Vector3.zero;
+    float RotateSpeed = 5000f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +23,11 @@ public class SawTooth : Obstacle
     {
         if (dir == E_Direction.Left)
         {
-            rotationDirection = new Vector3(0, 0, 2f);
+            rotationDirection = new Vector3(0, 0, -1f) * RotateSpeed * Time.deltaTime;
         }
         else
         {
-            rotationDirection = new Vector3(0, 0, -2f);
+            rotationDirection = new Vector3(0, 0, 1f) * RotateSpeed * Time.deltaTime;
         }
     }
 }
