@@ -230,6 +230,10 @@ PrefabInstance:
       propertyPath: BulletBar
       value: 
       objectReference: {fileID: 1519930017}
+    - target: {fileID: 7558245715000243470, guid: 194b7bad7cee2c649bde078747095988, type: 3}
+      propertyPath: BulletCount
+      value: 
+      objectReference: {fileID: 1645893140938260688}
     - target: {fileID: 7731817108806964454, guid: 194b7bad7cee2c649bde078747095988, type: 3}
       propertyPath: m_Name
       value: Knock
@@ -1187,6 +1191,11 @@ PrefabInstance:
 --- !u!224 &1645893140938260687 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4380286457794328308, guid: c08fc7754a9141b44814279e81d9a685, type: 3}
+  m_PrefabInstance: {fileID: 1645893140938260686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1645893140938260688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6515604671047814015, guid: c08fc7754a9141b44814279e81d9a685, type: 3}
   m_PrefabInstance: {fileID: 1645893140938260686}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1660934539717005405
