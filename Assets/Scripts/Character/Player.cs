@@ -5,6 +5,7 @@ using UnityEngine;
 using DG.Tweening;
 using static UnityEngine.GraphicsBuffer;
 using System;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -36,6 +37,10 @@ public class Player : MonoBehaviour
     public GameObject BulletBar;
     protected ProgressBar Bar;
 
+    public GameObject BulletCount;
+    protected Text BulletText;
+
+
     public GameObject TimerRef;
     private Timer Timer;
 
@@ -55,6 +60,8 @@ public class Player : MonoBehaviour
 
         Bar = BulletBar.GetComponent<ProgressBar>();
         Timer = TimerRef.GetComponent<Timer>();
+
+        BulletText = BulletCount.GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -169,6 +176,8 @@ public class Player : MonoBehaviour
 
         if (!Bar) { return; }
         Bar.Value = CurBulletNum;
+        if(!BulletText) { return; }
+        BulletText.text = CurBulletNum.ToString();
 
         if(CurBulletNum <=0 )
         {
@@ -202,8 +211,10 @@ public class Player : MonoBehaviour
         Bar.SetActiveProgress(true);
         Bar.Value = MaxBulletNum;
         CurBulletNum = MaxBulletNum;
+        if (!BulletText) { yield break; }
+        BulletText.text = CurBulletNum.ToString();
 
-        if(CanShoot) 
+        if (CanShoot) 
         {
             StartCoroutine(IE_ShootBullet());
         }

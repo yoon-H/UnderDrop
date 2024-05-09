@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -80,6 +80,8 @@ public class Knock : Player
         Bar.SetActiveProgress(true);
         Bar.Value = MaxBulletNum;
         CurBulletNum = MaxBulletNum;
+        if (!BulletText) { yield break; }
+        BulletText.text = CurBulletNum.ToString();
 
         if (CanShoot)
         {
