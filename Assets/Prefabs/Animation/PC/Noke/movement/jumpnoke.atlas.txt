@@ -1,0 +1,146 @@
+
+jumpnoke.png
+size: 729,520
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm1
+  rotate: false
+  xy: 302, 242
+  size: 248, 119
+  orig: 248, 119
+  offset: 0, 0
+  index: -1
+Arm2
+  rotate: true
+  xy: 552, 186
+  size: 175, 55
+  orig: 175, 55
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 302, 28
+  size: 159, 88
+  orig: 159, 88
+  offset: 0, 0
+  index: -1
+Cheek
+  rotate: false
+  xy: 75, 4
+  size: 40, 21
+  orig: 40, 21
+  offset: 0, 0
+  index: -1
+Ear1
+  rotate: true
+  xy: 609, 290
+  size: 74, 118
+  orig: 74, 118
+  offset: 0, 0
+  index: -1
+Ear2
+  rotate: true
+  xy: 609, 178
+  size: 110, 113
+  orig: 110, 113
+  offset: 0, 0
+  index: -1
+Eye
+  rotate: false
+  xy: 2, 2
+  size: 71, 23
+  orig: 71, 23
+  offset: 0, 0
+  index: -1
+Face
+  rotate: true
+  xy: 592, 366
+  size: 152, 129
+  orig: 152, 129
+  offset: 0, 0
+  index: -1
+Fire
+  rotate: false
+  xy: 528, 53
+  size: 188, 123
+  orig: 189, 123
+  offset: 0, 0
+  index: -1
+FireE1
+  rotate: true
+  xy: 117, 11
+  size: 14, 37
+  orig: 17, 37
+  offset: 1, 0
+  index: -1
+FireE2
+  rotate: true
+  xy: 528, 182
+  size: 58, 18
+  orig: 59, 20
+  offset: 1, 1
+  index: -1
+Hand1
+  rotate: true
+  xy: 513, 3
+  size: 44, 32
+  orig: 46, 35
+  offset: 0, 1
+  index: -1
+Hand2
+  rotate: false
+  xy: 463, 3
+  size: 48, 44
+  orig: 50, 47
+  offset: 0, 1
+  index: -1
+Hand3
+  rotate: false
+  xy: 547, 12
+  size: 33, 39
+  orig: 36, 43
+  offset: 2, 2
+  index: -1
+Leg1
+  rotate: false
+  xy: 302, 363
+  size: 288, 155
+  orig: 288, 155
+  offset: 0, 0
+  index: -1
+Leg2
+  rotate: false
+  xy: 2, 150
+  size: 284, 171
+  orig: 284, 171
+  offset: 0, 0
+  index: -1
+Ou1
+  rotate: false
+  xy: 2, 27
+  size: 298, 121
+  orig: 298, 121
+  offset: 0, 0
+  index: -1
+Ou2
+  rotate: false
+  xy: 2, 323
+  size: 298, 195
+  orig: 298, 195
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: false
+  xy: 302, 118
+  size: 224, 122
+  orig: 224, 122
+  offset: 0, 0
+  index: -1
+Tie
+  rotate: true
+  xy: 463, 49
+  size: 67, 49
+  orig: 67, 49
+  offset: 0, 0
+  index: -1
