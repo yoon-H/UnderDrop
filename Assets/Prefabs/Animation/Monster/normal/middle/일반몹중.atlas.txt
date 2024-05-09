@@ -1,0 +1,97 @@
+
+일반몹중.png
+size: 1456,198
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 998, 100
+  size: 80, 153
+  orig: 80, 153
+  offset: 0, 0
+  index: -1
+Ear1
+  rotate: true
+  xy: 198, 60
+  size: 120, 236
+  orig: 120, 236
+  offset: 0, 0
+  index: -1
+Ear2
+  rotate: false
+  xy: 2, 2
+  size: 194, 178
+  orig: 194, 178
+  offset: 0, 0
+  index: -1
+Face
+  rotate: false
+  xy: 436, 47
+  size: 150, 133
+  orig: 150, 133
+  offset: 0, 0
+  index: -1
+Hand1
+  rotate: false
+  xy: 588, 50
+  size: 133, 130
+  orig: 133, 130
+  offset: 0, 0
+  index: -1
+Hand2
+  rotate: true
+  xy: 1274, 65
+  size: 115, 116
+  orig: 115, 116
+  offset: 0, 0
+  index: -1
+Leg1
+  rotate: true
+  xy: 1153, 82
+  size: 98, 119
+  orig: 98, 119
+  offset: 0, 0
+  index: -1
+Leg2
+  rotate: false
+  xy: 723, 62
+  size: 121, 118
+  orig: 121, 118
+  offset: 0, 0
+  index: -1
+Lope1
+  rotate: false
+  xy: 198, 4
+  size: 56, 54
+  orig: 56, 54
+  offset: 0, 0
+  index: -1
+Lope2
+  rotate: true
+  xy: 2, 182
+  size: 14, 1452
+  orig: 18, 1452
+  offset: 2, 0
+  index: -1
+M1
+  rotate: false
+  xy: 846, 62
+  size: 42, 32
+  orig: 42, 32
+  offset: 0, 0
+  index: -1
+M2
+  rotate: false
+  xy: 1392, 155
+  size: 17, 25
+  orig: 17, 25
+  offset: 0, 0
+  index: -1
+Sun
+  rotate: false
+  xy: 846, 96
+  size: 150, 84
+  orig: 150, 84
+  offset: 0, 0
+  index: -1

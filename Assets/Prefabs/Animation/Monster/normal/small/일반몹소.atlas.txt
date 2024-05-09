@@ -1,0 +1,111 @@
+
+일반몹소.png
+size: 1456,215
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: true
+  xy: 771, 62
+  size: 136, 146
+  orig: 136, 146
+  offset: 0, 0
+  index: -1
+Ear1
+  rotate: true
+  xy: 65, 170
+  size: 28, 44
+  orig: 28, 44
+  offset: 0, 0
+  index: -1
+Ear2
+  rotate: false
+  xy: 111, 170
+  size: 47, 28
+  orig: 47, 28
+  offset: 0, 0
+  index: -1
+Face
+  rotate: false
+  xy: 639, 78
+  size: 130, 120
+  orig: 130, 120
+  offset: 0, 0
+  index: -1
+Hand1
+  rotate: false
+  xy: 345, 153
+  size: 116, 45
+  orig: 116, 45
+  offset: 0, 0
+  index: -1
+Hand2
+  rotate: false
+  xy: 197, 166
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+Leg1
+  rotate: false
+  xy: 302, 163
+  size: 41, 35
+  orig: 41, 35
+  offset: 0, 0
+  index: -1
+Leg2
+  rotate: true
+  xy: 231, 166
+  size: 32, 69
+  orig: 32, 69
+  offset: 0, 0
+  index: -1
+Lope1
+  rotate: false
+  xy: 463, 144
+  size: 56, 54
+  orig: 56, 54
+  offset: 0, 0
+  index: -1
+Lope2
+  rotate: true
+  xy: 2, 200
+  size: 13, 1452
+  orig: 18, 1452
+  offset: 2, 0
+  index: -1
+Mike
+  rotate: true
+  xy: 160, 168
+  size: 30, 35
+  orig: 32, 35
+  offset: 1, 0
+  index: -1
+Needle
+  rotate: true
+  xy: 919, 2
+  size: 196, 260
+  orig: 196, 260
+  offset: 0, 0
+  index: -1
+Sun
+  rotate: false
+  xy: 521, 120
+  size: 116, 78
+  orig: 116, 78
+  offset: 0, 0
+  index: -1
+qwer1
+  rotate: true
+  xy: 2, 174
+  size: 24, 26
+  orig: 24, 26
+  offset: 0, 0
+  index: -1
+qwer2
+  rotate: true
+  xy: 30, 173
+  size: 25, 33
+  orig: 26, 33
+  offset: 0, 0
+  index: -1

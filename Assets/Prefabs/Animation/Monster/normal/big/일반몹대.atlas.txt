@@ -1,0 +1,125 @@
+
+일반몹대.png
+size: 1540,241
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm1
+  rotate: false
+  xy: 997, 83
+  size: 253, 156
+  orig: 253, 156
+  offset: 0, 0
+  index: -1
+Arm2
+  rotate: false
+  xy: 1252, 88
+  size: 152, 151
+  orig: 152, 152
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 2, 20
+  size: 212, 219
+  orig: 212, 219
+  offset: 0, 0
+  index: -1
+Ear1
+  rotate: false
+  xy: 904, 22
+  size: 47, 50
+  orig: 47, 50
+  offset: 0, 0
+  index: -1
+Ear2
+  rotate: false
+  xy: 855, 20
+  size: 47, 52
+  orig: 47, 52
+  offset: 0, 0
+  index: -1
+Ering1
+  rotate: false
+  xy: 602, 20
+  size: 25, 27
+  orig: 25, 27
+  offset: 0, 0
+  index: -1
+Ering2
+  rotate: true
+  xy: 1053, 28
+  size: 53, 93
+  orig: 53, 93
+  offset: 0, 0
+  index: -1
+Face
+  rotate: true
+  xy: 855, 74
+  size: 165, 140
+  orig: 165, 140
+  offset: 0, 0
+  index: -1
+Hand1
+  rotate: false
+  xy: 1456, 140
+  size: 82, 99
+  orig: 82, 99
+  offset: 0, 0
+  index: -1
+Hand2
+  rotate: true
+  xy: 1252, 23
+  size: 63, 89
+  orig: 63, 89
+  offset: 0, 0
+  index: -1
+LBody
+  rotate: false
+  xy: 1456, 61
+  size: 78, 77
+  orig: 101, 77
+  offset: 0, 0
+  index: -1
+Leg1
+  rotate: true
+  xy: 216, 23
+  size: 216, 206
+  orig: 216, 206
+  offset: 0, 0
+  index: -1
+Leg2
+  rotate: false
+  xy: 424, 30
+  size: 176, 209
+  orig: 176, 209
+  offset: 0, 0
+  index: -1
+Rope1
+  rotate: true
+  xy: 997, 25
+  size: 56, 54
+  orig: 56, 54
+  offset: 0, 0
+  index: -1
+Rope2
+  rotate: true
+  xy: 2, 2
+  size: 16, 1452
+  orig: 18, 1452
+  offset: 2, 0
+  index: -1
+Sun
+  rotate: false
+  xy: 1456, 3
+  size: 74, 56
+  orig: 74, 56
+  offset: 0, 0
+  index: -1
+T
+  rotate: false
+  xy: 602, 49
+  size: 251, 190
+  orig: 251, 190
+  offset: 0, 0
+  index: -1
