@@ -25,9 +25,12 @@ public class Knock : Player
         AttackTime = _AttackTime;
         Damage = _Damage;
 
+        CurBulletNum = MaxBulletNum;
+
         Shield = ShieldRef.GetComponent<Shield>();
         Shield.SetKnock(this);
         SetIsShield(false);
+        BulletSlider.value = CurBulletNum;
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -78,6 +81,7 @@ public class Knock : Player
         CurBulletNum = MaxBulletNum;
         if (!BulletText) { yield break; }
         BulletText.text = CurBulletNum.ToString();
+        BulletSlider.value = CurBulletNum;
 
         if (CanShoot)
         {
