@@ -1,11 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LongClick : MonoBehaviour
 {
     private bool IsClicked = false;
-    private float ClickTime = 0.6f;
+    private float ClickTime = 0.4f;
     private float ClickCounter = 0f;
 
     public GameObject PlayerRef;

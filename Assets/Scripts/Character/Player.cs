@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private E_Direction Dir = E_Direction.Right;
     private Vector3 LeftLoc = new Vector3(-1.46f,1.7f,0);
     private Vector3 RightLoc = new Vector3(1.46f,1.7f,0);
-    private const float JumpTime = 0.15f;
+    private const float JumpTime = 0.07f;
     public Ease ease = Ease.Linear;
 
     public float PlayerYSize;
@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
     public float AttackTime = 0.1f;
     public int Damage = 20;
 
-
+    public float ReloadWaitingTime = 1f;
 
     public GameObject BulletBar;
     protected ProgressBar Bar;
@@ -123,9 +123,13 @@ public class Player : MonoBehaviour
         if(flag && CanShoot != flag)
         {
             CanShoot = true;
-            if(!Reloading)
+            if(CurBulletNum > 0)
             {
+                StopCoroutine(IE_ReloadBullet());
+                StopCoroutine(IE_WaitForReloading());
+
                 StartCoroutine(IE_ShootBullet());
+
             }
         }
         else if(!flag && CanShoot != flag)
@@ -134,6 +138,11 @@ public class Player : MonoBehaviour
 
             StopCoroutine(IE_ShootBullet());
             CancelTarget();
+            
+            if(CurBulletNum < MaxBulletNum)
+            {
+                StartCoroutine(IE_WaitForReloading());
+            }
         }
     }
 
@@ -205,7 +214,6 @@ public class Player : MonoBehaviour
     {
         CancelTarget();
         yield return new WaitForSeconds(ReloadTime);
-
         Reloading = false;
         if (!Bar) { yield break; }
         Bar.SetActiveProgress(true);
@@ -219,6 +227,12 @@ public class Player : MonoBehaviour
             StartCoroutine(IE_ShootBullet());
         }
 
+    }
+
+    IEnumerator IE_WaitForReloading()
+    {
+        yield return new WaitForSeconds(ReloadWaitingTime);
+        StartCoroutine(IE_ReloadBullet());
     }
 
 }
