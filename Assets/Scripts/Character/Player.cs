@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
     public GameObject BulletBar;
     protected ProgressBar Bar;
 
+    public Slider BulletSlider;
+
     public GameObject BulletCount;
     protected Text BulletText;
 
@@ -62,6 +64,8 @@ public class Player : MonoBehaviour
         Timer = TimerRef.GetComponent<Timer>();
 
         BulletText = BulletCount.GetComponent<Text>();
+
+        BulletSlider.value = CurBulletNum;
     }
 
     // Update is called once per frame
@@ -187,6 +191,7 @@ public class Player : MonoBehaviour
         Bar.Value = CurBulletNum;
         if(!BulletText) { return; }
         BulletText.text = CurBulletNum.ToString();
+        BulletSlider.value = CurBulletNum;
 
         if(CurBulletNum <=0 )
         {
@@ -221,6 +226,7 @@ public class Player : MonoBehaviour
         CurBulletNum = MaxBulletNum;
         if (!BulletText) { yield break; }
         BulletText.text = CurBulletNum.ToString();
+        BulletSlider.value = CurBulletNum;
 
         if (CanShoot) 
         {

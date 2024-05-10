@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7518332300775925679}
   - component: {fileID: 2884260824878536449}
   - component: {fileID: 694411343268966580}
-  - component: {fileID: 2020597012029475609}
+  - component: {fileID: 428261805424516501}
   m_Layer: 5
   m_Name: MusicButton
   m_TagString: Untagged
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2020597012029475609}
-        m_TargetAssemblyTypeName: SwitchButton, Assembly-CSharp
+      - m_Target: {fileID: 428261805424516501}
+        m_TargetAssemblyTypeName: SettingButton, Assembly-CSharp
         m_MethodName: SwitchFlag
         m_Mode: 1
         m_Arguments:
@@ -133,7 +133,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2020597012029475609
+--- !u!114 &428261805424516501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3860606269146349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d0bcda2ee294844a59fa3407890c7e, type: 3}
+  m_Script: {fileID: 11500000, guid: bab523cc16a5e7942b393d48037c8170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnImage: {fileID: 21300000, guid: 7a0438d805b5ecf4eb9eac44436dfcea, type: 3}
@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 2056888532805567058}
   - component: {fileID: 4965295156692420126}
   - component: {fileID: 224068467956104950}
-  - component: {fileID: 1954621286231178936}
+  - component: {fileID: 6584248323619492292}
   m_Layer: 5
   m_Name: VibButton
   m_TagString: Untagged
@@ -670,8 +670,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1954621286231178936}
-        m_TargetAssemblyTypeName: SwitchButton, Assembly-CSharp
+      - m_Target: {fileID: 6584248323619492292}
+        m_TargetAssemblyTypeName: SettingButton, Assembly-CSharp
         m_MethodName: SwitchFlag
         m_Mode: 1
         m_Arguments:
@@ -682,7 +682,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1954621286231178936
+--- !u!114 &6584248323619492292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -691,7 +691,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6096889141820569810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d0bcda2ee294844a59fa3407890c7e, type: 3}
+  m_Script: {fileID: 11500000, guid: bab523cc16a5e7942b393d48037c8170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnImage: {fileID: 21300000, guid: 7a0438d805b5ecf4eb9eac44436dfcea, type: 3}
@@ -853,7 +853,7 @@ GameObject:
   - component: {fileID: 4759575298213080412}
   - component: {fileID: 4018760580119019907}
   - component: {fileID: 2789506791047595042}
-  - component: {fileID: 4160058499253697479}
+  - component: {fileID: 9009083194734470931}
   m_Layer: 5
   m_Name: SoundButton
   m_TagString: Untagged
@@ -962,8 +962,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4160058499253697479}
-        m_TargetAssemblyTypeName: SwitchButton, Assembly-CSharp
+      - m_Target: {fileID: 9009083194734470931}
+        m_TargetAssemblyTypeName: SettingButton, Assembly-CSharp
         m_MethodName: SwitchFlag
         m_Mode: 1
         m_Arguments:
@@ -974,7 +974,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4160058499253697479
+--- !u!114 &9009083194734470931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -983,7 +983,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6315545021817857870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3d0bcda2ee294844a59fa3407890c7e, type: 3}
+  m_Script: {fileID: 11500000, guid: bab523cc16a5e7942b393d48037c8170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnImage: {fileID: 21300000, guid: 7a0438d805b5ecf4eb9eac44436dfcea, type: 3}
