@@ -34,9 +34,6 @@ public class Player : MonoBehaviour
 
     public float ReloadWaitingTime = 1f;
 
-    public GameObject BulletBar;
-    protected ProgressBar Bar;
-
     public Slider BulletSlider;
 
     public GameObject BulletCount;
@@ -60,11 +57,9 @@ public class Player : MonoBehaviour
 
         CurBulletNum = MaxBulletNum;
 
-        Bar = BulletBar.GetComponent<ProgressBar>();
         Timer = TimerRef.GetComponent<Timer>();
 
         BulletText = BulletCount.GetComponent<Text>();
-
         BulletSlider.value = CurBulletNum;
     }
 
@@ -102,8 +97,6 @@ public class Player : MonoBehaviour
 
     public bool Shoot()
     {
-        if (!Bar) { return false; }
-        Bar.SetActiveProgress(true);
 
         if (!Target)
         {
@@ -187,8 +180,6 @@ public class Player : MonoBehaviour
     {
         CurBulletNum -= 1;
 
-        if (!Bar) { return; }
-        Bar.Value = CurBulletNum;
         if(!BulletText) { return; }
         BulletText.text = CurBulletNum.ToString();
         BulletSlider.value = CurBulletNum;
@@ -196,8 +187,6 @@ public class Player : MonoBehaviour
         if(CurBulletNum <=0 )
         {
             Reloading = true;
-
-            Bar.SetActiveProgress(false);
 
             StopCoroutine(IE_ShootBullet());
             StartCoroutine(IE_ReloadBullet());
@@ -220,10 +209,9 @@ public class Player : MonoBehaviour
         CancelTarget();
         yield return new WaitForSeconds(ReloadTime);
         Reloading = false;
-        if (!Bar) { yield break; }
-        Bar.SetActiveProgress(true);
-        Bar.Value = MaxBulletNum;
+
         CurBulletNum = MaxBulletNum;
+
         if (!BulletText) { yield break; }
         BulletText.text = CurBulletNum.ToString();
         BulletSlider.value = CurBulletNum;
