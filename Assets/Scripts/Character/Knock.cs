@@ -75,9 +75,7 @@ public class Knock : Player
         SpawnShield();
         yield return new WaitForSeconds(ReloadTime);
         Reloading = false;
-        if (!Bar) { yield break; }
-        Bar.SetActiveProgress(true);
-        Bar.Value = MaxBulletNum;
+
         CurBulletNum = MaxBulletNum;
         if (!BulletText) { yield break; }
         BulletText.text = CurBulletNum.ToString();
