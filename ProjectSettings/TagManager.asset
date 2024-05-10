@@ -49,6 +49,9 @@ TagManager:
   - name: Monster
     uniqueID: 3400907421
     locked: 0
+  - name: Bullet
+    uniqueID: 2090470481
+    locked: 0
   - name: Wall
     uniqueID: 3660251759
     locked: 0

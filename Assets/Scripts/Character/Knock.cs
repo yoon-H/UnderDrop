@@ -10,6 +10,7 @@ public class Knock : Player
     public float _AttackTime = 0.05f;
     public int _Damage = 7;
 
+    private float ShieldTime = 2f;
     private bool IsShield = false;
 
     public GameObject ShieldRef;
@@ -70,12 +71,7 @@ public class Knock : Player
         CancelTarget();
         SpawnShield();
         yield return new WaitForSeconds(ReloadTime);
-
         Reloading = false;
-        if(IsShield)
-        {
-            SetIsShield(false);
-        }
         if (!Bar) { yield break; }
         Bar.SetActiveProgress(true);
         Bar.Value = MaxBulletNum;
@@ -96,7 +92,14 @@ public class Knock : Player
         int res = rand.Next(2);
         if(res == 0)
         {
-            SetIsShield(true);
+            StartCoroutine(IE_ShieldRemain());
         }
+    }
+
+    private IEnumerator IE_ShieldRemain()
+    {
+        SetIsShield(true);
+        yield return new WaitForSeconds(ShieldTime);
+        SetIsShield(false);
     }
 }
