@@ -16,18 +16,19 @@ public class SawTooth : Obstacle
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(rotationDirection);
+        Vector3 rotationVector = rotationDirection * Time.deltaTime;
+        transform.Rotate(rotationVector);
     }
 
     public void SetRotateDirection(E_Direction dir)
     {
         if (dir == E_Direction.Left)
         {
-            rotationDirection = new Vector3(0, 0, -1f) * RotateSpeed * Time.deltaTime;
+            rotationDirection = new Vector3(0, 0, -1f) * RotateSpeed;
         }
         else
         {
-            rotationDirection = new Vector3(0, 0, 1f) * RotateSpeed * Time.deltaTime;
+            rotationDirection = new Vector3(0, 0, 1f) * RotateSpeed;
         }
     }
 }
