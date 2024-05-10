@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool OnMusic = true;
     public bool OnSound = true;
     public bool OnVib = true;
+    public int Money = 0;
 
     private void Awake()
     {
