@@ -1919,6 +1919,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3032664365862523083, guid: 0af4bea46fae1e043902cf6eec757cec, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 8e165239352948f4bbcf8890b8544c68, type: 3}
+    - target: {fileID: 3032664365862523083, guid: 0af4bea46fae1e043902cf6eec757cec, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3807079042189181346, guid: 0af4bea46fae1e043902cf6eec757cec, type: 3}
       propertyPath: m_Name
       value: InfoPanel
