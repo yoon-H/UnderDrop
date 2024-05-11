@@ -1,3 +1,4 @@
+using Spine;
 using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +12,8 @@ public class PCAnimation : MonoBehaviour
 
     public SkeletonAnimation JumpSkeletonAnimation;
     public GameObject JumpObject;
-    public Spine.Bone Hand;
+    public Spine.Bone Arm;
+    float InitRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,10 @@ public class PCAnimation : MonoBehaviour
         if(SkeletonAnimation != null) 
         {
             SkeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
-            Hand = SkeletonAnimation.skeleton.FindBone("Arm2");
+            Arm = SkeletonAnimation.skeleton.FindBone("Arm2");
+
+            InitRotation = Arm.Data.Rotation;
+
         }
     }
 
@@ -33,19 +38,20 @@ public class PCAnimation : MonoBehaviour
     {
         if (SkeletonAnimation != null)
         {
-            
-            //var skeletonSpacePoint = SkeletonAnimation.transform.InverseTransformPoint(targetLoc);
-            //skeletonSpacePoint.x *= SkeletonAnimation.skeleton.ScaleX;
-            //skeletonSpacePoint.y *= SkeletonAnimation.skeleton.ScaleY;
 
-            //Hand.Data.X = skeletonSpacePoint.x;
-            //Hand.Data.Y = skeletonSpacePoint.y;
+            var targetRotation = Vector2.Angle(Vector2.up, targetLoc - transform.position);
+            Arm.Data.Rotation = targetRotation;
 
-            SkeletonAnimation.AnimationState.SetAnimation(0, "attack", false);
+            Spine.TrackEntry trackEntry = SkeletonAnimation.AnimationState.SetAnimation(0, "attack", false);
+            trackEntry.End += EndEvent;
 
-            SkeletonAnimation.AnimationState.AddAnimation(0, "idle", true, 0f);
-            
         }
+    }
+
+    public void EndEvent(TrackEntry trackEntry)
+    {
+        Arm.Data.Rotation = InitRotation;
+        SkeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
     }
 
     public void PlayJumpAnim()
@@ -73,7 +79,5 @@ public class PCAnimation : MonoBehaviour
 
             SkeletonAnimation.AnimationState.AddAnimation(0, "idle", true, 0f);
         }
-
-        print("Play Jump");
     }
 }

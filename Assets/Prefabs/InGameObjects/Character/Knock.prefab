@@ -555,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2404228149610255065, guid: 38b3de6b63e9c3d4d833bb5051b100e2, type: 3}
       propertyPath: m_Radius
-      value: 0.5
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2404228149610255065, guid: 38b3de6b63e9c3d4d833bb5051b100e2, type: 3}
       propertyPath: m_IsTrigger
@@ -565,13 +565,29 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.6156863
       objectReference: {fileID: 0}
+    - target: {fileID: 4726592902081201960, guid: 38b3de6b63e9c3d4d833bb5051b100e2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726592902081201960, guid: 38b3de6b63e9c3d4d833bb5051b100e2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726592902081201960, guid: 38b3de6b63e9c3d4d833bb5051b100e2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4726592902081201960, guid: 38b3de6b63e9c3d4d833bb5051b100e2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9162031625769677120, guid: 38b3de6b63e9c3d4d833bb5051b100e2, type: 3}
       propertyPath: m_Name
       value: Shield
       objectReference: {fileID: 0}
     - target: {fileID: 9162031625769677120, guid: 38b3de6b63e9c3d4d833bb5051b100e2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
