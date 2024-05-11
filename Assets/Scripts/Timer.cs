@@ -101,6 +101,7 @@ public class Timer : MonoBehaviour
                 IsRaidExisted = false;
                 RaidRemainCounter = 0;
                 RaidEvent.RaidBar.SetActive(false);
+                RaidEvent.RaidMarkRef.SetActive(false);
             }
         }
         else
