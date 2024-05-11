@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2044310439
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e00daeb7e4fdeb2469691e3d24ffb4b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 3774692235638835647}
   - component: {fileID: 225184721913353701}
   - component: {fileID: -7160226798968070708}
+  - component: {fileID: 3782551377919329467}
   m_Layer: 0
   m_Name: Obj_N_N_O
   m_TagString: Obstacle
@@ -187,9 +188,24 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.41314632, y: 0.41051078}
-      - {x: -0.41195092, y: 0.067175254}
-      - {x: -0.421519, y: -0.4160242}
-      - {x: 0.40640405, y: -0.4109857}
-      - {x: 0.4119509, y: 0.4148229}
+    - - {x: 0.17755073, y: 0.66670364}
+      - {x: -0.19130577, y: 0.66813946}
+      - {x: -0.69717443, y: -0.4198488}
+      - {x: -0.6961787, y: -0.6665945}
+      - {x: 0.6845851, y: -0.6650852}
+      - {x: 0.68661064, y: -0.40394226}
   m_UseDelaunayMesh: 0
+--- !u!114 &3782551377919329467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878505011092517734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a44719b6080b47449a2dc70adeb8da15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationValue: 90
+  FlipWhenLeftDirection: 0
