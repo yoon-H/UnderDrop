@@ -8,6 +8,7 @@ public class RaidEvent : MonoBehaviour
 
     Timer Timer;
 
+    public GameObject RaidMarkRef;
     public GameObject WarningPanel;
 
     public GameObject RaidBar;
@@ -21,6 +22,7 @@ public class RaidEvent : MonoBehaviour
         //RaidBar
         Bar = RaidBar.GetComponent<ProgressBar>();
         RaidBar.SetActive(false);
+        RaidMarkRef.SetActive(false);
         
     }
 
@@ -39,6 +41,7 @@ public class RaidEvent : MonoBehaviour
         Timer.SetIsRaidExisted(true);
         WarningPanel.SetActive(false);
         RaidBar.SetActive(true);
+        RaidMarkRef.SetActive(true);
         Time.timeScale = 1f;
     }
 

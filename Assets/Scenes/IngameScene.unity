@@ -196,6 +196,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c51d840df667e0e44ab05c25b20d29af, type: 3}
+--- !u!1 &20103717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 690739997265554703, guid: c51d840df667e0e44ab05c25b20d29af, type: 3}
+  m_PrefabInstance: {fileID: 20103716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &104580635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2258,10 @@ PrefabInstance:
       propertyPath: RaidBar
       value: 
       objectReference: {fileID: 8813533803854035560}
+    - target: {fileID: -2078896039891984534, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
+      propertyPath: RaidMarkRef
+      value: 
+      objectReference: {fileID: 20103717}
     - target: {fileID: -2078896039891984534, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: WarningPanel
       value: 
