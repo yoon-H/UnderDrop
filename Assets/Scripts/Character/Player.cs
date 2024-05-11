@@ -24,7 +24,9 @@ public class Player : MonoBehaviour
     GameObject Target = null;
     
     public int CurBulletNum;
-    
+
+    //Animation
+    protected PCAnimation AnimationRef;
 
     //Character Stat
     public int MaxBulletNum = 30;
@@ -61,6 +63,8 @@ public class Player : MonoBehaviour
 
         BulletText = BulletCount.GetComponent<Text>();
         BulletSlider.value = CurBulletNum;
+
+        AnimationRef = GetComponent<PCAnimation>();
     }
 
     // Update is called once per frame
@@ -76,12 +80,25 @@ public class Player : MonoBehaviour
         {
             Dir= E_Direction.Left;
             transform.DOMoveX(LeftLoc.x, JumpTime).SetEase(ease);
+
+            Flip();
         }
         else if (dir == E_Direction.Right && Dir == E_Direction.Left)
         {
             Dir=E_Direction.Right;
             transform.DOMoveX(RightLoc.x, JumpTime).SetEase(ease);
+
+            Flip();
         }
+
+
+    }
+
+    public void Flip()
+    {
+        Vector3 vec = transform.localScale;
+        vec.x = -transform.localScale.x;
+        transform.localScale = vec;
     }
 
 
@@ -111,6 +128,11 @@ public class Player : MonoBehaviour
             Bullet bullet = Bullet.GetComponent<Bullet>();
             bullet.SetBulletInfo(Target, Damage);
             UseBullet();
+
+            //Animation
+            if(AnimationRef != null)
+                AnimationRef.PlayAttackAnim(Target.transform.position);
+
             return true;
         }
         
