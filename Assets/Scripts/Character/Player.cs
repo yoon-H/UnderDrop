@@ -81,6 +81,8 @@ public class Player : MonoBehaviour
             Dir= E_Direction.Left;
             transform.DOMoveX(LeftLoc.x, JumpTime).SetEase(ease);
 
+            
+            AnimationRef.PlayJumpAnim();
             Flip();
         }
         else if (dir == E_Direction.Right && Dir == E_Direction.Left)
@@ -88,6 +90,8 @@ public class Player : MonoBehaviour
             Dir=E_Direction.Right;
             transform.DOMoveX(RightLoc.x, JumpTime).SetEase(ease);
 
+            
+            AnimationRef.PlayJumpAnim();
             Flip();
         }
 
