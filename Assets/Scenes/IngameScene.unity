@@ -450,8 +450,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -894059875
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &295258955
@@ -1311,8 +1311,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1291788647
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &931823830
@@ -1872,6 +1872,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a44a76b594496940b70b64e3b93612b, type: 3}
+--- !u!1 &1881835669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2746446604926783557, guid: 0a44a76b594496940b70b64e3b93612b, type: 3}
+  m_PrefabInstance: {fileID: 1881835668}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1990158917
 GameObject:
   m_ObjectHideFlags: 0
@@ -2681,7 +2686,7 @@ PrefabInstance:
     - target: {fileID: -2078896039891984534, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: RaidMarkRef
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1881835669}
     - target: {fileID: -2078896039891984534, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: WarningPanel
       value: 
