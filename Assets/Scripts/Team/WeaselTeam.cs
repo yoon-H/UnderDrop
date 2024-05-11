@@ -89,6 +89,10 @@ public class WeaselTeam : TeamRegion
         if (!obs) return;
         obs.InitializeObstacleStats(timer);
 
+        ObjectDirection direction = Obstacle.GetComponent<ObjectDirection>();
+        if (direction)
+            direction.SetDirection(dir);
+
         //Set Location
         Obstacle.transform.position = new Vector3(locX, locY, 0);
     }
