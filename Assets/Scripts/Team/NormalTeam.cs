@@ -12,7 +12,7 @@ public class NormalTeam : TeamRegion
     public GameObject ButtonTypeObstacleRef;
 
     private const float ToothSpawnLocDx = 1.94f;
-    private const float ButtonTypeSpawnLocDx = 1.55f;
+    private const float ButtonTypeSpawnLocDx = 1.2f;
 
     private GameObject Obstacle;
 
@@ -92,6 +92,10 @@ public class NormalTeam : TeamRegion
         if (!obs) return;
         obs.InitializeObstacleStats(timer);
 
+        ObjectDirection direction = Obstacle.GetComponent<ObjectDirection>();
+        if (direction)
+            direction.SetDirection(dir);
+
         //Set Location
         Obstacle.transform.position = new Vector3(locX, locY, 0);
     }
@@ -152,7 +156,11 @@ public class NormalTeam : TeamRegion
 
         if (!bto.LaserObstacleRef) return;
         Obstacle obs = bto.LaserObstacleRef.GetComponent<Obstacle>();
-        
+
+        ObjectDirection direction = Obstacle.GetComponentInChildren<ObjectDirection>();
+        if (direction)
+            direction.SetDirection(dir);
+
         //Set Timer
         if (!obs) return;
         obs.InitializeObstacleStats(timer);
