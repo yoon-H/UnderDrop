@@ -12,7 +12,7 @@ public class NormalTeam : TeamRegion
     public GameObject ButtonTypeObstacleRef;
 
     private const float ToothSpawnLocDx = 1.94f;
-    private const float ButtonTypeSpawnLocDx = 1.2f;
+    private const float ButtonTypeSpawnLocDx = 1.35f;
 
     private GameObject Obstacle;
 
