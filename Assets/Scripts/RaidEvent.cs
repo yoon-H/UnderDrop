@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +20,11 @@ public class RaidEvent : MonoBehaviour
         WarningPanel.SetActive(false);
 
         //RaidBar
-        Bar = RaidBar.GetComponent<ProgressBar>();
+        if(Bar == null)
+        {
+            Bar = RaidBar.GetComponent<ProgressBar>();
+        }
+        
         RaidBar.SetActive(false);
         RaidMarkRef.SetActive(false);
         
@@ -47,6 +51,10 @@ public class RaidEvent : MonoBehaviour
 
     public void SetTimer(Timer timer)
     {
+        if (Bar == null)
+        {
+            Bar = RaidBar.GetComponent<ProgressBar>();
+        }
         Timer = timer;
         Bar.Maxvalue = Timer.RaidRemainTime;
     }
