@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private GameObject MonsterRef;
-    private Monster Monster;
+    private GameObject Monster;
 
     private float MoveSpeed;
 
@@ -24,14 +23,14 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!MonsterRef)
+        if(!Monster)
         {
             Destroy(gameObject);
             return;
         }
         // MoveSpeed
-        Vector3 vec = MonsterRef.transform.position - transform.position;
-        float dist = Vector3.Distance(MonsterRef.transform.position, transform.position);
+        Vector3 vec = Monster.transform.position - transform.position;
+        float dist = Vector3.Distance(Monster.transform.position, transform.position);
         vec.Normalize();
 
         MoveSpeed = dist * 10f;
@@ -41,21 +40,20 @@ public class Bullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {   
-        if(collision.CompareTag("Monster"))
+    {
+        print(collision.gameObject.name);
+        Monster mon = collision.gameObject.GetComponent<Monster>();
+
+        if(mon)
         {
-            if (!Monster) return;
-            Monster.TakeDamage(Damage);
+            mon.TakeDamage(Damage);
             Destroy(gameObject);
         }
     }
 
     public void SetBulletInfo(GameObject monster, int damage)
     {
-        MonsterRef = monster;
-        if (!MonsterRef) return;
-        Monster = MonsterRef.GetComponent<Monster>();
-
+        Monster = monster;
         Damage = damage;
     }
 }
