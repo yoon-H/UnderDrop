@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Net;
 using UnityEngine;
 
 public class Monster : MonoBehaviour, IHittable
@@ -54,7 +55,7 @@ public class Monster : MonoBehaviour, IHittable
             LifeBar.Value = CurHp;
             LifeBar.SetWidth();
 
-            if (AnimationRef)
+            if (AnimationRef && CurHp > 0)
                 AnimationRef.PlayTakeDamageAnimation();
         }
         

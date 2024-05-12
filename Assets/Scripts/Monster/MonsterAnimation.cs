@@ -25,7 +25,7 @@ public class MonsterAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void PlayTakeDamageAnimation()
@@ -50,11 +50,10 @@ public class MonsterAnimation : MonoBehaviour
 
         if(DeadObject != null) { DeadObject.SetActive(true); }
 
-        if (DeadSkeleton != null)
+        if (DeadSkeleton != null && DeadSkeleton.AnimationName != "die")
         {
             Spine.TrackEntry trackEntry = DeadSkeleton.AnimationState.SetAnimation(0, "die", false);
-            trackEntry.End += DeadEvent;
-            print("DeadImage");
+            trackEntry.Complete += DeadEvent;
         }
 
        
@@ -62,7 +61,6 @@ public class MonsterAnimation : MonoBehaviour
 
     public void DeadEvent(TrackEntry trackEntry)
     {
-        print("Dead Event");
         Destroy(ParentObject);
     }
 

@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2044310439
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 534932fbc8cc55946921dc4445c55646, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -129,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.93, y: 1.51}
+  m_Size: {x: 7.93, y: 0.25}
   m_EdgeRadius: 0
 --- !u!114 &8072515090467670675
 MonoBehaviour:
@@ -217,7 +217,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2044310439
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4aa6d14b89444904aae2a65ba56d55d5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -365,4 +365,3 @@ MonoBehaviour:
   LaserButtonRef: {fileID: 3671929426720939274}
   InActiveButtonSprite: {fileID: 21300000, guid: b057f3593aae9cf4f9af405fa1820093, type: 3}
   InActiveObstacleSprite: {fileID: 0}
-  Direction: 0
