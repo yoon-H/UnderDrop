@@ -126,16 +126,16 @@ public class Player : MonoBehaviour
         }
         else
         {
+            //Animation
+            if (AnimationRef != null)
+                AnimationRef.PlayAttackAnim(Target.transform.position);
+
             Bullet = Instantiate(BulletRef);
             if(!Bullet) { return false; }
             Bullet.transform.position = transform.position;
             Bullet bullet = Bullet.GetComponent<Bullet>();
             bullet.SetBulletInfo(Target, Damage);
             UseBullet();
-
-            //Animation
-            if(AnimationRef != null)
-                AnimationRef.PlayAttackAnim(Target.transform.position);
 
             return true;
         }

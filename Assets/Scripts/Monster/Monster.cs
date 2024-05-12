@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using Spine.Unity;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using System.Net;
 using UnityEngine;
 
 public class Monster : MonoBehaviour, IHittable
@@ -17,11 +20,18 @@ public class Monster : MonoBehaviour, IHittable
 
     public MonsterSpawner Spawner;
 
+    private MonsterAnimation AnimationRef;
+
+    public GameObject DataAsset;
+    public GameObject DeadAsset;
+
     // Start is called before the first frame update
     void Start()
     {
         if(!LifeBarRef) return;
         LifeBar = LifeBarRef.GetComponent<ProgressBar>();
+
+        AnimationRef = GetComponent<MonsterAnimation>();
     }
 
     // Update is called once per frame
@@ -37,10 +47,18 @@ public class Monster : MonoBehaviour, IHittable
 
     public void TakeDamage(int amount)
     {
-        CurHp -= amount;
-        if (!LifeBar) return;
-        LifeBar.Value = CurHp;
-        LifeBar.SetWidth();
+        if(CurHp > 0)
+        {
+            CurHp -= amount;
+            if(CurHp < 0) CurHp = 0;
+            if (!LifeBar) return;
+            LifeBar.Value = CurHp;
+            LifeBar.SetWidth();
+
+            if (AnimationRef && CurHp > 0)
+                AnimationRef.PlayTakeDamageAnimation();
+        }
+        
 
         if (CurHp <= 0)
         {
@@ -55,6 +73,8 @@ public class Monster : MonoBehaviour, IHittable
         MaxHp = maxHp;
         CurHp = MaxHp;
         Timer = timer;
+
+        if(direction != E_Direction.Left) { FlipMesh(); }
 
         InitializeLifeBar();
     }
@@ -73,13 +93,28 @@ public class Monster : MonoBehaviour, IHittable
 
     protected virtual void DeadTask()
     {
-        // Monster died
-        LifeBar.Value = LifeBar.Maxvalue;
-        LifeBar.SetWidth();
-        LifeBar.SetActiveProgress(false);
+
         if (!Spawner) return;
         Spawner.SetDestroyedMonster(Direction);
 
-        Destroy(gameObject);
+        AnimationRef.PlayDieAnimation();
+
+    }
+
+    private void FlipMesh()
+    {
+        if(DataAsset)
+        {
+            Vector3 vec = DataAsset.transform.localScale;
+            vec.x = -vec.x;
+            DataAsset.transform.localScale = vec;
+        }
+
+        if (DeadAsset)
+        {
+            Vector3 vec = DeadAsset.transform.localScale;
+            vec.x = -vec.x;
+            DeadAsset.transform.localScale = vec;
+        }
     }
 }
