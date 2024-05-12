@@ -15,16 +15,23 @@ public class PCAnimation : MonoBehaviour
     public Spine.Bone Arm;
     float InitRotation;
 
+    private void Awake()
+    {
+        if (SkeletonAnimation != null)
+        {
+            Arm = SkeletonAnimation.skeleton.FindBone("Arm2");
+
+            InitRotation = Arm.Data.Rotation;
+
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         if(SkeletonAnimation != null) 
         {
             SkeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
-            Arm = SkeletonAnimation.skeleton.FindBone("Arm2");
-
-            InitRotation = Arm.Data.Rotation;
-
         }
     }
 

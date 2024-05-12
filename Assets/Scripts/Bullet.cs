@@ -41,7 +41,6 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.gameObject.name);
         Monster mon = collision.gameObject.GetComponent<Monster>();
 
         if(mon)
