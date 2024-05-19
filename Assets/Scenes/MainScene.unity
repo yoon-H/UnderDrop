@@ -675,6 +675,7 @@ GameObject:
   - component: {fileID: 1935448753}
   - component: {fileID: 1935448752}
   - component: {fileID: 1935448751}
+  - component: {fileID: 1935448754}
   m_Layer: 0
   m_Name: "Spine GameObject (\uC0C8)"
   m_TagString: Untagged
@@ -784,6 +785,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935448749}
   m_Mesh: {fileID: 0}
+--- !u!114 &1935448754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935448749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de9437830cafbb44f9e3ffa5e6ace29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SkAnim: {fileID: 1935448751}
 --- !u!1 &1946000714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,7 +1097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3486141319500367320, guid: 78a49108280b4d041b637bbc5c775fd7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -38.600006
+      value: -38.600098
       objectReference: {fileID: 0}
     - target: {fileID: 3486141319500367320, guid: 78a49108280b4d041b637bbc5c775fd7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1437,7 +1451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2164194842654136401, guid: 198fa1272e69f2540ae9d6edea765776, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -361.4
+      value: -361.40002
       objectReference: {fileID: 0}
     - target: {fileID: 2164194842654136401, guid: 198fa1272e69f2540ae9d6edea765776, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
