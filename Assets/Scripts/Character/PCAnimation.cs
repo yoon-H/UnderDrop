@@ -13,7 +13,7 @@ public class PCAnimation : MonoBehaviour
     public SkeletonAnimation JumpSkeletonAnimation;
     public GameObject JumpObject;
     public Spine.Bone Arm;
-    float InitRotation;
+    float InitRotation =  720f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +21,7 @@ public class PCAnimation : MonoBehaviour
         if (SkeletonAnimation != null)
         {
             Arm = SkeletonAnimation.skeleton.FindBone("Arm2");
-
-            if (InitRotation == 0)
+            if (InitRotation == 720f)
             {
                 InitRotation = Arm.Data.Rotation;
             }

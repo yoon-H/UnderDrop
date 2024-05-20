@@ -36,13 +36,14 @@ public class Player : MonoBehaviour
 
     public float ReloadWaitingTime = 1f;
 
+    //public GameObject BulletPanel;
     public Slider BulletSlider;
 
     public GameObject BulletCount;
     protected Text BulletText;
 
 
-    public GameObject TimerRef;
+    //public GameObject TimerRef;
     private Timer Timer;
 
     [SerializeField]
@@ -59,12 +60,8 @@ public class Player : MonoBehaviour
 
         CurBulletNum = MaxBulletNum;
 
-        Timer = TimerRef.GetComponent<Timer>();
-
-        BulletText = BulletCount.GetComponent<Text>();
-        BulletSlider.value = CurBulletNum;
-
-        AnimationRef = GetComponent<PCAnimation>();
+        if (!AnimationRef)
+            AnimationRef = GetComponent<PCAnimation>();
     }
 
     // Update is called once per frame
@@ -81,8 +78,8 @@ public class Player : MonoBehaviour
             Dir= E_Direction.Left;
             transform.DOMoveX(LeftLoc.x, JumpTime).SetEase(ease);
 
-            
-            AnimationRef.PlayJumpAnim();
+            if (AnimationRef != null)
+                AnimationRef.PlayJumpAnim();
             Flip();
         }
         else if (dir == E_Direction.Right && Dir == E_Direction.Left)
@@ -90,8 +87,8 @@ public class Player : MonoBehaviour
             Dir=E_Direction.Right;
             transform.DOMoveX(RightLoc.x, JumpTime).SetEase(ease);
 
-            
-            AnimationRef.PlayJumpAnim();
+            if (AnimationRef != null)
+                AnimationRef.PlayJumpAnim();
             Flip();
         }
 
@@ -253,6 +250,20 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(ReloadWaitingTime);
         StartCoroutine(IE_ReloadBullet());
+    }
+
+
+    public void SetPCInfo(GameObject timer, GameObject bulletPanel)
+    {
+        Timer = timer.GetComponent<Timer>();
+
+        BulletText = bulletPanel.GetComponentInChildren<Text>();
+        BulletSlider = bulletPanel.GetComponentInChildren<Slider>();
+        if(BulletSlider)
+        {
+            BulletSlider.value = CurBulletNum;
+        }
+       
     }
 
 }
