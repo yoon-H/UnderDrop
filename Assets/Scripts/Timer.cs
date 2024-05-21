@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -54,6 +55,8 @@ public class Timer : MonoBehaviour
     private SwitchPopUp GameOverPopUp;
     private ScoreBoard ScoreBoard;
 
+    public float WaitingTime =  5f;
+
     public int Score = 0;
 
     //TeamRegion
@@ -61,11 +64,13 @@ public class Timer : MonoBehaviour
     public NormalTeam NormalTeam;
     public WeaselTeam WeaselTeam;
 
-
+    SpawnCharacter SpawnCharacter;
 
     // Start is called before the first frame update
     void Start()
     {
+        SpawnCharacter = GetComponent<SpawnCharacter>();
+
         ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
         MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
 
@@ -205,10 +210,24 @@ public class Timer : MonoBehaviour
 
     public void GameOver()
     {
-        
-        //SetScoreText
+        //Play Dead Anim
+        PCAnimation animRef = SpawnCharacter.Player.GetComponent<PCAnimation>();
+
+        if (animRef != null)
+        {
+            animRef.PlayDeadAnim();
+        }
+
+        //Stop Game
+        SetIsPaused(true);
+
+    }
+
+
+    public void EndTask()
+    {
         int bestscore = GameManager.Instance.BestScore;
-        if(Score > bestscore)
+        if (Score > bestscore)
         {
             GameManager.Instance.BestScore = Score;
         }
@@ -216,10 +235,6 @@ public class Timer : MonoBehaviour
 
         //Show PopUp
         GameOverPopUp.SwitchFlag(true);
-
-        //Stop Game
-        SetIsPaused(true);
-
     }
 
     public void SetIsRaidExisted(bool flag)

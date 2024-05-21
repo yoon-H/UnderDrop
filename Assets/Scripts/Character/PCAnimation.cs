@@ -15,6 +15,9 @@ public class PCAnimation : MonoBehaviour
     public Spine.Bone Arm;
     float InitRotation =  720f;
 
+    public Timer Timer;
+    bool UnscaledTime = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +37,10 @@ public class PCAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(UnscaledTime)
+            SkeletonAnimation.Update(Time.unscaledDeltaTime);
+        else
+            SkeletonAnimation.Update(Time.deltaTime);
     }
 
     public void PlayAttackAnim(Vector3 targetLoc)
@@ -45,16 +51,17 @@ public class PCAnimation : MonoBehaviour
             var targetRotation = Vector2.Angle(Vector2.up, targetLoc - transform.position);
             Arm.Data.Rotation = targetRotation;
 
-            Spine.TrackEntry trackEntry = SkeletonAnimation.AnimationState.SetAnimation(0, "attack", false);
-            trackEntry.End += EndEvent;
+            if(SkeletonAnimation.AnimationName != "attack2" && SkeletonAnimation.AnimationName != "die")
+                SkeletonAnimation.AnimationState.SetAnimation(0, "attack2", true);
 
         }
     }
 
-    public void EndEvent(TrackEntry trackEntry)
+    public void PlayIdleAnim()
     {
         Arm.Data.Rotation = InitRotation;
-        SkeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
+        if(SkeletonAnimation)
+            SkeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
     }
 
     public void PlayJumpAnim()
@@ -82,5 +89,24 @@ public class PCAnimation : MonoBehaviour
 
             SkeletonAnimation.AnimationState.AddAnimation(0, "idle", true, 0f);
         }
+    }
+
+    public void PlayDeadAnim()
+    {
+        UnscaledTime = true;
+        if (SkeletonAnimation != null)
+        {
+            Spine.TrackEntry trackEntry = SkeletonAnimation.AnimationState.SetAnimation(0, "die", false);
+            trackEntry.Complete += EndEvent;
+        }
+    }
+
+    public void EndEvent(TrackEntry trackEntry)
+    {
+        gameObject.SetActive(false);
+        Timer.EndTask();
+        UnscaledTime = false;
+        Arm.Data.Rotation = InitRotation;
+        Destroy(gameObject);
     }
 }
