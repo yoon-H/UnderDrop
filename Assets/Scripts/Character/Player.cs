@@ -259,6 +259,8 @@ public class Player : MonoBehaviour
     public void SetPCInfo(GameObject timer, GameObject bulletPanel)
     {
         Timer = timer.GetComponent<Timer>();
+        gameObject.GetComponent<PCAnimation>().Timer = Timer;
+
 
         BulletText = bulletPanel.GetComponentInChildren<Text>();
         BulletSlider = bulletPanel.GetComponentInChildren<Slider>();
