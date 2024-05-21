@@ -51,11 +51,8 @@ public class PCAnimation : MonoBehaviour
             var targetRotation = Vector2.Angle(Vector2.up, targetLoc - transform.position);
             Arm.Data.Rotation = targetRotation;
 
-            if(SkeletonAnimation.AnimationName != "attack2")
+            if(SkeletonAnimation.AnimationName != "attack2" && SkeletonAnimation.AnimationName != "die")
                 SkeletonAnimation.AnimationState.SetAnimation(0, "attack2", true);
-
-            //Spine.TrackEntry trackEntry = SkeletonAnimation.AnimationState.SetAnimation(0, "attack2", false);
-            //trackEntry.End += EndEvent;
 
         }
     }
@@ -109,6 +106,7 @@ public class PCAnimation : MonoBehaviour
         gameObject.SetActive(false);
         Timer.EndTask();
         UnscaledTime = false;
+        Arm.Data.Rotation = InitRotation;
         Destroy(gameObject);
     }
 }
