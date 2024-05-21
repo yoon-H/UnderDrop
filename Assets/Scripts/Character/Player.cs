@@ -224,6 +224,9 @@ public class Player : MonoBehaviour
             bool flag = Shoot();
             if(!flag) break;
         }
+
+        if (AnimationRef)
+            AnimationRef.PlayIdleAnim();
         
     }
 
