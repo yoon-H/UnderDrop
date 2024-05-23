@@ -16,6 +16,7 @@ public class PCAnimation : MonoBehaviour
     float InitRotation =  720f;
 
     public float JumpTime = 0.1f;
+    public float IdleTimeScale = 1f;
 
     public Timer Timer;
     bool UnscaledTime = false;
@@ -33,6 +34,7 @@ public class PCAnimation : MonoBehaviour
             Arm.Data.Rotation = InitRotation;
 
             SkeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
+            SkeletonAnimation.timeScale = IdleTimeScale;
         }
     }
 
@@ -63,7 +65,11 @@ public class PCAnimation : MonoBehaviour
     {
         Arm.Data.Rotation = InitRotation;
         if(SkeletonAnimation)
+        {
             SkeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
+            SkeletonAnimation.timeScale = IdleTimeScale;
+        }
+            
     }
 
     public void PlayJumpAnim()

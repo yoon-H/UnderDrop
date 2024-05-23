@@ -281,6 +281,7 @@ MonoBehaviour:
   JumpSkeletonAnimation: {fileID: 389134450139252690}
   JumpObject: {fileID: 5330379324306329820}
   JumpTime: 0.1
+  IdleTimeScale: 1
   Timer: {fileID: 0}
 --- !u!1 &8521864563131094397
 GameObject:
