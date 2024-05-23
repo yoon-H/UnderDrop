@@ -9,9 +9,9 @@ public class BackGroundMovement : MonoBehaviour
     private float MoveSpeed;
     private float CameraSize;
 
-    public float MaxTimeForArrival = 5f;
+    public float MaxTimeForArrival = 3f;
     public float CurTimeForArrival;
-    public float MinTimeForArrival = 3.6f;
+    public float MinTimeForArrival = 2.4f;
     public float TimeForArrivalReducingAmount = 0.2f;
 
     //Scrolling

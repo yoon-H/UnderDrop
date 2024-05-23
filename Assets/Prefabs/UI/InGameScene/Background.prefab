@@ -4515,9 +4515,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52af594ca6d965942a45ff722b0126fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTimeForArrival: 5
+  MaxTimeForArrival: 3
   CurTimeForArrival: 0
-  MinTimeForArrival: 3.6
+  MinTimeForArrival: 2.4
   TimeForArrivalReducingAmount: 0.2
   StartIndex: 0
   EndIndex: 2

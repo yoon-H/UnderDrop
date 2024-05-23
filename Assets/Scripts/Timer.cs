@@ -15,6 +15,10 @@ public class Timer : MonoBehaviour
     private MonsterSpawner MonsterSpawner;
     public Text ScoreText;
 
+    //BackGround
+    public GameObject BackGroundRef;
+    public BackGroundMovement BackGround;
+
     private float ObstacleSpawnCounter = 0f;
     private float MonsterSpawnCounter = 0f;
     public float ScoreCounter = 0f;
@@ -73,6 +77,7 @@ public class Timer : MonoBehaviour
 
         ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
         MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
+        BackGround = BackGroundRef.GetComponentInChildren<BackGroundMovement>();
 
         GameOverPopUp = GameOverPanel.GetComponent<SwitchPopUp>();
         ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>();
@@ -153,6 +158,7 @@ public class Timer : MonoBehaviour
 
             ObstacleSpawner.ReduceTimeForArrival();
             MonsterSpawner.ReduceTimeForArrival();
+            BackGround.ReduceTimeForArrival();
         }
 
         if(Score >= CurSpawnPeriod)
