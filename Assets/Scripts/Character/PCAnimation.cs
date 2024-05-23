@@ -79,7 +79,7 @@ public class PCAnimation : MonoBehaviour
             JumpSkeletonAnimation.AnimationState.SetAnimation(0, "jumpS", false);
         }
 
-        yield return new WaitForSeconds(0.07f);
+        yield return new WaitForSeconds(0.1f);
 
         if (JumpObject != null) { JumpObject.SetActive(false); }
         if (Object != null) { Object.SetActive(true); }
