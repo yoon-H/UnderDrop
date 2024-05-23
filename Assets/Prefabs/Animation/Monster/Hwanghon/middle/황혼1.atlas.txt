@@ -1,0 +1,146 @@
+
+황혼1.png
+size: 1586,225
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm1
+  rotate: false
+  xy: 956, 45
+  size: 125, 68
+  orig: 125, 68
+  offset: 0, 0
+  index: -1
+Arm2
+  rotate: true
+  xy: 1309, 25
+  size: 90, 102
+  orig: 90, 102
+  offset: 0, 0
+  index: -1
+Beak
+  rotate: false
+  xy: 822, 45
+  size: 70, 58
+  orig: 70, 58
+  offset: 0, 0
+  index: -1
+Belt
+  rotate: true
+  xy: 1083, 26
+  size: 87, 49
+  orig: 87, 49
+  offset: 0, 0
+  index: -1
+Cap
+  rotate: false
+  xy: 436, 71
+  size: 205, 152
+  orig: 205, 152
+  offset: 0, 0
+  index: -1
+Hand1
+  rotate: true
+  xy: 228, 46
+  size: 177, 206
+  orig: 177, 206
+  offset: 0, 0
+  index: -1
+Hand2
+  rotate: false
+  xy: 1456, 72
+  size: 128, 151
+  orig: 128, 151
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 643, 88
+  size: 177, 135
+  orig: 181, 136
+  offset: 0, 0
+  index: -1
+Jk1
+  rotate: true
+  xy: 1158, 22
+  size: 93, 149
+  orig: 93, 149
+  offset: 0, 0
+  index: -1
+Jk2
+  rotate: true
+  xy: 1456, 2
+  size: 68, 127
+  orig: 68, 127
+  offset: 0, 0
+  index: -1
+Jk3
+  rotate: true
+  xy: 2, 22
+  size: 201, 224
+  orig: 201, 224
+  offset: 0, 0
+  index: -1
+Leg1
+  rotate: true
+  xy: 1158, 117
+  size: 106, 230
+  orig: 106, 230
+  offset: 0, 0
+  index: -1
+Leg2
+  rotate: true
+  xy: 956, 115
+  size: 108, 200
+  orig: 108, 200
+  offset: 0, 0
+  index: -1
+RB
+  rotate: false
+  xy: 730, 43
+  size: 71, 43
+  orig: 71, 43
+  offset: 0, 0
+  index: -1
+Rope1
+  rotate: true
+  xy: 2, 5
+  size: 15, 1452
+  orig: 18, 1452
+  offset: 0, 0
+  index: -1
+Rope2
+  rotate: true
+  xy: 894, 47
+  size: 56, 54
+  orig: 56, 54
+  offset: 0, 0
+  index: -1
+Shirt
+  rotate: false
+  xy: 822, 105
+  size: 132, 118
+  orig: 132, 118
+  offset: 0, 0
+  index: -1
+Sun1
+  rotate: true
+  xy: 1390, 131
+  size: 92, 60
+  orig: 92, 60
+  offset: 0, 0
+  index: -1
+Sun2
+  rotate: false
+  xy: 1413, 80
+  size: 27, 49
+  orig: 27, 49
+  offset: 0, 0
+  index: -1
+T
+  rotate: false
+  xy: 643, 32
+  size: 85, 54
+  orig: 85, 54
+  offset: 0, 0
+  index: -1
