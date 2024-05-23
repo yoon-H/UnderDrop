@@ -257,7 +257,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.12074329, z: 0, w: 0.99268377}
   m_LocalPosition: {x: 0, y: 0, z: 0.02}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 399170656723944551}
@@ -303,12 +303,12 @@ SpriteRenderer:
   m_SortingLayerID: 2044310439
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4aa6d14b89444904aae2a65ba56d55d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02c094044e1b4b24d8fa37665d248a25, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -351,7 +351,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.56, y: 2.56}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -448,5 +448,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaserObstacleRef: {fileID: 3515504453277284073}
   LaserButtonRef: {fileID: 3671929426720939274}
-  InActiveButtonSprite: {fileID: 21300000, guid: b057f3593aae9cf4f9af405fa1820093, type: 3}
+  InActiveButtonSprite: {fileID: 21300000, guid: ef39ecb0814944d4eb0c21531912a866, type: 3}
   InActiveObstacleSprite: {fileID: 21300000, guid: f148cfe98ccd2e048ab778c891750156, type: 3}
