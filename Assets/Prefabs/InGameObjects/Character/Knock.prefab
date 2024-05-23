@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1fd37310662814ab0a46fec4e10bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JumpTime: 0.1
   ease: 1
   PlayerYSize: 0
   PlayerYLoc: 0
@@ -229,7 +230,6 @@ MonoBehaviour:
   ReloadWaitingTime: 1
   BulletSlider: {fileID: 0}
   BulletCount: {fileID: 0}
-  TimerRef: {fileID: 8060112486869602541, guid: 45efcb10c8cf3e04a9f49e78d8b51533, type: 3}
   CanShoot: 0
   Reloading: 0
   _MaxBulletNum: 30
@@ -280,6 +280,8 @@ MonoBehaviour:
   Object: {fileID: 8521864563131094397}
   JumpSkeletonAnimation: {fileID: 389134450139252690}
   JumpObject: {fileID: 5330379324306329820}
+  JumpTime: 0.1
+  Timer: {fileID: 0}
 --- !u!1 &8521864563131094397
 GameObject:
   m_ObjectHideFlags: 0

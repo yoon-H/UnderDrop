@@ -13,7 +13,9 @@ public class Player : MonoBehaviour
     private E_Direction Dir = E_Direction.Right;
     private Vector3 LeftLoc = new Vector3(-1.98f,1.7f,0);
     private Vector3 RightLoc = new Vector3(1.98f,1.7f,0);
-    private const float JumpTime = 0.1f;
+
+    public float JumpTime = 0.1f;
+
     public Ease ease = Ease.Linear;
 
     public float PlayerYSize;

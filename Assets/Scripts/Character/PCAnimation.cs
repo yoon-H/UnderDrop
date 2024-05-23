@@ -15,6 +15,8 @@ public class PCAnimation : MonoBehaviour
     public Spine.Bone Arm;
     float InitRotation =  720f;
 
+    public float JumpTime = 0.1f;
+
     public Timer Timer;
     bool UnscaledTime = false;
 
@@ -79,7 +81,7 @@ public class PCAnimation : MonoBehaviour
             JumpSkeletonAnimation.AnimationState.SetAnimation(0, "jumpS", false);
         }
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(JumpTime);
 
         if (JumpObject != null) { JumpObject.SetActive(false); }
         if (Object != null) { Object.SetActive(true); }
