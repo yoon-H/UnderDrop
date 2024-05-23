@@ -6,6 +6,8 @@ public class ObjectMovement : MonoBehaviour
 {
 
     private float ObjectMoveSpeed;
+
+    [SerializeField]
     private float TimeForArrival;
 
     // Start is called before the first frame update

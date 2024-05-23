@@ -15,6 +15,8 @@ public class ObstacleSpawner : MonoBehaviour
     public float MinTimeForArrival = 2.4f;
     public float TimeForArrivalReducingAmount = 0.2f;
 
+    public float AddTimeAmountWhenRaid = 0.5f; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +40,7 @@ public class ObstacleSpawner : MonoBehaviour
         {
             if(isRaid)
             {
-                Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival, transform.position.y);
+                Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
             }
             else
             {
@@ -50,7 +52,7 @@ public class ObstacleSpawner : MonoBehaviour
         {
             if (isRaid)
             {
-                Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival, transform.position.y);
+                Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
             }
             else
             {
