@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
+//[ExecuteAlways]
 public class ECparticleColorChangerMaster : MonoBehaviour {
 
     [System.Serializable]
@@ -20,7 +20,13 @@ public class ECparticleColorChangerMaster : MonoBehaviour {
 
     void Start()
     {
+        Renderer[] obs = GetComponentsInChildren<Renderer>();
 
+        foreach (Renderer r in obs)
+        {
+            r.sortingLayerName = "Obstacle";
+        }
+        //GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Obstacle";
     }
 
     void Update()
