@@ -7,6 +7,8 @@ public class ButtonTypeObstacle : MonoBehaviour
     public GameObject LaserObstacleRef;
     public GameObject LaserButtonRef;
 
+    public GameObject LaserParticleRef;
+
     public Sprite InActiveButtonSprite;
     public Sprite InActiveObstacleSprite;
 
@@ -29,6 +31,8 @@ public class ButtonTypeObstacle : MonoBehaviour
         SpriteRenderer buttonRenderer = LaserButtonRef.GetComponentInChildren<SpriteRenderer>();
         if (buttonRenderer)
             buttonRenderer.sprite = InActiveButtonSprite;
+        if(LaserParticleRef)
+            LaserParticleRef.SetActive(false);
 
         //SpriteRenderer obstacleRenderer = LaserObstacleRef.GetComponentInChildren<SpriteRenderer>();
         //if(obstacleRenderer)
