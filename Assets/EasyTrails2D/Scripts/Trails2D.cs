@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
@@ -166,7 +167,6 @@ public class Trails2D : MonoBehaviour
         }
 
         StopAllCoroutines();
-
     }
 
     private void OnEnable()
@@ -318,11 +318,13 @@ public class Trails2D : MonoBehaviour
             if (disabledTrailObjects.Count > 0)
             {
                 obj = disabledTrailObjects.Pop();
+                if (obj == null) return;
                 obj.SetActive(true);
             }
             else
             {
                 obj = new GameObject($"TrailObject {nameof(spriteRenderer)}");
+                if (obj == null) return;
                 activeTrailObjects.Push(obj);
             }
 

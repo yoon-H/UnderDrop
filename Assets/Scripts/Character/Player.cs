@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
 
             if (AnimationRef != null)
                 AnimationRef.PlayJumpAnim();
-            Flip();
+            //Flip();
         }
         else if (dir == E_Direction.Right && Dir == E_Direction.Left)
         {
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
 
             if (AnimationRef != null)
                 AnimationRef.PlayJumpAnim();
-            Flip();
+           // Flip();
         }
 
 

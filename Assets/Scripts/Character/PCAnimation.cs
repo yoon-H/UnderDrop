@@ -89,6 +89,9 @@ public class PCAnimation : MonoBehaviour
 
         yield return new WaitForSeconds(JumpTime);
 
+        Player player = GetComponent<Player>();
+        if(player != null ) { player.Flip(); }
+
         if (JumpObject != null) { JumpObject.SetActive(false); }
         if (Object != null) { Object.SetActive(true); }
         if (SkeletonAnimation != null)
