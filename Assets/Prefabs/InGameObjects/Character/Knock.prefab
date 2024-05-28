@@ -221,8 +221,9 @@ MonoBehaviour:
   ease: 1
   PlayerYSize: 0
   PlayerYLoc: 0
-  BulletRef: {fileID: 1297338020777488507, guid: f57443e364d441d46bf49c7d97d7c8dd, type: 3}
+  BulletRef: {fileID: 1681046568612450, guid: afb57209c7eadb6479389e64408fc899, type: 3}
   Bullet: {fileID: 0}
+  MuzzleFlareRef: {fileID: 1584403288528622, guid: beaa01b4a647ff94781c8599254c8f01, type: 3}
   CurBulletNum: 0
   MaxBulletNum: 30
   ReloadTime: 1.5

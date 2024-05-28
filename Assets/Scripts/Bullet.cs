@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject ImpactPrefab;
+    public GameObject ExplosionPrefab;
     private GameObject Monster;
 
     private float MoveSpeed;
@@ -28,6 +30,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         // MoveSpeed
         Vector3 vec = Monster.transform.position - transform.position;
         float dist = Vector3.Distance(Monster.transform.position, transform.position);
@@ -37,6 +40,8 @@ public class Bullet : MonoBehaviour
         MoveVector = vec;
 
         transform.position += MoveVector * MoveSpeed * Time.deltaTime;
+
+        transform.right = vec;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,6 +50,7 @@ public class Bullet : MonoBehaviour
 
         if(mon)
         {
+            Instantiate(ImpactPrefab, transform.position, transform.rotation);
             mon.TakeDamage(Damage);
             Destroy(gameObject);
         }

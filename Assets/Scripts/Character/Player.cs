@@ -6,6 +6,7 @@ using DG.Tweening;
 using static UnityEngine.GraphicsBuffer;
 using System;
 using UnityEngine.UI;
+using Unity.Jobs.LowLevel.Unsafe;
 
 public class Player : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class Player : MonoBehaviour
 
     public GameObject BulletRef;
     public GameObject Bullet;
+
+    public GameObject MuzzleFlareRef;
+
     GameObject Target = null;
     
     public int CurBulletNum;
@@ -129,9 +133,15 @@ public class Player : MonoBehaviour
             if (AnimationRef != null)
                 AnimationRef.PlayAttackAnim(Target.transform.position);
 
-            Bullet = Instantiate(BulletRef);
+            //Flame
+            GameObject flame = Instantiate(MuzzleFlareRef, transform.position, transform.rotation);
+            if(!flame) { return false; }
+            flame.transform.right = Target.transform.position - transform.position;
+
+            //Bullet
+            Bullet = Instantiate(BulletRef, transform.position, transform.rotation);
+
             if(!Bullet) { return false; }
-            Bullet.transform.position = transform.position;
             Bullet bullet = Bullet.GetComponent<Bullet>();
             bullet.SetBulletInfo(Target, Damage);
             UseBullet();
