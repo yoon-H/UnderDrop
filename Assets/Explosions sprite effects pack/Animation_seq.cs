@@ -19,6 +19,16 @@ public class Animation_seq: MonoBehaviour
     void NextFrame()
     {
         rendererMy.sharedMaterial.SetTexture("_MainTex", frames[frameIndex]);
+
+        //Stop Animation
+        if(frameIndex + 0001 >= frames.Length) 
+        {
+            CancelInvoke("NestFrame");
+            return; 
+        }
+
+
         frameIndex = (frameIndex + 0001) % frames.Length;
+        
     }
 }
