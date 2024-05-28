@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 2044310439
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fbec1cb3ae3e89348b41d5af4517af71, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f148cfe98ccd2e048ab778c891750156, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,7 +130,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.93, y: 1.31}
+  m_Size: {x: 6, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &8072515090467670675
 MonoBehaviour:
@@ -466,8 +466,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5974789882450547430, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974789882450547430, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974789882450547430, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.79
+      value: -2.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974789882450547430, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5974789882450547431, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].time
@@ -479,19 +491,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5974789883056898285, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.40000004
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: 5974789883056898285, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.53333336
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5974789883056898285, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.53333336
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5974789883056898285, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.226667
+      value: -2.84
       objectReference: {fileID: 0}
     - target: {fileID: 5974789883056898285, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
       propertyPath: m_LocalPosition.y
@@ -560,6 +572,30 @@ PrefabInstance:
     - target: {fileID: 5974789883056898288, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974789883124683507, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
+      propertyPath: ClampVelocityModule.dampen
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974789883124683507, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974789883124683507, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974789883124683510, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974789883228896670, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974789883228896670, guid: aabc2310c6833b747b99ee0da45c3258, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

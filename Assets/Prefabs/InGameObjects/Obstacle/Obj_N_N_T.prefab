@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e0a99295dab1548b2381d8e5912b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeForArrival: 0
 --- !u!114 &8431611842086496522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,4 +178,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.6
