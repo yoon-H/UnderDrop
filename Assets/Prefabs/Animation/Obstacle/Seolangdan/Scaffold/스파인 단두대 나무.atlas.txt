@@ -1,0 +1,34 @@
+
+스파인 단두대 나무.png
+size: 414,279
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skin1/Knife
+  rotate: true
+  xy: 2, 58
+  size: 219, 177
+  orig: 219, 177
+  offset: 0, 0
+  index: -1
+skin1/Tree
+  rotate: true
+  xy: 360, 19
+  size: 258, 52
+  orig: 258, 52
+  offset: 0, 0
+  index: -1
+skin2/Bamboo
+  rotate: false
+  xy: 2, 2
+  size: 258, 54
+  orig: 258, 54
+  offset: 0, 0
+  index: -1
+skin2/Knife
+  rotate: true
+  xy: 181, 58
+  size: 219, 177
+  orig: 219, 177
+  offset: 0, 0
+  index: -1

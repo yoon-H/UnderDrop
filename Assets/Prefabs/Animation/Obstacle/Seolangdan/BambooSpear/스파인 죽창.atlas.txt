@@ -1,0 +1,13 @@
+
+스파인 죽창.png
+size: 174,259
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Bamboo
+  rotate: false
+  xy: 2, 2
+  size: 170, 255
+  orig: 170, 305
+  offset: 0, 50
+  index: -1
