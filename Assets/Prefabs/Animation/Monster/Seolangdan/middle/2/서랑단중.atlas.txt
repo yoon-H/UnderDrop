@@ -1,0 +1,153 @@
+
+서랑단중.png
+size: 1442,239
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm1(R)
+  rotate: false
+  xy: 507, 53
+  size: 141, 164
+  orig: 141, 164
+  offset: 0, 0
+  index: -1
+Arm2(L)
+  rotate: true
+  xy: 650, 109
+  size: 108, 170
+  orig: 108, 170
+  offset: 0, 0
+  index: -1
+Body1
+  rotate: false
+  xy: 822, 101
+  size: 154, 116
+  orig: 154, 116
+  offset: 0, 0
+  index: -1
+Body2
+  rotate: true
+  xy: 2, 18
+  size: 199, 257
+  orig: 199, 257
+  offset: 0, 0
+  index: -1
+Ear1(L)
+  rotate: true
+  xy: 976, 10
+  size: 82, 95
+  orig: 82, 95
+  offset: 0, 0
+  index: -1
+Ear2(R)
+  rotate: true
+  xy: 788, 2
+  size: 97, 108
+  orig: 97, 108
+  offset: 0, 0
+  index: -1
+Face
+  rotate: false
+  xy: 1112, 94
+  size: 116, 123
+  orig: 116, 123
+  offset: 0, 0
+  index: -1
+Hand1
+  rotate: false
+  xy: 1375, 144
+  size: 65, 73
+  orig: 65, 73
+  offset: 0, 0
+  index: -1
+Hand2(Death)
+  rotate: true
+  xy: 1179, 7
+  size: 73, 84
+  orig: 73, 84
+  offset: 0, 0
+  index: -1
+HeadDress1
+  rotate: false
+  xy: 1265, 13
+  size: 67, 67
+  orig: 67, 67
+  offset: 0, 0
+  index: -1
+HeadDress2
+  rotate: true
+  xy: 978, 94
+  size: 123, 132
+  orig: 123, 132
+  offset: 0, 0
+  index: -1
+HoodieHat1(L)
+  rotate: true
+  xy: 1345, 82
+  size: 60, 85
+  orig: 60, 85
+  offset: 0, 0
+  index: -1
+HoodieHat2(R)
+  rotate: false
+  xy: 650, 33
+  size: 136, 74
+  orig: 136, 74
+  offset: 0, 0
+  index: -1
+Leg1(R)
+  rotate: true
+  xy: 1073, 28
+  size: 64, 104
+  orig: 64, 104
+  offset: 0, 0
+  index: -1
+Leg2(L)
+  rotate: true
+  xy: 1230, 82
+  size: 65, 113
+  orig: 65, 113
+  offset: 0, 0
+  index: -1
+Rope1
+  rotate: false
+  xy: 1334, 26
+  size: 56, 54
+  orig: 56, 54
+  offset: 0, 0
+  index: -1
+Rope2
+  rotate: true
+  xy: 2, 219
+  size: 18, 1414
+  orig: 18, 1414
+  offset: 0, 0
+  index: -1
+String1
+  rotate: true
+  xy: 507, 8
+  size: 43, 87
+  orig: 43, 87
+  offset: 0, 0
+  index: -1
+String2
+  rotate: true
+  xy: 898, 11
+  size: 88, 76
+  orig: 88, 76
+  offset: 0, 0
+  index: -1
+String3
+  rotate: false
+  xy: 1230, 149
+  size: 143, 68
+  orig: 143, 68
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: false
+  xy: 261, 8
+  size: 244, 209
+  orig: 244, 209
+  offset: 0, 0
+  index: -1
