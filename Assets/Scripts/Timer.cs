@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     public ObstacleSpawner ObstacleSpawner;
     public GameObject MonsterSpawnerRef;
     private MonsterSpawner MonsterSpawner;
-    public Text ScoreText;
+    public Text[] ScoreTexts;
 
     //BackGround
     public GameObject BackGroundRef;
@@ -146,10 +146,14 @@ public class Timer : MonoBehaviour
         
 
 
-        if(ScoreText) 
+        if(ScoreTexts != null) 
         {
             Score = (int)(ScoreCounter / 0.2f);
-            ScoreText.text = Score + "m";
+
+            foreach (var text in ScoreTexts)
+            {
+                text.text = Score + "m";
+            }
         }
 
         if(Score >= CurSpeedPeriod)
