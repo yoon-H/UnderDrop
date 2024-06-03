@@ -9,7 +9,8 @@ public class RaidEvent : MonoBehaviour
     Timer Timer;
 
     public GameObject RaidMarkRef;
-    public GameObject WarningPanel;
+    public GameObject[] WarningPanels;
+    public GameObject TeamPanel;
 
     public GameObject RaidBar;
     public ProgressBar Bar;
@@ -17,7 +18,10 @@ public class RaidEvent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        WarningPanel.SetActive(false);
+        foreach (var panel in WarningPanels)
+        {
+            panel.SetActive(false);
+        }
 
         //RaidBar
         if(Bar == null)
@@ -36,14 +40,20 @@ public class RaidEvent : MonoBehaviour
         
     }
 
-    public IEnumerator IE_Warning()
+    public IEnumerator IE_Warning(E_Team team)
     {
+        //Select Team Raid Warning Panel 
+        SetRaidPanel(team);
+
         // Warning Animation
         Time.timeScale = 0.3f;
-        WarningPanel.SetActive(true);
+        TeamPanel.SetActive(true);
+
         yield return new WaitForSeconds(WarningTime);
+
+
         Timer.SetIsRaidExisted(true);
-        WarningPanel.SetActive(false);
+        TeamPanel.SetActive(false);
         RaidBar.SetActive(true);
         RaidMarkRef.SetActive(true);
         Time.timeScale = 1f;
@@ -57,5 +67,18 @@ public class RaidEvent : MonoBehaviour
         }
         Timer = timer;
         Bar.Maxvalue = Timer.RaidRemainTime;
+    }
+    
+    public void SetRaidPanel(E_Team team)
+    {
+        switch(team)
+        {
+            case E_Team.SID:
+                TeamPanel = WarningPanels[0]; break;
+            case E_Team.Weasel:
+                TeamPanel = WarningPanels[1]; break;
+            case E_Team.Twilight:
+                TeamPanel = WarningPanels[2]; break;
+        }
     }
 }
