@@ -1,6 +1,8 @@
 fileFormatVersion: 2
-guid: afb57209c7eadb6479389e64408fc899
-timeCreated: 1524401389
+guid: 3f4aa9b2b07e3a346b89b6a64c339b68
+labels:
+- Effect
+timeCreated: 1510008393
 licenseType: Store
 NativeFormatImporter:
   externalObjects: {}

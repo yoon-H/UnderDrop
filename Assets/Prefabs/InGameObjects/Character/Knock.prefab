@@ -440,9 +440,9 @@ MonoBehaviour:
   ease: 1
   PlayerYSize: 0
   PlayerYLoc: 0
-  BulletRef: {fileID: 1681046568612450, guid: afb57209c7eadb6479389e64408fc899, type: 3}
+  BulletRef: {fileID: 1681046568612450, guid: e605fb1383d4f654297728084407fce7, type: 3}
   Bullet: {fileID: 0}
-  MuzzleFlareRef: {fileID: 1584403288528622, guid: beaa01b4a647ff94781c8599254c8f01, type: 3}
+  MuzzleFlareRef: {fileID: 1584403288528622, guid: 3f4aa9b2b07e3a346b89b6a64c339b68, type: 3}
   CurBulletNum: 0
   MaxBulletNum: 30
   ReloadTime: 1.5
