@@ -32,7 +32,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     }
 
-    public void SpawnObstacle(bool isRaid)
+    public void SpawnObstacle(bool isRaid, E_Team team)
     {
         System.Random rand = new System.Random();
         int res = rand.Next(0, 3);
@@ -40,7 +40,17 @@ public class ObstacleSpawner : MonoBehaviour
         {
             if(isRaid)
             {
-                Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
+                if (!Timer) return;
+                switch (team)
+                {
+                    case E_Team.SID:
+                        break;
+                    case E_Team.Weasel:
+                        Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
+                        break;
+                    case E_Team.Twilight:
+                        break;
+                }
             }
             else
             {
@@ -52,7 +62,17 @@ public class ObstacleSpawner : MonoBehaviour
         {
             if (isRaid)
             {
-                Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
+                if (!Timer) return;
+                switch (team)
+                {
+                    case E_Team.SID:
+                        break;
+                    case E_Team.Weasel:
+                        Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
+                        break;
+                    case E_Team.Twilight:
+                        break;
+                }
             }
             else
             {

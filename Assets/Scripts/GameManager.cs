@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public bool OnSound = true;
     public bool OnVib = true;
     public int Money = 0;
+    public E_Team team = E_Team.SID;
 
     private void Awake()
     {
