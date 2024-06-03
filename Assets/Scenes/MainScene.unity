@@ -492,6 +492,7 @@ MonoBehaviour:
   OnSound: 1
   OnVib: 1
   Money: 0
+  team: 0
 --- !u!114 &1265346951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,6 +887,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6297115841645272426, guid: 817892d97cff0e0488e204cc8c060c15, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6480012572781023833, guid: 817892d97cff0e0488e204cc8c060c15, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -992,6 +997,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7988240149747574900, guid: 817892d97cff0e0488e204cc8c060c15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431290704966403069, guid: 817892d97cff0e0488e204cc8c060c15, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8438449186048719110, guid: 817892d97cff0e0488e204cc8c060c15, type: 3}
