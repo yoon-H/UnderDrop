@@ -20,6 +20,7 @@ public class PCAnimation : MonoBehaviour
 
     public Timer Timer;
     bool UnscaledTime = false;
+    bool IsJumping = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,9 +43,15 @@ public class PCAnimation : MonoBehaviour
     void Update()
     {
         if(UnscaledTime)
+        {
             SkeletonAnimation.Update(Time.unscaledDeltaTime);
+            JumpSkeletonAnimation.Update(Time.unscaledDeltaTime);
+        }
         else
+        {
             SkeletonAnimation.Update(Time.deltaTime);
+            JumpSkeletonAnimation.Update(Time.deltaTime);
+        }
     }
 
     public void PlayAttackAnim(Vector3 targetLoc)
@@ -79,6 +86,7 @@ public class PCAnimation : MonoBehaviour
 
     public IEnumerator IE_PlayJumpAnim()
     {
+        IsJumping = true;
         if (Object != null) { Object.SetActive(false); }
         if (JumpObject != null) { JumpObject.SetActive(true); }
 
@@ -100,6 +108,8 @@ public class PCAnimation : MonoBehaviour
 
             SkeletonAnimation.AnimationState.AddAnimation(0, "idle", true, 0f);
         }
+
+        IsJumping = false;
     }
 
     public void PlayDeadAnim()
@@ -107,8 +117,17 @@ public class PCAnimation : MonoBehaviour
         UnscaledTime = true;
         if (SkeletonAnimation != null)
         {
-            Spine.TrackEntry trackEntry = SkeletonAnimation.AnimationState.SetAnimation(0, "die", false);
-            trackEntry.Complete += EndEvent;
+            if(IsJumping)
+            {
+                Spine.TrackEntry trackEntry = JumpSkeletonAnimation.AnimationState.SetAnimation(0, "die", false);
+                trackEntry.Complete += EndEvent;
+            }
+            else
+            {
+                Spine.TrackEntry trackEntry = SkeletonAnimation.AnimationState.SetAnimation(0, "die", false);
+                trackEntry.Complete += EndEvent;
+            }
+            
         }
     }
 
