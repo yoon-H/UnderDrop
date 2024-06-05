@@ -2676,6 +2676,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
+      propertyPath: WallChangeAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: MonsterSpawnerRef
       value: 
       objectReference: {fileID: 104580635}

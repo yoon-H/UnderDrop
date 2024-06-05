@@ -63,6 +63,10 @@ public class Timer : MonoBehaviour
 
     public int Score = 0;
 
+    //Wall Change
+    public float WallChangeAmount = 10f;
+    private float WallCounter = 0f;
+
     //TeamRegion
 
     public NormalTeam NormalTeam;
@@ -105,6 +109,7 @@ public class Timer : MonoBehaviour
     {
         ObstacleSpawnCounter += Time.deltaTime;
         ScoreCounter += Time.deltaTime;
+        WallCounter += Time.deltaTime;
 
         //Raid Counter
         if (IsRaidExisted)
@@ -223,6 +228,11 @@ public class Timer : MonoBehaviour
             }
         }
 
+        if(WallCounter >= WallChangeAmount)
+        {
+            BackGround.Setflag(true);
+            WallCounter = 0;
+        }
 
     }
 

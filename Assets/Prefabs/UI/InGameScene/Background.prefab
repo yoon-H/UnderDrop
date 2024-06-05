@@ -1816,6 +1816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be92c3de29289bf428fde706f1957e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveSpeed: 0.7
 --- !u!1 &3586606978483678634
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,6 +2399,11 @@ MonoBehaviour:
   - {fileID: 5481693968487911056}
   MaxYLoc: 60
   YSize: 0.888
+  LeftWalls: []
+  RightWalls: []
+  CurrentSpriteIndex: 0
+  ChangeCount: 0
+  SpriteChanging: 0
 --- !u!1 &4443880339023066521
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,6 +4533,17 @@ MonoBehaviour:
   - {fileID: 7164837739662464543}
   MaxYLoc: 60
   YSize: 0.888
+  LeftWalls:
+  - {fileID: 21300000, guid: a6ecefbbd45ee4144a7d75760f53ff1c, type: 3}
+  - {fileID: 21300000, guid: 160f5e0a911e128439f8ca078d7d51e9, type: 3}
+  - {fileID: 21300000, guid: a6ecefbbd45ee4144a7d75760f53ff1c, type: 3}
+  RightWalls:
+  - {fileID: 21300000, guid: 006343e2c2a3b9749855f14a2bc6eeb0, type: 3}
+  - {fileID: 21300000, guid: 25e954b2f1dc99e4b865ed72be41fba3, type: 3}
+  - {fileID: 21300000, guid: 006343e2c2a3b9749855f14a2bc6eeb0, type: 3}
+  CurrentSpriteIndex: 0
+  ChangeCount: 0
+  SpriteChanging: 0
 --- !u!1 &8449698494300609619
 GameObject:
   m_ObjectHideFlags: 0
