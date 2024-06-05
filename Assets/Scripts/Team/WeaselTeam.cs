@@ -8,7 +8,7 @@ public class WeaselTeam : TeamRegion
     public GameObject BambooObstacleRef;
     public GameObject DartObstacleRef;
 
-    private const float BambooSpawnLocDx = 1.55f;
+    private const float BambooSpawnLocDx = 1.5f;
     //private const float DartSpawnLocDx = 1.4f;
 
     private GameObject Obstacle;

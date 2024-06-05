@@ -59,7 +59,7 @@ public class Timer : MonoBehaviour
     private SwitchPopUp GameOverPopUp;
     private ScoreBoard ScoreBoard;
 
-    public float WaitingTime =  5f;
+    public float WaitingTime = 5f;
 
     public int Score = 0;
 
@@ -67,6 +67,9 @@ public class Timer : MonoBehaviour
 
     public NormalTeam NormalTeam;
     public WeaselTeam WeaselTeam;
+
+    public E_Team[] RaidTeams = new E_Team[2] { E_Team.SID, E_Team.SID};
+    public E_Team curRaidTeam;
 
     SpawnCharacter SpawnCharacter;
 
@@ -92,21 +95,24 @@ public class Timer : MonoBehaviour
 
         //RaidEvent
         RaidEvent.SetTimer(this);
+
+        //Set Raid Teams in this game
+        SetRaidTeams();
     }
 
     // Update is called once per frame
     void Update()
     {
         ObstacleSpawnCounter += Time.deltaTime;
-        MonsterSpawnCounter += Time.deltaTime;
         ScoreCounter += Time.deltaTime;
 
         //Raid Counter
-        if(IsRaidExisted)
+        if (IsRaidExisted)
         {
             RaidRemainCounter += Time.deltaTime;
+            MonsterSpawnCounter += Time.deltaTime;
             RaidEvent.Bar.Value = RaidRemainTime - RaidRemainCounter;
-            if(RaidRemainCounter >= RaidRemainTime)
+            if (RaidRemainCounter >= RaidRemainTime)
             {
                 IsRaidExisted = false;
                 RaidRemainCounter = 0;
@@ -119,34 +125,46 @@ public class Timer : MonoBehaviour
             RaidSpawnCounter += Time.deltaTime;
             if (RaidSpawnCounter >= RaidSpawnTime)
             {
-                if(RaidMissedCount >= 2)
+                if (RaidMissedCount >= 2)
                 {
-                    StartCoroutine(RaidEvent.IE_Warning());
+                    System.Random rand = new System.Random();
+                    int res = rand.Next(2);
+
+                    //Set current RaidTeam
+                    //curRaidTeam = RaidTeams[res];
+                    curRaidTeam = E_Team.Weasel;
+
+
+                    StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
                     RaidMissedCount = 0;
                 }
                 else
                 {
                     System.Random rand = new System.Random();
-                    int res = rand.Next(2);
+                    int res = rand.Next(3);
 
-                    if (res == 0)
-                    {
-                        StartCoroutine(RaidEvent.IE_Warning());
-                    }
-                    else
+                    if (res == 2)
                     {
                         RaidMissedCount++;
                     }
+                    else
+                    {
+                        //Set current RaidTeam
+                        //curRaidTeam = RaidTeams[res];
+                        curRaidTeam = E_Team.Weasel;
+
+                        StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
+                    }
                 }
-                
+
 
                 RaidSpawnCounter = 0;
             }
         }
-        
 
 
-        if(ScoreTexts != null) 
+
+        if (ScoreTexts != null)
         {
             Score = (int)(ScoreCounter / 0.2f);
 
@@ -156,7 +174,7 @@ public class Timer : MonoBehaviour
             }
         }
 
-        if(Score >= CurSpeedPeriod)
+        if (Score >= CurSpeedPeriod)
         {
             CurSpeedPeriod += FixedSpeedPeriod;
 
@@ -165,22 +183,22 @@ public class Timer : MonoBehaviour
             BackGround.ReduceTimeForArrival();
         }
 
-        if(Score >= CurSpawnPeriod)
+        if (Score >= CurSpawnPeriod)
         {
             CurSpawnPeriod += FixedSpawnPeriod;
-            if(CurObstacleSpawnTime > MinObstacleSpawnTime)
+            if (CurObstacleSpawnTime > MinObstacleSpawnTime)
             {
                 CurObstacleSpawnTime -= ObstacleSpawnTimeReducingAmount;
             }
-            
-            if(CurMonsterSpawnTime > MinMonsterSpawnTime)
+
+            if (CurMonsterSpawnTime > MinMonsterSpawnTime)
             {
                 CurMonsterSpawnTime -= MonsterSpawnTimeReducingAmount;
             }
-            
+
         }
 
-        if(RaidRemainCounter >= RaidRemainTime)
+        if (RaidRemainCounter >= RaidRemainTime)
         {
             IsRaidExisted = false;
         }
@@ -191,22 +209,26 @@ public class Timer : MonoBehaviour
         if (ObstacleSpawnCounter >= CurObstacleSpawnTime)
         {
             ObstacleSpawnCounter -= CurObstacleSpawnTime;
-            ObstacleSpawner.SpawnObstacle(IsRaidExisted);
+            ObstacleSpawner.SpawnObstacle(IsRaidExisted, curRaidTeam);
         }
 
         if (!MonsterSpawner) return;
 
-        if (MonsterSpawnCounter >= CurMonsterSpawnTime)
+        if (IsRaidExisted)
         {
-            MonsterSpawnCounter -= CurMonsterSpawnTime;
-            MonsterSpawner.SpawnMonster(IsRaidExisted);
+            if (MonsterSpawnCounter >= CurMonsterSpawnTime)
+            {
+                MonsterSpawnCounter -= CurMonsterSpawnTime;
+                MonsterSpawner.SpawnMonster(curRaidTeam);
+            }
         }
+
 
     }
 
     public void SetIsPaused(bool flag)
     {
-        if(flag)
+        if (flag)
         {
             //IsPaused = true;
             Time.timeScale = 0;
@@ -250,5 +272,20 @@ public class Timer : MonoBehaviour
     public void SetIsRaidExisted(bool flag)
     {
         IsRaidExisted = flag;
+    }
+
+    private void SetRaidTeams()
+    {
+        E_Team team = GameManager.Instance.team;
+
+        switch (team)
+        {
+            case E_Team.SID:
+                RaidTeams[0] = E_Team.Weasel; RaidTeams[1] = E_Team.Twilight; break;
+            case E_Team.Weasel:
+                RaidTeams[0] = E_Team.SID; RaidTeams[1] = E_Team.Twilight; break;
+            case E_Team.Twilight:
+                RaidTeams[0] = E_Team.SID; RaidTeams[1] = E_Team.Weasel; break;
+        }
     }
 }

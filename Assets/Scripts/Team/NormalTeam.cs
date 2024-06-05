@@ -11,8 +11,9 @@ public class NormalTeam : TeamRegion
     public GameObject SawToothObstacleRef;
     public GameObject ButtonTypeObstacleRef;
 
-    private const float ToothSpawnLocDx = 1.94f;
-    private const float ButtonTypeSpawnLocDx = 1.35f;
+    private const float ToothSpawnLocDx = 2f;
+    private const float ThornSpawnLocDx = 1.5f;
+    private const float ButtonTypeSpawnLocDx = 1.65f;
 
     private GameObject Obstacle;
 
@@ -75,8 +76,8 @@ public class NormalTeam : TeamRegion
     {
         //Set LocX
         float locX;
-        if (E_Direction.Left == dir) { locX = -ButtonTypeSpawnLocDx; }
-        else locX = ButtonTypeSpawnLocDx;
+        if (E_Direction.Left == dir) { locX = -ThornSpawnLocDx; }
+        else locX = ThornSpawnLocDx;
 
         //Spawn Obstacle
         Obstacle = Instantiate(ThornObstacleRef);                                 //TODO : change to ObjectPool
