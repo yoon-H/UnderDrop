@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1fd37310662814ab0a46fec4e10bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpTime: 1
+  JumpTime: 0.25
   ease: 1
   PlayerYSize: 0
   PlayerYLoc: 0
@@ -520,7 +520,7 @@ MonoBehaviour:
   Object: {fileID: 8158853732067586835}
   JumpSkeletonAnimation: {fileID: 8846756354967109061}
   JumpObject: {fileID: 5764691710161120283}
-  JumpTime: 1
+  JumpTime: 0.25
   IdleTimeScale: 1
   Timer: {fileID: 0}
 --- !u!50 &9209277706860768658

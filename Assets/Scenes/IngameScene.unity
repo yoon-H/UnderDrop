@@ -364,9 +364,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerRef: {fileID: 381403812}
-  MaxTimeForArrival: 3
+  MaxTimeForArrival: 2
   CurTimeForArrival: 0
-  MinTimeForArrival: 2.4
+  MinTimeForArrival: 1.4
   TimeForArrivalReducingAmount: 0.2
   AddTimeAmountWhenRaid: 0.5
 --- !u!1 &381403812 stripped
@@ -1752,6 +1752,14 @@ PrefabInstance:
     - target: {fileID: 141884562348361129, guid: 0a44a76b594496940b70b64e3b93612b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324767024182018728, guid: 0a44a76b594496940b70b64e3b93612b, type: 3}
+      propertyPath: MaxTimeForArrival
+      value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324767024182018728, guid: 0a44a76b594496940b70b64e3b93612b, type: 3}
+      propertyPath: MinTimeForArrival
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2313950719494726431, guid: 0a44a76b594496940b70b64e3b93612b, type: 3}
       propertyPath: m_SortingLayer
