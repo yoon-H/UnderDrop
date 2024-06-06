@@ -1,0 +1,13 @@
+
+Title.png
+size: 963,516
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+title
+  rotate: false
+  xy: 2, 2
+  size: 959, 512
+  orig: 959, 512
+  offset: 0, 0
+  index: -1

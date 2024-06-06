@@ -1,0 +1,160 @@
+
+Attack.png
+size: 2030,1423
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Bag
+  rotate: false
+  xy: 1291, 196
+  size: 166, 341
+  orig: 413, 367
+  offset: 157, 0
+  index: -1
+Bag(1)
+  rotate: true
+  xy: 1741, 240
+  size: 58, 124
+  orig: 135, 124
+  offset: 77, 0
+  index: -1
+Bag(2)
+  rotate: true
+  xy: 1962, 307
+  size: 143, 57
+  orig: 143, 118
+  offset: 0, 24
+  index: -1
+BagLine
+  rotate: true
+  xy: 1130, 48
+  size: 120, 93
+  orig: 154, 156
+  offset: 14, 46
+  index: -1
+BigText
+  rotate: false
+  xy: 1647, 55
+  size: 256, 173
+  orig: 256, 173
+  offset: 0, 0
+  index: -1
+Body1
+  rotate: false
+  xy: 1291, 31
+  size: 140, 163
+  orig: 150, 170
+  offset: 0, 0
+  index: -1
+Bottom
+  rotate: false
+  xy: 2, 42
+  size: 871, 495
+  orig: 871, 495
+  offset: 0, 0
+  index: -1
+Circle
+  rotate: true
+  xy: 1749, 452
+  size: 337, 255
+  orig: 461, 818
+  offset: 0, 119
+  index: -1
+Ear(L)
+  rotate: false
+  xy: 1905, 57
+  size: 101, 108
+  orig: 104, 108
+  offset: 0, 0
+  index: -1
+Ear(R)
+  rotate: false
+  xy: 1018, 68
+  size: 110, 100
+  orig: 110, 116
+  offset: 0, 15
+  index: -1
+Eight(L)
+  rotate: true
+  xy: 1905, 7
+  size: 48, 60
+  orig: 48, 63
+  offset: 0, 3
+  index: -1
+Eight(R)
+  rotate: true
+  xy: 1433, 2
+  size: 71, 74
+  orig: 74, 74
+  offset: 2, 0
+  index: -1
+Face
+  rotate: false
+  xy: 1905, 167
+  size: 123, 131
+  orig: 158, 203
+  offset: 35, 0
+  index: -1
+Hat(Back)
+  rotate: false
+  xy: 1459, 311
+  size: 203, 226
+  orig: 259, 368
+  offset: 16, 142
+  index: -1
+Hat(Front)
+  rotate: true
+  xy: 1741, 300
+  size: 150, 219
+  orig: 161, 233
+  offset: 11, 14
+  index: -1
+Leg
+  rotate: false
+  xy: 1509, 3
+  size: 88, 70
+  orig: 88, 70
+  offset: 0, 0
+  index: -1
+Paper
+  rotate: false
+  xy: 875, 41
+  size: 141, 127
+  orig: 348, 329
+  offset: 0, 166
+  index: -1
+Shadow
+  rotate: false
+  xy: 875, 170
+  size: 414, 367
+  orig: 414, 367
+  offset: 0, 0
+  index: -1
+SmallText
+  rotate: true
+  xy: 1664, 230
+  size: 307, 75
+  orig: 307, 75
+  offset: 0, 0
+  index: -1
+SpeedTop
+  rotate: false
+  xy: 2, 791
+  size: 2026, 630
+  orig: 2028, 630
+  offset: 2, 0
+  index: -1
+SpeedUnder
+  rotate: false
+  xy: 2, 539
+  size: 1745, 250
+  orig: 1745, 250
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: false
+  xy: 1459, 75
+  size: 186, 234
+  orig: 193, 318
+  offset: 7, 33
+  index: -1
