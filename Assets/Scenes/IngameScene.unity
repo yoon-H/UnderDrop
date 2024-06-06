@@ -1781,6 +1781,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 6676202517367819514, guid: 0a44a76b594496940b70b64e3b93612b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.187
+      objectReference: {fileID: 0}
     - target: {fileID: 8353583608625276733, guid: 0a44a76b594496940b70b64e3b93612b, type: 3}
       propertyPath: m_IsActive
       value: 1
