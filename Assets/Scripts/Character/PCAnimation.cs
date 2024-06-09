@@ -40,7 +40,7 @@ public class PCAnimation : MonoBehaviour
         }
 
         if (JumpSkeletonAnimation != null)
-            JumpTimeScale = JumpSkeletonAnimation.Skeleton.Data.FindAnimation("JumpS").Duration / JumpTime;
+            JumpTimeScale = JumpSkeletonAnimation.Skeleton.Data.FindAnimation("jumpS").Duration / JumpTime;
     }
 
     // Update is called once per frame
