@@ -1,0 +1,153 @@
+
+시드중.png
+size: 1456,170
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Ae1
+  rotate: false
+  xy: 1245, 24
+  size: 81, 57
+  orig: 81, 57
+  offset: 0, 0
+  index: -1
+Ae2
+  rotate: false
+  xy: 1362, 79
+  size: 61, 74
+  orig: 61, 74
+  offset: 0, 0
+  index: -1
+Ae3
+  rotate: false
+  xy: 1054, 26
+  size: 76, 47
+  orig: 76, 47
+  offset: 0, 0
+  index: -1
+Arm1
+  rotate: true
+  xy: 620, 63
+  size: 90, 92
+  orig: 91, 92
+  offset: 1, 0
+  index: -1
+Arm1-2
+  rotate: false
+  xy: 1054, 75
+  size: 80, 78
+  orig: 80, 78
+  offset: 0, 0
+  index: -1
+Arm2
+  rotate: true
+  xy: 290, 34
+  size: 119, 160
+  orig: 119, 160
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 2, 2
+  size: 152, 151
+  orig: 152, 151
+  offset: 0, 0
+  index: -1
+Button
+  rotate: false
+  xy: 1356, 32
+  size: 84, 45
+  orig: 84, 45
+  offset: 0, 0
+  index: -1
+Ear1
+  rotate: true
+  xy: 1136, 24
+  size: 56, 70
+  orig: 56, 70
+  offset: 0, 0
+  index: -1
+Ear2
+  rotate: false
+  xy: 963, 71
+  size: 89, 82
+  orig: 89, 82
+  offset: 0, 0
+  index: -1
+GG
+  rotate: false
+  xy: 829, 66
+  size: 132, 87
+  orig: 132, 87
+  offset: 0, 0
+  index: -1
+H
+  rotate: true
+  xy: 1328, 9
+  size: 31, 23
+  orig: 31, 23
+  offset: 0, 0
+  index: -1
+H2
+  rotate: false
+  xy: 1328, 42
+  size: 26, 39
+  orig: 26, 39
+  offset: 0, 0
+  index: -1
+Hand1
+  rotate: false
+  xy: 829, 18
+  size: 50, 46
+  orig: 50, 46
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 156, 27
+  size: 132, 126
+  orig: 132, 126
+  offset: 0, 0
+  index: -1
+Leg1
+  rotate: true
+  xy: 452, 56
+  size: 97, 166
+  orig: 97, 166
+  offset: 0, 0
+  index: -1
+Leg2
+  rotate: true
+  xy: 1245, 83
+  size: 70, 115
+  orig: 70, 115
+  offset: 0, 0
+  index: -1
+Lope1
+  rotate: false
+  xy: 963, 15
+  size: 56, 54
+  orig: 56, 54
+  offset: 0, 0
+  index: -1
+Lope2
+  rotate: true
+  xy: 2, 155
+  size: 13, 1452
+  orig: 18, 1452
+  offset: 2, 0
+  index: -1
+T
+  rotate: false
+  xy: 1136, 82
+  size: 107, 71
+  orig: 107, 71
+  offset: 0, 0
+  index: -1
+Tail
+  rotate: true
+  xy: 714, 65
+  size: 88, 113
+  orig: 88, 113
+  offset: 0, 0
+  index: -1

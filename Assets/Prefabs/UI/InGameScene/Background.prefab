@@ -443,7 +443,7 @@ SpriteRenderer:
   m_SortingLayerID: -634715537
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d751af79a0f6d7e4b83bb9dd552a5ecc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a8f32d24d599f445b0c4065c8b837b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -490,7 +490,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8933593, y: 29.599998}
+    oldSize: {x: 1.864453, y: 29.599998}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -741,7 +741,7 @@ SpriteRenderer:
   m_SortingLayerID: -634715537
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7df796be9fe58be42905072201a0f7c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd32a1724e1b3ac48bf6f77474b66feb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -788,7 +788,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8933593, y: 29.599998}
+    oldSize: {x: 1.864453, y: 29.599998}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1542,7 +1542,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -14}
-  m_LocalScale: {x: 0.6679714, y: 0.23379, z: 4.6758}
+  m_LocalScale: {x: 0.5458529, y: 0.19104853, z: 3.8209708}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 141884562348361129}
@@ -1672,7 +1672,7 @@ SpriteRenderer:
   m_SortingLayerID: -1108383809
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3d7e98485cfb4da4abc92df2854329c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cfe9e5fb407dd714b82dcd1f71eb5d72, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2728,7 +2728,7 @@ SpriteRenderer:
   m_SortingLayerID: -1108383809
   m_SortingLayer: 1
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: eee6a82521f82774cb4f208ee5cf85c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89d9ef6f9703d834c8531e88a189ede6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3319,7 +3319,7 @@ SpriteRenderer:
   m_SortingLayerID: -634715537
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7df796be9fe58be42905072201a0f7c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd32a1724e1b3ac48bf6f77474b66feb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3366,7 +3366,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8933593, y: 29.599998}
+    oldSize: {x: 1.864453, y: 29.599998}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3401,8 +3401,8 @@ Transform:
   m_GameObject: {fileID: 5774003008057188030}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.864, z: -20}
-  m_LocalScale: {x: 0.06595714, y: 0.023085, z: 0.9234}
+  m_LocalPosition: {x: 0, y: 0.903, z: -20}
+  m_LocalScale: {x: 0.06562663, y: 0.022969322, z: 0.91877294}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6276740515138872546}
@@ -3448,7 +3448,7 @@ SpriteRenderer:
   m_SortingLayerID: -1108383809
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3d059d716b2a5d2408b47021573da26b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e25b5326eebb78b4ebba312a2dd61184, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3617,7 +3617,7 @@ SpriteRenderer:
   m_SortingLayerID: -634715537
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7df796be9fe58be42905072201a0f7c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fd32a1724e1b3ac48bf6f77474b66feb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3664,7 +3664,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8933593, y: 29.599998}
+    oldSize: {x: 1.864453, y: 29.599998}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3831,7 +3831,7 @@ SpriteRenderer:
   m_SortingLayerID: -634715537
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d751af79a0f6d7e4b83bb9dd552a5ecc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a8f32d24d599f445b0c4065c8b837b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3878,7 +3878,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8933593, y: 29.599998}
+    oldSize: {x: 1.864453, y: 29.599998}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3998,7 +3998,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 7, y: 20, z: 1}
+  m_LocalScale: {x: 5.996969, y: 17.1342, z: 0.8567099}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1083378614352216889}
@@ -4417,7 +4417,7 @@ SpriteRenderer:
   m_SortingLayerID: -634715537
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d751af79a0f6d7e4b83bb9dd552a5ecc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a8f32d24d599f445b0c4065c8b837b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4464,7 +4464,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.8933593, y: 29.599998}
+    oldSize: {x: 1.864453, y: 29.599998}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4489,7 +4489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8914291138768403692
 Transform:
   m_ObjectHideFlags: 0

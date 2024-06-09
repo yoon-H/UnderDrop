@@ -16,6 +16,7 @@ public class PCAnimation : MonoBehaviour
     float InitRotation =  720f;
 
     public float JumpTime = 0.1f;
+    public float JumpTimeScale;
     public float IdleTimeScale = 1f;
 
     public Timer Timer;
@@ -37,6 +38,9 @@ public class PCAnimation : MonoBehaviour
             SkeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
             SkeletonAnimation.timeScale = IdleTimeScale;
         }
+
+        if (JumpSkeletonAnimation != null)
+            JumpTimeScale = JumpSkeletonAnimation.Skeleton.Data.FindAnimation("JumpS").Duration / JumpTime;
     }
 
     // Update is called once per frame
@@ -92,7 +96,7 @@ public class PCAnimation : MonoBehaviour
 
         if (JumpSkeletonAnimation != null)
         {
-            JumpSkeletonAnimation.AnimationState.SetAnimation(0, "jumpS", false);
+            JumpSkeletonAnimation.AnimationState.SetAnimation(0, "jumpS", false).TimeScale = JumpTimeScale;
         }
 
         yield return new WaitForSeconds(JumpTime);
