@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -44,10 +44,10 @@ public class SettingButton : SwitchButton
         switch (Type)
         {
             case E_SettingType.Music:
-                GameManager.Instance.OnMusic = flag;
+                GameManager.Instance.SwitchMusic(flag);
                 break;
             case E_SettingType.Sound:
-                GameManager.Instance.OnSound = flag;
+                GameManager.Instance.SwitchSound(flag);
                 break;
             case E_SettingType.Vibration:
                 GameManager.Instance.OnVib = flag;

@@ -49,6 +49,9 @@ public class RaidEvent : MonoBehaviour
         Time.timeScale = 0.3f;
         TeamPanel.SetActive(true);
 
+        // Play Sound
+        GameManager.Instance.PlaySound("raidbgm");
+
         yield return new WaitForSeconds(WarningTime);
 
 

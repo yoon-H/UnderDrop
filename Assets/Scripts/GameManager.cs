@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,11 @@ public class GameManager : MonoBehaviour
     public int Money = 0;
     public E_Team team = E_Team.SID;
 
+    private Dictionary<string, AudioClip> MusicFiles = new Dictionary<string, AudioClip>();
+    private Dictionary<string, AudioClip> SoundFiles = new Dictionary<string, AudioClip>();
+    private AudioSource MusicAudio;
+    private AudioSource SoundAudio;
+
     private void Awake()
     {
         if(!Instance)    // Singleton pattern
@@ -23,13 +29,27 @@ public class GameManager : MonoBehaviour
         {
             if(Instance != this)
                 Destroy(gameObject);
-        }        
+        }
+
+        if(MusicFiles.Count <=0)
+        {
+            InitMusicFiles();
+        }
+
+        if (SoundFiles.Count <= 0)
+        {
+            InitSoundFiles();
+        }
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioSource[] audios =  GetComponents<AudioSource>();
+
+        MusicAudio = audios[0];
+        SoundAudio = audios[1];
     }
 
     private void FixedUpdate()
@@ -42,5 +62,69 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void PlayMusic(string name)
+    {
+        if(MusicAudio != null)
+        {
+            MusicAudio.Stop();
+            MusicAudio.clip = MusicFiles[name];
+            MusicAudio.Play();
+        }
+    }
+
+    public void PlaySound(string name) {
+        
+        if(SoundAudio != null)
+        {
+            SoundAudio.PlayOneShot(SoundFiles[name]);
+        }
+    }
+
+    public void StopMusic()
+    {
+        if (MusicAudio != null)
+        {
+            MusicAudio.Stop();
+        }
+    }
+
+    public void SwitchMusic(bool flag)
+    {
+        if(flag) { 
+            OnMusic = true;
+            MusicAudio.mute = false;
+        }
+        else { 
+            OnMusic = false; 
+            MusicAudio.mute = true;
+        }
+    }
+
+    public void SwitchSound(bool flag)
+    {
+        if (flag)
+        {
+            OnSound = true;
+            SoundAudio.mute = false;
+        }
+        else
+        {
+            OnSound = false;
+            SoundAudio.mute = true;
+        }
+    }
+
+    private void InitMusicFiles()
+    {
+        MusicFiles.Add("ingamebgm", Resources.Load("Sounds/UI/Sound_Game_Bgm") as AudioClip);
+    }
+
+    private void InitSoundFiles()
+    {
+        SoundFiles.Add("raidbgm", Resources.Load("Sounds/UI/Sound_Game_Warr") as AudioClip);
+    }
+
+
 
 }

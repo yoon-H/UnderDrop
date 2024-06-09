@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -20,10 +20,12 @@ public class ChangeScene : MonoBehaviour
     public void MoveToInGameScene()
     {
         SceneManager.LoadScene("InGameScene");
+        GameManager.Instance.PlayMusic("ingamebgm");
     }
 
     public void MoveToMainScene()
     {
         SceneManager.LoadScene("MainScene");
+        GameManager.Instance.StopMusic();
     }
 }
