@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,22 +23,26 @@ public class Timer : MonoBehaviour
     private float MonsterSpawnCounter = 0f;
     public float ScoreCounter = 0f;
 
-    public float MaxObstacleSpawnTime = 3f;
+    public float MaxObstacleSpawnTime = 4f;
     private float CurObstacleSpawnTime;
-    public float MinObstacleSpawnTime = 2f;
-    public float ObstacleSpawnTimeReducingAmount = 0.2f;
+
+    [SerializeField]
+    private float RandObstacleSpawnTime;
+    
+    public float MinObstacleSpawnTime = 1.5f;
+    public float ObstacleSpawnTimeReducingAmount = 0.5f;
 
     public float MaxMonsterSpawnTime = 4f;
     private float CurMonsterSpawnTime;
-    public float MinMonsterSpawnTime = 3f;
-    public float MonsterSpawnTimeReducingAmount = 0.2f;
+    public float MinMonsterSpawnTime = 2.5f;
+    public float MonsterSpawnTimeReducingAmount = 0.5f;
 
     public int FixedSpeedPeriod = 100;
     private int CurSpeedPeriod;
 
 
     private int CurSpawnPeriod;
-    public int FixedSpawnPeriod = 300;
+    public int FixedSpawnPeriod = 100;
 
     //Raid Event
     public float RaidSpawnTime = 30f;
@@ -117,6 +121,7 @@ public class Timer : MonoBehaviour
             RaidRemainCounter += Time.deltaTime;
             MonsterSpawnCounter += Time.deltaTime;
             RaidEvent.Bar.Value = RaidRemainTime - RaidRemainCounter;
+
             if (RaidRemainCounter >= RaidRemainTime)
             {
                 IsRaidExisted = false;
@@ -211,10 +216,11 @@ public class Timer : MonoBehaviour
 
         if (!ObstacleSpawner) return;
 
-        if (ObstacleSpawnCounter >= CurObstacleSpawnTime)
+        if (ObstacleSpawnCounter >= RandObstacleSpawnTime)
         {
-            ObstacleSpawnCounter -= CurObstacleSpawnTime;
+            ObstacleSpawnCounter -= RandObstacleSpawnTime;
             ObstacleSpawner.SpawnObstacle(IsRaidExisted, curRaidTeam);
+            SetObstacleSpawnTime();
         }
 
         if (!MonsterSpawner) return;
@@ -228,12 +234,16 @@ public class Timer : MonoBehaviour
             }
         }
 
-        if(WallCounter >= WallChangeAmount)
+        if (WallCounter >= WallChangeAmount)
         {
             BackGround.Setflag(true);
             WallCounter = 0;
         }
-
+    }
+        
+    public void SpawnMonster()
+    {
+        MonsterSpawner.SpawnMonster(curRaidTeam, 2);
     }
 
     public void SetIsPaused(bool flag)
@@ -297,5 +307,15 @@ public class Timer : MonoBehaviour
             case E_Team.Twilight:
                 RaidTeams[0] = E_Team.SID; RaidTeams[1] = E_Team.Weasel; break;
         }
+    }
+
+    private void SetObstacleSpawnTime()
+    {
+        System.Random rand = new System.Random();
+        int res = rand.Next(0,5);
+
+        float time = CurObstacleSpawnTime - (float)res / 10f;
+
+        RandObstacleSpawnTime = time;
     }
 }

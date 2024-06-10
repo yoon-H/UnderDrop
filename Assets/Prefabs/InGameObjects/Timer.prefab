@@ -50,23 +50,29 @@ MonoBehaviour:
   ObstacleSpawnerRef: {fileID: 0}
   ObstacleSpawner: {fileID: 0}
   MonsterSpawnerRef: {fileID: 0}
-  ScoreText: {fileID: 0}
+  ScoreTexts: []
+  BackGroundRef: {fileID: 0}
+  BackGround: {fileID: 0}
   ScoreCounter: 0
-  MaxObstacleSpawnTime: 3
-  MinObstacleSpawnTime: 2
-  ObstacleSpawnTimeReducingAmount: 0.2
+  MaxObstacleSpawnTime: 4
+  RandObstacleSpawnTime: 0
+  MinObstacleSpawnTime: 1.5
+  ObstacleSpawnTimeReducingAmount: 0.5
   MaxMonsterSpawnTime: 4
-  MinMonsterSpawnTime: 3
-  MonsterSpawnTimeReducingAmount: 0.2
+  MinMonsterSpawnTime: 2.5
+  MonsterSpawnTimeReducingAmount: 0.5
   FixedSpeedPeriod: 100
-  FixedSpawnPeriod: 300
-  RaidSpawnTime: 20
+  FixedSpawnPeriod: 100
+  RaidSpawnTime: 30
   RaidRemainTime: 15
   RaidEvent: {fileID: -2078896039891984534}
   GameOverPanel: {fileID: 0}
+  WaitingTime: 5
   Score: 0
   NormalTeam: {fileID: 7772853722693344254}
   WeaselTeam: {fileID: 5244616330875127759}
+  RaidTeams: 0000000000000000
+  curRaidTeam: 0
 --- !u!114 &7772853722693344254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,3 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WarningTime: 1
+  RaidMarkRef: {fileID: 0}
+  WarningPanels: []
+  TeamPanel: {fileID: 0}
+  RaidBar: {fileID: 0}
+  Bar: {fileID: 0}

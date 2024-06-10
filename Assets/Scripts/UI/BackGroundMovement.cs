@@ -38,7 +38,6 @@ public class BackGroundMovement : MonoBehaviour
     {
         CurTimeForArrival = MaxTimeForArrival;
         CameraSize = Camera.main.orthographicSize *2 ;
-
     }
 
     // Update is called once per frame
