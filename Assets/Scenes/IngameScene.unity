@@ -1853,6 +1853,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2112774149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8353583608625276733, guid: 0a44a76b594496940b70b64e3b93612b, type: 3}
+  m_PrefabInstance: {fileID: 1881835668}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1645893140938260686
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2663,6 +2668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
+      propertyPath: WallRef
+      value: 
+      objectReference: {fileID: 2112774149}
     - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: RaidEvent
       value: 

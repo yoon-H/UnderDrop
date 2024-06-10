@@ -26,6 +26,10 @@ public class BackGroundMovement : MonoBehaviour
     public Sprite[] LeftWalls;
     public Sprite[] RightWalls;
 
+    public Sprite LeftPassWall;
+    public Sprite RightPassWall;
+    public bool SpriteInserted;
+
     public int SpriteLength = 3 ;
 
     public int CurrentSpriteIndex = 0;
@@ -57,12 +61,15 @@ public class BackGroundMovement : MonoBehaviour
             EndIndex += 1;
             if (EndIndex >= Sprites.Length) EndIndex = 0;
 
-            print("out");
-            print(SpriteChanging);
-            print("ChangeCount :: " + ChangeCount);
+            if(CurrentSpriteIndex == 2 && !SpriteInserted)
+            {
+                InsertWall();
+                SpriteInserted = true;
+                return;
+            }
+
             if(SpriteChanging && ChangeCount < 3)
             {
-                print("In");
                 ChangeWallSprite();
 
                 ChangeCount += 1;
@@ -75,8 +82,6 @@ public class BackGroundMovement : MonoBehaviour
 
             }
         }
-
-        //print(SpriteChanging);
     }
 
     public void ReduceTimeForArrival()
@@ -84,10 +89,25 @@ public class BackGroundMovement : MonoBehaviour
         CurTimeForArrival -= TimeForArrivalReducingAmount;
     }
 
+    private void InsertWall()
+    {
+        SpriteRenderer[] renderers = Sprites[EndIndex].gameObject.GetComponentsInChildren<SpriteRenderer>();
+
+        foreach (var item in renderers)
+        {
+            if (item.gameObject.name == "LeftWall")
+            {
+                item.sprite = LeftPassWall;
+            }
+            else
+            {
+                item.sprite = RightPassWall;
+            }
+        }
+    }
+
     private void ChangeWallSprite()
     {
-        print("Change");
-
         SpriteRenderer[] renderers = Sprites[EndIndex].gameObject.GetComponentsInChildren<SpriteRenderer>();
 
         foreach (var item in renderers)
@@ -116,8 +136,6 @@ public class BackGroundMovement : MonoBehaviour
                 SpriteChanging = true;
 
                 AddSpriteIndex();
-
-                print("flag :: " + SpriteChanging);
             }
         }
         
@@ -125,13 +143,10 @@ public class BackGroundMovement : MonoBehaviour
 
     public void AddSpriteIndex()
     {
-        print("ADD Length::" + CurrentSpriteIndex + " " + SpriteLength);
-
         CurrentSpriteIndex += 1;
 
         if (CurrentSpriteIndex >= SpriteLength)
         {
-            print("return");
             CurrentSpriteIndex = SpriteLength - 1;
             Setflag(false);
         }

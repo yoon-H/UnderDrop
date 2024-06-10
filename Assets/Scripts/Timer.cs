@@ -19,6 +19,10 @@ public class Timer : MonoBehaviour
     public GameObject BackGroundRef;
     public BackGroundMovement BackGround;
 
+    //Wall
+    public GameObject WallRef;
+    public BackGroundMovement Wall;
+
     private float ObstacleSpawnCounter = 0f;
     private float MonsterSpawnCounter = 0f;
     public float ScoreCounter = 0f;
@@ -68,7 +72,7 @@ public class Timer : MonoBehaviour
     public int Score = 0;
 
     //Wall Change
-    public float WallChangeAmount = 10f;
+    private float WallChangeAmount = 36f;
     private float WallCounter = 0f;
 
     //TeamRegion
@@ -89,6 +93,7 @@ public class Timer : MonoBehaviour
         ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
         MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
         BackGround = BackGroundRef.GetComponentInChildren<BackGroundMovement>();
+        Wall = WallRef.GetComponent<BackGroundMovement>();
 
         GameOverPopUp = GameOverPanel.GetComponent<SwitchPopUp>();
         ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>();
@@ -236,7 +241,7 @@ public class Timer : MonoBehaviour
 
         if (WallCounter >= WallChangeAmount)
         {
-            BackGround.Setflag(true);
+            Wall.Setflag(true);
             WallCounter = 0;
         }
     }
