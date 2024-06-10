@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +18,10 @@ public class Timer : MonoBehaviour
     //BackGround
     public GameObject BackGroundRef;
     public BackGroundMovement BackGround;
+
+    //Wall
+    public GameObject WallRef;
+    public BackGroundMovement Wall;
 
     private float ObstacleSpawnCounter = 0f;
     private float MonsterSpawnCounter = 0f;
@@ -67,6 +71,10 @@ public class Timer : MonoBehaviour
 
     public int Score = 0;
 
+    //Wall Change
+    private float WallChangeAmount = 36f;
+    private float WallCounter = 0f;
+
     //TeamRegion
 
     public NormalTeam NormalTeam;
@@ -85,6 +93,7 @@ public class Timer : MonoBehaviour
         ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
         MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
         BackGround = BackGroundRef.GetComponentInChildren<BackGroundMovement>();
+        Wall = WallRef.GetComponent<BackGroundMovement>();
 
         GameOverPopUp = GameOverPanel.GetComponent<SwitchPopUp>();
         ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>();
@@ -109,6 +118,7 @@ public class Timer : MonoBehaviour
     {
         ObstacleSpawnCounter += Time.deltaTime;
         ScoreCounter += Time.deltaTime;
+        WallCounter += Time.deltaTime;
 
         //Raid Counter
         if (IsRaidExisted)
@@ -228,8 +238,14 @@ public class Timer : MonoBehaviour
                 MonsterSpawner.SpawnMonster(curRaidTeam);
             }
         }
-    }
 
+        if (WallCounter >= WallChangeAmount)
+        {
+            Wall.Setflag(true);
+            WallCounter = 0;
+        }
+    }
+        
     public void SpawnMonster()
     {
         MonsterSpawner.SpawnMonster(curRaidTeam, 2);

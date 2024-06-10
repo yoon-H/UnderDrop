@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BackGroundMovement : MonoBehaviour
@@ -20,6 +21,20 @@ public class BackGroundMovement : MonoBehaviour
     public Transform[] Sprites;
     public float MaxYLoc = 60f;
     public float YSize = 0.888f;
+
+    //Wall Sprites
+    public Sprite[] LeftWalls;
+    public Sprite[] RightWalls;
+
+    public Sprite LeftPassWall;
+    public Sprite RightPassWall;
+    public bool SpriteInserted;
+
+    public int SpriteLength = 3 ;
+
+    public int CurrentSpriteIndex = 0;
+    public int ChangeCount = 0;
+    public bool SpriteChanging;
 
 
     // Start is called before the first frame update
@@ -45,11 +60,95 @@ public class BackGroundMovement : MonoBehaviour
             if (StartIndex >= Sprites.Length) StartIndex = 0;
             EndIndex += 1;
             if (EndIndex >= Sprites.Length) EndIndex = 0;
+
+            if(CurrentSpriteIndex == 2 && !SpriteInserted)
+            {
+                InsertWall();
+                SpriteInserted = true;
+                return;
+            }
+
+            if(SpriteChanging && ChangeCount < 3)
+            {
+                ChangeWallSprite();
+
+                ChangeCount += 1;
+
+                if(ChangeCount >=3)
+                {
+                    ChangeCount = 0;
+                    Setflag(false);
+                }
+
+            }
         }
     }
 
     public void ReduceTimeForArrival()
     {
         CurTimeForArrival -= TimeForArrivalReducingAmount;
+    }
+
+    private void InsertWall()
+    {
+        SpriteRenderer[] renderers = Sprites[EndIndex].gameObject.GetComponentsInChildren<SpriteRenderer>();
+
+        foreach (var item in renderers)
+        {
+            if (item.gameObject.name == "LeftWall")
+            {
+                item.sprite = LeftPassWall;
+            }
+            else
+            {
+                item.sprite = RightPassWall;
+            }
+        }
+    }
+
+    private void ChangeWallSprite()
+    {
+        SpriteRenderer[] renderers = Sprites[EndIndex].gameObject.GetComponentsInChildren<SpriteRenderer>();
+
+        foreach (var item in renderers)
+        {
+            if(item.gameObject.name == "LeftWall")
+            {
+                item.sprite = LeftWalls[CurrentSpriteIndex];
+            }
+            else
+            {
+                item.sprite = RightWalls[CurrentSpriteIndex];
+            }
+        }
+    }
+
+    public void Setflag(bool flag)
+    {
+        if(SpriteChanging != flag)
+        {
+            if (!flag)
+            {
+                SpriteChanging = false;
+            }
+            else
+            {
+                SpriteChanging = true;
+
+                AddSpriteIndex();
+            }
+        }
+        
+    }
+
+    public void AddSpriteIndex()
+    {
+        CurrentSpriteIndex += 1;
+
+        if (CurrentSpriteIndex >= SpriteLength)
+        {
+            CurrentSpriteIndex = SpriteLength - 1;
+            Setflag(false);
+        }
     }
 }
