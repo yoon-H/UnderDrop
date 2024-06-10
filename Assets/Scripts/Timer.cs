@@ -95,6 +95,8 @@ public class Timer : MonoBehaviour
 
         //RaidEvent
         RaidEvent.SetTimer(this);
+        MonsterSpawnCounter = CurMonsterSpawnTime - 0.1f;
+
 
         //Set Raid Teams in this game
         SetRaidTeams();
