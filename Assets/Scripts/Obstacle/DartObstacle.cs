@@ -8,7 +8,7 @@ using static UnityEngine.GridBrushBase;
 public class DartObstacle : Obstacle
 {
     public float CountTime = 1f;
-    public float RotateTime = 1.5f;
+    public float RotateTime = 1f;
     public float MoveTime = 0.1f;
 
     Vector3 RotateDirection = new Vector3(0, 0, 2f);
