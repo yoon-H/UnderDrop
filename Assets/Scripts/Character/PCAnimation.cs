@@ -85,24 +85,28 @@ public class PCAnimation : MonoBehaviour
 
     public void PlayJumpAnim()
     {
-        StartCoroutine(IE_PlayJumpAnim());
+        if(!IsJumping)
+        {
+            IsJumping = true;
+            if (Object != null) { Object.SetActive(false); }
+            if (JumpObject != null) { JumpObject.SetActive(true); }
+
+            if (JumpSkeletonAnimation != null)
+            {
+                JumpSkeletonAnimation.AnimationState.SetAnimation(0, "jumpS", false).TimeScale = JumpTimeScale;
+            }
+        }
+        else
+        {
+            Player player = GetComponent<Player>();
+            if (player != null) { player.Flip(); }
+        }
     }
 
-    public IEnumerator IE_PlayJumpAnim()
+    public void FinishJump()
     {
-        IsJumping = true;
-        if (Object != null) { Object.SetActive(false); }
-        if (JumpObject != null) { JumpObject.SetActive(true); }
-
-        if (JumpSkeletonAnimation != null)
-        {
-            JumpSkeletonAnimation.AnimationState.SetAnimation(0, "jumpS", false).TimeScale = JumpTimeScale;
-        }
-
-        yield return new WaitForSeconds(JumpTime);
-
         Player player = GetComponent<Player>();
-        if(player != null ) { player.Flip(); }
+        if (player != null) { player.Flip(); }
 
         if (JumpObject != null) { JumpObject.SetActive(false); }
         if (Object != null) { Object.SetActive(true); }
@@ -115,6 +119,7 @@ public class PCAnimation : MonoBehaviour
 
         IsJumping = false;
     }
+
 
     public void PlayDeadAnim()
     {

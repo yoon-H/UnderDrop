@@ -11,6 +11,7 @@ using Unity.Jobs.LowLevel.Unsafe;
 public class Player : MonoBehaviour
 {
 
+    private bool IsJumping = false;
     private E_Direction Dir = E_Direction.Right;
     private Vector3 LeftLoc = new Vector3(-1.98f,1.7f,0);
     private Vector3 RightLoc = new Vector3(1.98f,1.7f,0);
@@ -73,7 +74,19 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(IsJumping)
+        {
+            if(Dir == E_Direction.Left && transform.position.x <= - 1.9f)
+            {
+                IsJumping = false;
+                if (AnimationRef != null) AnimationRef.FinishJump();
+            }
+            else if(Dir == E_Direction.Right && transform.position.x >= 1.9f)
+            {
+                IsJumping = false;
+                if (AnimationRef !=null) AnimationRef.FinishJump();
+            }
+        }
     }
 
     public void SwitchDir(E_Direction dir)
@@ -81,24 +94,27 @@ public class Player : MonoBehaviour
         if (!transform) return;
         if (dir == E_Direction.Left && Dir == E_Direction.Right) 
         {
+            IsJumping = true;
             Dir= E_Direction.Left;
             transform.DOMoveX(LeftLoc.x, JumpTime).SetEase(ease);
 
             if (AnimationRef != null)
                 AnimationRef.PlayJumpAnim();
+
+
             //Flip();
         }
         else if (dir == E_Direction.Right && Dir == E_Direction.Left)
         {
-            Dir=E_Direction.Right;
+            IsJumping = true;
+            Dir =E_Direction.Right;
             transform.DOMoveX(RightLoc.x, JumpTime).SetEase(ease);
 
             if (AnimationRef != null)
                 AnimationRef.PlayJumpAnim();
-           // Flip();
+
+            // Flip();
         }
-
-
     }
 
     public void Flip()
