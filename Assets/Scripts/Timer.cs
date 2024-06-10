@@ -95,8 +95,6 @@ public class Timer : MonoBehaviour
 
         //RaidEvent
         RaidEvent.SetTimer(this);
-        MonsterSpawnCounter = CurMonsterSpawnTime - 0.1f;
-
 
         //Set Raid Teams in this game
         SetRaidTeams();
@@ -114,6 +112,7 @@ public class Timer : MonoBehaviour
             RaidRemainCounter += Time.deltaTime;
             MonsterSpawnCounter += Time.deltaTime;
             RaidEvent.Bar.Value = RaidRemainTime - RaidRemainCounter;
+
             if (RaidRemainCounter >= RaidRemainTime)
             {
                 IsRaidExisted = false;
@@ -224,8 +223,11 @@ public class Timer : MonoBehaviour
                 MonsterSpawner.SpawnMonster(curRaidTeam);
             }
         }
+    }
 
-
+    public void SpawnMonster()
+    {
+        MonsterSpawner.SpawnMonster(curRaidTeam, 2);
     }
 
     public void SetIsPaused(bool flag)

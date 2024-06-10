@@ -54,6 +54,8 @@ public class RaidEvent : MonoBehaviour
 
         yield return new WaitForSeconds(WarningTime);
 
+        //SpawnMonster
+        Timer.SpawnMonster();
 
         Timer.SetIsRaidExisted(true);
         TeamPanel.SetActive(false);

@@ -36,9 +36,9 @@ public class MonsterSpawner : MonoBehaviour
 
     }
 
-    public void SpawnMonster(E_Team team)
+    public void SpawnMonster(E_Team team, int value = 3)
     {
-        int res = Random.Range(0, 3);
+        int res = Random.Range(0, value);
         if (res == 0) // spawn left
         {
             if (!LeftIsExisted)
