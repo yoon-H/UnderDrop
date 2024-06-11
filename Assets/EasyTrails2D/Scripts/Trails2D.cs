@@ -299,7 +299,7 @@ public class Trails2D : MonoBehaviour
         var props = type.GetProperties();
         foreach (var prop in props)
         {
-            if (!prop.CanWrite || !prop.CanWrite || prop.Name == "name") continue;
+            if (!prop.CanWrite || !prop.CanRead || prop.Name == "name") continue;
             prop.SetValue(dst, prop.GetValue(original, null), null);
         }
         return dst as T;
@@ -340,7 +340,6 @@ public class Trails2D : MonoBehaviour
 
             SpriteRenderer renderer = CopyComponent(spriteRenderer, obj);
             renderer.sortingOrder = trailOrderInLayer;
-
 
             if (overrideSpriteColor) renderer.color = overrideColor;
 
