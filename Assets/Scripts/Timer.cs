@@ -267,6 +267,8 @@ public class Timer : MonoBehaviour
 
     public void GameOver()
     {
+        GameManager.Instance.StopMusic();
+
         //Play Dead Anim
         PCAnimation animRef = SpawnCharacter.Player.GetComponent<PCAnimation>();
 
