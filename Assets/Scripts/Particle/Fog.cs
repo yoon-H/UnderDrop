@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fog : MonoBehaviour
 {
-    public float LifeTime = 0.7f;
+    public float LifeTime = 0.5f;
 
     // Start is called before the first frame update
     void Start()
