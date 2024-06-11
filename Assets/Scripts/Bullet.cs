@@ -50,7 +50,7 @@ public class Bullet : MonoBehaviour
 
         if(mon)
         {
-            Instantiate(ImpactPrefab, transform.position, transform.rotation);
+            Instantiate(ImpactPrefab, collision.transform.position, collision.transform.rotation);
             mon.TakeDamage(Damage);
             Destroy(gameObject);
         }
@@ -60,5 +60,7 @@ public class Bullet : MonoBehaviour
     {
         Monster = monster;
         Damage = damage;
+
+        Monster = monster.GetComponentInParent<Collider2D>().gameObject;
     }
 }
