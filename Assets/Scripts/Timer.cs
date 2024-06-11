@@ -111,6 +111,9 @@ public class Timer : MonoBehaviour
 
         //Set Raid Teams in this game
         SetRaidTeams();
+
+        //Random time
+        SetObstacleSpawnTime();
     }
 
     // Update is called once per frame
