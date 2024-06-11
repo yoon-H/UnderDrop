@@ -72,7 +72,8 @@ public class Timer : MonoBehaviour
     public int Score = 0;
 
     //Wall Change
-    private float WallChangeAmount = 36f;
+    private float[] WallChangeAmount = {100f, 60f};
+    private int WallIndex;
     private float WallCounter = 0f;
 
     //TeamRegion
@@ -242,11 +243,16 @@ public class Timer : MonoBehaviour
             }
         }
 
-        if (WallCounter >= WallChangeAmount)
+        if(WallIndex < 2)
         {
-            Wall.Setflag(true);
-            WallCounter = 0;
+            if (WallCounter >= WallChangeAmount[WallIndex])
+            {
+                Wall.Setflag(true);
+                WallCounter = 0;
+                WallIndex += 1;
+            }
         }
+        
     }
         
     public void SpawnMonster()
