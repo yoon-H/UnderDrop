@@ -162,7 +162,8 @@ public class Trails2D : MonoBehaviour
         {
             if (objectsHolder != null)
             {
-                DestroyImmediate(objectsHolder);
+                //DestroyImmediate(objectsHolder);
+                Destroy(objectsHolder);
             }
         }
 

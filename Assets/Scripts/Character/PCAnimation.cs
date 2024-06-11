@@ -130,6 +130,12 @@ public class PCAnimation : MonoBehaviour
             {
                 Spine.TrackEntry trackEntry = JumpSkeletonAnimation.AnimationState.SetAnimation(0, "die", false);
                 trackEntry.Complete += EndEvent;
+
+                Trails2D trail = GetComponentInChildren<Trails2D>();
+                if (trail != null)
+                {
+                    trail.gameObject.SetActive(false);
+                }
             }
             else
             {
