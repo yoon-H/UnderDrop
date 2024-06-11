@@ -278,8 +278,8 @@ MonoBehaviour:
   velocityMagnitudeToSpawn: 0.2
   velocityInLocalSpace: 0
   trailSpawnCondition: 1
-  objectsPerSecond: 60
-  objectsSpawnedBetweenRefresh: 10
+  objectsPerSecond: 20
+  objectsSpawnedBetweenRefresh: 1
   distanceBetweenObjects: 1
   trailLifespan: 0.33
   colorType: 1
