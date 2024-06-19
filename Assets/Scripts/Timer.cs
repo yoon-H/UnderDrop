@@ -72,7 +72,7 @@ public class Timer : MonoBehaviour
     public int Score = 0;
 
     //Wall Change
-    private float[] WallChangeAmount = {100f, 60f};
+    private float[] WallChangeAmount = {100f, 86f};
     private int WallIndex;
     private float WallCounter = 0f;
 
