@@ -89,6 +89,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PauseMusic()
+    {
+        if(MusicAudio != null)
+        {
+            MusicAudio.Pause();
+        }
+    }
+
+    public void ResumeMusic()
+    {
+        if (MusicAudio != null)
+        {
+            MusicAudio.UnPause();
+        }
+    }
+
     public void SwitchMusic(bool flag)
     {
         if(flag) { 
