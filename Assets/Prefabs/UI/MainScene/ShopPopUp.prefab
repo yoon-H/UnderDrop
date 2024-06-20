@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 4266340084393391877}
   - component: {fileID: 1059995487466933712}
   - component: {fileID: 1076583863231392405}
+  - component: {fileID: 7344380848384947869}
   m_Layer: 5
   m_Name: ShopPopUp
   m_TagString: Untagged
@@ -368,6 +369,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlurPanel: {fileID: 0}
+--- !u!114 &7344380848384947869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276351528565096793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24af7b63d34ffc742a8344b27081101b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonType: 0
 --- !u!1 &1282196390723368278
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1013,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SwitchPopUp, Assembly-CSharp
         m_MethodName: SwitchFlag
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7344380848384947869}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlayButtonSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
