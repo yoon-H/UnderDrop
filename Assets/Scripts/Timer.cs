@@ -303,6 +303,8 @@ public class Timer : MonoBehaviour
 
         //Show PopUp
         GameOverPopUp.SwitchFlag(true);
+
+        GameManager.Instance.PlaySound("gameoverbgm");
     }
 
     public void SetIsRaidExisted(bool flag)

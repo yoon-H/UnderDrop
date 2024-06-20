@@ -145,6 +145,13 @@ public class GameManager : MonoBehaviour
         SoundFiles.Add("norkshootsound", Resources.Load("Sounds/Nork/Sound_PC_Nork1") as AudioClip);
         SoundFiles.Add("norkreloadsound", Resources.Load("Sounds/Nork/Sound_PC_Nork2") as AudioClip);
         SoundFiles.Add("norkskillsound", Resources.Load("Sounds/Nork/Sound_PC_Nork3") as AudioClip);
+
+        //GameOver bgm
+        SoundFiles.Add("gameoverbgm", Resources.Load("Sounds/UI/Sound_Game_Over") as AudioClip);
+
+        //Button sounds
+        SoundFiles.Add("normalbuttonsound", Resources.Load("Sounds/UI/Sound_UI_Botton1") as AudioClip);
+        SoundFiles.Add("switchbuttonsound", Resources.Load("Sounds/UI/Sound_UI_Botton2") as AudioClip);
     }
 
 
