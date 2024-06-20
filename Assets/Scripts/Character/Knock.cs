@@ -71,6 +71,7 @@ public class Knock : Player
 
     protected override IEnumerator IE_ReloadBullet()
     {
+        GameManager.Instance.PlaySound("norkreloadsound");
         CancelTarget();
         SpawnShield();
         yield return new WaitForSeconds(ReloadTime);
@@ -101,6 +102,7 @@ public class Knock : Player
     private IEnumerator IE_ShieldRemain()
     {
         SetIsShield(true);
+        GameManager.Instance.PlaySound("norkskillsound");
         yield return new WaitForSeconds(ShieldTime);
         SetIsShield(false);
     }

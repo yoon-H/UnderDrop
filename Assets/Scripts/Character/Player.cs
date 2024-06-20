@@ -162,6 +162,8 @@ public class Player : MonoBehaviour
             bullet.SetBulletInfo(Target, Damage);
             UseBullet();
 
+            GameManager.Instance.PlaySound("norkshootsound");
+
             return true;
         }
         

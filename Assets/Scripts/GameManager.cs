@@ -138,7 +138,13 @@ public class GameManager : MonoBehaviour
 
     private void InitSoundFiles()
     {
+        // Raid bgm
         SoundFiles.Add("raidbgm", Resources.Load("Sounds/UI/Sound_Game_Warr") as AudioClip);
+
+        // PC sounds
+        SoundFiles.Add("norkshootsound", Resources.Load("Sounds/Nork/Sound_PC_Nork1") as AudioClip);
+        SoundFiles.Add("norkreloadsound", Resources.Load("Sounds/Nork/Sound_PC_Nork2") as AudioClip);
+        SoundFiles.Add("norkskillsound", Resources.Load("Sounds/Nork/Sound_PC_Nork3") as AudioClip);
     }
 
 
