@@ -1,0 +1,132 @@
+
+JumpMont.png
+size: 600,661
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm1
+  rotate: false
+  xy: 2, 162
+  size: 314, 273
+  orig: 314, 273
+  offset: 0, 0
+  index: -1
+arm2
+  rotate: true
+  xy: 318, 120
+  size: 272, 278
+  orig: 272, 278
+  offset: 0, 0
+  index: -1
+beak
+  rotate: false
+  xy: 231, 18
+  size: 38, 25
+  orig: 38, 25
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 437
+  size: 383, 222
+  orig: 383, 222
+  offset: 0, 0
+  index: -1
+bt
+  rotate: false
+  xy: 357, 415
+  size: 26, 20
+  orig: 26, 20
+  offset: 0, 0
+  index: -1
+cap
+  rotate: true
+  xy: 387, 394
+  size: 265, 207
+  orig: 266, 207
+  offset: 0, 0
+  index: -1
+capr
+  rotate: false
+  xy: 310, 39
+  size: 133, 79
+  orig: 133, 79
+  offset: 0, 0
+  index: -1
+eb1
+  rotate: false
+  xy: 68, 25
+  size: 79, 26
+  orig: 79, 26
+  offset: 0, 0
+  index: -1
+eb2
+  rotate: true
+  xy: 510, 34
+  size: 25, 18
+  orig: 25, 18
+  offset: 0, 0
+  index: -1
+eye1
+  rotate: false
+  xy: 2, 7
+  size: 64, 44
+  orig: 64, 44
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: true
+  xy: 149, 22
+  size: 29, 31
+  orig: 29, 31
+  offset: 0, 0
+  index: -1
+foot
+  rotate: true
+  xy: 445, 2
+  size: 57, 63
+  orig: 57, 63
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 53
+  size: 178, 107
+  orig: 178, 107
+  offset: 0, 0
+  index: -1
+rapel
+  rotate: false
+  xy: 182, 45
+  size: 126, 115
+  orig: 126, 115
+  offset: 0, 0
+  index: -1
+rose
+  rotate: false
+  xy: 318, 398
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
+rose2
+  rotate: true
+  xy: 530, 54
+  size: 64, 68
+  orig: 64, 68
+  offset: 0, 0
+  index: -1
+rp
+  rotate: false
+  xy: 182, 17
+  size: 47, 26
+  orig: 47, 26
+  offset: 0, 0
+  index: -1
+tux
+  rotate: false
+  xy: 445, 61
+  size: 83, 57
+  orig: 84, 57
+  offset: 0, 0
+  index: -1
