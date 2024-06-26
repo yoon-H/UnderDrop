@@ -66,8 +66,11 @@ public class PCAnimation : MonoBehaviour
             var targetRotation = Vector2.Angle(Vector2.up, targetLoc - transform.position);
             Arm.Data.Rotation = targetRotation;
 
-            if(SkeletonAnimation.AnimationName != "attack2" && SkeletonAnimation.AnimationName != "die")
-                SkeletonAnimation.AnimationState.SetAnimation(0, "attack2", true);
+            if (SkeletonAnimation.AnimationName != "die")
+                SkeletonAnimation.AnimationState.SetAnimation(0, "attack", false);
+
+            //if(SkeletonAnimation.AnimationName != "attack2" && SkeletonAnimation.AnimationName != "die")
+            //    SkeletonAnimation.AnimationState.SetAnimation(0, "attack2", true);
 
         }
     }

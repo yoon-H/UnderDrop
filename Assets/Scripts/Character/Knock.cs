@@ -5,10 +5,10 @@ using UnityEngine;
 public class Knock : Player
 {
     //Character Stat
-    public int _MaxBulletNum = 30;
-    public float _ReloadTime = 1.2f;
-    public float _AttackTime = 0.05f;
-    public int _Damage = 7;
+    private int _MaxBulletNum = 8;
+    private float _ReloadTime = 1.5f;
+    private float _AttackTime = 0.4f;
+    private int _Damage = 40;
 
     private float ShieldTime = 2f;
     private bool IsShield = false;
@@ -30,7 +30,9 @@ public class Knock : Player
         Shield = ShieldRef.GetComponent<Shield>();
         Shield.SetKnock(this);
         SetIsShield(false);
+        BulletSlider.maxValue = MaxBulletNum;
         BulletSlider.value = CurBulletNum;
+        BulletText.text = CurBulletNum.ToString();
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
