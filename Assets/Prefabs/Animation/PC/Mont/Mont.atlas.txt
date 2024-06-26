@@ -1,0 +1,139 @@
+
+Mont.png
+size: 1470,298
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm1
+  rotate: true
+  xy: 661, 139
+  size: 157, 496
+  orig: 157, 496
+  offset: 0, 0
+  index: -1
+arm2
+  rotate: true
+  xy: 344, 16
+  size: 280, 315
+  orig: 280, 315
+  offset: 0, 0
+  index: -1
+arm3
+  rotate: false
+  xy: 1046, 75
+  size: 105, 62
+  orig: 289, 340
+  offset: 114, 121
+  index: -1
+beak
+  rotate: false
+  xy: 1099, 50
+  size: 40, 23
+  orig: 40, 23
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 2, 7
+  size: 289, 340
+  orig: 289, 340
+  offset: 0, 0
+  index: -1
+button
+  rotate: true
+  xy: 1153, 50
+  size: 26, 24
+  orig: 26, 26
+  offset: 0, 1
+  index: -1
+cap
+  rotate: false
+  xy: 1159, 78
+  size: 309, 218
+  orig: 309, 218
+  offset: 0, 0
+  index: -1
+ebrow1
+  rotate: false
+  xy: 861, 4
+  size: 37, 18
+  orig: 37, 19
+  offset: 0, 0
+  index: -1
+ebrow2
+  rotate: false
+  xy: 972, 7
+  size: 77, 27
+  orig: 77, 27
+  offset: 0, 0
+  index: -1
+eye1
+  rotate: true
+  xy: 1411, 42
+  size: 34, 35
+  orig: 34, 35
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 1051, 2
+  size: 72, 39
+  orig: 73, 39
+  offset: 0, 0
+  index: -1
+foot
+  rotate: true
+  xy: 1125, 8
+  size: 40, 67
+  orig: 40, 67
+  offset: 0, 0
+  index: -1
+hand
+  rotate: true
+  xy: 972, 36
+  size: 101, 72
+  orig: 101, 72
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 661, 8
+  size: 198, 129
+  orig: 198, 129
+  offset: 0, 0
+  index: -1
+lapel
+  rotate: false
+  xy: 861, 24
+  size: 109, 113
+  orig: 109, 113
+  offset: 0, 0
+  index: -1
+rose1
+  rotate: true
+  xy: 1365, 30
+  size: 46, 44
+  orig: 46, 44
+  offset: 0, 0
+  index: -1
+rose2
+  rotate: false
+  xy: 1296, 6
+  size: 67, 70
+  orig: 67, 70
+  offset: 0, 0
+  index: -1
+rp
+  rotate: false
+  xy: 1046, 43
+  size: 51, 30
+  orig: 51, 30
+  offset: 0, 0
+  index: -1
+tux
+  rotate: false
+  xy: 1194, 22
+  size: 100, 54
+  orig: 100, 55
+  offset: 0, 1
+  index: -1
