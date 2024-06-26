@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +15,9 @@ public class ObstacleSpawner : MonoBehaviour
     public float MinTimeForArrival = 2.4f;
     public float TimeForArrivalReducingAmount = 0.2f;
 
-    public float AddTimeAmountWhenRaid = 0.5f; 
+    public float AddTimeAmountWhenRaid = 0.5f;
+
+    private int SpawnCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +37,19 @@ public class ObstacleSpawner : MonoBehaviour
     public void SpawnObstacle(bool isRaid, E_Team team)
     {
         System.Random rand = new System.Random();
-        int res = rand.Next(0, 3);
+
+        int res;
+
+        if(SpawnCount >=2)
+        {
+            res = rand.Next(0, 2);
+            SpawnCount = 0;
+        }
+        else
+        {
+            res = rand.Next(0, 3);
+        }
+
         if (res == 0) // spawn left
         {
             if(isRaid)
@@ -78,6 +92,10 @@ public class ObstacleSpawner : MonoBehaviour
             {
                 Obstacle = Timer.NormalTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival, transform.position.y);
             }
+        }
+        else
+        {
+            SpawnCount += 1;
         }
 
         Destroy(Obstacle, 8f);
