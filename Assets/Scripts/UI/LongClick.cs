@@ -43,7 +43,7 @@ public class LongClick : MonoBehaviour
     {
         IsClicked = true;
         if(!Player) { return; }
-        Player.SwitchDir(Dir);
+        Player.SwitchDir();
     }
     
     public void ButtonUp()
