@@ -53,6 +53,8 @@ MonoBehaviour:
   ScoreTexts: []
   BackGroundRef: {fileID: 0}
   BackGround: {fileID: 0}
+  WallRef: {fileID: 0}
+  Wall: {fileID: 0}
   ScoreCounter: 0
   MaxObstacleSpawnTime: 4
   RandObstacleSpawnTime: 0
@@ -103,8 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6178832db8629e4eaac656ee8b69542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BambooObstacleRef: {fileID: 6795462152882908697, guid: f9e3dae9544ec9a4fb30a3a772904941, type: 3}
+  KnifeObstacleRef: {fileID: 6795462152882908697, guid: f9e3dae9544ec9a4fb30a3a772904941, type: 3}
   DartObstacleRef: {fileID: 248230822583104538, guid: 4652c35e9dbef6d4d9fcda4e431cdae7, type: 3}
+  BambooObstacleRef: {fileID: 2197795880020588996, guid: e63784bf7577a814582e00446dbfebee, type: 3}
   NormalMonsterRef: {fileID: 8186947535803924099, guid: 559681fa4d652224784bbf6a845e632e, type: 3}
   ObstacleMonsterRef: {fileID: 3293482773338002329, guid: 46fca548842a1cd4e9d86f828ad0d540, type: 3}
 --- !u!114 &-2078896039891984534

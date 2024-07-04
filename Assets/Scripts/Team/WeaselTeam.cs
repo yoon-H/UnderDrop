@@ -5,11 +5,13 @@ using UnityEngine;
 public class WeaselTeam : TeamRegion
 {
     [Header("Obstacle")]
-    public GameObject BambooObstacleRef;
+    public GameObject KnifeObstacleRef;
     public GameObject DartObstacleRef;
+    public GameObject BambooObstacleRef;
 
-    private const float BambooSpawnLocDx = 1.5f;
+    private const float KnifeSpawnLocDx = 1.5f;
     //private const float DartSpawnLocDx = 1.4f;
+    private const float BambooSpawnLocDx = 2f;
 
     private GameObject Obstacle;
 
@@ -31,14 +33,17 @@ public class WeaselTeam : TeamRegion
     {
         System.Random rand = new System.Random();
         int res = rand.Next(100);
-        if (res <= 69)
+        if (res <= 9)
         {
-            SpawnBambooObstacle(dir, timer, timeForArrival, locY);
+            SpawnKnifeObstacle(dir, timer, timeForArrival, locY);
+        }
+        else if (res <= 19)
+        {
+            SpawnDartObstacle(dir, timer, timeForArrival, locY);
         }
         else
         {
-            SpawnDartObstacle(dir, timer, timeForArrival, locY);
-
+            SpawnBambooObstacle(dir, timer, timeForArrival, locY);
         }
 
         return Obstacle;
@@ -68,15 +73,15 @@ public class WeaselTeam : TeamRegion
 
 
     //Obstacle
-    private void SpawnBambooObstacle(E_Direction dir, Timer timer, float timeForArrival, float locY)
+    private void SpawnKnifeObstacle(E_Direction dir, Timer timer, float timeForArrival, float locY)
     {
         //Set LocX
         float locX;
-        if (E_Direction.Left == dir) { locX = - BambooSpawnLocDx; }
-        else locX = BambooSpawnLocDx;
+        if (E_Direction.Left == dir) { locX = - KnifeSpawnLocDx; }
+        else locX = KnifeSpawnLocDx;
 
         //Spawn Obstacle
-        Obstacle = Instantiate(BambooObstacleRef);                                 //TODO : change to ObjectPool
+        Obstacle = Instantiate(KnifeObstacleRef);                                 //TODO : change to ObjectPool
         if (!Obstacle) return;
         ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
 
@@ -101,8 +106,8 @@ public class WeaselTeam : TeamRegion
     {
         //Set LocX
         float locX;
-        if (E_Direction.Left == dir) { locX = - BambooSpawnLocDx; }
-        else locX = BambooSpawnLocDx;
+        if (E_Direction.Left == dir) { locX = - KnifeSpawnLocDx; }
+        else locX = KnifeSpawnLocDx;
 
         //Spawn Obstacle
         Obstacle = Instantiate(DartObstacleRef);                                 //TODO : change to ObjectPool
@@ -118,6 +123,47 @@ public class WeaselTeam : TeamRegion
         if (!dart) return;
         dart.InitializeObstacleStats(timer);
         dart.SetDirection(dir);
+
+        //Set Location
+        Obstacle.transform.position = new Vector3(locX, locY, 0);
+    }
+
+    private void SpawnBambooObstacle(E_Direction dir, Timer timer, float timeForArrival, float locY)
+    {
+        //Set LocX
+        float locX;
+        if (E_Direction.Left == dir) { locX = -BambooSpawnLocDx; }
+        else locX = BambooSpawnLocDx;
+
+        //Spawn Obstacle
+        Obstacle = Instantiate(BambooObstacleRef);                                 //TODO : change to ObjectPool
+        if (!Obstacle) return;
+        ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
+
+        //Set Speed variable
+        if (!obj) return;
+        obj.SetTimeForArrival(timeForArrival);
+
+        ObjectDirection direction = Obstacle.GetComponent<ObjectDirection>();
+        if (direction)
+            direction.SetDirection(dir);
+
+        //Set collider of BambooObstacle
+        BambooObstacle bamboo = Obstacle.GetComponent<BambooObstacle>();
+        if(!bamboo) return;
+
+        bamboo.InitializeObstacleStats(timer);
+
+        System.Random random = new System.Random();
+        int res = random.Next(2);
+        if(res == 0)
+        {
+            bamboo.SetCollider(true);
+        }
+        else
+        {
+            bamboo.SetCollider(false);
+        }
 
         //Set Location
         Obstacle.transform.position = new Vector3(locX, locY, 0);
