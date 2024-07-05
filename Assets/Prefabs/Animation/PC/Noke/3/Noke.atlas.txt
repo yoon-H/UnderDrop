@@ -1,0 +1,188 @@
+
+Noke.png
+size: 1516,288
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Arm1
+  rotate: false
+  xy: 976, 119
+  size: 93, 167
+  orig: 93, 168
+  offset: 0, 0
+  index: -1
+Arm2
+  rotate: false
+  xy: 551, 100
+  size: 101, 186
+  orig: 101, 186
+  offset: 0, 0
+  index: -1
+Body
+  rotate: false
+  xy: 1327, 5
+  size: 121, 127
+  orig: 121, 127
+  offset: 0, 0
+  index: -1
+Cheek
+  rotate: true
+  xy: 1264, 3
+  size: 40, 21
+  orig: 40, 21
+  offset: 0, 0
+  index: -1
+Collar
+  rotate: true
+  xy: 1461, 238
+  size: 48, 53
+  orig: 48, 53
+  offset: 0, 0
+  index: -1
+Ear1
+  rotate: true
+  xy: 1169, 45
+  size: 74, 118
+  orig: 74, 118
+  offset: 0, 0
+  index: -1
+Ear2
+  rotate: true
+  xy: 913, 2
+  size: 110, 113
+  orig: 110, 113
+  offset: 0, 0
+  index: -1
+Eff
+  rotate: false
+  xy: 1028, 14
+  size: 102, 103
+  orig: 102, 103
+  offset: 0, 0
+  index: -1
+Eye
+  rotate: false
+  xy: 1132, 7
+  size: 71, 23
+  orig: 71, 23
+  offset: 0, 0
+  index: -1
+Face
+  rotate: true
+  xy: 1205, 134
+  size: 152, 129
+  orig: 152, 129
+  offset: 0, 0
+  index: -1
+Fire
+  rotate: true
+  xy: 654, 108
+  size: 178, 152
+  orig: 178, 152
+  offset: 0, 0
+  index: -1
+FireE1
+  rotate: false
+  xy: 1289, 103
+  size: 31, 29
+  orig: 33, 30
+  offset: 2, 0
+  index: -1
+FireE2
+  rotate: true
+  xy: 1461, 194
+  size: 42, 47
+  orig: 42, 47
+  offset: 0, 0
+  index: -1
+Hand
+  rotate: false
+  xy: 476, 90
+  size: 73, 196
+  orig: 73, 196
+  offset: 0, 0
+  index: -1
+Hand1
+  rotate: false
+  xy: 1461, 150
+  size: 43, 42
+  orig: 43, 42
+  offset: 0, 0
+  index: -1
+Hand2
+  rotate: false
+  xy: 1205, 3
+  size: 57, 40
+  orig: 57, 40
+  offset: 0, 0
+  index: -1
+Hand3
+  rotate: true
+  xy: 1287, 4
+  size: 39, 38
+  orig: 39, 38
+  offset: 0, 0
+  index: -1
+Leg1
+  rotate: true
+  xy: 1336, 155
+  size: 131, 123
+  orig: 131, 123
+  offset: 0, 0
+  index: -1
+Leg2
+  rotate: false
+  xy: 326, 4
+  size: 145, 83
+  orig: 145, 83
+  offset: 0, 0
+  index: -1
+Leg3
+  rotate: true
+  xy: 553, 5
+  size: 93, 358
+  orig: 93, 358
+  offset: 0, 0
+  index: -1
+Ou2
+  rotate: false
+  xy: 326, 89
+  size: 148, 197
+  orig: 148, 198
+  offset: 0, 1
+  index: -1
+Ou3
+  rotate: false
+  xy: 2, 10
+  size: 322, 276
+  orig: 322, 276
+  offset: 0, 0
+  index: -1
+Outerwear1
+  rotate: false
+  xy: 808, 114
+  size: 166, 172
+  orig: 166, 172
+  offset: 0, 0
+  index: -1
+T
+  rotate: false
+  xy: 473, 6
+  size: 78, 81
+  orig: 78, 82
+  offset: 0, 1
+  index: -1
+Tail
+  rotate: false
+  xy: 1071, 121
+  size: 132, 165
+  orig: 133, 165
+  offset: 0, 0
+  index: -1
+Tie
+  rotate: false
+  xy: 1132, 32
+  size: 35, 87
+  orig: 35, 87
+  offset: 0, 0
+  index: -1
