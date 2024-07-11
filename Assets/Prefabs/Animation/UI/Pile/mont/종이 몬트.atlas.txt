@@ -1,0 +1,181 @@
+
+종이 몬트.png
+size: 470,1307
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm1
+  rotate: true
+  xy: 2, 854
+  size: 170, 318
+  orig: 170, 318
+  offset: 0, 0
+  index: -1
+arm2
+  rotate: false
+  xy: 2, 37
+  size: 135, 188
+  orig: 135, 188
+  offset: 0, 0
+  index: -1
+b
+  rotate: true
+  xy: 322, 994
+  size: 30, 21
+  orig: 30, 21
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 2, 1026
+  size: 279, 349
+  orig: 279, 349
+  offset: 0, 0
+  index: -1
+body2
+  rotate: false
+  xy: 353, 1199
+  size: 111, 106
+  orig: 111, 106
+  offset: 0, 0
+  index: -1
+cap
+  rotate: false
+  xy: 2, 657
+  size: 307, 195
+  orig: 307, 195
+  offset: 0, 0
+  index: -1
+cd1
+  rotate: true
+  xy: 2, 459
+  size: 196, 261
+  orig: 196, 261
+  offset: 0, 0
+  index: -1
+cd2
+  rotate: false
+  xy: 344, 759
+  size: 124, 189
+  orig: 124, 189
+  offset: 0, 0
+  index: -1
+cd2a1
+  rotate: false
+  xy: 139, 71
+  size: 124, 188
+  orig: 124, 189
+  offset: 0, 0
+  index: -1
+cd2a2
+  rotate: true
+  xy: 265, 101
+  size: 124, 187
+  orig: 124, 189
+  offset: 0, 1
+  index: -1
+cda1
+  rotate: false
+  xy: 265, 227
+  size: 196, 261
+  orig: 196, 261
+  offset: 0, 0
+  index: -1
+cda2
+  rotate: true
+  xy: 2, 261
+  size: 196, 261
+  orig: 196, 261
+  offset: 0, 0
+  index: -1
+eye1
+  rotate: true
+  xy: 265, 550
+  size: 65, 34
+  orig: 65, 34
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 265, 617
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1
+eyeb1
+  rotate: true
+  xy: 322, 914
+  size: 78, 20
+  orig: 78, 20
+  offset: 0, 0
+  index: -1
+eyeb2
+  rotate: true
+  xy: 322, 876
+  size: 36, 19
+  orig: 36, 19
+  offset: 0, 0
+  index: -1
+h1
+  rotate: false
+  xy: 353, 1100
+  size: 110, 97
+  orig: 110, 97
+  offset: 0, 0
+  index: -1
+h2
+  rotate: true
+  xy: 265, 2
+  size: 97, 78
+  orig: 97, 78
+  offset: 0, 0
+  index: -1
+h3
+  rotate: false
+  xy: 195, 20
+  size: 51, 49
+  orig: 51, 49
+  offset: 0, 0
+  index: -1
+h4
+  rotate: false
+  xy: 311, 702
+  size: 156, 55
+  orig: 156, 55
+  offset: 0, 0
+  index: -1
+hand
+  rotate: false
+  xy: 353, 950
+  size: 106, 148
+  orig: 106, 148
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 311, 490
+  size: 210, 135
+  orig: 210, 135
+  offset: 0, 0
+  index: -1
+leg
+  rotate: true
+  xy: 139, 6
+  size: 63, 54
+  orig: 63, 54
+  offset: 0, 0
+  index: -1
+rep
+  rotate: true
+  xy: 265, 497
+  size: 51, 32
+  orig: 52, 32
+  offset: 1, 0
+  index: -1
+rose
+  rotate: false
+  xy: 345, 11
+  size: 83, 88
+  orig: 84, 88
+  offset: 0, 0
+  index: -1

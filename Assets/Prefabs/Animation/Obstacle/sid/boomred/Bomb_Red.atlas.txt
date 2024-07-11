@@ -1,0 +1,27 @@
+
+Bomb_Red.png
+size: 262,179
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+boom
+  rotate: true
+  xy: 2, 2
+  size: 175, 196
+  orig: 175, 196
+  offset: 0, 0
+  index: -1
+f
+  rotate: false
+  xy: 200, 62
+  size: 34, 53
+  orig: 34, 53
+  offset: 0, 0
+  index: -1
+sk
+  rotate: false
+  xy: 200, 117
+  size: 60, 60
+  orig: 60, 60
+  offset: 0, 0
+  index: -1
