@@ -64,7 +64,11 @@ public class WeaselObstacleMonster : Monster
 
         GameObject obs = Timer.WeaselTeam.SpawnObstacle(dir, Timer, Timer.ObstacleSpawner.CurTimeForArrival, SpawnLocY);
         GameObject obsFog = Instantiate(FogRef);
-        obs.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+
+        if (!obs.TryGetComponent<BambooObstacle>(out var bam))
+        {
+            obs.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+        }
 
         Vector3 fogPos = obs.transform.position;
         fogPos.y += 2f;

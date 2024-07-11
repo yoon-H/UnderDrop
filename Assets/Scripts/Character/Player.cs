@@ -140,7 +140,6 @@ public class Player : MonoBehaviour
 
     public bool Shoot()
     {
-        print("shoot");
         if (!Target)
         {
             bool flag = SearchTarget();
@@ -151,7 +150,6 @@ public class Player : MonoBehaviour
         if (AnimationRef != null)
             AnimationRef.PlayAttackAnim(Target.transform.position);
 
-        print("Flame");
         //Flame
         GameObject flame = Instantiate(MuzzleFlareRef, transform.position, transform.rotation);
         if (!flame) { return false; }
@@ -159,14 +157,12 @@ public class Player : MonoBehaviour
 
         //Bullet
         Bullet = Instantiate(BulletRef, transform.position, transform.rotation);
-        print("Bullet");
         if (!Bullet) { return false; }
         Bullet bullet = Bullet.GetComponent<Bullet>();
         bullet.SetBulletInfo(Target, Damage);
         UseBullet();
 
         GameManager.Instance.PlaySound("norkshootsound");
-        print("attack");
         return true;
 
 
@@ -178,7 +174,6 @@ public class Player : MonoBehaviour
             CanShoot = true;
             if(CurBulletNum > 0 && !IsWaitingForAttack)
             {
-                print("canshoot");
                 StopCoroutine(IE_ReloadBullet());
                 StopCoroutine(IE_WaitForReloading());
 

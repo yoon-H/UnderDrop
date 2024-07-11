@@ -43,9 +43,12 @@ public class MonsterMovement : MonoBehaviour
         }
         else
         {
-            if(transform.position.y >= PlayerRef.transform.position.y)
+            if(PlayerRef != null)
             {
-                transform.position += new Vector3(0f, -1f, 0f) * MonsterMoveSpeed * Time.deltaTime;
+                if (transform.position.y >= PlayerRef.transform.position.y)
+                {
+                    transform.position += new Vector3(0f, -1f, 0f) * MonsterMoveSpeed * Time.deltaTime;
+                }
             }
         }
     }
