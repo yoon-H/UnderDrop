@@ -41,6 +41,9 @@ public class Player : MonoBehaviour
     public float AttackTime = 0.1f;
     public int Damage = 20;
 
+    [SerializeField]
+    private bool IsWaitingForAttack = false;
+
     public float ReloadWaitingTime = 1f;
 
     //public GameObject BulletPanel;
@@ -89,10 +92,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void SwitchDir(E_Direction dir)
+    public void SwitchDir()
     {
         if (!transform) return;
-        if (dir == E_Direction.Left && Dir == E_Direction.Right) 
+        if (Dir == E_Direction.Right) 
         {
             IsJumping = true;
             Dir= E_Direction.Left;
@@ -104,7 +107,7 @@ public class Player : MonoBehaviour
 
             //Flip();
         }
-        else if (dir == E_Direction.Right && Dir == E_Direction.Left)
+        else if (Dir == E_Direction.Left)
         {
             IsJumping = true;
             Dir =E_Direction.Right;
@@ -137,44 +140,45 @@ public class Player : MonoBehaviour
 
     public bool Shoot()
     {
-
+        print("shoot");
         if (!Target)
         {
-            bool hasTarget = SearchTarget();
-            return hasTarget;
+            bool flag = SearchTarget();
+            if (!flag) { return false; }
         }
-        else
-        {
-            //Animation
-            if (AnimationRef != null)
-                AnimationRef.PlayAttackAnim(Target.transform.position);
 
-            //Flame
-            GameObject flame = Instantiate(MuzzleFlareRef, transform.position, transform.rotation);
-            if(!flame) { return false; }
-            flame.transform.right = Target.transform.position - transform.position;
+        //Animation
+        if (AnimationRef != null)
+            AnimationRef.PlayAttackAnim(Target.transform.position);
 
-            //Bullet
-            Bullet = Instantiate(BulletRef, transform.position, transform.rotation);
+        print("Flame");
+        //Flame
+        GameObject flame = Instantiate(MuzzleFlareRef, transform.position, transform.rotation);
+        if (!flame) { return false; }
+        flame.transform.right = Target.transform.position - transform.position;
 
-            if(!Bullet) { return false; }
-            Bullet bullet = Bullet.GetComponent<Bullet>();
-            bullet.SetBulletInfo(Target, Damage);
-            UseBullet();
+        //Bullet
+        Bullet = Instantiate(BulletRef, transform.position, transform.rotation);
+        print("Bullet");
+        if (!Bullet) { return false; }
+        Bullet bullet = Bullet.GetComponent<Bullet>();
+        bullet.SetBulletInfo(Target, Damage);
+        UseBullet();
 
-            GameManager.Instance.PlaySound("norkshootsound");
+        GameManager.Instance.PlaySound("norkshootsound");
+        print("attack");
+        return true;
 
-            return true;
-        }
-        
+
     }
     public void SetCanShoot(bool flag)
     {
         if(flag && CanShoot != flag)
         {
             CanShoot = true;
-            if(CurBulletNum > 0)
+            if(CurBulletNum > 0 && !IsWaitingForAttack)
             {
+                print("canshoot");
                 StopCoroutine(IE_ReloadBullet());
                 StopCoroutine(IE_WaitForReloading());
 
@@ -248,16 +252,25 @@ public class Player : MonoBehaviour
 
     protected IEnumerator IE_ShootBullet()
     {
-        while(CanShoot && !Reloading)
+        if(CanShoot && !Reloading)
         {
-            yield return new WaitForSeconds(AttackTime);
             bool flag = Shoot();
-            if(!flag) break;
+            if (!flag)
+            {
+                SetCanShoot(false);
+                yield break;
+            }
+            IsWaitingForAttack = true;
         }
+
+        yield return new WaitForSeconds(AttackTime);
+
+        IsWaitingForAttack = false;
 
         if (AnimationRef)
             AnimationRef.PlayIdleAnim();
-        
+
+        SetCanShoot(false);
     }
 
     protected virtual IEnumerator IE_ReloadBullet()

@@ -24,7 +24,7 @@ public class ButtonSize : MonoBehaviour
         if (!scaler) return;
 
         float referenceWidth = scaler.referenceResolution.x;
-        float scaledWidth = referenceWidth /2;
+        float scaledWidth = referenceWidth;
 
         rectTransform.sizeDelta = new Vector2(scaledWidth, rectTransform.sizeDelta.y);
     }
