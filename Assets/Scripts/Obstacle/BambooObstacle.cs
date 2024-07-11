@@ -38,6 +38,7 @@ public class BambooObstacle : Obstacle
             else
             {
                 Collider.enabled = false;
+                Animation.AnimationState.SetAnimation(0, "Down", false);
             }
         }
 

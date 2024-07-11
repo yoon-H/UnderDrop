@@ -33,11 +33,11 @@ public class WeaselTeam : TeamRegion
     {
         System.Random rand = new System.Random();
         int res = rand.Next(100);
-        if (res <= 9)
+        if (res <= 59)
         {
             SpawnKnifeObstacle(dir, timer, timeForArrival, locY);
         }
-        else if (res <= 19)
+        else if (res <= 79)
         {
             SpawnDartObstacle(dir, timer, timeForArrival, locY);
         }
