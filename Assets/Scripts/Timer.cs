@@ -336,4 +336,9 @@ public class Timer : MonoBehaviour
 
         RandObstacleSpawnTime = time;
     }
+
+    public void SetPlayerRef(GameObject player)
+    {
+        MonsterSpawner.PlayerRef = player;
+    }
 }

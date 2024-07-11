@@ -44,14 +44,12 @@ public class Swipe : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private void CheckSwipe()
     {
         float dist = Mathf.Abs(fingerDownPosition.y - fingerUpPosition.y);
-        print(dist);
         if(dist >= CheckDist)
         {
             
             if(fingerDownPosition.y - fingerUpPosition.y < 0)
             {
                 Player.SetCanShoot(true);
-                print("swipe");
             }
                 
         }

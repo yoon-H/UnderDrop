@@ -42,6 +42,11 @@ public class SpawnCharacter : MonoBehaviour
 
             Player.transform.position = SpawnPoisition;
 
+            if(Timer.TryGetComponent<Timer>(out var timer))
+            {
+                timer.SetPlayerRef(Player);
+            }
+
         }
     }
 }
