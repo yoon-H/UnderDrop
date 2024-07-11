@@ -1,0 +1,48 @@
+
+Card.png
+size: 465,590
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Card1
+  rotate: true
+  xy: 221, 5
+  size: 165, 215
+  orig: 165, 215
+  offset: 0, 0
+  index: -1
+Card2
+  rotate: true
+  xy: 235, 172
+  size: 171, 219
+  orig: 171, 219
+  offset: 0, 0
+  index: -1
+Card3
+  rotate: false
+  xy: 254, 345
+  size: 209, 243
+  orig: 209, 243
+  offset: 0, 0
+  index: -1
+Card4
+  rotate: true
+  xy: 2, 362
+  size: 226, 250
+  orig: 226, 250
+  offset: 0, 0
+  index: -1
+Card5
+  rotate: true
+  xy: 2, 172
+  size: 188, 231
+  orig: 188, 231
+  offset: 0, 0
+  index: -1
+Card6
+  rotate: true
+  xy: 2, 2
+  size: 168, 217
+  orig: 168, 217
+  offset: 0, 0
+  index: -1

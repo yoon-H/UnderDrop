@@ -36,14 +36,16 @@ public class SpawnCharacter : MonoBehaviour
 
             knock.SetPCInfo(Timer, BulletPanel);
 
-            LongClick[] clicks =  MoveButton.GetComponentsInChildren<LongClick>();
+            Swipe click =  MoveButton.GetComponent<Swipe>();
 
-            foreach(LongClick click in clicks)
-            {
-                click.PlayerRef = Player;
-            }
+            click.PlayerRef = Player;
 
             Player.transform.position = SpawnPoisition;
+
+            if(Timer.TryGetComponent<Timer>(out var timer))
+            {
+                timer.SetPlayerRef(Player);
+            }
 
         }
     }
