@@ -30,13 +30,13 @@ public class TwilightTeam : TeamRegion
     {
         System.Random rand = new System.Random();
         int res = rand.Next(100);
-        if (res <= 59)
+        if (res <=59)
         {
             SpawnFeatherObstacle(dir, timer, timeForArrival, locY);
         }
         else
         {
-            //SpawnCardObstacle(dir, timer, timeForArrival, locY);
+            SpawnCardObstacle(dir, timer, timeForArrival, locY);
         }
 
         return Obstacle;
@@ -92,5 +92,40 @@ public class TwilightTeam : TeamRegion
 
         //Set Location
         Obstacle.transform.position = new Vector3(locX, locY, 0);
+    }
+
+    //Obstacle
+    private void SpawnCardObstacle(E_Direction dir, Timer timer, float timeForArrival, float locY)
+    {
+        //Set LocX
+        float locX;
+        if (E_Direction.Left == dir) { locX = -CardSpawnLocDx; }
+        else locX = CardSpawnLocDx;
+
+        //Spawn Obstacle
+        Obstacle = Instantiate(CardObstacleRef);                                 //TODO : change to ObjectPool
+        if (!Obstacle) return;
+        ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
+
+        //Set Speed variable
+        if (!obj) return;
+        obj.SetTimeForArrival(timeForArrival);
+
+        //Set Timer
+        Obstacle obs = Obstacle.GetComponent<Obstacle>();
+        if (!obs) return;
+        obs.InitializeObstacleStats(timer);
+
+        //Set Location
+        Obstacle.transform.position = new Vector3(locX, locY, 0);
+
+        if(dir == E_Direction.Right)
+        {
+            Vector3 vec = Obstacle.transform.localScale;
+
+            vec.x *= -1;
+
+            Obstacle.transform.localScale = vec;
+        }
     }
 }
