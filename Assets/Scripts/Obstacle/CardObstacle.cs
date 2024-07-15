@@ -8,6 +8,7 @@ public class CardObstacle : Obstacle
 {
     bool IsExpending = false;
     BoxCollider2D Collider;
+    SkeletonAnimation Animation;
 
     const float MaxOffsetX = 1.1f;
     const float MaxSizeX = 2.2f;
@@ -20,11 +21,13 @@ public class CardObstacle : Obstacle
     // Start is called before the first frame update
     void Start()
     {
-        var animation = GetComponentInChildren<SkeletonAnimation>();
+        Animation = GetComponentInChildren<SkeletonAnimation>();
 
-        if(animation != null )
+        if(Animation != null )
         {
-            animation.AnimationState.SetAnimation(0, "motion1", false).TimeScale = 0.3f;    // 1 second animation to 3 seconds
+            float timescale = Animation.Skeleton.Data.FindAnimation("motion1").Duration / ExpendTime;
+
+            Animation.AnimationState.SetAnimation(0, "motion1", false).TimeScale = timescale;    // 1 second animation to 3 seconds
 
             Collider = GetComponentInChildren<BoxCollider2D>();
 
@@ -43,6 +46,8 @@ public class CardObstacle : Obstacle
     {
         if(IsExpending)
         {
+            Animation.Update(Time.deltaTime);
+
             float offsetX = Collider.offset.x;
             float sizeX = Collider.size.x;
 

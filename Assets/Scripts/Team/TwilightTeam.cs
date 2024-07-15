@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TwilightTeam : TeamRegion
@@ -24,8 +22,6 @@ public class TwilightTeam : TeamRegion
 
     private GameObject Monster;
 
-    private bool IsObstacleMonsterSpawned = false;
-
     public override GameObject SpawnObstacle(E_Direction dir, Timer timer, float timeForArrival, float locY)
     {
         System.Random rand = new System.Random();
@@ -46,19 +42,19 @@ public class TwilightTeam : TeamRegion
     {
         System.Random rand = new System.Random();
         int res = rand.Next(100);
-        if (IsObstacleMonsterSpawned)
+        if (HasSpecialMonsterSpawned)
         {
             SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
         }
         else
         {
-            if (res > -1)
+            if (res <0)
             {
                 SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
             }
             else
             {
-                //SpawnObstacleMonster(dir, player, spawner, timer, timeForArrival, locY);
+                SpawnDebuffMonster(dir, player, spawner, timer, timeForArrival, locY);
             }
         }
 
@@ -155,4 +151,35 @@ public class TwilightTeam : TeamRegion
         //Set location
         Monster.transform.position = new Vector3(locX, locY, 0);
     }
+
+    private void SpawnDebuffMonster(E_Direction dir, GameObject player, GameObject spawner, Timer timer, float timeForArrival, float locY)
+    {
+        //Set LocX
+        float locX;
+        if (E_Direction.Left == dir) { locX = -MonsterSpawnLocDx; }
+        else locX = MonsterSpawnLocDx;
+
+        //Spawn Moster
+        Monster = Instantiate(DebuffMonsterRef);                                 //TODO : change to ObjectPool
+
+
+        if (!Monster) return;
+        MonsterMovement movement = Monster.GetComponent<MonsterMovement>();
+        TwilightDebuffMonster mon = Monster.GetComponent<TwilightDebuffMonster>();
+
+        //Set Movement variables
+        if (!movement) return;
+        movement.SetMonsterMovementInfo(player, timeForArrival);
+
+        if (!mon) return;
+        mon.SetMonsterInfo(dir, spawner, Hp, timer);
+        mon.SetPC(player.GetComponent<Player>());
+        mon.SetTeam(this);
+
+        //Set location
+        Monster.transform.position = new Vector3(locX, locY, 0);
+
+        HasSpecialMonsterSpawned = true;
+    }
+
 }

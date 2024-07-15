@@ -41,6 +41,10 @@ public class Player : MonoBehaviour
     public float AttackTime = 0.1f;
     public int Damage = 20;
 
+    //Skill CoolDown
+
+    bool IsSkillCoolDownStopped = false;
+
     [SerializeField]
     private bool IsWaitingForAttack = false;
 
@@ -307,6 +311,19 @@ public class Player : MonoBehaviour
             BulletSlider.value = CurBulletNum;
         }
        
+    }
+
+    public void SetIsSkillCoolDownStopped(bool flag)
+    {
+        if(flag)
+        {
+            IsSkillCoolDownStopped = true;
+            //TODO Skill CoolDown feature
+        }
+        else
+        {
+            IsSkillCoolDownStopped = false;
+        }
     }
 
 }

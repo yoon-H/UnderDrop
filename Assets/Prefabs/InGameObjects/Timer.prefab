@@ -127,7 +127,7 @@ MonoBehaviour:
   FeatherObstacleRef: {fileID: 3227781456740714911, guid: cc36c34350bf61044997c8012f9ece78, type: 3}
   CardObstacleRef: {fileID: 6046387778487321540, guid: be34dc1a639e94f469baa90fefbb90f6, type: 3}
   NormalMonsterRef: {fileID: 971280619119805927, guid: 67687a1e19365c14a8ae8500ad816a95, type: 3}
-  DebuffMonsterRef: {fileID: 0}
+  DebuffMonsterRef: {fileID: 3607467563546085234, guid: dab8f164888e44440be4d38a5c67473e, type: 3}
 --- !u!114 &-2078896039891984534
 MonoBehaviour:
   m_ObjectHideFlags: 0

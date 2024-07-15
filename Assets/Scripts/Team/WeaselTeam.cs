@@ -27,8 +27,6 @@ public class WeaselTeam : TeamRegion
 
     private GameObject Monster;
 
-    private bool IsObstaclMonsterSpawned = false;
-
     public override GameObject SpawnObstacle(E_Direction dir, Timer timer, float timeForArrival, float locY)
     {
         System.Random rand = new System.Random();
@@ -53,7 +51,7 @@ public class WeaselTeam : TeamRegion
     {
         System.Random rand = new System.Random();
         int res = rand.Next(100);
-        if(IsObstaclMonsterSpawned)
+        if(HasSpecialMonsterSpawned)
         {
             SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
         }
@@ -198,7 +196,7 @@ public class WeaselTeam : TeamRegion
 
     private void SpawnObstacleMonster(E_Direction dir, GameObject player, GameObject spawner, Timer timer, float timeForArrival, float locY)
     {
-        IsObstaclMonsterSpawned = true;
+        HasSpecialMonsterSpawned = true;
         //Set LocX
         float locX;
         if (E_Direction.Left == dir) { locX = -MonsterSpawnLocDx; }
@@ -223,10 +221,5 @@ public class WeaselTeam : TeamRegion
 
         //Set location
         Monster.transform.position = new Vector3(locX, locY, 0);
-    }
-
-    public void SetIsObstacleMonsterSpawned(bool flag)
-    {
-        IsObstaclMonsterSpawned = flag;
     }
 }
