@@ -52,6 +52,7 @@ public class MonsterSpawner : MonoBehaviour
                         Timer.WeaselTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
                         break;
                     case E_Team.Twilight:
+                        Timer.TwilightTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
                         break;
                 }
 
@@ -73,6 +74,7 @@ public class MonsterSpawner : MonoBehaviour
                         Timer.WeaselTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
                         break;
                     case E_Team.Twilight:
+                        Timer.TwilightTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
                         break;
                 }
 
