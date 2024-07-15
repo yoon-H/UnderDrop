@@ -26,7 +26,7 @@ public class Monster : MonoBehaviour, IHittable
     public GameObject DeadAsset;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         if(!LifeBarRef) return;
         LifeBar = LifeBarRef.GetComponent<ProgressBar>();
@@ -97,7 +97,15 @@ public class Monster : MonoBehaviour, IHittable
         if (!Spawner) return;
         Spawner.SetDestroyedMonster(Direction);
 
-        AnimationRef.PlayDieAnimation();
+        if(AnimationRef)
+        {
+            AnimationRef.PlayDieAnimation();
+        }
+        else
+        {
+            print("AnimationRef is null");
+        }
+        
 
     }
 

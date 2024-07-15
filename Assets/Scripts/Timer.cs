@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
     private float MonsterSpawnCounter = 0f;
     public float ScoreCounter = 0f;
 
-    public float MaxObstacleSpawnTime = 4f;
+    public float MaxObstacleSpawnTime = 3f;
     private float CurObstacleSpawnTime;
 
     [SerializeField]
@@ -80,6 +80,7 @@ public class Timer : MonoBehaviour
 
     public NormalTeam NormalTeam;
     public WeaselTeam WeaselTeam;
+    public TwilightTeam TwilightTeam;
 
     public E_Team[] RaidTeams = new E_Team[2] { E_Team.SID, E_Team.SID};
     public E_Team curRaidTeam;
@@ -151,7 +152,7 @@ public class Timer : MonoBehaviour
 
                     //Set current RaidTeam
                     //curRaidTeam = RaidTeams[res];
-                    curRaidTeam = E_Team.Weasel;
+                    curRaidTeam = E_Team.Twilight;
 
 
                     StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
@@ -170,7 +171,7 @@ public class Timer : MonoBehaviour
                     {
                         //Set current RaidTeam
                         //curRaidTeam = RaidTeams[res];
-                        curRaidTeam = E_Team.Weasel;
+                        curRaidTeam = E_Team.Twilight;
 
                         StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
                     }

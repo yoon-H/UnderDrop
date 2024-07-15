@@ -63,6 +63,7 @@ public class ObstacleSpawner : MonoBehaviour
                         Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
                         break;
                     case E_Team.Twilight:
+                        Obstacle = Timer.TwilightTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
                         break;
                 }
             }
@@ -70,7 +71,7 @@ public class ObstacleSpawner : MonoBehaviour
             {
                 Obstacle = Timer.NormalTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival, transform.position.y);
             }
-            
+                
         }
         else if (res == 1) // spawn right
         {
@@ -85,6 +86,7 @@ public class ObstacleSpawner : MonoBehaviour
                         Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
                         break;
                     case E_Team.Twilight:
+                        Obstacle = Timer.TwilightTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
                         break;
                 }
             }

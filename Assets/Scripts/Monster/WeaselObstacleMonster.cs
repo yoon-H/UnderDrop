@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ public class WeaselObstacleMonster : Monster
     private WeaselTeam Team;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         StartCoroutine(IE_ChangeTransform());
     }
@@ -45,7 +45,7 @@ public class WeaselObstacleMonster : Monster
         if (!Spawner) return;
         Spawner.SetDestroyedMonster(Direction);
         if (!Team) return;
-        Team.SetIsObstacleMonsterSpawned(false);
+        Team.SetSpecialMonsterFlag(false);
         
         GameObject Fog = Instantiate(FogRef);
         Fog.transform.position = transform.position;
@@ -90,7 +90,7 @@ public class WeaselObstacleMonster : Monster
         if (!Spawner) return;
         Spawner.SetDestroyedMonster(Direction);
         if (!Team) return;
-        Team.SetIsObstacleMonsterSpawned(false);
+        Team.SetSpecialMonsterFlag(false);
 
         Destroy(gameObject);
     }

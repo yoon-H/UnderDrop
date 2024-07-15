@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2032136966517372749}
   - component: {fileID: 7772853722693344254}
   - component: {fileID: 5244616330875127759}
+  - component: {fileID: 5421726963611631199}
   - component: {fileID: -2078896039891984534}
   m_Layer: 0
   m_Name: Timer
@@ -73,6 +74,7 @@ MonoBehaviour:
   Score: 0
   NormalTeam: {fileID: 7772853722693344254}
   WeaselTeam: {fileID: 5244616330875127759}
+  TwilightTeam: {fileID: 5421726963611631199}
   RaidTeams: 0000000000000000
   curRaidTeam: 0
 --- !u!114 &7772853722693344254
@@ -110,6 +112,22 @@ MonoBehaviour:
   BambooObstacleRef: {fileID: 2197795880020588996, guid: e63784bf7577a814582e00446dbfebee, type: 3}
   NormalMonsterRef: {fileID: 8186947535803924099, guid: 559681fa4d652224784bbf6a845e632e, type: 3}
   ObstacleMonsterRef: {fileID: 3293482773338002329, guid: 46fca548842a1cd4e9d86f828ad0d540, type: 3}
+--- !u!114 &5421726963611631199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870215753751365577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b58882f0dbefe4ebacb84b68b65349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FeatherObstacleRef: {fileID: 3227781456740714911, guid: cc36c34350bf61044997c8012f9ece78, type: 3}
+  CardObstacleRef: {fileID: 6046387778487321540, guid: be34dc1a639e94f469baa90fefbb90f6, type: 3}
+  NormalMonsterRef: {fileID: 971280619119805927, guid: 67687a1e19365c14a8ae8500ad816a95, type: 3}
+  DebuffMonsterRef: {fileID: 3607467563546085234, guid: dab8f164888e44440be4d38a5c67473e, type: 3}
 --- !u!114 &-2078896039891984534
 MonoBehaviour:
   m_ObjectHideFlags: 0
