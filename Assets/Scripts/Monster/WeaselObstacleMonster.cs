@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Spine.Unity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,6 +35,13 @@ public class WeaselObstacleMonster : Monster
     IEnumerator IE_Warning()
     {
         //TODO :: Animation
+
+        if(TryGetComponent<WeaselMonsterAnimation>(out var anim))
+        {
+            anim.PlayWarningAnimation();
+        }
+
+
         yield return new WaitForSeconds(WarningTime);
         //Spawn Fog Object
         DestroyTasks();
@@ -64,10 +72,10 @@ public class WeaselObstacleMonster : Monster
 
         GameObject obs = Timer.WeaselTeam.SpawnObstacle(dir, Timer, Timer.ObstacleSpawner.CurTimeForArrival, SpawnLocY);
         GameObject obsFog = Instantiate(FogRef);
-
-        if (!obs.TryGetComponent<BambooObstacle>(out var bam))
+        
+        if(obs.TryGetComponent<DartObstacle>(out var dart))
         {
-            obs.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+            dart.GetComponentInChildren<SpriteRenderer>().color = Color.red;
         }
 
         Vector3 fogPos = obs.transform.position;
