@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +18,12 @@ public class WeaselMonsterAnimation : MonsterAnimation
 
     public void PlayWarningAnimation()
     {
+        if (SkeletonAnimation != null)
+        {
 
+            SkeletonAnimation.AnimationState.SetAnimation(0, "casting", false);
+            SkeletonAnimation.AnimationState.AddAnimation(0, "idle", true, 0);
+
+        }
     }
 }

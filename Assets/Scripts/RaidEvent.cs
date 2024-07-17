@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Spine.Unity;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -48,6 +49,14 @@ public class RaidEvent : MonoBehaviour
         // Warning Animation
         Time.timeScale = 0.3f;
         TeamPanel.SetActive(true);
+
+        //Start Animation
+        SkeletonGraphic graph = TeamPanel.GetComponentInChildren<SkeletonGraphic>();
+
+        if(graph != null)
+        {
+            graph.AnimationState.SetAnimation(0, "animation", false);
+        }
 
         // Play Sound
         GameManager.Instance.PlaySound("raidbgm");

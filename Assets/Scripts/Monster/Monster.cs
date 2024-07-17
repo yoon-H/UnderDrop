@@ -20,7 +20,7 @@ public class Monster : MonoBehaviour, IHittable
 
     public MonsterSpawner Spawner;
 
-    private MonsterAnimation AnimationRef;
+    protected MonsterAnimation AnimationRef;
 
     public GameObject DataAsset;
     public GameObject DeadAsset;
