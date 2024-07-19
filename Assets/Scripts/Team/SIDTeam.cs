@@ -11,6 +11,7 @@ public class SIDTeam : TeamRegion
 
     private const float NormalSpawnLocDx = 1.5f;
     private const float LongSpawnLocDx = 1.6f;
+    private const float BombDxAmount = 0.5f;
 
     private GameObject Obstacle;
 
@@ -33,9 +34,13 @@ public class SIDTeam : TeamRegion
         {
             SpawnNormalObstacle(dir, timer, timeForArrival, locY);
         }
-        else
+        else if (res <-2)
         {
             SpawnButtonTypeObstacle(dir, timer, timeForArrival, locY);
+        }
+        else
+        {
+            SpawnBombObstacle(dir, timer, timeForArrival, locY);
         }
 
         return Obstacle;
@@ -159,6 +164,63 @@ public class SIDTeam : TeamRegion
         //Set Timer
         if (!obs) return;
         obs.InitializeObstacleStats(timer);
+    }
+
+    private void SpawnBombObstacle(E_Direction dir, Timer timer, float timeForArrival, float locY)
+    {
+        //Set LocX
+        float locX;
+        float obsLocX;
+
+        if (E_Direction.Left == dir)
+        {
+            locX = -LongSpawnLocDx;
+            obsLocX = locX - BombDxAmount;
+
+        }
+        else
+        {
+            locX = LongSpawnLocDx;
+            obsLocX = locX + BombDxAmount;
+        }
+
+
+        //Spawn Obstacle
+        Obstacle = Instantiate(BombObstacleRef);                                //TODO : change to ObjectPool
+
+        if (!Obstacle) return;
+        ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
+        TriggerObstacle bto = Obstacle.GetComponent<TriggerObstacle>();
+
+        if (!obj) return;
+
+        //Set Speed variable
+        obj.SetTimeForArrival(timeForArrival);
+
+        //Set Location
+        Obstacle.transform.position = new Vector3(locX, locY, 0);
+
+        //Rotate
+        ObjectDirection[] directions = Obstacle.GetComponentsInChildren<ObjectDirection>();
+
+        foreach (var item in directions)
+        {
+            item.SetDirection(dir);
+        }
+
+        if (!bto.BombObstacleRef) return;
+        Obstacle obs = bto.BombObstacleRef.GetComponent<Obstacle>();
+
+        Vector3 vec = obs.transform.position;
+        vec.x = obsLocX;
+
+        obs.transform.position = vec;
+
+        //Set Timer
+        if (!obs) return;
+        obs.InitializeObstacleStats(timer);
+
+        
     }
 
 }
