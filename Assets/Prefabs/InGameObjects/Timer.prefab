@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5244616330875127759}
   - component: {fileID: 5421726963611631199}
   - component: {fileID: -2078896039891984534}
+  - component: {fileID: 7927822171792478966}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -75,6 +76,7 @@ MonoBehaviour:
   NormalTeam: {fileID: 7772853722693344254}
   WeaselTeam: {fileID: 5244616330875127759}
   TwilightTeam: {fileID: 5421726963611631199}
+  SIDTeam: {fileID: 7927822171792478966}
   RaidTeams: 0000000000000000
   curRaidTeam: 0
 --- !u!114 &7772853722693344254
@@ -146,3 +148,20 @@ MonoBehaviour:
   TeamPanel: {fileID: 0}
   RaidBar: {fileID: 0}
   Bar: {fileID: 0}
+--- !u!114 &7927822171792478966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870215753751365577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5582ace4deeb1174f92c1f42051e7827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NormalObstacleRef: {fileID: 4465473184046166983, guid: 42ee1b24a8d48d94aa6aed1218debea4, type: 3}
+  LongObstacleRef: {fileID: 0}
+  BombObstacleRef: {fileID: 0}
+  NormalMonsterRef: {fileID: 0}
+  LazerMonsterRef: {fileID: 0}
