@@ -10,7 +10,7 @@ public class SIDTeam : TeamRegion
     public GameObject BombObstacleRef;
 
     private const float NormalSpawnLocDx = 1.5f;
-    private const float LongSpawnLocDx = 2f;
+    private const float LongSpawnLocDx = 1.6f;
 
     private GameObject Obstacle;
 
@@ -29,13 +29,13 @@ public class SIDTeam : TeamRegion
     {
         System.Random rand = new System.Random();
         int res = rand.Next(100);
-        if (res >-1)
+        if (res <-1)
         {
             SpawnNormalObstacle(dir, timer, timeForArrival, locY);
         }
         else
         {
-            //SpawnCardObstacle(dir, timer, timeForArrival, locY);
+            SpawnButtonTypeObstacle(dir, timer, timeForArrival, locY);
         }
 
         return Obstacle;
@@ -92,4 +92,73 @@ public class SIDTeam : TeamRegion
         //Set Location
         Obstacle.transform.position = new Vector3(locX, locY, 0);
     }
+
+    private void SpawnButtonTypeObstacle(E_Direction dir, Timer timer, float timeForArrival, float locY)
+    {
+        //Set LocX
+        float locX;
+        if (E_Direction.Left == dir) { locX = -LongSpawnLocDx; }
+        else locX = LongSpawnLocDx;
+
+        //Set Obstcle direction
+
+        System.Random rand = new System.Random();
+        int res = rand.Next(2);
+
+        E_Direction obsDir;
+
+        if (res ==0) { obsDir = E_Direction.Left; }
+        else obsDir = E_Direction.Right;
+
+        float obsLocX;
+        if (obsDir == E_Direction.Left) { obsLocX = -LongSpawnLocDx; }
+        else obsLocX = LongSpawnLocDx;
+
+
+        //Spawn Obstacle
+        Obstacle = Instantiate(LongObstacleRef);                                //TODO : change to ObjectPool
+
+        if (!Obstacle) return;
+        ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
+        ButtonTypeObstacle bto = Obstacle.GetComponent<ButtonTypeObstacle>();
+
+        if (!obj) return;
+        if (!bto) return;
+
+        //Set Speed variable
+        obj.SetTimeForArrival(timeForArrival);
+
+        //Set Location
+        Obstacle.transform.position = new Vector3(0, locY, 0);
+
+        //Set Button Location
+        if (!bto.LaserButtonRef) return;
+        bto.LaserButtonRef.gameObject.transform.position = new Vector3(locX, locY, 0);
+
+        if (bto.LaserButtonRef.TryGetComponent<ObjectDirection>(out var direction))
+        {
+            direction.SetDirection(dir);
+        }
+
+
+        if (!bto.LaserObstacleRef) return;
+        Obstacle obs = bto.LaserObstacleRef.GetComponent<Obstacle>();
+
+        if (!obs) return;
+
+        if(obs.TryGetComponent<ObjectDirection>(out var obsDirection))
+        {
+            obsDirection.SetDirection(obsDir);
+        }
+
+        Vector3 vec = obs.transform.position;
+        vec.x = obsLocX;
+
+        obs.transform.position = vec;
+
+        //Set Timer
+        if (!obs) return;
+        obs.InitializeObstacleStats(timer);
+    }
+
 }
