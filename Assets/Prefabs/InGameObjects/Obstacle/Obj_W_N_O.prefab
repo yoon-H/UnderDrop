@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6003191534682619028}
   - component: {fileID: 3482467019707346303}
   - component: {fileID: 4262867001227172156}
+  - component: {fileID: 3798384765250387884}
   m_Layer: 0
   m_Name: Obj_W_N_O
   m_TagString: Untagged
@@ -120,6 +121,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationValue: 90
   FlipWhenLeftDirection: 0
+--- !u!114 &3798384765250387884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6795462152882908697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1a0041986a49e4db19037dc13b1cf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7097623468415751276
 GameObject:
   m_ObjectHideFlags: 0

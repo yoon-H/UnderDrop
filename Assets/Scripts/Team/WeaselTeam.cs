@@ -96,6 +96,12 @@ public class WeaselTeam : TeamRegion
         if (direction)
             direction.SetDirection(dir);
 
+        OneshotAnim anim = Obstacle.GetComponent<OneshotAnim>();
+        if(anim)
+        {
+            anim.SetTime(0.3f, "UP");
+        }
+
         //Set Location
         Obstacle.transform.position = new Vector3(locX, locY, 0);
     }
@@ -177,7 +183,6 @@ public class WeaselTeam : TeamRegion
 
         //Spawn Moster
         Monster = Instantiate(NormalMonsterRef);                                 //TODO : change to ObjectPool
-
 
         if (!Monster) return;
         MonsterMovement movement = Monster.GetComponent<MonsterMovement>();
