@@ -47,6 +47,7 @@ public class MonsterSpawner : MonoBehaviour
                 switch(team)
                 {
                     case E_Team.SID:
+                        Timer.SIDTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
                         break;
                     case E_Team.Weasel:
                         Timer.WeaselTeam.SpawnMonster(E_Direction.Left, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
@@ -69,6 +70,7 @@ public class MonsterSpawner : MonoBehaviour
                 switch (team)
                 {
                     case E_Team.SID:
+                        Timer.SIDTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);
                         break;
                     case E_Team.Weasel:
                         Timer.WeaselTeam.SpawnMonster(E_Direction.Right, PlayerRef, gameObject, Timer, CurTimeForArrival, gameObject.transform.position.y);

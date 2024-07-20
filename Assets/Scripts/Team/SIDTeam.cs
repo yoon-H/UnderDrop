@@ -52,13 +52,13 @@ public class SIDTeam : TeamRegion
         int res = rand.Next(100);
         if (HasSpecialMonsterSpawned)
         {
-            //SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
+            SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
         }
         else
         {
-            if (res < 0)
+            if (res >= 0)
             {
-                //SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
+                SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
             }
             else
             {
@@ -221,6 +221,33 @@ public class SIDTeam : TeamRegion
         obs.InitializeObstacleStats(timer);
 
         
+    }
+
+    // Monster
+    private void SpawnNormalMonster(E_Direction dir, GameObject player, GameObject spawner, Timer timer, float timeForArrival, float locY)
+    {
+        //Set LocX
+        float locX;
+        if (E_Direction.Left == dir) { locX = -MonsterSpawnLocDx; }
+        else locX = MonsterSpawnLocDx;
+
+        //Spawn Moster
+        Monster = Instantiate(NormalMonsterRef);                                 //TODO : change to ObjectPool
+
+
+        if (!Monster) return;
+        MonsterMovement movement = Monster.GetComponent<MonsterMovement>();
+        Monster mon = Monster.GetComponent<Monster>();
+
+        //Set Movement variables
+        if (!movement) return;
+        movement.SetMonsterMovementInfo(player, timeForArrival);
+
+        if (!mon) return;
+        mon.SetMonsterInfo(dir, spawner, Hp, timer);
+
+        //Set location
+        Monster.transform.position = new Vector3(locX, locY, 0);
     }
 
 }
