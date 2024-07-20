@@ -48,7 +48,7 @@ public class TwilightTeam : TeamRegion
         }
         else
         {
-            if (res <0)
+            if (res <=69)
             {
                 SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
             }
