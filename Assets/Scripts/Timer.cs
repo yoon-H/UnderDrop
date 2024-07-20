@@ -152,7 +152,7 @@ public class Timer : MonoBehaviour
 
                     //Set current RaidTeam
                     //curRaidTeam = RaidTeams[res];
-                    curRaidTeam = E_Team.Twilight;
+                    //curRaidTeam = E_Team.Twilight;
 
 
                     StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
@@ -171,7 +171,7 @@ public class Timer : MonoBehaviour
                     {
                         //Set current RaidTeam
                         //curRaidTeam = RaidTeams[res];
-                        curRaidTeam = E_Team.Twilight;
+                        //curRaidTeam = E_Team.Twilight;
 
                         StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
                     }
