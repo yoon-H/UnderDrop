@@ -1,0 +1,104 @@
+
+Attack.png
+size: 2030,1351
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Attack/SpeedTop
+  rotate: false
+  xy: 2, 719
+  size: 2026, 630
+  orig: 2028, 630
+  offset: 2, 0
+  index: -1
+Attack/SpeedUnder
+  rotate: false
+  xy: 2, 467
+  size: 1745, 250
+  orig: 1745, 250
+  offset: 0, 0
+  index: -1
+Attack3/BigText
+  rotate: false
+  xy: 1041, 2
+  size: 177, 167
+  orig: 177, 167
+  offset: 0, 0
+  index: -1
+Attack3/Bottom
+  rotate: false
+  xy: 2, 2
+  size: 721, 463
+  orig: 721, 463
+  offset: 0, 0
+  index: -1
+Attack3/Center
+  rotate: false
+  xy: 1041, 171
+  size: 281, 294
+  orig: 312, 372
+  offset: 31, 78
+  index: -1
+Attack3/EarL
+  rotate: true
+  xy: 1633, 399
+  size: 66, 87
+  orig: 67, 87
+  offset: 1, 0
+  index: -1
+Attack3/EarR
+  rotate: false
+  xy: 1324, 231
+  size: 79, 68
+  orig: 79, 68
+  offset: 0, 0
+  index: -1
+Attack3/EightL
+  rotate: false
+  xy: 1883, 624
+  size: 76, 93
+  orig: 76, 93
+  offset: 0, 0
+  index: -1
+Attack3/EightR
+  rotate: false
+  xy: 1220, 28
+  size: 83, 141
+  orig: 126, 141
+  offset: 43, 0
+  index: -1
+Attack3/Gun
+  rotate: false
+  xy: 1749, 599
+  size: 132, 118
+  orig: 132, 118
+  offset: 0, 0
+  index: -1
+Attack3/Leg
+  rotate: false
+  xy: 1749, 470
+  size: 88, 127
+  orig: 88, 127
+  offset: 0, 0
+  index: -1
+Attack3/Shadow
+  rotate: false
+  xy: 725, 44
+  size: 314, 421
+  orig: 314, 421
+  offset: 0, 0
+  index: -1
+Attack3/SmallText
+  rotate: false
+  xy: 1324, 390
+  size: 307, 75
+  orig: 307, 75
+  offset: 0, 0
+  index: -1
+Attack3/Tail
+  rotate: false
+  xy: 1324, 301
+  size: 129, 87
+  orig: 129, 105
+  offset: 0, 16
+  index: -1
