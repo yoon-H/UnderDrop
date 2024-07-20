@@ -58,6 +58,7 @@ public class ObstacleSpawner : MonoBehaviour
                 switch (team)
                 {
                     case E_Team.SID:
+                        Obstacle = Timer.SIDTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
                         break;
                     case E_Team.Weasel:
                         Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Left, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
@@ -81,6 +82,7 @@ public class ObstacleSpawner : MonoBehaviour
                 switch (team)
                 {
                     case E_Team.SID:
+                        Obstacle = Timer.SIDTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
                         break;
                     case E_Team.Weasel:
                         Obstacle = Timer.WeaselTeam.SpawnObstacle(E_Direction.Right, Timer, CurTimeForArrival + AddTimeAmountWhenRaid, transform.position.y);
