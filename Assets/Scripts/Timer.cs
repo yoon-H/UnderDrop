@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 
 public class Timer : MonoBehaviour
 {
+    #region References
     public GameObject ObstacleSpawnerRef;
     public ObstacleSpawner ObstacleSpawner;
     public GameObject MonsterSpawnerRef;
@@ -22,6 +23,8 @@ public class Timer : MonoBehaviour
     //Wall
     public GameObject WallRef;
     public BackGroundMovement Wall;
+
+    #endregion
 
     private float ObstacleSpawnCounter = 0f;
     private float MonsterSpawnCounter = 0f;
@@ -70,6 +73,7 @@ public class Timer : MonoBehaviour
     public float WaitingTime = 5f;
 
     public int Score = 0;
+    public int CoinCount = 0;
 
     //Wall Change
     private float[] WallChangeAmount = {100f, 86f};
@@ -297,17 +301,26 @@ public class Timer : MonoBehaviour
 
     public void EndTask()
     {
-        int bestscore = GameManager.Instance.BestScore;
+        GameManager gameManager = GameManager.Instance;
+
+        //Set bestscore
+        int bestscore = gameManager.BestScore;
         if (Score > bestscore)
         {
-            GameManager.Instance.BestScore = Score;
+            gameManager.BestScore = Score;
         }
-        ScoreBoard.SetText(Score);
+
+        //Add Money
+        gameManager.Money += CoinCount;
+
+        //Set GameOverText
+        ScoreBoard.SetText(Score, CoinCount);
 
         //Show PopUp
         GameOverPopUp.SwitchFlag(true);
-
-        GameManager.Instance.PlaySound("gameoverbgm");
+        
+        //Play GameOverSound
+        gameManager.PlaySound("gameoverbgm");
     }
 
     public void SetIsRaidExisted(bool flag)
