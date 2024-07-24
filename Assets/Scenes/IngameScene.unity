@@ -624,6 +624,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1455411451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1455411453}
+  - component: {fileID: 1455411452}
+  m_Layer: 0
+  m_Name: ItemSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1455411452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455411451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b81c3ff783793b488d2631bca262b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimerRef: {fileID: 381403812}
+  CoinRef: {fileID: 7242501309050402290, guid: 160812c4ac27ca848a1a5683d9aed994, type: 3}
+  MaxTimeForArrival: 3
+  CurTimeForArrival: 0
+  MinTimeForArrival: 2.4
+  TimeForArrivalReducingAmount: 0.2
+--- !u!4 &1455411453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1455411451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -6.09, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455644197
 GameObject:
   m_ObjectHideFlags: 0
@@ -2011,6 +2061,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
+      propertyPath: ItemSpawnerRef
+      value: 
+      objectReference: {fileID: 1455411451}
+    - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: WallChangeAmount
       value: 10
       objectReference: {fileID: 0}
@@ -2861,3 +2915,4 @@ SceneRoots:
   - {fileID: 104580636}
   - {fileID: 496508155}
   - {fileID: 1625234276}
+  - {fileID: 1455411453}

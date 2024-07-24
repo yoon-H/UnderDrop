@@ -14,6 +14,8 @@ public class Timer : MonoBehaviour
     public ObstacleSpawner ObstacleSpawner;
     public GameObject MonsterSpawnerRef;
     private MonsterSpawner MonsterSpawner;
+    public GameObject ItemSpawnerRef;
+    private ItemSpawner ItemSpawner;
     public Text[] ScoreTexts;
 
     //BackGround
@@ -28,6 +30,7 @@ public class Timer : MonoBehaviour
 
     private float ObstacleSpawnCounter = 0f;
     private float MonsterSpawnCounter = 0f;
+    private float ItemSpawnCounter = 0f;
     public float ScoreCounter = 0f;
 
     public float MaxObstacleSpawnTime = 3f;
@@ -99,6 +102,7 @@ public class Timer : MonoBehaviour
 
         ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
         MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
+        ItemSpawner = ItemSpawnerRef.GetComponent<ItemSpawner>();
         BackGround = BackGroundRef.GetComponentInChildren<BackGroundMovement>();
         Wall = WallRef.GetComponent<BackGroundMovement>();
 
@@ -129,6 +133,7 @@ public class Timer : MonoBehaviour
         ObstacleSpawnCounter += Time.deltaTime;
         ScoreCounter += Time.deltaTime;
         WallCounter += Time.deltaTime;
+        ItemSpawnCounter += Time.deltaTime;
 
         //Raid Counter
         if (IsRaidExisted)
@@ -250,7 +255,16 @@ public class Timer : MonoBehaviour
             }
         }
 
-        if(WallIndex < 2)
+        if (!ItemSpawner) return;
+
+        if (ItemSpawnCounter >= ItemSpawner.SpawnPeriod)
+        {
+            ItemSpawnCounter -= ItemSpawner.SpawnPeriod;
+            ItemSpawner.GenerateCoinLocation();
+        }
+
+
+        if (WallIndex < 2)
         {
             if (WallCounter >= WallChangeAmount[WallIndex])
             {
