@@ -40,7 +40,7 @@ public class Knock : Player
         IHittable hittable = collision.gameObject.GetComponent<IHittable>();
         if (hittable != null)
         {
-            if (IsShield && collision.CompareTag("Obstacle") )
+            if (IsShield && collision.CompareTag("Obstacle"))
             {
                 return;
             }

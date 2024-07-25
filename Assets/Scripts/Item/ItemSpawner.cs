@@ -11,6 +11,7 @@ public class ItemSpawner : MonoBehaviour
     public GameObject CoinRef;
     public GameObject CoinDoubleItemRef;
     public GameObject DamageDoubleItemRef;
+    public GameObject InvincibleItemRef;
 
     #region SpawnTime
     public float MaxTimeForArrival = 3f;
@@ -154,7 +155,7 @@ public class ItemSpawner : MonoBehaviour
     private void SelectSpawnItem(E_Direction dir, int zValue)
     {
         System.Random random = new System.Random();
-        int res = 2;//random.Next(3);
+        int res = 0;//random.Next(3);
 
         //Set LocX
         float locX;
@@ -164,7 +165,7 @@ public class ItemSpawner : MonoBehaviour
         switch(res)
         {
             case 0:
-                
+                SpawnDamageDoubleItem(locX, zValue);
                 break;
             case 1:
                 SpawnCoinDoubleItem(locX, zValue);
@@ -215,6 +216,29 @@ public class ItemSpawner : MonoBehaviour
         //Set Timer
         if (!damageDouble) return;
         damageDouble.SetPlayer(Player);
+
+        //Set Location
+        ItemObject.transform.position = new Vector3(locX, gameObject.transform.position.y, zValue);
+
+        Destroy(ItemObject, 6f);
+    }
+
+    private void SpawnInvincibleItem(float locX, float zValue)
+    {
+
+        //Spawn Item
+        GameObject ItemObject = Instantiate(InvincibleItemRef);                                 //TODO : change to ObjectPool
+        if (!ItemObject) return;
+
+        ObjectMovement movement = ItemObject.GetComponent<ObjectMovement>();
+        if (!movement) return;
+        movement.SetTimeForArrival(CurTimeForArrival);
+
+        InvincibleItem invincible = ItemObject.GetComponent<InvincibleItem>();
+
+        //Set Timer
+        if (!invincible) return;
+        invincible.SetPlayer(Player);
 
         //Set Location
         ItemObject.transform.position = new Vector3(locX, gameObject.transform.position.y, zValue);

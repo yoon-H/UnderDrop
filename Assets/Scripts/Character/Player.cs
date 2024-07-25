@@ -48,12 +48,10 @@ public class Player : MonoBehaviour
         {
             if(DamageDoubleBuff)
             {
-                print("double");
                 return Damage * 2;
             }
             else
             {
-                print("normal");
                 return Damage;
             }
         }
@@ -61,6 +59,12 @@ public class Player : MonoBehaviour
 
     private bool DamageDoubleBuff = false;
     Coroutine DamageDoubleCoroutine;
+
+    //Invincible Buff
+
+    private bool InvincibleBuff = false;
+    Coroutine InvincibleCoroutine;
+
 
     //Skill CoolDown
 
@@ -158,7 +162,15 @@ public class Player : MonoBehaviour
         IHittable hittable = collision.gameObject.GetComponent<IHittable>();
         if(hittable != null)
         {
-            hittable.OnHit();
+            if (InvincibleBuff && (TryGetComponent<Monster>(out var monster) || TryGetComponent<Obstacle>(out var obstacle)))
+            {
+                return;
+            }
+            else
+            {
+                hittable.OnHit();
+            }
+
         }
     
     }
@@ -369,6 +381,30 @@ public class Player : MonoBehaviour
         yield return sec;
 
         DamageDoubleBuff = false;
+    }
+
+    public void SetInvincibleDoubleBuff(float time)
+    {
+        if (InvincibleCoroutine != null)
+        {
+            StopCoroutine(InvincibleCoroutine);
+            InvincibleCoroutine = StartCoroutine(IE_InvincibleDoubleBuff(time));
+        }
+        else
+        {
+            InvincibleCoroutine = StartCoroutine(IE_InvincibleDoubleBuff(time));
+        }
+    }
+
+    IEnumerator IE_InvincibleDoubleBuff(float time)
+    {
+        InvincibleBuff = true;
+
+        var sec = new WaitForSeconds(time);
+
+        yield return sec;
+
+        InvincibleBuff = false;
     }
 
 }
