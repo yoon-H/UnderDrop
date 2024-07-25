@@ -10,6 +10,7 @@ public class ItemSpawner : MonoBehaviour
 
     public GameObject CoinRef;
     public GameObject CoinDoubleItemRef;
+    public GameObject DamageDoubleItemRef;
 
     #region SpawnTime
     public float MaxTimeForArrival = 3f;
@@ -30,6 +31,11 @@ public class ItemSpawner : MonoBehaviour
         // Timer Initializing
         Timer = TimerRef.GetComponent<Timer>();
         Player = Timer.GetPlayer();
+
+        if (Player == null)
+        {
+            print("ItemSpawner :: Player is null");
+        }
     }
 
     // Update is called once per frame
@@ -111,6 +117,12 @@ public class ItemSpawner : MonoBehaviour
         
         GameObject CoinObject= Instantiate(CoinRef);                                 //TODO : change to ObjectPool
         if (!CoinObject) return;
+        
+        ObjectMovement movement = CoinObject.GetComponent<ObjectMovement>();
+        if(!movement) return;
+        movement.SetTimeForArrival(CurTimeForArrival);
+
+
         Coin coin = CoinObject.GetComponent<Coin>();
 
         //Set Timer
@@ -142,7 +154,7 @@ public class ItemSpawner : MonoBehaviour
     private void SelectSpawnItem(E_Direction dir, int zValue)
     {
         System.Random random = new System.Random();
-        int res = 1;//random.Next(3);
+        int res = 2;//random.Next(3);
 
         //Set LocX
         float locX;
@@ -158,7 +170,7 @@ public class ItemSpawner : MonoBehaviour
                 SpawnCoinDoubleItem(locX, zValue);
                 break;
             case 2:
-
+                SpawnDamageDoubleItem(locX, zValue);
                 break;
         }
     }
@@ -169,11 +181,40 @@ public class ItemSpawner : MonoBehaviour
         //Spawn Item
         GameObject ItemObject = Instantiate(CoinDoubleItemRef);                                 //TODO : change to ObjectPool
         if (!ItemObject) return;
+
+        ObjectMovement movement = ItemObject.GetComponent<ObjectMovement>();
+        if (!movement) return;
+        movement.SetTimeForArrival(CurTimeForArrival);
+
+
         CoinDoubleItem coinDouble = ItemObject.GetComponent<CoinDoubleItem>();
 
         //Set Timer
         if (!coinDouble) return;
         coinDouble.SetTimer(Timer);
+
+        //Set Location
+        ItemObject.transform.position = new Vector3(locX, gameObject.transform.position.y, zValue);
+
+        Destroy(ItemObject, 6f);
+    }
+
+    private void SpawnDamageDoubleItem(float locX, float zValue)
+    {
+
+        //Spawn Item
+        GameObject ItemObject = Instantiate(DamageDoubleItemRef);                                 //TODO : change to ObjectPool
+        if (!ItemObject) return;
+
+        ObjectMovement movement = ItemObject.GetComponent<ObjectMovement>();
+        if (!movement) return;
+        movement.SetTimeForArrival(CurTimeForArrival);
+
+        DamageDoubleItem damageDouble = ItemObject.GetComponent<DamageDoubleItem>();
+
+        //Set Timer
+        if (!damageDouble) return;
+        damageDouble.SetPlayer(Player);
 
         //Set Location
         ItemObject.transform.position = new Vector3(locX, gameObject.transform.position.y, zValue);

@@ -656,6 +656,7 @@ MonoBehaviour:
   TimerRef: {fileID: 381403812}
   CoinRef: {fileID: 7242501309050402290, guid: 160812c4ac27ca848a1a5683d9aed994, type: 3}
   CoinDoubleItemRef: {fileID: 6549392911593827523, guid: 029c077ae5111cd44ac7ffc3f452eab2, type: 3}
+  DamageDoubleItemRef: {fileID: 1270536813586271966, guid: b2e35b92996c58c4582e7fcf99da306a, type: 3}
   MaxTimeForArrival: 3
   CurTimeForArrival: 0
   MinTimeForArrival: 2.4

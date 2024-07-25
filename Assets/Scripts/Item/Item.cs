@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour, IHittable
 {
-    Player Player;
+    protected Player Player;
 
     public void OnHit()
     {

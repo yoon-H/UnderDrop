@@ -10,7 +10,7 @@ using Unity.Jobs.LowLevel.Unsafe;
 
 public class Player : MonoBehaviour
 {
-
+    #region JumpVariable
     private bool IsJumping = false;
     private E_Direction Dir = E_Direction.Right;
     private Vector3 LeftLoc = new Vector3(-1.98f,1.7f,0);
@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public float JumpTime = 0.1f;
 
     public Ease ease = Ease.Linear;
+    #endregion
 
     public float PlayerYSize;
     public float PlayerYLoc;
@@ -36,10 +37,30 @@ public class Player : MonoBehaviour
     protected PCAnimation AnimationRef;
 
     //Character Stat
-    public int MaxBulletNum = 30;
-    public float ReloadTime = 1.5f;
-    public float AttackTime = 0.1f;
-    public int Damage = 20;
+    public int MaxBulletNum;
+    public float ReloadTime;
+    public float AttackTime;
+    protected int Damage;
+
+    protected int CurDamage
+    {
+        get
+        {
+            if(DamageDoubleBuff)
+            {
+                print("double");
+                return Damage * 2;
+            }
+            else
+            {
+                print("normal");
+                return Damage;
+            }
+        }
+    }
+
+    private bool DamageDoubleBuff = false;
+    Coroutine DamageDoubleCoroutine;
 
     //Skill CoolDown
 
@@ -163,7 +184,7 @@ public class Player : MonoBehaviour
         Bullet = Instantiate(BulletRef, transform.position, transform.rotation);
         if (!Bullet) { return false; }
         Bullet bullet = Bullet.GetComponent<Bullet>();
-        bullet.SetBulletInfo(Target, Damage);
+        bullet.SetBulletInfo(Target, CurDamage);
         UseBullet();
 
         GameManager.Instance.PlaySound("norkshootsound");
@@ -324,6 +345,30 @@ public class Player : MonoBehaviour
         {
             IsSkillCoolDownStopped = false;
         }
+    }
+
+    public void SetDamageDoubleBuff(float time)
+    {
+        if (DamageDoubleCoroutine != null)
+        {
+            StopCoroutine(DamageDoubleCoroutine);
+            DamageDoubleCoroutine = StartCoroutine(IE_DamageDoubleBuff(time));
+        }
+        else
+        {
+            DamageDoubleCoroutine = StartCoroutine(IE_DamageDoubleBuff(time));
+        }
+    }
+
+    IEnumerator IE_DamageDoubleBuff(float time)
+    {
+        DamageDoubleBuff = true;
+
+        var sec = new WaitForSeconds(time);
+
+        yield return sec;
+
+        DamageDoubleBuff = false;
     }
 
 }

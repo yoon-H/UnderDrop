@@ -215,6 +215,7 @@ public class Timer : MonoBehaviour
             ObstacleSpawner.ReduceTimeForArrival();
             MonsterSpawner.ReduceTimeForArrival();
             BackGround.ReduceTimeForArrival();
+            ItemSpawner.ReduceTimeForArrival();
         }
 
         if (Score >= CurSpawnPeriod)
@@ -389,7 +390,11 @@ public class Timer : MonoBehaviour
 
     public Player GetPlayer()
     {
-        Player player = SpawnCharacter.Player.GetComponent<Player>();
+        
+        if (!SpawnCharacter.Player.TryGetComponent<Player>(out var player))
+        {
+            print("player is null");
+        }
 
         return player;
     }

@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 484dcf5892865184abd5af1c99d9b417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Timer: {fileID: 0}
 --- !u!61 &3779593051374557088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -188,4 +189,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e0a99295dab1548b2381d8e5912b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeForArrival: 4
+  TimeForArrival: 0
