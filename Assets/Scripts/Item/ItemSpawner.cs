@@ -6,6 +6,7 @@ public class ItemSpawner : MonoBehaviour
 {
     public GameObject TimerRef;
     private Timer Timer;
+    private Player Player;
 
     public GameObject CoinRef;
 
@@ -27,6 +28,7 @@ public class ItemSpawner : MonoBehaviour
 
         // Timer Initializing
         Timer = TimerRef.GetComponent<Timer>();
+        Player = Timer.GetPlayer();
     }
 
     // Update is called once per frame
@@ -84,10 +86,6 @@ public class ItemSpawner : MonoBehaviour
             cnt++;
             yield return time;
         }
-        
-
-
-        
     }
 
     void SpawnCoinTask(E_Direction dir, int zValue)
@@ -113,6 +111,9 @@ public class ItemSpawner : MonoBehaviour
         Destroy(CoinObject, 6f);
     }
 
-
+    public void SetPlayer(GameObject playerObject)
+    {
+        Player = playerObject.GetComponent<Player>();
+    }
 
 }

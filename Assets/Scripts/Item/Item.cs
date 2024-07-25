@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour, IHittable
 {
+    Player Player;
+
     public void OnHit()
     {
         OnUse();
@@ -11,5 +13,10 @@ public abstract class Item : MonoBehaviour, IHittable
     }
 
     protected abstract void OnUse();
+
+    public void SetPlayer(Player player)
+    {
+        Player = player;
+    }
 
 }

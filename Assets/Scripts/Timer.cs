@@ -75,8 +75,10 @@ public class Timer : MonoBehaviour
 
     public float WaitingTime = 5f;
 
+    private bool CoinDoubleBuff = false;
+
     public int Score = 0;
-    public int CoinCount = 0;
+    private int CoinCount = 0;
 
     //Wall Change
     private float[] WallChangeAmount = {100f, 86f};
@@ -370,5 +372,35 @@ public class Timer : MonoBehaviour
     public void SetPlayerRef(GameObject player)
     {
         MonsterSpawner.PlayerRef = player;
+    }
+
+    public void AddCoin(int value)
+    {
+        if(CoinDoubleBuff)
+        {
+            CoinCount += value * 2;
+        }
+        else
+        {
+            CoinCount += value;
+        }
+    }
+
+    public Player GetPlayer()
+    {
+        Player player = SpawnCharacter.Player.GetComponent<Player>();
+
+        return player;
+    }
+
+    public IEnumerator IE_CoinDoubleBuff(float time)
+    {
+        CoinDoubleBuff = true;
+
+        var sec = new WaitForSeconds(time);
+
+        yield return sec;
+
+        CoinDoubleBuff = false;
     }
 }
