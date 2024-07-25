@@ -9,6 +9,7 @@ public class ItemSpawner : MonoBehaviour
     private Player Player;
 
     public GameObject CoinRef;
+    public GameObject CoinDoubleItemRef;
 
     #region SpawnTime
     public float MaxTimeForArrival = 3f;
@@ -76,6 +77,8 @@ public class ItemSpawner : MonoBehaviour
     {
         int num = SetCoinNum();
 
+        bool willSpawn = GenerateSpawnItem();
+
         int cnt = 0;
 
         while(num > cnt)
@@ -86,6 +89,15 @@ public class ItemSpawner : MonoBehaviour
             cnt++;
             yield return time;
         }
+
+        if(willSpawn)
+        {
+            var time = new WaitForSeconds(SpawnTime);
+            yield return time;
+
+            SelectSpawnItem(direction,cnt);
+
+        }    
     }
 
     void SpawnCoinTask(E_Direction dir, int zValue)
@@ -101,7 +113,7 @@ public class ItemSpawner : MonoBehaviour
         if (!CoinObject) return;
         Coin coin = CoinObject.GetComponent<Coin>();
 
-        //Set Speed variable
+        //Set Timer
         if (!coin) return;
         coin.SetTimer(Timer);
 
@@ -114,6 +126,59 @@ public class ItemSpawner : MonoBehaviour
     public void SetPlayer(GameObject playerObject)
     {
         Player = playerObject.GetComponent<Player>();
+    }
+
+    private bool GenerateSpawnItem()
+    {
+        System.Random rand = new System.Random();
+        int res = rand.Next(10);
+
+        //if (res <= 2) return true;
+        //else return false;
+
+        return true;
+    }
+
+    private void SelectSpawnItem(E_Direction dir, int zValue)
+    {
+        System.Random random = new System.Random();
+        int res = 1;//random.Next(3);
+
+        //Set LocX
+        float locX;
+        if (E_Direction.Left == dir) { locX = -SpawnXLoc; }
+        else locX = SpawnXLoc;
+
+        switch(res)
+        {
+            case 0:
+                
+                break;
+            case 1:
+                SpawnCoinDoubleItem(locX, zValue);
+                break;
+            case 2:
+
+                break;
+        }
+    }
+
+    private void SpawnCoinDoubleItem(float locX, float zValue)
+    {
+
+        //Spawn Item
+        GameObject ItemObject = Instantiate(CoinDoubleItemRef);                                 //TODO : change to ObjectPool
+        if (!ItemObject) return;
+        CoinDoubleItem coinDouble = ItemObject.GetComponent<CoinDoubleItem>();
+
+        //Set Timer
+        if (!coinDouble) return;
+        coinDouble.SetTimer(Timer);
+
+        //Set Location
+        ItemObject.transform.position = new Vector3(locX, gameObject.transform.position.y, zValue);
+
+        Destroy(ItemObject, 6f);
     }
 
 }

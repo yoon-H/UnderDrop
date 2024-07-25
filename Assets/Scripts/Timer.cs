@@ -76,6 +76,7 @@ public class Timer : MonoBehaviour
     public float WaitingTime = 5f;
 
     private bool CoinDoubleBuff = false;
+    private Coroutine CoinDeoubleCoroutine;
 
     public int Score = 0;
     private int CoinCount = 0;
@@ -393,7 +394,21 @@ public class Timer : MonoBehaviour
         return player;
     }
 
-    public IEnumerator IE_CoinDoubleBuff(float time)
+
+    public void SetCoinDoubleBuff(float time)
+    {
+        if(CoinDeoubleCoroutine !=null)
+        {
+            StopCoroutine(CoinDeoubleCoroutine);
+            CoinDeoubleCoroutine = StartCoroutine(IE_CoinDoubleBuff(time));
+        }
+        else
+        {
+            CoinDeoubleCoroutine = StartCoroutine(IE_CoinDoubleBuff(time));
+        }
+    }
+
+    private IEnumerator IE_CoinDoubleBuff(float time)
     {
         CoinDoubleBuff = true;
 

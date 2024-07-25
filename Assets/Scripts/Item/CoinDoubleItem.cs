@@ -9,7 +9,7 @@ public class CoinDoubleItem : Item
     private const float BuffTime = 10f;
     protected override void OnUse()
     {
-        StartCoroutine(Timer.IE_CoinDoubleBuff(BuffTime));
+        Timer.SetCoinDoubleBuff(BuffTime);
     }
 
     public void SetTimer(Timer timer)
