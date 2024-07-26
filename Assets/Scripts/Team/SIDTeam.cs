@@ -30,11 +30,11 @@ public class SIDTeam : TeamRegion
     {
         System.Random rand = new System.Random();
         int res = rand.Next(100);
-        if (res <-1)
+        if (res <=59)
         {
             SpawnNormalObstacle(dir, timer, timeForArrival, locY);
         }
-        else if (res <-2)
+        else if (res <=79)
         {
             SpawnButtonTypeObstacle(dir, timer, timeForArrival, locY);
         }
