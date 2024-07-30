@@ -1,0 +1,34 @@
+
+풍선오브젝트.png
+size: 697,170
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+rope
+  rotate: false
+  xy: 571, 11
+  size: 124, 157
+  orig: 124, 157
+  offset: 0, 0
+  index: -1
+skin1/p1
+  rotate: true
+  xy: 2, 2
+  size: 166, 189
+  orig: 166, 189
+  offset: 0, 0
+  index: -1
+skin2/p2
+  rotate: true
+  xy: 193, 4
+  size: 164, 187
+  orig: 166, 189
+  offset: 1, 1
+  index: -1
+skin3/p3
+  rotate: true
+  xy: 382, 4
+  size: 164, 187
+  orig: 166, 189
+  offset: 1, 1
+  index: -1

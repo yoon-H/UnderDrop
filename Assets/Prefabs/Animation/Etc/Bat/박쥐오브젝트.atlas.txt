@@ -1,0 +1,27 @@
+
+박쥐오브젝트.png
+size: 246,158
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm1
+  rotate: false
+  xy: 112, 75
+  size: 132, 81
+  orig: 132, 81
+  offset: 0, 0
+  index: -1
+arm2
+  rotate: true
+  xy: 2, 7
+  size: 149, 108
+  orig: 149, 108
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 112, 2
+  size: 71, 98
+  orig: 71, 98
+  offset: 0, 0
+  index: -1
