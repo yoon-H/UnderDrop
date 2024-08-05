@@ -1,0 +1,20 @@
+
+collection.png
+size: 1379,981
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Page
+  rotate: false
+  xy: 780, 60
+  size: 597, 919
+  orig: 597, 919
+  offset: 0, 0
+  index: -1
+book
+  rotate: false
+  xy: 2, 2
+  size: 776, 977
+  orig: 776, 977
+  offset: 0, 0
+  index: -1

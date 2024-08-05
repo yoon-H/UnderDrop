@@ -1,0 +1,27 @@
+
+Button.png
+size: 138,49
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+button/LeftArrowButton
+  rotate: false
+  xy: 94, 3
+  size: 42, 44
+  orig: 45, 45
+  offset: 0, 1
+  index: -1
+button/RightArrowButton
+  rotate: false
+  xy: 2, 2
+  size: 45, 45
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
+button/ShopButton
+  rotate: true
+  xy: 49, 2
+  size: 45, 43
+  orig: 45, 45
+  offset: 0, 0
+  index: -1
