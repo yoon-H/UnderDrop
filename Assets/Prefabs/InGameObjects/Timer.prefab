@@ -52,6 +52,7 @@ MonoBehaviour:
   ObstacleSpawnerRef: {fileID: 0}
   ObstacleSpawner: {fileID: 0}
   MonsterSpawnerRef: {fileID: 0}
+  ItemSpawnerRef: {fileID: 0}
   ScoreTexts: []
   BackGroundRef: {fileID: 0}
   BackGround: {fileID: 0}
@@ -144,7 +145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WarningTime: 1
   RaidMarkRef: {fileID: 0}
-  WarningPanels: []
+  BackPanel: {fileID: 0}
+  WarningPanels:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   TeamPanel: {fileID: 0}
   RaidBar: {fileID: 0}
   Bar: {fileID: 0}

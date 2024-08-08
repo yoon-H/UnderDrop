@@ -10,6 +10,7 @@ public class RaidEvent : MonoBehaviour
     Timer Timer;
 
     public GameObject RaidMarkRef;
+    public GameObject BackPanel;
     public GameObject[] WarningPanels;
     public GameObject TeamPanel;
 
@@ -32,7 +33,7 @@ public class RaidEvent : MonoBehaviour
         
         RaidBar.SetActive(false);
         RaidMarkRef.SetActive(false);
-        
+        BackPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,12 +49,12 @@ public class RaidEvent : MonoBehaviour
 
         // Warning Animation
         Time.timeScale = 0.3f;
+        BackPanel.SetActive(true);
         TeamPanel.SetActive(true);
 
         //Start Animation
-        SkeletonGraphic graph = TeamPanel.GetComponentInChildren<SkeletonGraphic>();
-
-        if(graph != null)
+        
+        if(TeamPanel.TryGetComponent<SkeletonGraphic>(out var graph))
         {
             graph.AnimationState.SetAnimation(0, "animation", false);
         }
@@ -66,10 +67,14 @@ public class RaidEvent : MonoBehaviour
         //SpawnMonster
         Timer.SpawnMonster();
 
-        Timer.SetIsRaidExisted(true);
+
         TeamPanel.SetActive(false);
+        BackPanel.SetActive(false);
+
+        Timer.SetIsRaidExisted(true);
         RaidBar.SetActive(true);
         RaidMarkRef.SetActive(true);
+        
         Time.timeScale = 1f;
     }
 
