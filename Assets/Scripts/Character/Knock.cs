@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Knock : Player
@@ -10,11 +11,11 @@ public class Knock : Player
     private const float _AttackTime = 0.4f;
     private const int _Damage = 40;
 
-    private float ShieldTime = 2f;
+    private float ShieldTime = 0.5f;
+    private int ShieldCount = 3;
     private bool IsShield = false;
 
     public GameObject ShieldRef;
-    private Shield Shield;
 
     protected override void Start()
     {
@@ -27,9 +28,7 @@ public class Knock : Player
 
         CurBulletNum = MaxBulletNum;
 
-        Shield = ShieldRef.GetComponent<Shield>();
-        Shield.SetKnock(this);
-        SetIsShield(false);
+        ShieldRef.SetActive(false);
         BulletSlider.maxValue = MaxBulletNum;
         BulletSlider.value = CurBulletNum;
         BulletText.text = CurBulletNum.ToString();
@@ -40,31 +39,62 @@ public class Knock : Player
         IHittable hittable = collision.gameObject.GetComponent<IHittable>();
         if (hittable != null)
         {
-            if (IsShield && collision.CompareTag("Obstacle"))
+            if(collision.gameObject.GetComponentInChildren<Obstacle>()) // When collision object is obstacle type
             {
-                return;
-            }
-            else
-            {
-                if (!collision.gameObject.GetComponent<Collider2D>().isActiveAndEnabled)
+                if (InvincibleBuff) // When player get Invincible Item
                 {
                     return;
                 }
-
+                else if(ShieldCount > 0) // When Knock can use shield skill
+                {
+                    collision.gameObject.GetComponent<Collider2D>().enabled = false;
+                    SetIsShield(true);
+                    return;
+                }
+                else
+                {
+                    hittable.OnHit();
+                }
+            }
+            else if (collision.gameObject.TryGetComponent<InvincibleItem>(out var item))
+            {
+                if (IsShield)
+                {
+                    return;
+                }
+                else
+                {
+                    item.OnHit();
+                }
+            }
+            else if (collision.gameObject.GetComponentInChildren<Monster>())
+            {
+                if (InvincibleBuff) // When player get Invincible Item
+                {
+                    return;
+                }
+                else
+                {
+                    hittable.OnHit();
+                }
+            }
+            else
+            {
                 hittable.OnHit();
             }
-            
         }
     }
 
     public void SetIsShield(bool flag)
     {
-        if(flag)
+        if (flag && !IsShield)
         {
             IsShield = true;
             ShieldRef.SetActive(true);
+            ShieldCount -= 1;
+            StartCoroutine(IE_ShieldRemain());
         }
-        else
+        else if (!flag && IsShield)
         {
             IsShield = false;
             ShieldRef.SetActive(false);
@@ -75,7 +105,6 @@ public class Knock : Player
     {
         GameManager.Instance.PlaySound("norkreloadsound");
         CancelTarget();
-        SpawnShield();
         yield return new WaitForSeconds(ReloadTime);
         Reloading = false;
 
@@ -89,16 +118,6 @@ public class Knock : Player
             StartCoroutine(IE_ShootBullet());
         }
 
-    }
-
-    private void SpawnShield()
-    {
-        System.Random rand = new System.Random();
-        int res = rand.Next(2);
-        if(res == 0)
-        {
-            StartCoroutine(IE_ShieldRemain());
-        }
     }
 
     private IEnumerator IE_ShieldRemain()

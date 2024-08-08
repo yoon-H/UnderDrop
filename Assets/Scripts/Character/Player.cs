@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 
     //Invincible Buff
 
-    private bool InvincibleBuff = false;
+    public bool InvincibleBuff = false;
     Coroutine InvincibleCoroutine;
 
 
@@ -399,15 +399,12 @@ public class Player : MonoBehaviour
     IEnumerator IE_InvincibleBuff(float time)
     {
         InvincibleBuff = true;
-        print(InvincibleBuff);
 
         var sec = new WaitForSeconds(time);
 
         yield return sec;
 
         InvincibleBuff = false;
-
-        print(InvincibleBuff);
     }
 
 }

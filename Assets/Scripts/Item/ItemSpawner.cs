@@ -146,16 +146,14 @@ public class ItemSpawner : MonoBehaviour
         System.Random rand = new System.Random();
         int res = rand.Next(10);
 
-        //if (res <= 2) return true;
-        //else return false;
-
-        return true;
+        if (res <= 2) return true;
+        else return false;
     }
 
     private void SelectSpawnItem(E_Direction dir, int zValue)
     {
         System.Random random = new System.Random();
-        int res = 2;//random.Next(3);
+        int res = random.Next(3);
 
         //Set LocX
         float locX;
