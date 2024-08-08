@@ -501,6 +501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 6998098688679386177}
   BestText: {fileID: 9043483097287087385}
+  CoinText: {fileID: 2515231488931586811}
 --- !u!1 &5126801315389732296
 GameObject:
   m_ObjectHideFlags: 0

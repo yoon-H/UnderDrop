@@ -9,10 +9,13 @@ using UnityEngine.UIElements;
 
 public class Timer : MonoBehaviour
 {
+    #region References
     public GameObject ObstacleSpawnerRef;
     public ObstacleSpawner ObstacleSpawner;
     public GameObject MonsterSpawnerRef;
     private MonsterSpawner MonsterSpawner;
+    public GameObject ItemSpawnerRef;
+    private ItemSpawner ItemSpawner;
     public Text[] ScoreTexts;
 
     //BackGround
@@ -23,8 +26,11 @@ public class Timer : MonoBehaviour
     public GameObject WallRef;
     public BackGroundMovement Wall;
 
+    #endregion
+
     private float ObstacleSpawnCounter = 0f;
     private float MonsterSpawnCounter = 0f;
+    private float ItemSpawnCounter = 0f;
     public float ScoreCounter = 0f;
 
     public float MaxObstacleSpawnTime = 3f;
@@ -69,7 +75,11 @@ public class Timer : MonoBehaviour
 
     public float WaitingTime = 5f;
 
+    private bool CoinDoubleBuff = false;
+    private Coroutine CoinDeoubleCoroutine;
+
     public int Score = 0;
+    private int CoinCount = 0;
 
     //Wall Change
     private float[] WallChangeAmount = {100f, 86f};
@@ -95,6 +105,7 @@ public class Timer : MonoBehaviour
 
         ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
         MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
+        ItemSpawner = ItemSpawnerRef.GetComponent<ItemSpawner>();
         BackGround = BackGroundRef.GetComponentInChildren<BackGroundMovement>();
         Wall = WallRef.GetComponent<BackGroundMovement>();
 
@@ -125,6 +136,7 @@ public class Timer : MonoBehaviour
         ObstacleSpawnCounter += Time.deltaTime;
         ScoreCounter += Time.deltaTime;
         WallCounter += Time.deltaTime;
+        ItemSpawnCounter += Time.deltaTime;
 
         //Raid Counter
         if (IsRaidExisted)
@@ -203,6 +215,7 @@ public class Timer : MonoBehaviour
             ObstacleSpawner.ReduceTimeForArrival();
             MonsterSpawner.ReduceTimeForArrival();
             BackGround.ReduceTimeForArrival();
+            ItemSpawner.ReduceTimeForArrival();
         }
 
         if (Score >= CurSpawnPeriod)
@@ -246,7 +259,16 @@ public class Timer : MonoBehaviour
             }
         }
 
-        if(WallIndex < 2)
+        if (!ItemSpawner) return;
+
+        if (ItemSpawnCounter >= ItemSpawner.SpawnPeriod)
+        {
+            ItemSpawnCounter -= ItemSpawner.SpawnPeriod;
+            ItemSpawner.GenerateCoinLocation();
+        }
+
+
+        if (WallIndex < 2)
         {
             if (WallCounter >= WallChangeAmount[WallIndex])
             {
@@ -297,17 +319,26 @@ public class Timer : MonoBehaviour
 
     public void EndTask()
     {
-        int bestscore = GameManager.Instance.BestScore;
+        GameManager gameManager = GameManager.Instance;
+
+        //Set bestscore
+        int bestscore = gameManager.BestScore;
         if (Score > bestscore)
         {
-            GameManager.Instance.BestScore = Score;
+            gameManager.BestScore = Score;
         }
-        ScoreBoard.SetText(Score);
+
+        //Add Money
+        gameManager.Money += CoinCount;
+
+        //Set GameOverText
+        ScoreBoard.SetText(Score, CoinCount);
 
         //Show PopUp
         GameOverPopUp.SwitchFlag(true);
-
-        GameManager.Instance.PlaySound("gameoverbgm");
+        
+        //Play GameOverSound
+        gameManager.PlaySound("gameoverbgm");
     }
 
     public void SetIsRaidExisted(bool flag)
@@ -343,5 +374,53 @@ public class Timer : MonoBehaviour
     public void SetPlayerRef(GameObject player)
     {
         MonsterSpawner.PlayerRef = player;
+    }
+
+    public void AddCoin(int value)
+    {
+        if(CoinDoubleBuff)
+        {
+            CoinCount += value * 2;
+        }
+        else
+        {
+            CoinCount += value;
+        }
+    }
+
+    public Player GetPlayer()
+    {
+        
+        if (!SpawnCharacter.Player.TryGetComponent<Player>(out var player))
+        {
+            print("player is null");
+        }
+
+        return player;
+    }
+
+
+    public void SetCoinDoubleBuff(float time)
+    {
+        if(CoinDeoubleCoroutine !=null)
+        {
+            StopCoroutine(CoinDeoubleCoroutine);
+            CoinDeoubleCoroutine = StartCoroutine(IE_CoinDoubleBuff(time));
+        }
+        else
+        {
+            CoinDeoubleCoroutine = StartCoroutine(IE_CoinDoubleBuff(time));
+        }
+    }
+
+    private IEnumerator IE_CoinDoubleBuff(float time)
+    {
+        CoinDoubleBuff = true;
+
+        var sec = new WaitForSeconds(time);
+
+        yield return sec;
+
+        CoinDoubleBuff = false;
     }
 }
