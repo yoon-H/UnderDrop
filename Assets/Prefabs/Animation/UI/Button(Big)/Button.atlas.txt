@@ -1,0 +1,104 @@
+
+Button.png
+size: 276,726
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Clip
+  rotate: true
+  xy: 2, 259
+  size: 28, 55
+  orig: 28, 55
+  offset: 0, 0
+  index: -1
+button/Button
+  rotate: false
+  xy: 147, 366
+  size: 127, 135
+  orig: 127, 135
+  offset: 0, 0
+  index: -1
+button/Button1
+  rotate: true
+  xy: 2, 130
+  size: 127, 135
+  orig: 127, 135
+  offset: 0, 0
+  index: -1
+button/Button2
+  rotate: true
+  xy: 2, 2
+  size: 126, 135
+  orig: 127, 135
+  offset: 0, 0
+  index: -1
+button/Button3
+  rotate: false
+  xy: 145, 229
+  size: 127, 135
+  orig: 127, 135
+  offset: 0, 0
+  index: -1
+button/Button4
+  rotate: true
+  xy: 139, 100
+  size: 127, 135
+  orig: 127, 135
+  offset: 0, 0
+  index: -1
+button/Home
+  rotate: true
+  xy: 69, 279
+  size: 61, 62
+  orig: 61, 62
+  offset: 0, 0
+  index: -1
+button/Home(GameOver)
+  rotate: false
+  xy: 139, 12
+  size: 91, 86
+  orig: 91, 86
+  offset: 0, 0
+  index: -1
+button/ReplayButton
+  rotate: true
+  xy: 170, 503
+  size: 221, 82
+  orig: 221, 87
+  offset: 0, 0
+  index: -1
+button/SelectButton
+  rotate: true
+  xy: 2, 388
+  size: 221, 82
+  orig: 221, 87
+  offset: 0, 0
+  index: -1
+button/Setting(1)
+  rotate: true
+  xy: 86, 342
+  size: 55, 57
+  orig: 55, 57
+  offset: 0, 0
+  index: -1
+button/ShopButton(1)
+  rotate: true
+  xy: 86, 399
+  size: 210, 59
+  orig: 217, 62
+  offset: 0, 0
+  index: -1
+button/ShopButton(2)
+  rotate: false
+  xy: 2, 611
+  size: 166, 113
+  orig: 172, 116
+  offset: 0, 0
+  index: -1
+setting/Back
+  rotate: false
+  xy: 2, 289
+  size: 65, 97
+  orig: 65, 99
+  offset: 0, 0
+  index: -1

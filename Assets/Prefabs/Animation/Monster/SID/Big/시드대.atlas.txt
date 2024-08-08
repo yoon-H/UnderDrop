@@ -1,0 +1,167 @@
+
+시드대.png
+size: 1770,255
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Lope1
+  rotate: false
+  xy: 899, 19
+  size: 56, 54
+  orig: 56, 54
+  offset: 0, 0
+  index: -1
+Lope2
+  rotate: true
+  xy: 309, 240
+  size: 13, 1452
+  orig: 18, 1452
+  offset: 2, 0
+  index: -1
+T
+  rotate: true
+  xy: 1687, 24
+  size: 125, 60
+  orig: 125, 60
+  offset: 0, 0
+  index: -1
+arm1
+  rotate: true
+  xy: 977, 89
+  size: 149, 169
+  orig: 149, 169
+  offset: 0, 0
+  index: -1
+arm2
+  rotate: false
+  xy: 1398, 2
+  size: 89, 133
+  orig: 89, 133
+  offset: 0, 0
+  index: -1
+arm3
+  rotate: true
+  xy: 1503, 49
+  size: 98, 141
+  orig: 98, 141
+  offset: 0, 0
+  index: -1
+bm
+  rotate: false
+  xy: 1283, 40
+  size: 85, 87
+  orig: 85, 87
+  offset: 0, 0
+  index: -1
+bm2
+  rotate: true
+  xy: 1148, 27
+  size: 85, 87
+  orig: 85, 87
+  offset: 0, 0
+  index: -1
+ear1
+  rotate: true
+  xy: 797, 15
+  size: 58, 100
+  orig: 58, 101
+  offset: 0, 0
+  index: -1
+ear2
+  rotate: true
+  xy: 977, 2
+  size: 85, 87
+  orig: 86, 87
+  offset: 0, 0
+  index: -1
+gg
+  rotate: false
+  xy: 1687, 151
+  size: 65, 87
+  orig: 65, 87
+  offset: 0, 0
+  index: -1
+h1
+  rotate: false
+  xy: 2, 6
+  size: 305, 247
+  orig: 305, 247
+  offset: 0, 0
+  index: -1
+h2
+  rotate: false
+  xy: 574, 51
+  size: 221, 187
+  orig: 221, 187
+  offset: 0, 0
+  index: -1
+head1
+  rotate: true
+  xy: 1398, 137
+  size: 101, 103
+  orig: 101, 103
+  offset: 0, 0
+  index: -1
+head2
+  rotate: true
+  xy: 797, 75
+  size: 163, 178
+  orig: 163, 178
+  offset: 0, 0
+  index: -1
+head3
+  rotate: false
+  xy: 309, 39
+  size: 263, 199
+  orig: 263, 199
+  offset: 0, 0
+  index: -1
+hl
+  rotate: true
+  xy: 1749, 115
+  size: 34, 18
+  orig: 35, 20
+  offset: 1, 1
+  index: -1
+leg1
+  rotate: true
+  xy: 1503, 149
+  size: 89, 182
+  orig: 89, 182
+  offset: 0, 0
+  index: -1
+leg2
+  rotate: false
+  xy: 1283, 129
+  size: 113, 109
+  orig: 113, 110
+  offset: 0, 0
+  index: -1
+lt1
+  rotate: false
+  xy: 1754, 205
+  size: 14, 33
+  orig: 15, 34
+  offset: 1, 0
+  index: -1
+lt2
+  rotate: true
+  xy: 1066, 38
+  size: 49, 39
+  orig: 49, 39
+  offset: 0, 0
+  index: -1
+lt3
+  rotate: true
+  xy: 1066, 6
+  size: 30, 33
+  orig: 31, 33
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 1148, 114
+  size: 133, 124
+  orig: 133, 124
+  offset: 0, 0
+  index: -1

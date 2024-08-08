@@ -1,0 +1,27 @@
+
+setting.png
+size: 1276,636
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Letter
+  rotate: true
+  xy: 570, 2
+  size: 632, 389
+  orig: 641, 403
+  offset: 6, 14
+  index: -1
+LetterBack
+  rotate: true
+  xy: 961, 15
+  size: 619, 313
+  orig: 619, 313
+  offset: 0, 0
+  index: -1
+paper
+  rotate: false
+  xy: 2, 67
+  size: 566, 567
+  orig: 566, 567
+  offset: 0, 0
+  index: -1

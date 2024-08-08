@@ -12,7 +12,7 @@ public class SpawnCharacter : MonoBehaviour
 
     public GameObject MoveButton;
 
-    public Vector3 SpawnPoisition = new Vector3(1.98f, 2f , 0);
+    public Vector3 SpawnPoisition = new Vector3(2.025f, 2f , 0);
 
 
     // Start is called before the first frame update

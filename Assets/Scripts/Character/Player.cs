@@ -13,8 +13,8 @@ public class Player : MonoBehaviour
     #region JumpVariable
     private bool IsJumping = false;
     private E_Direction Dir = E_Direction.Right;
-    private Vector3 LeftLoc = new Vector3(-1.98f,1.7f,0);
-    private Vector3 RightLoc = new Vector3(1.98f,1.7f,0);
+    private Vector3 LeftLoc = new Vector3(-2.025f,1.7f,0);
+    private Vector3 RightLoc = new Vector3(2.025f,1.7f,0);
 
     public float JumpTime = 0.1f;
 
