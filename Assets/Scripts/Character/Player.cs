@@ -383,28 +383,31 @@ public class Player : MonoBehaviour
         DamageDoubleBuff = false;
     }
 
-    public void SetInvincibleDoubleBuff(float time)
+    public void SetInvincibleBuff(float time)
     {
         if (InvincibleCoroutine != null)
         {
             StopCoroutine(InvincibleCoroutine);
-            InvincibleCoroutine = StartCoroutine(IE_InvincibleDoubleBuff(time));
+            InvincibleCoroutine = StartCoroutine(IE_InvincibleBuff(time));
         }
         else
         {
-            InvincibleCoroutine = StartCoroutine(IE_InvincibleDoubleBuff(time));
+            InvincibleCoroutine = StartCoroutine(IE_InvincibleBuff(time));
         }
     }
 
-    IEnumerator IE_InvincibleDoubleBuff(float time)
+    IEnumerator IE_InvincibleBuff(float time)
     {
         InvincibleBuff = true;
+        print(InvincibleBuff);
 
         var sec = new WaitForSeconds(time);
 
         yield return sec;
 
         InvincibleBuff = false;
+
+        print(InvincibleBuff);
     }
 
 }

@@ -7,6 +7,6 @@ public class InvincibleItem : Item
     private const float BuffTime = 2f;
     protected override void OnUse()
     {
-        Player.SetDamageDoubleBuff(BuffTime);
+        Player.SetInvincibleBuff(BuffTime);
     }
 }

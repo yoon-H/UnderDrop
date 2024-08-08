@@ -155,7 +155,7 @@ public class ItemSpawner : MonoBehaviour
     private void SelectSpawnItem(E_Direction dir, int zValue)
     {
         System.Random random = new System.Random();
-        int res = 0;//random.Next(3);
+        int res = 2;//random.Next(3);
 
         //Set LocX
         float locX;
@@ -171,7 +171,7 @@ public class ItemSpawner : MonoBehaviour
                 SpawnCoinDoubleItem(locX, zValue);
                 break;
             case 2:
-                SpawnDamageDoubleItem(locX, zValue);
+                SpawnInvincibleItem(locX, zValue);
                 break;
         }
     }
