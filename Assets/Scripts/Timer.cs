@@ -373,6 +373,11 @@ public class Timer : MonoBehaviour
 
     public void SetPlayerRef(GameObject player)
     {
+        if(MonsterSpawner == null)
+        {
+            MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
+        }
+
         MonsterSpawner.PlayerRef = player;
     }
 

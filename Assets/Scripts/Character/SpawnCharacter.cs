@@ -7,7 +7,7 @@ public class SpawnCharacter : MonoBehaviour
     public GameObject Timer;
     public GameObject BulletPanel;
 
-    public GameObject PlayerRef;
+    public GameObject[] PlayerRefs;
     public GameObject Player;
 
     public GameObject MoveButton;
@@ -18,7 +18,7 @@ public class SpawnCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnPC();
+        SpawnPC(GameManager.Instance.PlayerIndex);
     }
 
     // Update is called once per frame
@@ -27,14 +27,20 @@ public class SpawnCharacter : MonoBehaviour
         
     }
 
-    void SpawnPC()
+    void SpawnPC(int index)
     {
-        if(PlayerRef)
+        if (PlayerRefs[index])
         {
-            Player = Instantiate(PlayerRef);
-            Knock knock = Player.GetComponent<Knock>();
+            Player = Instantiate(PlayerRefs[index]);
 
-            knock.SetPCInfo(Timer, BulletPanel);
+            if(Player == null)
+            {
+                print("null");
+            }
+
+            Player player = Player.GetComponent<Player>();
+
+            player.SetPCInfo(Timer, BulletPanel);
 
             Swipe click =  MoveButton.GetComponent<Swipe>();
 
@@ -42,9 +48,14 @@ public class SpawnCharacter : MonoBehaviour
 
             Player.transform.position = SpawnPoisition;
 
-            if(Timer.TryGetComponent<Timer>(out var timer))
+            if(TryGetComponent<Timer>(out var timer))
             {
                 timer.SetPlayerRef(Player);
+            }
+
+            if(index == 0)
+            {
+                Player.GetComponent<PCAnimation>().CheckIsNoke(true);
             }
 
         }

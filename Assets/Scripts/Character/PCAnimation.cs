@@ -12,6 +12,8 @@ public class PCAnimation : MonoBehaviour
 
     public SkeletonAnimation JumpSkeletonAnimation;
     public GameObject JumpObject;
+
+    private bool IsNoke = false;
     public Spine.Bone Arm;
     float InitRotation =  720f;
 
@@ -28,19 +30,32 @@ public class PCAnimation : MonoBehaviour
     {
         if (SkeletonAnimation != null)
         {
-            Arm = SkeletonAnimation.skeleton.FindBone("Arm2");
-            if (InitRotation == 720f)
+            if(IsNoke)
             {
-                InitRotation = Arm.Data.Rotation;
+                Arm = SkeletonAnimation.skeleton.FindBone("Arm2");
+                if (InitRotation == 720f)
+                {
+                    InitRotation = Arm.Data.Rotation;
+                }
+                Arm.Data.Rotation = InitRotation;
             }
-            Arm.Data.Rotation = InitRotation;
 
             SkeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
             SkeletonAnimation.timeScale = IdleTimeScale;
         }
 
         if (JumpSkeletonAnimation != null)
-            JumpTimeScale = JumpSkeletonAnimation.Skeleton.Data.FindAnimation("jumpS").Duration / JumpTime;
+        {
+            if (IsNoke)
+            {
+                JumpTimeScale = JumpSkeletonAnimation.Skeleton.Data.FindAnimation("jumpS").Duration / JumpTime;
+            }
+            else
+            {
+                JumpTimeScale = JumpSkeletonAnimation.Skeleton.Data.FindAnimation("jump").Duration / JumpTime;
+            }
+        }
+            
     }
 
     // Update is called once per frame
@@ -62,10 +77,12 @@ public class PCAnimation : MonoBehaviour
     {
         if (SkeletonAnimation != null)
         {
-
-            var targetRotation = Vector2.Angle(Vector2.up, targetLoc - transform.position);
-            Arm.Data.Rotation = targetRotation;
-
+            if(IsNoke)
+            {
+                var targetRotation = Vector2.Angle(Vector2.up, targetLoc - transform.position);
+                Arm.Data.Rotation = targetRotation;
+            }
+            
             if (SkeletonAnimation.AnimationName != "die")
                 SkeletonAnimation.AnimationState.SetAnimation(0, "attack", false);
 
@@ -77,7 +94,11 @@ public class PCAnimation : MonoBehaviour
 
     public void PlayIdleAnim()
     {
-        Arm.Data.Rotation = InitRotation;
+        if (IsNoke)
+        {
+            Arm.Data.Rotation = InitRotation;
+        }
+        
         if(SkeletonAnimation)
         {
             SkeletonAnimation.AnimationState.SetAnimation(0, "idle", true);
@@ -96,7 +117,16 @@ public class PCAnimation : MonoBehaviour
 
             if (JumpSkeletonAnimation != null)
             {
-                JumpSkeletonAnimation.AnimationState.SetAnimation(0, "jumpS", false).TimeScale = JumpTimeScale;
+                if(IsNoke)
+                {
+                    JumpSkeletonAnimation.AnimationState.SetAnimation(0, "jumpS", false).TimeScale = JumpTimeScale;
+                }
+                else
+                {
+                    JumpSkeletonAnimation.AnimationState.SetAnimation(0, "jump", false).TimeScale = JumpTimeScale;
+                }
+                
+                
             }
         }
         else
@@ -120,6 +150,7 @@ public class PCAnimation : MonoBehaviour
             SkeletonAnimation.AnimationState.AddAnimation(0, "idle", true, 0f);
         }
 
+        print("finish Jump");
         IsJumping = false;
     }
 
@@ -154,7 +185,17 @@ public class PCAnimation : MonoBehaviour
         gameObject.SetActive(false);
         Timer.EndTask();
         UnscaledTime = false;
-        Arm.Data.Rotation = InitRotation;
+
+        if (IsNoke)
+        {
+            Arm.Data.Rotation = InitRotation;
+        }
+        
         Destroy(gameObject);
+    }
+
+    public void CheckIsNoke(bool flag)
+    {
+        IsNoke = flag;
     }
 }
