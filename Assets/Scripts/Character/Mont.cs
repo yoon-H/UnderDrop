@@ -17,6 +17,7 @@ public class Mont : Player
     private const int MaxSkillCount = 7;
     private int CurSkillCount = 0;
 
+    public Transform FireLocation;
     public GameObject SkillFlare;
     public GameObject SkillBullet;
 
@@ -74,12 +75,12 @@ public class Mont : Player
         }
 
         //Flame
-        GameObject flame = Instantiate(flarePrefab, transform.position, transform.rotation);
+        GameObject flame = Instantiate(flarePrefab, FireLocation.position, FireLocation.rotation);
         if (!flame) { return false; }
-        flame.transform.right = Target.transform.position - transform.position;
+        flame.transform.right = Target.transform.position - FireLocation.position;
 
         //Bullet
-        Bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
+        Bullet = Instantiate(bulletPrefab, FireLocation.position, FireLocation.rotation);
         if (!Bullet) { return false; }
         Bullet bullet = Bullet.GetComponent<Bullet>();
         bullet.SetBulletInfo(Target, CurDamage);

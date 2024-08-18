@@ -335,6 +335,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 1.5}
   m_EdgeRadius: 0
+--- !u!1 &3572677977777410788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1120014420000486859}
+  m_Layer: 0
+  m_Name: FireLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1120014420000486859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3572677977777410788}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.497, y: 0.556, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2384190819587890539}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6142205984681333117
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +400,7 @@ Transform:
   m_Children:
   - {fileID: 4700450449449428046}
   - {fileID: 3316406067720478945}
+  - {fileID: 1120014420000486859}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8065698973165575058
@@ -410,13 +442,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8d1fc5215dca945ae1bf6a6f0b20e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpTime: 0.1
   ease: 1
   PlayerYSize: 0
   PlayerYLoc: 0
-  BulletRef: {fileID: 1681046568612450, guid: e605fb1383d4f654297728084407fce7, type: 3}
+  BulletRef: {fileID: 5289248819870677295, guid: b7bfa290675cbda47ab78ec0efcebe17, type: 3}
   Bullet: {fileID: 0}
-  MuzzleFlareRef: {fileID: 1584403288528622, guid: 3f4aa9b2b07e3a346b89b6a64c339b68, type: 3}
+  MuzzleFlareRef: {fileID: 6986871770166649600, guid: b64994184918d1244ae58be6671f27a9, type: 3}
   CurBulletNum: 0
   MaxBulletNum: 0
   ReloadTime: 0
@@ -428,8 +459,9 @@ MonoBehaviour:
   BulletCount: {fileID: 0}
   CanShoot: 0
   Reloading: 0
-  SkillFlare: {fileID: 1584403288528622, guid: 3f4aa9b2b07e3a346b89b6a64c339b68, type: 3}
-  SkillBullet: {fileID: 1681046568612450, guid: e605fb1383d4f654297728084407fce7, type: 3}
+  FireLocation: {fileID: 1120014420000486859}
+  SkillFlare: {fileID: 6986871770166649600, guid: b64994184918d1244ae58be6671f27a9, type: 3}
+  SkillBullet: {fileID: 5289248819870677295, guid: b7bfa290675cbda47ab78ec0efcebe17, type: 3}
 --- !u!114 &8229732049273852689
 MonoBehaviour:
   m_ObjectHideFlags: 0

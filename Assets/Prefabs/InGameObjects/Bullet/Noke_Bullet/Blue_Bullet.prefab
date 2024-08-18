@@ -4793,8 +4793,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2090470481
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -9684,8 +9684,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2090470481
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -9729,7 +9729,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4304552942328286}
   - component: {fileID: 114466745178800524}
-  - component: {fileID: 114221931414188392}
   - component: {fileID: 2632536480727948922}
   - component: {fileID: 1596556004953495275}
   - component: {fileID: 6302531919965906113}
@@ -9763,7 +9762,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681046568612450}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14fe9984834882c43b827e4197192a74, type: 3}
   m_Name: 
@@ -9838,31 +9837,6 @@ MonoBehaviour:
       m_NumAlphaKeys: 3
   applyChanges: 0
   Keep_applyChanges: 0
---- !u!114 &114221931414188392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1681046568612450}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 538d28f745155f34fba977c5c1026e39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impactPrefab: {fileID: 1879272669879180, guid: 3b22960d5e460c2458d3dccd2cf94b80, type: 3}
-  explosionPrefab: {fileID: 0}
-  thrust: 0
-  thisRigidbody: {fileID: 0}
-  particleKillGroup: {fileID: 0}
-  LookRotation: 1
-  Missile: 0
-  missileTarget: {fileID: 0}
-  projectileSpeed: 0
-  projectileSpeedMultiplier: 0
-  ignorePrevRotation: 0
-  explodeOnTimer: 0
-  explosionTimer: 0
 --- !u!50 &2632536480727948922
 Rigidbody2D:
   serializedVersion: 4
@@ -9948,8 +9922,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ImpactPrefab: {fileID: 1879272669879180, guid: a277241abc57bcf4b9516bf9d35824f9, type: 3}
-  ExplosionPrefab: {fileID: 0}
-  Damage: 20
 --- !u!1 &301443493389002018
 GameObject:
   m_ObjectHideFlags: 0
