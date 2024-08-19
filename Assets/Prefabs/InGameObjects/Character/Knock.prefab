@@ -482,7 +482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1fd37310662814ab0a46fec4e10bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  JumpTime: 0.25
   ease: 1
   PlayerYSize: 0
   PlayerYLoc: 0

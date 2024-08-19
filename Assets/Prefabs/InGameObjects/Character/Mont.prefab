@@ -155,7 +155,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.58539397, y: 0.41}
+  m_Offset: {x: 0.22, y: 0.41}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -166,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2959963, y: 0.2}
+  m_Size: {x: 1.2959963, y: 0.14}
   m_EdgeRadius: 0
 --- !u!1 &2356863034480755043
 GameObject:
@@ -460,8 +460,8 @@ MonoBehaviour:
   CanShoot: 0
   Reloading: 0
   FireLocation: {fileID: 1120014420000486859}
-  SkillFlare: {fileID: 6986871770166649600, guid: b64994184918d1244ae58be6671f27a9, type: 3}
-  SkillBullet: {fileID: 5289248819870677295, guid: b7bfa290675cbda47ab78ec0efcebe17, type: 3}
+  SkillFlare: {fileID: 3051299296646875860, guid: 3294f1d97661f20418870e9426250c0d, type: 3}
+  SkillBullet: {fileID: 5816110235116180218, guid: de9926b4831890346a9da3217a24ee0e, type: 3}
 --- !u!114 &8229732049273852689
 MonoBehaviour:
   m_ObjectHideFlags: 0
