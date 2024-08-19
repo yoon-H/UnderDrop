@@ -54,8 +54,11 @@ public class Mont : Player
         if (AnimationRef != null)
             AnimationRef.PlayAttackAnim(Target.transform.position);
 
-
-        CurSkillCount += 1;
+        if(!IsSkillCoolDownStopped)
+        {
+            CurSkillCount += 1;
+        }
+       
         GameObject flarePrefab;
         GameObject bulletPrefab;
         

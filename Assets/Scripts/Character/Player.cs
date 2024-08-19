@@ -7,6 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 using System;
 using UnityEngine.UI;
 using Unity.Jobs.LowLevel.Unsafe;
+using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
@@ -68,7 +69,7 @@ public class Player : MonoBehaviour
 
     //Skill CoolDown
 
-    bool IsSkillCoolDownStopped = false;
+    protected bool IsSkillCoolDownStopped = false;
 
     [SerializeField]
     private bool IsWaitingForAttack = false;
@@ -351,7 +352,6 @@ public class Player : MonoBehaviour
         if(flag)
         {
             IsSkillCoolDownStopped = true;
-            //TODO Skill CoolDown feature
         }
         else
         {

@@ -46,7 +46,7 @@ public class Knock : Player
                 {
                     return;
                 }
-                else if(ShieldCount > 0) // When Knock can use shield skill
+                else if(!IsSkillCoolDownStopped && ShieldCount > 0) // When Knock can use shield skill
                 {
                     collision.gameObject.GetComponent<Collider2D>().enabled = false;
                     SetIsShield(true);
