@@ -6,14 +6,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public GameObject ImpactPrefab;
-    public GameObject ExplosionPrefab;
     private GameObject Monster;
 
     private float MoveSpeed;
 
     private Vector3 MoveVector = Vector3.zero;
 
-    public int Damage = 20;
+    private int Damage = 20;
 
 
     // Start is called before the first frame update

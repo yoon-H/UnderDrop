@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Knock : Player
 {
-    //Character Stat
+    #region Character Stat
     private const int _MaxBulletNum = 8;
     private const float _ReloadTime = 1.5f;
     private const float _AttackTime = 0.4f;
     private const int _Damage = 40;
+    #endregion
 
     private float ShieldTime = 0.5f;
     private int ShieldCount = 3;

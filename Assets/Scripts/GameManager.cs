@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public bool OnVib = true;
     public int Money = 0;
     public E_Team team = E_Team.SID;
+    public int PlayerIndex = 0;
 
     private Dictionary<string, AudioClip> MusicFiles = new Dictionary<string, AudioClip>();
     private Dictionary<string, AudioClip> SoundFiles = new Dictionary<string, AudioClip>();
@@ -153,7 +154,5 @@ public class GameManager : MonoBehaviour
         SoundFiles.Add("normalbuttonsound", Resources.Load("Sounds/UI/Sound_UI_Botton1") as AudioClip);
         SoundFiles.Add("switchbuttonsound", Resources.Load("Sounds/UI/Sound_UI_Botton2") as AudioClip);
     }
-
-
 
 }

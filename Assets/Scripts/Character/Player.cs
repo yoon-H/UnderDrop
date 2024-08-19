@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     private Vector3 LeftLoc = new Vector3(-2.025f,1.7f,0);
     private Vector3 RightLoc = new Vector3(2.025f,1.7f,0);
 
-    public float JumpTime = 0.1f;
+    private float JumpTime = 0.25f;
 
     public Ease ease = Ease.Linear;
     #endregion
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
 
     public GameObject MuzzleFlareRef;
 
-    GameObject Target = null;
+    protected GameObject Target = null;
     
     public int CurBulletNum;
 
@@ -108,6 +108,7 @@ public class Player : MonoBehaviour
     {
         if(IsJumping)
         {
+
             if(Dir == E_Direction.Left && transform.position.x <= - 1.9f)
             {
                 IsJumping = false;
@@ -132,7 +133,6 @@ public class Player : MonoBehaviour
 
             if (AnimationRef != null)
                 AnimationRef.PlayJumpAnim();
-
 
             //Flip();
         }
@@ -175,7 +175,7 @@ public class Player : MonoBehaviour
     
     }
 
-    public bool Shoot()
+    public virtual bool Shoot()
     {
         if (!Target)
         {

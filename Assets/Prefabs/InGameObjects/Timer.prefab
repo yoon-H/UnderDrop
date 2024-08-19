@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5421726963611631199}
   - component: {fileID: -2078896039891984534}
   - component: {fileID: 7927822171792478966}
+  - component: {fileID: 5936915650479139649}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -170,3 +171,23 @@ MonoBehaviour:
   BombObstacleRef: {fileID: 5173553850452283100, guid: dd334f660bb14414f8e7d447e9e9195b, type: 3}
   NormalMonsterRef: {fileID: 7742011440974847689, guid: 0ed286c3f3c86864791ed9751dc4e3a8, type: 3}
   LazerMonsterRef: {fileID: 0}
+--- !u!114 &5936915650479139649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870215753751365577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b49867c85afbe4e886d3f4435eba0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Timer: {fileID: 870215753751365577}
+  BulletPanel: {fileID: 0}
+  PlayerRefs:
+  - {fileID: 7731817108806964454, guid: 194b7bad7cee2c649bde078747095988, type: 3}
+  - {fileID: 6142205984681333117, guid: 705c6e4e693ff0d41b7b5096dd9ec171, type: 3}
+  Player: {fileID: 0}
+  MoveButton: {fileID: 0}
+  SpawnPoisition: {x: 1.98, y: 2, z: 0}
