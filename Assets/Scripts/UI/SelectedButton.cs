@@ -7,12 +7,22 @@ using UnityEngine.UI;
 public class SelectedButton : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Button[] Buttons;
     private int ButtonIndex = 0;
+
+    public Image[] ButtonImages;
+    public Sprite[] OnImages;
+    public Sprite[] OffImages;
+    
+
+
+    public CollectionPanel Panel;
+
     private void OnEnable()
     {
-        if (Buttons[ButtonIndex] != null)
-            Buttons[ButtonIndex].Select();
+        if (ButtonImages[ButtonIndex] != null)
+        {
+            ButtonImages[ButtonIndex].sprite = OnImages[ButtonIndex];
+        }
     }
     void Start()
     {
@@ -27,6 +37,11 @@ public class SelectedButton : MonoBehaviour
 
     public void SetIndex(int index)
     {
+        ButtonImages[ButtonIndex].sprite = OffImages[ButtonIndex];
+
         ButtonIndex = index;
+        ButtonImages[ButtonIndex].sprite = OnImages[ButtonIndex];
+
+        Panel.SetPanelIndex(ButtonIndex);
     }
 }
