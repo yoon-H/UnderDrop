@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.NCalc;
@@ -27,20 +28,27 @@ public class CharacterInfo : MonoBehaviour
         
     }
 
-    public void ChangeIndex(int value)
+    public void AddIndex(int value)
+    {
+        int res = CharacterIndex + value;
+
+        if (res >= Characters.Length)
+        {
+            res = Characters.Length - 1;
+        }
+        else if (res < 0)
+        {
+            res = 0;
+        }
+
+        ChangeIndex(res);
+    }
+
+    public void ChangeIndex(int index)
     {
         Characters[CharacterIndex].SetActive(false);
 
-        CharacterIndex += value;
-
-        if(CharacterIndex >= Characters.Length)
-        {
-            CharacterIndex = Characters.Length -1;
-        }
-        else if(CharacterIndex < 0)
-        {
-            CharacterIndex = 0;
-        }
+        CharacterIndex = index;
 
         Characters[CharacterIndex].SetActive(true);
 
