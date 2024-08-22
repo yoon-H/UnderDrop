@@ -497,7 +497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &881802963
 RectTransform:
   m_ObjectHideFlags: 0
@@ -636,6 +636,10 @@ PrefabInstance:
     - target: {fileID: 7248676397719439414, guid: 9f82c7cd33724b7489e5e24ea4605af3, type: 3}
       propertyPath: m_Name
       value: BlurObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248676397719439414, guid: 9f82c7cd33724b7489e5e24ea4605af3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7761402731405332434, guid: 9f82c7cd33724b7489e5e24ea4605af3, type: 3}
       propertyPath: m_Color.a
@@ -1902,6 +1906,10 @@ PrefabInstance:
     - target: {fileID: 9165052049328690769, guid: 70f71c1c2f4c9f64ca3a5db60ef12ac0, type: 3}
       propertyPath: m_Name
       value: WarningPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165052049328690769, guid: 70f71c1c2f4c9f64ca3a5db60ef12ac0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
