@@ -149,8 +149,6 @@ public class PCAnimation : MonoBehaviour
 
             SkeletonAnimation.AnimationState.AddAnimation(0, "idle", true, 0f);
         }
-
-        print("finish Jump");
         IsJumping = false;
     }
 
