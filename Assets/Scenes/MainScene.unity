@@ -977,9 +977,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 398108171
-  m_SortingLayer: 8
-  m_SortingOrder: 0
+  m_SortingLayerID: -1108383809
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &569087216
 MeshFilter:
@@ -4152,6 +4152,18 @@ PrefabInstance:
     - target: {fileID: 8199906456158105333, guid: 46082b2adad485c42a9389597595696f, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197979883788619941, guid: 46082b2adad485c42a9389597595696f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197979883788619941, guid: 46082b2adad485c42a9389597595696f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197979883788619941, guid: 46082b2adad485c42a9389597595696f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
