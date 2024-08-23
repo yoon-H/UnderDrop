@@ -65,7 +65,7 @@ public class ItemSpawner : MonoBehaviour
     int SetCoinNum()
     {
         System.Random rand = new System.Random();
-        int res = rand.Next(3, 7);
+        int res = rand.Next(3, 9);
 
         return res;
     }
