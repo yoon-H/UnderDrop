@@ -409,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3718329665230603381, guid: 8f361c2ecefb46647804e8554bdc3e4c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 3718329665230603381, guid: 8f361c2ecefb46647804e8554bdc3e4c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -896,7 +896,7 @@ Transform:
   m_GameObject: {fileID: 569087212}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.73, y: -2.72, z: 0}
+  m_LocalPosition: {x: 1.73, y: -2.76, z: 0}
   m_LocalScale: {x: 0.2415018, y: 0.30747738, z: 0.2257026}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -979,7 +979,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1108383809
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &569087216
 MeshFilter:
@@ -4152,6 +4152,18 @@ PrefabInstance:
     - target: {fileID: 8199906456158105333, guid: 46082b2adad485c42a9389597595696f, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197979883788619941, guid: 46082b2adad485c42a9389597595696f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197979883788619941, guid: 46082b2adad485c42a9389597595696f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197979883788619941, guid: 46082b2adad485c42a9389597595696f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
