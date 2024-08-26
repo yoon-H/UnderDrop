@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class SIDTeam : TeamRegion
@@ -18,11 +19,12 @@ public class SIDTeam : TeamRegion
 
     [Header("Monster")]
     public GameObject NormalMonsterRef;
-    public GameObject LazerMonsterRef;
+    public GameObject LaserMonsterRef;
 
     private const float MonsterSpawnLocDx = 1.55f;
 
-    private const int Hp = 80;
+    private const int NormalHp = 70;
+    private const int BigHp = 70;
 
     private GameObject Monster;
 
@@ -56,13 +58,13 @@ public class SIDTeam : TeamRegion
         }
         else
         {
-            if (res >= 0)
+            if (res <0)
             {
                 SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
             }
             else
             {
-                //SpawnDebuffMonster(dir, player, spawner, timer, timeForArrival, locY);
+                SpawnLaserMonster(dir, player, spawner, timer, timeForArrival, locY);
             }
         }
 
@@ -244,7 +246,44 @@ public class SIDTeam : TeamRegion
         movement.SetMonsterMovementInfo(player, timeForArrival);
 
         if (!mon) return;
-        mon.SetMonsterInfo(dir, spawner, Hp, timer);
+        mon.SetMonsterInfo(dir, spawner, NormalHp, timer);
+
+        //Set location
+        Monster.transform.position = new Vector3(locX, locY, 0);
+    }
+
+    private void SpawnLaserMonster(E_Direction dir, GameObject player, GameObject spawner, Timer timer, float timeForArrival, float locY)
+    {
+        HasSpecialMonsterSpawned = true;
+        //Set LocX
+        float locX;
+        if (E_Direction.Left == dir) { locX = -MonsterSpawnLocDx; }
+        else locX = MonsterSpawnLocDx;
+
+        //Spawn Moster
+        Monster = Instantiate(LaserMonsterRef);                                 //TODO : change to ObjectPool
+
+
+        if (!Monster) return;
+        MonsterMovement movement = Monster.GetComponent<MonsterMovement>();
+        SIDLaserMonster sMon = Monster.GetComponent<SIDLaserMonster>();
+
+        //Set Movement variables
+        if (!movement) return;
+        movement.SetMonsterMovementInfo(player, timeForArrival);
+
+
+        if (!sMon) return;
+        sMon.SetMonsterInfo(dir, spawner, BigHp, timer);
+        sMon.SetTeam(this);
+
+        if (dir != E_Direction.Left)
+        {
+            Vector3 vec = sMon.SpawnLocation.transform.position;
+            vec.x = -vec.x;
+            sMon.SpawnLocation.transform.position = vec;
+        }
+
 
         //Set location
         Monster.transform.position = new Vector3(locX, locY, 0);

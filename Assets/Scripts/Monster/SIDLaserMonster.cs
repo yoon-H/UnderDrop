@@ -3,6 +3,7 @@ using Spine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SIDLaserMonster : Monster
 {
@@ -12,10 +13,17 @@ public class SIDLaserMonster : Monster
 
     private SIDTeam Team;
 
+    public GameObject LaserObject;
+    public GameObject SpawnLocation;
+
+    public GameObject SpawnedLaser;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
+
+        Anim = DataAsset.GetComponent<SkeletonAnimation>();
 
         StartCoroutine(IE_WaitForDebuff());
     }
@@ -23,12 +31,17 @@ public class SIDLaserMonster : Monster
     // Update is called once per frame
     void Update()
     {
-
+        if(SpawnedLaser != null)
+        {
+            SpawnedLaser.transform.position = SpawnLocation.transform.position;
+        }
     }
 
     private void OnDestroy()
     {
         Team.SetSpecialMonsterFlag(false);
+
+        if(LaserObject != null) { Destroy(SpawnedLaser); }
     }
 
     IEnumerator IE_WaitForDebuff()
@@ -48,15 +61,20 @@ public class SIDLaserMonster : Monster
         var time = new WaitForSeconds(WarningTime);
         yield return time;
 
-        //TODO Anim
+        var track = Anim.AnimationState.SetAnimation(0, "skill", false);
 
-        //TODO Spawn Obstacle
+        track.Complete += EndEvent;
 
-
+        
     }
 
     public void SetTeam(SIDTeam team)
     {
         Team = team;
+    }
+
+    private void EndEvent(TrackEntry entry)
+    {
+        SpawnedLaser = Instantiate(LaserObject);
     }
 }
