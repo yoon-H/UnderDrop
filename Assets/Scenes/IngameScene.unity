@@ -2012,7 +2012,7 @@ PrefabInstance:
       objectReference: {fileID: 3338412809894228390}
     - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: curRaidTeam
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: BackGroundRef
