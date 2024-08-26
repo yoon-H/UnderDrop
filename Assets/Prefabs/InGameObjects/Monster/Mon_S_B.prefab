@@ -36,6 +36,7 @@ Transform:
   - {fileID: 3017744984554677322}
   - {fileID: 3778449578266963860}
   - {fileID: 3471280176611814164}
+  - {fileID: 3736657457180341938}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7034811338463265016
@@ -73,6 +74,9 @@ MonoBehaviour:
   Spawner: {fileID: 0}
   DataAsset: {fileID: 5538828795043545739}
   DeadAsset: {fileID: 4634010699776171690}
+  LaserObject: {fileID: 1459673035012348, guid: 5a7d998f8c629ee4e880a23f22fd5828, type: 3}
+  SpawnLocation: {fileID: 7069187104379690913}
+  SpawnedLaser: {fileID: 0}
 --- !u!61 &6948919541434761495
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -266,7 +270,7 @@ GameObject:
   - component: {fileID: 8955371816770981593}
   m_Layer: 0
   m_Name: "Spine GameObject (\uC2DC\uB4DC\uB300)"
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -373,6 +377,37 @@ MonoBehaviour:
   _animationName: 
   loop: 1
   timeScale: 1
+--- !u!1 &7069187104379690913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3736657457180341938}
+  m_Layer: 0
+  m_Name: LaserLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3736657457180341938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7069187104379690913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.439, y: -0.879, z: 0}
+  m_LocalScale: {x: 0, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 763868670475242522}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7244043235908708018
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +467,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 398108171
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &2685465244172938239
