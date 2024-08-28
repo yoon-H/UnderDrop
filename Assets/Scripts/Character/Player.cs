@@ -82,6 +82,10 @@ public class Player : MonoBehaviour
     public GameObject BulletCount;
     protected Text BulletText;
 
+    public GameObject BulletPanelRef;
+    public Sprite ActiveBulletImage;
+    public Sprite InActiveBulletImage;
+
 
     //public GameObject TimerRef;
     private Timer Timer;
@@ -340,6 +344,9 @@ public class Player : MonoBehaviour
 
         BulletText = bulletPanel.GetComponentInChildren<Text>();
         BulletSlider = bulletPanel.GetComponentInChildren<Slider>();
+
+        BulletPanelRef = BulletSlider.gameObject;
+
         if(BulletSlider)
         {
             BulletSlider.value = CurBulletNum;
@@ -405,6 +412,39 @@ public class Player : MonoBehaviour
         yield return sec;
 
         InvincibleBuff = false;
+    }
+
+    public void SetBulletImage()
+    {
+        GameObject fillObject = BulletPanelRef.transform.Find("Fill Area").transform.Find("Fill").gameObject;
+
+        Image[] activeImages = fillObject.GetComponentsInChildren<Image>();
+        
+
+        foreach(var image in activeImages)
+        {
+            if(image.gameObject == fillObject)
+            {
+                continue;
+            }
+
+            image.sprite = ActiveBulletImage;
+        }
+
+        GameObject backgroundObject = BulletPanelRef.transform.Find("Background").gameObject;
+
+        Image[] inActiveImages = backgroundObject.GetComponentsInChildren<Image>();
+
+        foreach (var image in inActiveImages)
+        {
+            if (image.gameObject == backgroundObject)
+            {
+                continue;
+            }
+
+            image.sprite = InActiveBulletImage;
+        }
+
     }
 
 }

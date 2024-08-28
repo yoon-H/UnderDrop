@@ -6,6 +6,8 @@ public class SpawnCharacter : MonoBehaviour
 {
     public GameObject Timer;
     public GameObject BulletPanel;
+    public GameObject BackgroundBullet;
+    public GameObject FillBullet;
 
     public GameObject[] PlayerRefs;
     public GameObject Player;
