@@ -497,6 +497,9 @@ MonoBehaviour:
   ReloadWaitingTime: 1
   BulletSlider: {fileID: 0}
   BulletCount: {fileID: 0}
+  BulletPanelRef: {fileID: 0}
+  ActiveBulletImage: {fileID: 21300000, guid: 05ad6cdeb03704948b8d3df30a0ceaef, type: 3}
+  InActiveBulletImage: {fileID: 21300000, guid: ef8d455c60cc4f144b3bfa8856373be2, type: 3}
   CanShoot: 0
   Reloading: 0
   ShieldRef: {fileID: 787781574669942628}
