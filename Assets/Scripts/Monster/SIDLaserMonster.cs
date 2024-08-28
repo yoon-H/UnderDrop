@@ -65,8 +65,6 @@ public class SIDLaserMonster : Monster
         var track = Anim.AnimationState.SetAnimation(0, "skill", false);
 
         track.Complete += EndEvent;
-
-        
     }
 
     public void SetTeam(SIDTeam team)
@@ -77,6 +75,7 @@ public class SIDLaserMonster : Monster
     private void EndEvent(TrackEntry entry)
     {
         SpawnedLaser = Instantiate(LaserObject);
+        GameManager.Instance.PlaySound("sidattack");
 
         StartCoroutine(IE_DestroyLaser());
     }
