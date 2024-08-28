@@ -8,5 +8,6 @@ public class DamageDoubleItem : Item
     protected override void OnUse()
     {
         Player.SetDamageDoubleBuff(BuffTime);
+        GameManager.Instance.PlaySound("itemsound");
     }
 }

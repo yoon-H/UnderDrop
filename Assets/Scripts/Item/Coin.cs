@@ -8,6 +8,7 @@ public class Coin : Item
     protected override void OnUse()
     {
         Timer.AddCoin(1);
+        GameManager.Instance.PlaySound("coinsound");
     }
 
     public void SetTimer(Timer timer)

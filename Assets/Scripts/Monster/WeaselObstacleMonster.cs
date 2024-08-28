@@ -45,7 +45,9 @@ public class WeaselObstacleMonster : Monster
         yield return new WaitForSeconds(WarningTime);
         //Spawn Fog Object
         DestroyTasks();
-     
+
+        GameManager.Instance.PlaySound("seorangattack");
+
     }
 
     private void DestroyTasks()

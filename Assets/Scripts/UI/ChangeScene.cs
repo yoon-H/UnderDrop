@@ -20,6 +20,7 @@ public class ChangeScene : MonoBehaviour
     public void MoveToInGameScene()
     {
         SceneManager.LoadScene("InGameScene");
+        GameManager.Instance.StopMusic();
         GameManager.Instance.PlayMusic("ingamebgm");
     }
 
@@ -27,5 +28,6 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("MainScene");
         GameManager.Instance.StopMusic();
+        GameManager.Instance.PlayMusic("mainbgm");
     }
 }
