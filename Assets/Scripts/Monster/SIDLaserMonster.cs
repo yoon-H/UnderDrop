@@ -9,6 +9,7 @@ public class SIDLaserMonster : Monster
 {
     const float SkillDelay = 2f;
     const float WarningTime = 4f;
+    const float LaserTime = 1f;
     SkeletonAnimation Anim;
 
     private SIDTeam Team;
@@ -76,5 +77,15 @@ public class SIDLaserMonster : Monster
     private void EndEvent(TrackEntry entry)
     {
         SpawnedLaser = Instantiate(LaserObject);
+
+        StartCoroutine(IE_DestroyLaser());
+    }
+
+    IEnumerator IE_DestroyLaser()
+    {
+        var time = new WaitForSeconds(LaserTime);
+        yield return time;
+
+        Destroy(SpawnedLaser);
     }
 }
