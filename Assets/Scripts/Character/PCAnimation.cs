@@ -145,8 +145,6 @@ public class PCAnimation : MonoBehaviour
         if (Object != null) { Object.SetActive(true); }
         if (SkeletonAnimation != null)
         {
-            SkeletonAnimation.AnimationState.SetAnimation(0, "P", false);
-
             SkeletonAnimation.AnimationState.AddAnimation(0, "idle", true, 0f);
         }
         IsJumping = false;

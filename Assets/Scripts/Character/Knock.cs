@@ -27,6 +27,8 @@ public class Knock : Player
         AttackTime = _AttackTime;
         Damage = _Damage;
 
+        SetBulletImage();
+
         CurBulletNum = MaxBulletNum;
 
         ShieldRef.SetActive(false);

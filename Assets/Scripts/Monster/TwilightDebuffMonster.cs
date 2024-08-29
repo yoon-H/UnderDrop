@@ -58,6 +58,7 @@ public class TwilightDebuffMonster : Monster
         {
             TrackEntry track = Anim.AnimationState.SetAnimation(0, "skill", false);
             track.Complete += EndEvent;
+            GameManager.Instance.PlaySound("hwanghonattack");
         }
 
     }

@@ -8,5 +8,6 @@ public class InvincibleItem : Item
     protected override void OnUse()
     {
         Player.SetInvincibleBuff(BuffTime);
+        GameManager.Instance.PlaySound("itemsound");
     }
 }

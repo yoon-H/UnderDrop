@@ -10,6 +10,7 @@ public class CoinDoubleItem : Item
     protected override void OnUse()
     {
         Timer.SetCoinDoubleBuff(BuffTime);
+        GameManager.Instance.PlaySound("itemsound");
     }
 
     public void SetTimer(Timer timer)

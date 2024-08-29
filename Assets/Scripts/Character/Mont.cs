@@ -33,6 +33,7 @@ public class Mont : Player
         ReloadTime = _ReloadTime;
         AttackTime = _AttackTime;
         Damage = _Damage;
+        SetBulletImage();
 
         CurBulletNum = MaxBulletNum;
 

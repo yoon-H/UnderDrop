@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
 
         MusicAudio = audios[0];
         SoundAudio = audios[1];
+
+        GameManager.Instance.PlayMusic("mainbgm");
     }
 
     private void FixedUpdate()
@@ -135,6 +137,7 @@ public class GameManager : MonoBehaviour
     private void InitMusicFiles()
     {
         MusicFiles.Add("ingamebgm", Resources.Load("Sounds/UI/Sound_Game_Bgm") as AudioClip);
+        MusicFiles.Add("mainbgm", Resources.Load("Sounds/New/Sound_Game_Title") as AudioClip);
     }
 
     private void InitSoundFiles()
@@ -153,6 +156,15 @@ public class GameManager : MonoBehaviour
         //Button sounds
         SoundFiles.Add("normalbuttonsound", Resources.Load("Sounds/UI/Sound_UI_Botton1") as AudioClip);
         SoundFiles.Add("switchbuttonsound", Resources.Load("Sounds/UI/Sound_UI_Botton2") as AudioClip);
+
+        //Item sounds
+        SoundFiles.Add("itemsound", Resources.Load("Sounds/New/Sound_Game_Item") as AudioClip);
+        SoundFiles.Add("coinsound", Resources.Load("Sounds/New/Sound_Game_Coin") as AudioClip);
+
+        //Attack Monster sounds
+        SoundFiles.Add("hwanghonattack", Resources.Load("Sounds/New/Sound_Mon_Hwanghon") as AudioClip);
+        SoundFiles.Add("seorangattack", Resources.Load("Sounds/New/Sound_Mon_Seorang") as AudioClip);
+        SoundFiles.Add("sidattack", Resources.Load("Sounds/New/Sound_Mon_SID") as AudioClip);
     }
 
 }
