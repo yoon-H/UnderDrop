@@ -66,6 +66,8 @@ public class Player : MonoBehaviour
     public bool InvincibleBuff = false;
     Coroutine InvincibleCoroutine;
 
+    public GameObject InvincibleEffect;
+
 
     //Skill CoolDown
 
@@ -103,6 +105,8 @@ public class Player : MonoBehaviour
         PlayerYLoc = transform.position.y;
 
         CurBulletNum = MaxBulletNum;
+
+        InvincibleEffect.SetActive(false);
 
         if (!AnimationRef)
             AnimationRef = GetComponent<PCAnimation>();
@@ -407,11 +411,15 @@ public class Player : MonoBehaviour
     {
         InvincibleBuff = true;
 
+        InvincibleEffect.SetActive(true);
+
         var sec = new WaitForSeconds(time);
 
         yield return sec;
 
         InvincibleBuff = false;
+
+        InvincibleEffect.SetActive(false);
     }
 
     public void SetBulletImage()
