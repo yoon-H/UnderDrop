@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReplayAnim : MonoBehaviour
+public class ReplayProfileAnim : MonoBehaviour
 {
     public SkeletonAnimation Anim;
 
