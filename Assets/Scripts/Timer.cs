@@ -151,6 +151,9 @@ public class Timer : MonoBehaviour
                 RaidRemainCounter = 0;
                 RaidEvent.RaidBar.SetActive(false);
                 RaidEvent.RaidMarkRef.SetActive(false);
+
+                RaidEvent.SetRaidBackGround(false, curRaidTeam);
+                Wall.SetIsAttacked(false, curRaidTeam);
             }
         }
         else
@@ -169,6 +172,7 @@ public class Timer : MonoBehaviour
                     //curRaidTeam = E_Team.Twilight;
 
                     StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
+                    Wall.SetIsAttacked(true, curRaidTeam );
                     RaidMissedCount = 0;
                 }
                 else
@@ -188,6 +192,7 @@ public class Timer : MonoBehaviour
                         //curRaidTeam = E_Team.Twilight;
 
                         StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
+                        Wall.SetIsAttacked(true, curRaidTeam);
                     }
                 }
 

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RaidEvent : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class RaidEvent : MonoBehaviour
 
     public GameObject RaidBar;
     public ProgressBar Bar;
+
+    public GameObject RaidBackGroundRef;
+    public Sprite[] RaidBackGrounds;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +38,8 @@ public class RaidEvent : MonoBehaviour
         RaidBar.SetActive(false);
         RaidMarkRef.SetActive(false);
         BackPanel.SetActive(false);
+
+        RaidBackGroundRef.SetActive(false);
     }
 
     // Update is called once per frame
@@ -74,6 +80,7 @@ public class RaidEvent : MonoBehaviour
         Timer.SetIsRaidExisted(true);
         RaidBar.SetActive(true);
         RaidMarkRef.SetActive(true);
+        SetRaidBackGround(true, team);
         
         Time.timeScale = 1f;
     }
@@ -98,6 +105,26 @@ public class RaidEvent : MonoBehaviour
                 TeamPanel = WarningPanels[1]; break;
             case E_Team.Twilight:
                 TeamPanel = WarningPanels[2]; break;
+        }
+    }
+
+    public void SetRaidBackGround(bool flag, E_Team team)
+    {
+        RaidBackGroundRef.SetActive(flag);
+
+        if(flag)
+        {
+            SpriteRenderer renderer = RaidBackGroundRef.GetComponent<SpriteRenderer>();
+
+            switch (team)
+            {
+                case E_Team.SID:
+                    renderer.sprite = RaidBackGrounds[0]; break;
+                case E_Team.Weasel:
+                    renderer.sprite = RaidBackGrounds[1]; break;
+                case E_Team.Twilight:
+                    renderer.sprite = RaidBackGrounds[2]; break;
+            }
         }
     }
 }
