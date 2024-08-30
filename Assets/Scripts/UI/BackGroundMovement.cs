@@ -36,6 +36,19 @@ public class BackGroundMovement : MonoBehaviour
     public int ChangeCount = 0;
     public bool SpriteChanging;
 
+    //Raid Walls
+    public Sprite[] RaidLeftWalls; // 0 : SID, 1 : seorang, 2 : hwanghon
+    public Sprite[] RaidRightWalls;
+
+    private bool IsAttacked = false;
+    private bool RemoveRaidWall = false;
+
+
+    private int RaidIndex;
+    private int RaidCount = 0;
+    private int RemoveRaidCount= 0;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,25 +74,62 @@ public class BackGroundMovement : MonoBehaviour
             EndIndex += 1;
             if (EndIndex >= Sprites.Length) EndIndex = 0;
 
-            if(CurrentSpriteIndex == 2 && !SpriteInserted)
+            if(IsAttacked)
             {
-                InsertWall();
-                SpriteInserted = true;
-                return;
-            }
-
-            if(SpriteChanging && ChangeCount < 3)
-            {
-                ChangeWallSprite();
-
-                ChangeCount += 1;
-
-                if(ChangeCount >=3)
+                if (RaidCount < 3)
                 {
-                    ChangeCount = 0;
-                    Setflag(false);
+                    ChangeRaidWalls();
+
+                    RaidCount += 1;
+                }
+            }
+            else if (RemoveRaidWall)
+            {
+                if(RemoveRaidCount < 3)
+                {
+                    RemoveRaidCount += 1;
+
+                    if (CurrentSpriteIndex == 2 && !SpriteInserted) //On the border of walls
+                    {
+                        InsertWall();
+                        SpriteInserted = true;
+                        return;
+                    }
+                    else
+                    {
+                        ChangeWallSprite();
+                    }
+
+                    if(RemoveRaidCount >=3)
+                    {
+                        RemoveRaidWall = false;
+                        RemoveRaidCount = 0;
+                    }
+                }
+            }
+            else
+            {
+
+                if (CurrentSpriteIndex == 2 && !SpriteInserted) //On the border of walls
+                {
+                    InsertWall();
+                    SpriteInserted = true;
+                    return;
                 }
 
+                if (SpriteChanging && ChangeCount < 3)   // Change Wall Type
+                {
+                    ChangeWallSprite();
+
+                    ChangeCount += 1;
+
+                    if (ChangeCount >= 3)
+                    {
+                        ChangeCount = 0;
+                        Setflag(false);
+                    }
+
+                }
             }
         }
     }
@@ -150,5 +200,55 @@ public class BackGroundMovement : MonoBehaviour
             CurrentSpriteIndex = SpriteLength - 1;
             Setflag(false);
         }
+    }
+
+    public void SetIsAttacked(bool flag, E_Team team)
+    {
+        if(IsAttacked != flag)
+        {
+            if(flag)
+            {
+                IsAttacked = true;
+                SetRaidIndex(team);
+            }
+            else
+            {
+                IsAttacked = false;
+                RaidCount = 0;
+                RemoveRaidWall = true;
+            }
+        }
+    }
+
+    private void SetRaidIndex(E_Team team)
+    {
+        switch (team)
+        {
+            case E_Team.SID:
+                RaidIndex = 0; break;
+            case E_Team.Weasel:
+                RaidIndex = 1; break;
+            case E_Team.Twilight:
+                RaidIndex = 2; break;
+        }
+    }
+
+
+    private void ChangeRaidWalls()
+    {
+        SpriteRenderer[] renderers = Sprites[EndIndex].gameObject.GetComponentsInChildren<SpriteRenderer>();
+
+        foreach (var item in renderers)
+        {
+            if (item.gameObject.name == "LeftWall")
+            {
+                item.sprite = RaidLeftWalls[RaidIndex];
+            }
+            else
+            {
+                item.sprite = RaidRightWalls[RaidIndex];
+            }
+        }
+
     }
 }

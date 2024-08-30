@@ -2446,6 +2446,8 @@ MonoBehaviour:
   CurrentSpriteIndex: 0
   ChangeCount: 0
   SpriteChanging: 0
+  RaidLeftWalls: []
+  RaidRightWalls: []
 --- !u!1 &4443880339023066521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,7 +3174,6 @@ MonoBehaviour:
   - {fileID: 1404263663652084329}
   - {fileID: 4990358374479537496}
   - {fileID: 2801375513710994664}
-  MaxYLoc: 60
   YSize: 13.8
   BackGrounds:
   - {fileID: 21300000, guid: 2dfecb0fe5e604c4388bdb97560cb26f, type: 3}
@@ -4741,6 +4742,14 @@ MonoBehaviour:
   CurrentSpriteIndex: 0
   ChangeCount: 0
   SpriteChanging: 0
+  RaidLeftWalls:
+  - {fileID: 21300000, guid: c9c43c0824892754bafac9de0c340f8f, type: 3}
+  - {fileID: 21300000, guid: 4e50411294fec564e86d30888d489ef6, type: 3}
+  - {fileID: 21300000, guid: d44993ca0ef522c4588c492e84239ae4, type: 3}
+  RaidRightWalls:
+  - {fileID: 21300000, guid: d866a65cd1dd5f549a9450e64794c776, type: 3}
+  - {fileID: 21300000, guid: c0f1680bc6bced4488f5ee2f46616fe3, type: 3}
+  - {fileID: 21300000, guid: c11ca7edacb329240a014df39c19c9f5, type: 3}
 --- !u!1 &8449698494300609619
 GameObject:
   m_ObjectHideFlags: 0
