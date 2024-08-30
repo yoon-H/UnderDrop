@@ -14,10 +14,10 @@ public class ItemSpawner : MonoBehaviour
     public GameObject InvincibleItemRef;
 
     #region SpawnTime
-    public float MaxTimeForArrival = 3f;
-    public float CurTimeForArrival;
-    public float MinTimeForArrival = 2.4f;
-    public float TimeForArrivalReducingAmount = 0.2f;
+    private float MaxTimeForArrival = 2.2f;
+    private float CurTimeForArrival;
+    private float MinTimeForArrival = 1.4f;
+    private float TimeForArrivalReducingAmount = 0.2f;
     #endregion
 
     private float SpawnXLoc = 1.5f;
