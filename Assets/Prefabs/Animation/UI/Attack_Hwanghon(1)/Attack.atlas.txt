@@ -1,0 +1,111 @@
+
+Attack.png
+size: 2030,1351
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Attack/Circle
+  rotate: false
+  xy: 998, 210
+  size: 337, 255
+  orig: 461, 818
+  offset: 0, 119
+  index: -1
+Attack/SpeedTop
+  rotate: false
+  xy: 2, 719
+  size: 2026, 630
+  orig: 2028, 630
+  offset: 2, 0
+  index: -1
+Attack/SpeedUnder
+  rotate: false
+  xy: 2, 467
+  size: 1745, 250
+  orig: 1745, 250
+  offset: 0, 0
+  index: -1
+Attack2/BigText
+  rotate: false
+  xy: 1337, 292
+  size: 194, 173
+  orig: 194, 173
+  offset: 0, 0
+  index: -1
+Attack2/Bottom
+  rotate: false
+  xy: 2, 2
+  size: 721, 463
+  orig: 721, 463
+  offset: 0, 0
+  index: -1
+Attack2/Center
+  rotate: true
+  xy: 1749, 519
+  size: 198, 255
+  orig: 229, 295
+  offset: 0, 0
+  index: -1
+Attack2/Clothes
+  rotate: false
+  xy: 1180, 26
+  size: 160, 105
+  orig: 160, 105
+  offset: 0, 0
+  index: -1
+Attack2/EightL
+  rotate: true
+  xy: 1749, 455
+  size: 62, 123
+  orig: 62, 123
+  offset: 0, 0
+  index: -1
+Attack2/EightR
+  rotate: true
+  xy: 1337, 163
+  size: 127, 193
+  orig: 174, 280
+  offset: 47, 87
+  index: -1
+Attack2/Face
+  rotate: false
+  xy: 1342, 18
+  size: 151, 143
+  orig: 151, 143
+  offset: 0, 0
+  index: -1
+Attack2/HandL
+  rotate: false
+  xy: 998, 9
+  size: 180, 122
+  orig: 180, 122
+  offset: 0, 0
+  index: -1
+Attack2/Hat
+  rotate: false
+  xy: 1533, 313
+  size: 212, 152
+  orig: 212, 152
+  offset: 0, 0
+  index: -1
+Attack2/Ribbon
+  rotate: false
+  xy: 725, 22
+  size: 56, 36
+  orig: 56, 36
+  offset: 0, 0
+  index: -1
+Attack2/Shadow
+  rotate: false
+  xy: 725, 60
+  size: 271, 405
+  orig: 272, 405
+  offset: 0, 0
+  index: -1
+Attack2/SmallText
+  rotate: false
+  xy: 998, 133
+  size: 307, 75
+  orig: 307, 75
+  offset: 0, 0
+  index: -1

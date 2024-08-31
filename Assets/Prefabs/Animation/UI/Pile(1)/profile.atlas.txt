@@ -1,0 +1,41 @@
+
+profile.png
+size: 1853,1798
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Noke
+  rotate: true
+  xy: 989, 60
+  size: 639, 747
+  orig: 639, 747
+  offset: 0, 0
+  index: -1
+Paper
+  rotate: false
+  xy: 989, 701
+  size: 862, 1095
+  orig: 862, 1095
+  offset: 0, 0
+  index: -1
+Paper(1)
+  rotate: false
+  xy: 2, 631
+  size: 985, 1165
+  orig: 985, 1165
+  offset: 0, 0
+  index: -1
+clip
+  rotate: false
+  xy: 1738, 526
+  size: 83, 173
+  orig: 83, 173
+  offset: 0, 0
+  index: -1
+mont1
+  rotate: true
+  xy: 2, 2
+  size: 627, 601
+  orig: 628, 630
+  offset: 0, 1
+  index: -1
