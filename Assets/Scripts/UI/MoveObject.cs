@@ -9,23 +9,31 @@ public class MoveObject : MonoBehaviour
 {
     public float StartPosition;
     public float EndPosition;
-    public float Time = 1f;
+    public float moveTime = 1f;
 
     public SkeletonGraphic Anim;
     public GameObject Objects;
 
-    private RectTransform Rect;
+    protected RectTransform Rect;
 
-    private void Start()
+    private void Awake()
     {
         Rect = GetComponent<RectTransform>();
         HideObjects();
     }
 
-    public void Move()
+    private void OnDisable()
     {
-        if(Rect != null)
-            Rect.DOAnchorPosX(EndPosition, Time).SetEase(Ease.OutQuart).OnComplete(() => PlayAnim());
+        HideObjects();
+    }
+    
+    public virtual void Move()
+    {
+        if (Rect != null)
+        {
+            Rect.DOAnchorPosX(EndPosition, moveTime).SetEase(Ease.OutQuart).OnComplete(() => PlayAnim()).SetUpdate(true);
+        }
+       
     }
 
     private void Remove()
@@ -36,21 +44,18 @@ public class MoveObject : MonoBehaviour
             rect.x = StartPosition;
 
             Rect.anchoredPosition = rect;
-
             Anim.Initialize(true);
         }
             
     }
 
-    private void PlayAnim()
+    protected virtual void PlayAnim()
     {
-        Anim.AnimationState.ClearTrack(0);
-        Anim.Skeleton.SetToSetupPose();
         var entry = Anim.AnimationState.SetAnimation(0, "animation", false);
         entry.Complete += Event;
     }
 
-    private void Event(TrackEntry entry)
+    protected void Event(TrackEntry entry)
     {
         Objects.SetActive(true);
     }

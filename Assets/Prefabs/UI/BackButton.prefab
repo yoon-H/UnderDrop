@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1663253818038188434
+--- !u!1 &1711315579239877142
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9049214231011174040}
-  - component: {fileID: 5222611731907098567}
-  - component: {fileID: 442333800575844659}
-  - component: {fileID: 2570474030672482761}
+  - component: {fileID: 3055801134855278111}
+  - component: {fileID: 8258961033227870962}
+  - component: {fileID: 7812685538411070423}
+  - component: {fileID: 5050361696043790094}
   m_Layer: 5
-  m_Name: SettingButton
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &9049214231011174040
+--- !u!224 &3055801134855278111
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663253818038188434}
+  m_GameObject: {fileID: 1711315579239877142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6076575007983399856}
+  - {fileID: 7646129495649560748}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -30, y: -30}
-  m_SizeDelta: {x: 110, y: 114}
-  m_Pivot: {x: 1, y: 1}
---- !u!222 &5222611731907098567
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 130, y: 198}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8258961033227870962
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663253818038188434}
+  m_GameObject: {fileID: 1711315579239877142}
   m_CullTransparentMesh: 1
---- !u!114 &442333800575844659
+--- !u!114 &7812685538411070423
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663253818038188434}
+  m_GameObject: {fileID: 1711315579239877142}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -91,31 +91,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SwitchPopUp, Assembly-CSharp
-        m_MethodName: SwitchFlag
-        m_Mode: 6
+      - m_Target: {fileID: 8758040075043057279}
+        m_TargetAssemblyTypeName: PlayAnim, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
-        m_MethodName: SetIsPaused
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 2570474030672482761}
+      - m_Target: {fileID: 5050361696043790094}
         m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
         m_MethodName: PlayButtonSound
         m_Mode: 1
@@ -125,22 +113,22 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2570474030672482761
+--- !u!114 &5050361696043790094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1663253818038188434}
+  m_GameObject: {fileID: 1711315579239877142}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24af7b63d34ffc742a8344b27081101b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonType: 0
---- !u!1 &2647439729884324095
+--- !u!1 &3551316085068136006
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,9 +136,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6076575007983399856}
-  - component: {fileID: 1831662384056455665}
-  - component: {fileID: 2352530021490096704}
+  - component: {fileID: 7646129495649560748}
+  - component: {fileID: 1806651364558053746}
+  - component: {fileID: 2266919770662858127}
+  - component: {fileID: 8758040075043057279}
   m_Layer: 0
   m_Name: SkeletonGraphic (Button)
   m_TagString: Untagged
@@ -158,40 +147,40 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6076575007983399856
+--- !u!224 &7646129495649560748
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2647439729884324095}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 3551316085068136006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.43, y: 0.43, z: 0.43}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9049214231011174040}
+  m_Father: {fileID: 3055801134855278111}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 77.97583}
+  m_AnchoredPosition: {x: 3, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: -0.7}
---- !u!222 &1831662384056455665
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!222 &1806651364558053746
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2647439729884324095}
+  m_GameObject: {fileID: 3551316085068136006}
   m_CullTransparentMesh: 1
---- !u!114 &2352530021490096704
+--- !u!114 &2266919770662858127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2647439729884324095}
+  m_GameObject: {fileID: 3551316085068136006}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d85b887af7e6c3f45a2e2d2920d641bc, type: 3}
@@ -206,11 +195,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   skeletonDataAsset: {fileID: 11400000, guid: c1825a855d69a7e4da7a7b121fffe730, type: 2}
-  initialSkinName: Setting(Playsceen)
+  initialSkinName: xbutton
   initialFlipX: 0
   initialFlipY: 0
   startingAnimation: 
-  startingLoop: 1
+  startingLoop: 0
   timeScale: 1
   freeze: 0
   updateWhenInvisible: 3
@@ -231,3 +220,17 @@ MonoBehaviour:
       calculateTangents: 0
       addNormals: 0
       immutableTriangles: 0
+--- !u!114 &8758040075043057279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3551316085068136006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9830276864d47cd4f9aca1373db4cc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Anim: {fileID: 2266919770662858127}
+  PopUp: {fileID: 0}
