@@ -3357,7 +3357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPosition: 0
   EndPosition: 0
-  Time: 0.1
+  moveTime: 0.1
   Anim: {fileID: 8056580735994101059}
   Objects: {fileID: 5260530044212877560}
 --- !u!1 &6660652685957745551

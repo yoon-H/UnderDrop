@@ -1338,17 +1338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d529ba01488754692b594373c3afd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &819742212 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5441740682120037438, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-  m_PrefabInstance: {fileID: 7022571178804281394}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4795f6d2eb739246b345441e763a797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &882766455 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4944065497545247806, guid: 817892d97cff0e0488e204cc8c060c15, type: 3}
@@ -3914,50 +3903,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1468502886}
     m_Modifications:
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1946000715}
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 819742212}
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: PlayAnim, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: PlayAnim, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 402693238013056802, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 488250135647133469, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4254,6 +4199,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7802570237579592855, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
+      propertyPath: Change
+      value: 
+      objectReference: {fileID: 1946000715}
     - target: {fileID: 7876682268998224570, guid: ed02aba919d1e2a40838d9869d596263, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4

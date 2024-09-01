@@ -13,7 +13,7 @@ public class CharacterInfo : MonoBehaviour
     public GameObject[] Characters;
     private bool[] UnLocked = { true, true, false, false, false, false };
     public Image SelectImage;
-    public Sprite OnImage;
+    public GameObject OnObject;
     public Sprite OffImage;
 
     // Start is called before the first frame update
@@ -52,14 +52,17 @@ public class CharacterInfo : MonoBehaviour
 
         Characters[CharacterIndex].SetActive(true);
 
-        if (UnLocked[CharacterIndex])
-        {
-            SelectImage.sprite = OnImage;
-        }
-        else
-        {
-            SelectImage.sprite = OffImage;
-        }
+        //if (UnLocked[CharacterIndex])
+        //{
+        //    OnObject.SetActive(true);
+        //    SelectImage.enabled = false;
+        //}
+        //else
+        //{
+        //    OnObject.SetActive(false);
+        //    SelectImage.enabled = true;
+        //    SelectImage.sprite = OffImage;
+        //}
     }
 
     public void SelectPC()
