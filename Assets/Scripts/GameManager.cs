@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int Money = 0;
     public E_Team team = E_Team.SID;
     public int PlayerIndex = 0;
+    public E_Scene CurrentScene = E_Scene.MainScene;
 
     private Dictionary<string, AudioClip> MusicFiles = new Dictionary<string, AudioClip>();
     private Dictionary<string, AudioClip> SoundFiles = new Dictionary<string, AudioClip>();

@@ -14,6 +14,13 @@ public class ChangeScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Escape)) 
+        {
+            if (GameManager.Instance.CurrentScene == E_Scene.MainScene)
+            {
+                Application.Quit();
+            }
+        }
         
     }
 
@@ -22,6 +29,7 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene("InGameScene");
         GameManager.Instance.StopMusic();
         GameManager.Instance.PlayMusic("ingamebgm");
+        GameManager.Instance.CurrentScene = E_Scene.InGameScene;
     }
 
     public void MoveToMainScene()
@@ -29,5 +37,6 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene("MainScene");
         GameManager.Instance.StopMusic();
         GameManager.Instance.PlayMusic("mainbgm");
+        GameManager.Instance.CurrentScene = E_Scene.MainScene;
     }
 }
