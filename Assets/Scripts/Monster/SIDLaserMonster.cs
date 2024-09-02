@@ -1,4 +1,4 @@
-using Spine.Unity;
+﻿using Spine.Unity;
 using Spine;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,6 +18,8 @@ public class SIDLaserMonster : Monster
     public GameObject SpawnLocation;
 
     public GameObject SpawnedLaser;
+
+    public GameObject WarningEffect;
 
     // Start is called before the first frame update
     protected override void Start()

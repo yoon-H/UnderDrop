@@ -8,11 +8,13 @@ public class TwilightDebuffMonster : Monster
 {
 
     const float SkillDelay = 2f;
-    const float WarningTime = 1.5f;
+    const float WarningTime = 1f;
     SkeletonAnimation Anim;
 
     Player PC;
     private TwilightTeam Team;
+
+    public GameObject WarningEffect;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -46,10 +48,12 @@ public class TwilightDebuffMonster : Monster
 
     IEnumerator IE_Debuff()
     {
-        //TODO Warning
+        WarningEffect.SetActive(true);
 
         var time = new WaitForSeconds(WarningTime);
         yield return time;
+
+        WarningEffect.SetActive(true);
 
         //Hat Animation
         Anim = GetComponentInChildren<SkeletonAnimation>();

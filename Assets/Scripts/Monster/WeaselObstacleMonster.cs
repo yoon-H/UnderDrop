@@ -13,6 +13,8 @@ public class WeaselObstacleMonster : Monster
     public float SpawnLocY = -4.5f;
     private WeaselTeam Team;
 
+    public GameObject WarningEffect;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -34,15 +36,18 @@ public class WeaselObstacleMonster : Monster
 
     IEnumerator IE_Warning()
     {
-        //TODO :: Animation
 
         if(TryGetComponent<WeaselMonsterAnimation>(out var anim))
         {
             anim.PlayWarningAnimation();
         }
 
+        WarningEffect.SetActive(true);
 
         yield return new WaitForSeconds(WarningTime);
+        
+        WarningEffect.SetActive(false);
+
         //Spawn Fog Object
         DestroyTasks();
 
