@@ -73,6 +73,8 @@ public class Player : MonoBehaviour
 
     protected bool IsSkillCoolDownStopped = false;
 
+    public GameObject StoppedEffect;
+
     [SerializeField]
     private bool IsWaitingForAttack = false;
 
@@ -368,10 +370,12 @@ public class Player : MonoBehaviour
         if(flag)
         {
             IsSkillCoolDownStopped = true;
+            StoppedEffect.SetActive(true);
         }
         else
         {
             IsSkillCoolDownStopped = false;
+            StoppedEffect.SetActive(false);
         }
     }
 
