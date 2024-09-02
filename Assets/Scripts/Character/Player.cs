@@ -282,6 +282,11 @@ public class Player : MonoBehaviour
         BulletText.text = CurBulletNum.ToString();
         BulletSlider.value = CurBulletNum;
 
+        if(GameManager.Instance.OnVib) 
+        {
+            Handheld.Vibrate();
+        }
+
         if(CurBulletNum <=0 )
         {
             Reloading = true;
