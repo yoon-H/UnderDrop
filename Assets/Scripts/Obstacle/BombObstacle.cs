@@ -9,7 +9,7 @@ public class BombObstacle : Obstacle
     const float WaitingTime = 1f;
     public SkeletonAnimation Anim;
     public GameObject Explosion;
-    const float StartTime = 4.3f;
+    const float StartTime = 5f;
 
     // Start is called before the first frame update
     void Start()
