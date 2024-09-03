@@ -531,6 +531,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1366640045 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5108911510619567055, guid: 70f71c1c2f4c9f64ca3a5db60ef12ac0, type: 3}
+  m_PrefabInstance: {fileID: 1660934539717005405}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1455411451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,11 +1976,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9165052049328690769, guid: 70f71c1c2f4c9f64ca3a5db60ef12ac0, type: 3}
   m_PrefabInstance: {fileID: 1660934539717005405}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1660934539717005408 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2487357168937960213, guid: 70f71c1c2f4c9f64ca3a5db60ef12ac0, type: 3}
-  m_PrefabInstance: {fileID: 1660934539717005405}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1660934539717005409 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3051579894196190999, guid: 70f71c1c2f4c9f64ca3a5db60ef12ac0, type: 3}
@@ -2140,7 +2140,7 @@ PrefabInstance:
     - target: {fileID: -2078896039891984534, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: WarningPanels.Array.data[2]
       value: 
-      objectReference: {fileID: 1660934539717005408}
+      objectReference: {fileID: 1366640045}
     - target: {fileID: -2078896039891984534, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: RaidBackGrounds.Array.data[0]
       value: 

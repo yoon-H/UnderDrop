@@ -62,6 +62,7 @@ public class RaidEvent : MonoBehaviour
         
         if(TeamPanel.TryGetComponent<SkeletonGraphic>(out var graph))
         {
+            graph.Initialize(true);
             graph.AnimationState.SetAnimation(0, "animation", false);
         }
 

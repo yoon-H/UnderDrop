@@ -53,7 +53,7 @@ public class TwilightDebuffMonster : Monster
         var time = new WaitForSeconds(WarningTime);
         yield return time;
 
-        WarningEffect.SetActive(true);
+        WarningEffect.SetActive(false);
 
         //Hat Animation
         Anim = GetComponentInChildren<SkeletonAnimation>();
