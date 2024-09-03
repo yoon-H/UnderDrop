@@ -8,8 +8,8 @@ using UnityEngine.UIElements;
 public class SIDLaserMonster : Monster
 {
     const float SkillDelay = 2f;
-    const float WarningTime = 4f;
-    const float LaserTime = 1f;
+    const float WarningTime = 0.7f;
+    const float LaserTime = 0.3f;
     SkeletonAnimation Anim;
 
     private SIDTeam Team;
@@ -59,14 +59,17 @@ public class SIDLaserMonster : Monster
 
     IEnumerator IE_Debuff()
     {
-        //TODO Warning
+        WarningEffect.SetActive(true);
+
+        var track = Anim.AnimationState.SetAnimation(0, "skill", false);
 
         var time = new WaitForSeconds(WarningTime);
         yield return time;
 
-        var track = Anim.AnimationState.SetAnimation(0, "skill", false);
+        WarningEffect.SetActive(false);
+        SpawnLaser();
 
-        track.Complete += EndEvent;
+        
     }
 
     public void SetTeam(SIDTeam team)
@@ -74,7 +77,7 @@ public class SIDLaserMonster : Monster
         Team = team;
     }
 
-    private void EndEvent(TrackEntry entry)
+    private void SpawnLaser()
     {
         SpawnedLaser = Instantiate(LaserObject);
         GameManager.Instance.PlaySound("sidattack");
