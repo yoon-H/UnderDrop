@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour, IHittable
 {
-    Timer Timer;
+    protected Timer Timer;
 
     // Start is called before the first frame update
     void Start()

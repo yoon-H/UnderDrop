@@ -32,11 +32,11 @@ public class SIDTeam : TeamRegion
     {
         System.Random rand = new System.Random();
         int res = rand.Next(100);
-        if (res <=59)
+        if (res <0)
         {
             SpawnNormalObstacle(dir, timer, timeForArrival, locY);
         }
-        else if (res <=79)
+        else if (res <0)
         {
             SpawnButtonTypeObstacle(dir, timer, timeForArrival, locY);
         }
@@ -192,7 +192,7 @@ public class SIDTeam : TeamRegion
 
         if (!Obstacle) return;
         ObjectMovement obj = Obstacle.GetComponent<ObjectMovement>();
-        TriggerObstacle bto = Obstacle.GetComponent<TriggerObstacle>();
+        BombObstacle bomb = Obstacle.GetComponentInChildren<BombObstacle>();
 
         if (!obj) return;
 
@@ -210,17 +210,14 @@ public class SIDTeam : TeamRegion
             item.SetDirection(dir);
         }
 
-        if (!bto.BombObstacleRef) return;
-        Obstacle obs = bto.BombObstacleRef.GetComponent<Obstacle>();
-
-        Vector3 vec = obs.transform.position;
+        Vector3 vec = Obstacle.transform.position;
         vec.x = obsLocX;
 
-        obs.transform.position = vec;
+        Obstacle.transform.position = vec;
 
         //Set Timer
-        if (!obs) return;
-        obs.InitializeObstacleStats(timer);
+        if (!bomb) return;
+        bomb.InitializeObstacleStats(timer);
 
         
     }
