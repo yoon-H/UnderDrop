@@ -58,7 +58,7 @@ public class SIDTeam : TeamRegion
         }
         else
         {
-            if (res <0)
+            if (res <= 79)
             {
                 SpawnNormalMonster(dir, player, spawner, timer, timeForArrival, locY);
             }

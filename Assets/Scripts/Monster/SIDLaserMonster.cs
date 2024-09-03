@@ -79,10 +79,14 @@ public class SIDLaserMonster : Monster
 
     private void SpawnLaser()
     {
-        SpawnedLaser = Instantiate(LaserObject);
-        GameManager.Instance.PlaySound("sidattack");
+        if (CurHp > 0)
+        {
+            SpawnedLaser = Instantiate(LaserObject);
+            GameManager.Instance.PlaySound("sidattack");
 
-        StartCoroutine(IE_DestroyLaser());
+            StartCoroutine(IE_DestroyLaser());
+        }
+        
     }
 
     IEnumerator IE_DestroyLaser()

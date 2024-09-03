@@ -10,7 +10,7 @@ public class Monster : MonoBehaviour, IHittable
     protected Timer Timer;
 
     [SerializeField]
-    private int CurHp;
+    protected int CurHp;
     private int MaxHp = 100;
 
     public E_Direction Direction;
@@ -24,6 +24,8 @@ public class Monster : MonoBehaviour, IHittable
 
     public GameObject DataAsset;
     public GameObject DeadAsset;
+
+    public GameObject Objects;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -111,18 +113,11 @@ public class Monster : MonoBehaviour, IHittable
 
     private void FlipMesh()
     {
-        if(DataAsset)
+        if(Objects)
         {
-            Vector3 vec = DataAsset.transform.localScale;
+            Vector3 vec = Objects.transform.localScale;
             vec.x = -vec.x;
-            DataAsset.transform.localScale = vec;
-        }
-
-        if (DeadAsset)
-        {
-            Vector3 vec = DeadAsset.transform.localScale;
-            vec.x = -vec.x;
-            DeadAsset.transform.localScale = vec;
-        }
+            Objects.transform.localScale = vec;
+        }    
     }
 }
