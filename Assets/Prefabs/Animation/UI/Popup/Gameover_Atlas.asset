@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
   m_Name: Gameover_Atlas
   m_EditorClassIdentifier: 
-  atlasFile: {fileID: 4900000, guid: 0db648f8962783d47ad948339b6d16a2, type: 3}
+  atlasFile: {fileID: 4900000, guid: e38bec004aecc694fb68019eca69d09a, type: 3}
   materials:
-  - {fileID: 2100000, guid: 7623511c41ac70245b23b310623779f6, type: 2}
+  - {fileID: 2100000, guid: b1c75e2a179523549ac0a5e216fdc76e, type: 2}

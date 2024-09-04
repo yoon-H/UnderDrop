@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Gameover_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 66e048dc804bfc745b14b8110a12fd9c, type: 2}
+  - {fileID: 11400000, guid: 78efe9d49beaafb4db04c39b639fd53a, type: 2}
   scale: 0.01
-  skeletonJSON: {fileID: 4900000, guid: 0c55bc8d06c18284c9d493e744f184c0, type: 3}
+  skeletonJSON: {fileID: 4900000, guid: cebb0c9ecde51fb4fa89a06dd5660bbe, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0
