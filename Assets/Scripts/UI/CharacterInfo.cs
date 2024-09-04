@@ -28,6 +28,11 @@ public class CharacterInfo : MonoBehaviour
         
     }
 
+    private void OnDisable()
+    {
+        ChangeIndex(GameManager.Instance.PlayerIndex);
+    }
+
     public void AddIndex(int value)
     {
         int res = CharacterIndex + value;
