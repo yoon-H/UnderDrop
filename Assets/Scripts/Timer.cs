@@ -110,7 +110,7 @@ public class Timer : MonoBehaviour
         Wall = WallRef.GetComponent<BackGroundMovement>();
 
         GameOverPopUp = GameOverPanel.GetComponent<SwitchPopUp>();
-        ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>();
+        ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>(true);
 
         SetIsPaused(false);
 
@@ -341,6 +341,7 @@ public class Timer : MonoBehaviour
 
         //Show PopUp
         GameOverPopUp.SwitchFlag(true);
+        GameOverPopUp.GetComponentInChildren<PopUpAnim>().Play();
         
         //Play GameOverSound
         gameManager.PlaySound("gameoverbgm");

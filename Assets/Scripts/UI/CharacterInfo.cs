@@ -22,10 +22,9 @@ public class CharacterInfo : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        ChangeIndex(GameManager.Instance.PlayerIndex);
     }
 
     public void AddIndex(int value)
