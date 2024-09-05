@@ -94,7 +94,7 @@ public class Timer : MonoBehaviour
     public SIDTeam SIDTeam;
 
     public E_Team[] RaidTeams = new E_Team[2] { E_Team.SID, E_Team.SID};
-    public E_Team curRaidTeam;
+    private E_Team curRaidTeam;
 
     SpawnCharacter SpawnCharacter;
 
@@ -167,9 +167,7 @@ public class Timer : MonoBehaviour
                     int res = rand.Next(2);
 
                     //Set current RaidTeam
-                    //curRaidTeam = RaidTeams[res];
-
-                    //curRaidTeam = E_Team.Twilight;
+                    curRaidTeam = RaidTeams[res];
 
                     StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
                     Wall.SetIsAttacked(true, curRaidTeam );
@@ -187,9 +185,7 @@ public class Timer : MonoBehaviour
                     else
                     {
                         //Set current RaidTeam
-                        //curRaidTeam = RaidTeams[res];
-
-                        //curRaidTeam = E_Team.Twilight;
+                        curRaidTeam = RaidTeams[res];
 
                         StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
                         Wall.SetIsAttacked(true, curRaidTeam);
