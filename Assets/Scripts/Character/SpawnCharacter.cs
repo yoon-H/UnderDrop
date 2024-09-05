@@ -20,7 +20,7 @@ public class SpawnCharacter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnPC(GameManager.Instance.PlayerIndex);
+
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class SpawnCharacter : MonoBehaviour
         
     }
 
-    void SpawnPC(int index)
+    public void SpawnPC(int index)
     {
         if (PlayerRefs[index])
         {
@@ -46,7 +46,7 @@ public class SpawnCharacter : MonoBehaviour
 
             Swipe click =  MoveButton.GetComponent<Swipe>();
 
-            click.PlayerRef = Player;
+            click.SetPlayer(Player);
 
             Player.transform.position = SpawnPoisition;
 

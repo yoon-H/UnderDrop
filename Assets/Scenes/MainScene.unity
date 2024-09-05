@@ -1207,6 +1207,7 @@ GameObject:
   - component: {fileID: 157738539}
   - component: {fileID: 157738538}
   - component: {fileID: 157738537}
+  - component: {fileID: 157738540}
   m_Layer: 0
   m_Name: Spine GameObject (profile)
   m_TagString: Untagged
@@ -1316,6 +1317,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157738535}
   m_Mesh: {fileID: 0}
+--- !u!114 &157738540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157738535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b10d6d51622e8c4fab5b168d2ee5b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Anim: {fileID: 157738537}
 --- !u!4 &178813956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5979393251368470070, guid: 46082b2adad485c42a9389597595696f, type: 3}

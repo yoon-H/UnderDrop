@@ -102,10 +102,12 @@ public class Timer : MonoBehaviour
     void Start()
     {
         SpawnCharacter = GetComponent<SpawnCharacter>();
+        SpawnCharacter.SpawnPC(GameManager.Instance.PlayerIndex);
 
         ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
         MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
         ItemSpawner = ItemSpawnerRef.GetComponent<ItemSpawner>();
+        ItemSpawner.SetTimer(this);
         BackGround = BackGroundRef.GetComponentInChildren<BackGroundMovement>();
         Wall = WallRef.GetComponent<BackGroundMovement>();
 

@@ -159,8 +159,8 @@ public class GameManager : MonoBehaviour
         SoundFiles.Add("switchbuttonsound", Resources.Load("Sounds/UI/Sound_UI_Botton2") as AudioClip);
 
         //Item sounds
-        SoundFiles.Add("itemsound", Resources.Load("Sounds/New/Sound_Game_Item") as AudioClip);
-        SoundFiles.Add("coinsound", Resources.Load("Sounds/New/Sound_Game_Coin") as AudioClip);
+        SoundFiles.Add("itemsound", Resources.Load("Sounds/New/Sound_Game_item") as AudioClip);
+        SoundFiles.Add("coinsound", Resources.Load("Sounds/New/Sound_Game_coin") as AudioClip);
 
         //Attack Monster sounds
         SoundFiles.Add("hwanghonattack", Resources.Load("Sounds/New/Sound_Mon_Hwanghon") as AudioClip);

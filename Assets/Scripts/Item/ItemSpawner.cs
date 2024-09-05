@@ -28,15 +28,6 @@ public class ItemSpawner : MonoBehaviour
     void Start()
     {
         CurTimeForArrival = MaxTimeForArrival;
-
-        // Timer Initializing
-        Timer = TimerRef.GetComponent<Timer>();
-        Player = Timer.GetPlayer();
-
-        if (Player == null)
-        {
-            print("ItemSpawner :: Player is null");
-        }
     }
 
     // Update is called once per frame
@@ -134,11 +125,6 @@ public class ItemSpawner : MonoBehaviour
         CoinObject.transform.position = new Vector3(locX, gameObject.transform.position.y, zValue);
 
         Destroy(CoinObject, 6f);
-    }
-
-    public void SetPlayer(GameObject playerObject)
-    {
-        Player = playerObject.GetComponent<Player>();
     }
 
     private bool GenerateSpawnItem()
@@ -242,6 +228,19 @@ public class ItemSpawner : MonoBehaviour
         ItemObject.transform.position = new Vector3(locX, gameObject.transform.position.y, zValue);
 
         Destroy(ItemObject, 6f);
+    }
+
+    public void SetTimer(Timer timer)
+    {
+        Timer = timer;
+
+        // Timer Initializing
+        Player = Timer.GetPlayer();
+
+        if (Player == null)
+        {
+            print("ItemSpawner :: Player is null");
+        }
     }
 
 }
