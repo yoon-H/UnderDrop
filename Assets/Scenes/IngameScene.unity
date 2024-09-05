@@ -2225,6 +2225,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 251865899}
     - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
+      propertyPath: MaxObstacleSpawnTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: RaidTeams.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -3370,7 +3374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9049214231011174040, guid: 6bb7300cad545e249923ef3472ae3d85, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -33.19995
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 9049214231011174040, guid: 6bb7300cad545e249923ef3472ae3d85, type: 3}
       propertyPath: m_AnchoredPosition.y
