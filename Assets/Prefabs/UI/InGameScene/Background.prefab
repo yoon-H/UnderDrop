@@ -4743,12 +4743,12 @@ MonoBehaviour:
   ChangeCount: 0
   SpriteChanging: 0
   RaidLeftWalls:
-  - {fileID: 21300000, guid: c9c43c0824892754bafac9de0c340f8f, type: 3}
-  - {fileID: 21300000, guid: 4e50411294fec564e86d30888d489ef6, type: 3}
+  - {fileID: 21300000, guid: 7308378f730dc78449c00d7b9eff076a, type: 3}
+  - {fileID: 21300000, guid: bd5032e80c573e74fadde8b05137919c, type: 3}
   - {fileID: 21300000, guid: d44993ca0ef522c4588c492e84239ae4, type: 3}
   RaidRightWalls:
-  - {fileID: 21300000, guid: d866a65cd1dd5f549a9450e64794c776, type: 3}
-  - {fileID: 21300000, guid: c0f1680bc6bced4488f5ee2f46616fe3, type: 3}
+  - {fileID: 21300000, guid: 532c82de730b3244d9adaf0e649e3c55, type: 3}
+  - {fileID: 21300000, guid: 03df98c731dc70341b6dd6e1bd2d072c, type: 3}
   - {fileID: 21300000, guid: c11ca7edacb329240a014df39c19c9f5, type: 3}
 --- !u!1 &8449698494300609619
 GameObject:

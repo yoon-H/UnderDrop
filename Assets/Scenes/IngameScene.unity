@@ -2144,15 +2144,15 @@ PrefabInstance:
     - target: {fileID: -2078896039891984534, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: RaidBackGrounds.Array.data[0]
       value: 
-      objectReference: {fileID: 21300000, guid: e6e1cfe7dab356a4b9c3da00d3c70a6c, type: 3}
+      objectReference: {fileID: 21300000, guid: e42e9905a2de7204f899d0471ca9327b, type: 3}
     - target: {fileID: -2078896039891984534, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: RaidBackGrounds.Array.data[1]
       value: 
-      objectReference: {fileID: 21300000, guid: dcc74da565982d74db81dcc9ea2d3f68, type: 3}
+      objectReference: {fileID: 21300000, guid: c548b0f27b0ef064e9d434d5b392e8ef, type: 3}
     - target: {fileID: -2078896039891984534, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: RaidBackGrounds.Array.data[2]
       value: 
-      objectReference: {fileID: 21300000, guid: a1b57ceb0dd87384fb0782e5f0d92b38, type: 3}
+      objectReference: {fileID: 21300000, guid: 6abf3d1f73ccda84993980029718b82f, type: 3}
     - target: {fileID: 870215753751365577, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: m_Name
       value: Timer
@@ -2179,7 +2179,7 @@ PrefabInstance:
       objectReference: {fileID: 3338412809894228390}
     - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: curRaidTeam
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2032136966517372749, guid: 1d2aa29bb9140394d8d7c699a1caa2f6, type: 3}
       propertyPath: BackGroundRef
