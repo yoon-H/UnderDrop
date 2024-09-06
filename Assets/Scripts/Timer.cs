@@ -94,7 +94,7 @@ public class Timer : MonoBehaviour
     public SIDTeam SIDTeam;
 
     public E_Team[] RaidTeams = new E_Team[2] { E_Team.SID, E_Team.SID};
-    public E_Team curRaidTeam;
+    private E_Team curRaidTeam;
 
     SpawnCharacter SpawnCharacter;
 
@@ -102,15 +102,17 @@ public class Timer : MonoBehaviour
     void Start()
     {
         SpawnCharacter = GetComponent<SpawnCharacter>();
+        SpawnCharacter.SpawnPC(GameManager.Instance.PlayerIndex);
 
         ObstacleSpawner = ObstacleSpawnerRef.GetComponent<ObstacleSpawner>();
         MonsterSpawner = MonsterSpawnerRef.GetComponent<MonsterSpawner>();
         ItemSpawner = ItemSpawnerRef.GetComponent<ItemSpawner>();
+        ItemSpawner.SetTimer(this);
         BackGround = BackGroundRef.GetComponentInChildren<BackGroundMovement>();
         Wall = WallRef.GetComponent<BackGroundMovement>();
 
         GameOverPopUp = GameOverPanel.GetComponent<SwitchPopUp>();
-        ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>();
+        ScoreBoard = GameOverPanel.GetComponentInChildren<ScoreBoard>(true);
 
         SetIsPaused(false);
 
@@ -167,9 +169,7 @@ public class Timer : MonoBehaviour
                     int res = rand.Next(2);
 
                     //Set current RaidTeam
-                    //curRaidTeam = RaidTeams[res];
-
-                    //curRaidTeam = E_Team.Twilight;
+                    curRaidTeam = RaidTeams[res];
 
                     StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
                     Wall.SetIsAttacked(true, curRaidTeam );
@@ -187,9 +187,7 @@ public class Timer : MonoBehaviour
                     else
                     {
                         //Set current RaidTeam
-                        //curRaidTeam = RaidTeams[res];
-
-                        //curRaidTeam = E_Team.Twilight;
+                        curRaidTeam = RaidTeams[res];
 
                         StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
                         Wall.SetIsAttacked(true, curRaidTeam);
@@ -341,6 +339,7 @@ public class Timer : MonoBehaviour
 
         //Show PopUp
         GameOverPopUp.SwitchFlag(true);
+        GameOverPopUp.GetComponentInChildren<PopUpAnim>().Play();
         
         //Play GameOverSound
         gameManager.PlaySound("gameoverbgm");

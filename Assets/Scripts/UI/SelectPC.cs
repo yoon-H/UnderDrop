@@ -14,6 +14,10 @@ public class SelectPC : PlayAnim
         Info.SelectPC();
         PopUp.SwitchFlag(false);
 
+        CharacterImage.Skeleton.SetSlotsToSetupPose();
+        CharacterImage.LateUpdate();
+        CharacterImage.AnimationState.ClearTracks();
+
         if (GameManager.Instance.PlayerIndex == 0)
         {
             CharacterImage.Skeleton.SetSkin("Noke");
@@ -23,10 +27,6 @@ public class SelectPC : PlayAnim
         {
             CharacterImage.Skeleton.SetSkin("mont");
         }
-
-        CharacterImage.Skeleton.SetSlotsToSetupPose();
-        CharacterImage.LateUpdate();
-        CharacterImage.AnimationState.ClearTracks();
 
         CharacterImage.AnimationState.SetAnimation(0, "animation", false);
 

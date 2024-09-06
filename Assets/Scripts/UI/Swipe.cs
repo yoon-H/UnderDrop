@@ -12,13 +12,11 @@ public class Swipe : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private float CheckDist = 200f;
 
-    public GameObject PlayerRef;
     private Player Player;
 
     // Start is called before the first frame update
     void Start()
     {
-        Player = PlayerRef.GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -59,4 +57,9 @@ public class Swipe : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
       
     }
+
+    public void SetPlayer(GameObject player)
+    {
+        Player = player.GetComponent<Player>();
+    }    
 }

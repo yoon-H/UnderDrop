@@ -1,0 +1,34 @@
+
+Gameover.png
+size: 1841,1269
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Gameover
+  rotate: true
+  xy: 970, 2
+  size: 650, 802
+  orig: 650, 802
+  offset: 0, 0
+  index: -1
+Map
+  rotate: true
+  xy: 2, 655
+  size: 612, 892
+  orig: 612, 892
+  offset: 0, 0
+  index: -1
+Shop
+  rotate: true
+  xy: 896, 654
+  size: 613, 943
+  orig: 613, 943
+  offset: 0, 0
+  index: -1
+profile
+  rotate: true
+  xy: 2, 40
+  size: 612, 966
+  orig: 612, 966
+  offset: 0, 0
+  index: -1
