@@ -67,6 +67,9 @@ public class CharacterInfo : MonoBehaviour
     public void SelectPC()
     {
         if (UnLocked[CharacterIndex])
+        {
             GameManager.Instance.PlayerIndex = CharacterIndex;
+        }
+            
     }
 }

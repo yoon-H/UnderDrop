@@ -93,7 +93,8 @@ public class Timer : MonoBehaviour
     public TwilightTeam TwilightTeam;
     public SIDTeam SIDTeam;
 
-    public E_Team[] RaidTeams = new E_Team[2] { E_Team.SID, E_Team.SID};
+    [SerializeField]
+    private E_Team[] RaidTeams = new E_Team[2] { E_Team.SID, E_Team.SID};
     private E_Team curRaidTeam;
 
     SpawnCharacter SpawnCharacter;
@@ -282,7 +283,7 @@ public class Timer : MonoBehaviour
         }
         
     }
-        
+
     public void SpawnMonster()
     {
         MonsterSpawner.SpawnMonster(curRaidTeam, 2);

@@ -26,6 +26,7 @@ public class Knock : Player
         ReloadTime = _ReloadTime;
         AttackTime = _AttackTime;
         Damage = _Damage;
+        
 
         SetBulletImage();
 

@@ -10,6 +10,7 @@ public class SpawnCharacter : MonoBehaviour
     public GameObject FillBullet;
 
     public GameObject[] PlayerRefs;
+    private E_Team[] Teams = { E_Team.SID, E_Team.Twilight };
     public GameObject Player;
 
     public GameObject MoveButton;
@@ -43,6 +44,8 @@ public class SpawnCharacter : MonoBehaviour
             Player player = Player.GetComponent<Player>();
 
             player.SetPCInfo(Timer, BulletPanel);
+
+            GameManager.Instance.team = Teams[index];
 
             Swipe click =  MoveButton.GetComponent<Swipe>();
 
