@@ -10,7 +10,7 @@ public class Mont : Player
     private const int _MaxBulletNum = 7;
     private const float _ReloadTime = 0.5f;
     private const float _AttackTime = 0.5f;
-    private const int _Damage = 20;
+    private const int _Damage = 30;
     #endregion
 
 

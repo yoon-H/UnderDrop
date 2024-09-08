@@ -61,6 +61,7 @@ public class Timer : MonoBehaviour
     private float RaidRemainCounter = 0f;
 
     private int RaidMissedCount = 0;
+    private int RaidMaxCount = 2;
 
     private bool IsRaidExisted = false;
 
@@ -164,7 +165,7 @@ public class Timer : MonoBehaviour
             RaidSpawnCounter += Time.deltaTime;
             if (RaidSpawnCounter >= RaidSpawnTime)
             {
-                if (RaidMissedCount >= 2)
+                if (RaidMissedCount >= RaidMaxCount)
                 {
                     System.Random rand = new System.Random();
                     int res = rand.Next(2);

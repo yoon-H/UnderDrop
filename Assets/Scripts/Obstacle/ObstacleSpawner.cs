@@ -18,6 +18,7 @@ public class ObstacleSpawner : MonoBehaviour
     public float AddTimeAmountWhenRaid = 0.5f;
 
     private int SpawnCount = 0;
+    private int MaxSpawnCount = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,7 @@ public class ObstacleSpawner : MonoBehaviour
 
         int res;
 
-        if(SpawnCount >=2)
+        if(SpawnCount >= MaxSpawnCount)
         {
             res = rand.Next(0, 2);
             SpawnCount = 0;
