@@ -13,7 +13,7 @@ public class Knock : Player
     #endregion
 
     private float ShieldTime = 0.5f;
-    private int ShieldCount = 3;
+    private int ShieldCount = 2;
     private bool IsShield = false;
 
     public GameObject ShieldRef;
