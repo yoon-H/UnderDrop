@@ -2998,10 +2998,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "7\uBC88\uC9F8 \uD0C4\uD658\uC740 \uBC18\uC9DD\uC774\uB294 \uB0A0\uAC1C\uB97C
-    \uB358\uC838 \uC2A4\uD0DD\uC744 \uC801\uB9BD.\_\r\n7\uC2A4\uD0DD \uC2DC 3\uCD08
-    \uB3D9\uC548 \uC544\uB974\uCE89\uC2DC\uC5D8 \uC0C1\uD0DC\uC5D0 \uB3CC\uC785\uD574
-    \x03\uC7A5\uC560\uBB3C\uACFC \uBAAC\uC2A4\uD130\uB97C \uBB34\uC2DC"
+  m_Text: "\uACF5\uACA9\uC744  \uD560 \uB54C\uB9C8\uB2E4 \uC2A4\uD0DD\uC774 \uC313\uC774\uBA70,
+    7\uBC88\uC9F8 \uC2A4\uD0DD\uC774 \n\uBAA8\uC774\uBA74 \uAC15\uB825\uD55C \uACF5\uACA9
+    \uC2A4\uD0AC\uC744 \uBC1C\uC0AC\uD569\uB2C8\uB2E4."
 --- !u!1 &4881190835834553569
 GameObject:
   m_ObjectHideFlags: 0
@@ -3107,6 +3106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Anim: {fileID: 8118564380334162155}
+  IsStopped: 0
   Objects: {fileID: 755297750096681730}
 --- !u!1 &4910522172572338493
 GameObject:
@@ -3544,6 +3544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Anim: {fileID: 5595300933467329097}
+  IsStopped: 0
   Info: {fileID: 7594899705510571433}
   Amount: 1
 --- !u!1 &5428013127570675963
@@ -3626,7 +3627,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\uC7AC\uC7A5\uC804 \uC2DC \uC811\uCD09\uD55C \uC7A5\uC560\uBB3C\uC744
     \uBE44\uD65C\uC131\uD654 \uC2DC\uD0A8 \uD6C4 \r\uC0AC\uB77C\uC9C0\uB294 1\uD68C\uC6A9
-    \uC2E4\uB4DC\uB97C 1\uAC1C \uC0DD\uC131."
+    \uC2E4\uB4DC\uB97C 2\uAC1C \uC0DD\uC131."
 --- !u!1 &5680641013504694593
 GameObject:
   m_ObjectHideFlags: 0
@@ -4511,6 +4512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Anim: {fileID: 4131378380052463342}
+  IsStopped: 0
   Info: {fileID: 7594899705510571433}
   Amount: -1
 --- !u!1 &6844775209765305686
@@ -6077,6 +6079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Anim: {fileID: 566248285323783667}
+  IsStopped: 0
   Info: {fileID: 7594899705510571433}
   PopUp: {fileID: 502388437128330589}
   CharacterImage: {fileID: 0}
