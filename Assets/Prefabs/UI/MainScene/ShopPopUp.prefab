@@ -1632,6 +1632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Anim: {fileID: 6684674822112535380}
+  IsStopped: 0
   Objects: {fileID: 367905398205414769}
 --- !u!1 &7553534647565480984
 GameObject:
@@ -2101,7 +2102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -111.56677, y: -105.470215}
+  m_AnchoredPosition: {x: -97, y: -105.470215}
   m_SizeDelta: {x: 700, y: 1100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3965034965000621663
