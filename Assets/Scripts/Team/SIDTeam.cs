@@ -32,11 +32,11 @@ public class SIDTeam : TeamRegion
     {
         System.Random rand = new System.Random();
         int res = rand.Next(100);
-        if (res <0)
+        if (res <= 59)
         {
             SpawnNormalObstacle(dir, timer, timeForArrival, locY);
         }
-        else if (res <0)
+        else if (res <= 79)
         {
             SpawnButtonTypeObstacle(dir, timer, timeForArrival, locY);
         }
@@ -273,14 +273,6 @@ public class SIDTeam : TeamRegion
         if (!sMon) return;
         sMon.SetMonsterInfo(dir, spawner, BigHp, timer);
         sMon.SetTeam(this);
-
-        if (dir != E_Direction.Left)
-        {
-            Vector3 vec = sMon.SpawnLocation.transform.position;
-            vec.x = -vec.x;
-            sMon.SpawnLocation.transform.position = vec;
-        }
-
 
         //Set location
         Monster.transform.position = new Vector3(locX, locY, 0);
