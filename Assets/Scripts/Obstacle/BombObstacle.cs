@@ -39,7 +39,6 @@ public class BombObstacle : Obstacle
         var explosion = Instantiate(Explosion);
         explosion.transform.position = transform.position;
         explosion.GetComponentInChildren<Obstacle>().InitializeObstacleStats(Timer);
-        Destroy(explosion, 1f);
 
         Destroy(gameObject);
     }
