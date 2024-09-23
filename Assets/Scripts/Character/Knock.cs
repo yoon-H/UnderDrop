@@ -116,12 +116,6 @@ public class Knock : Player
         if (!BulletText) { yield break; }
         BulletText.text = CurBulletNum.ToString();
         BulletSlider.value = CurBulletNum;
-
-        if (CanShoot)
-        {
-            StartCoroutine(IE_ShootBullet());
-        }
-
     }
 
     private IEnumerator IE_ShieldRemain()
