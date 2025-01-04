@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
             MusicAudio.Stop();
             MusicAudio.clip = MusicFiles[name];
             MusicAudio.Play();
+            MusicAudio.loop = true;
         }
     }
 

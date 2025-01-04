@@ -82,6 +82,9 @@ public class SIDLaserMonster : Monster
         if (CurHp > 0)
         {
             SpawnedLaser = Instantiate(LaserObject);
+
+            SpawnedLaser.GetComponent<Obstacle>().InitializeObstacleStats(Timer);
+
             GameManager.Instance.PlaySound("sidattack");
 
             StartCoroutine(IE_DestroyLaser());

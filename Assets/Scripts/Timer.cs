@@ -64,6 +64,8 @@ public class Timer : MonoBehaviour
     private int RaidMaxCount = 2;
 
     private bool IsRaidExisted = false;
+    private bool IsRaidFirstSpawned = false;
+    private int FirstSpawnScore = 150;
 
     public RaidEvent RaidEvent;
 
@@ -142,67 +144,6 @@ public class Timer : MonoBehaviour
         WallCounter += Time.deltaTime;
         ItemSpawnCounter += Time.deltaTime;
 
-        //Raid Counter
-        if (IsRaidExisted)
-        {
-            RaidRemainCounter += Time.deltaTime;
-            MonsterSpawnCounter += Time.deltaTime;
-            RaidEvent.Bar.Value = RaidRemainTime - RaidRemainCounter;
-
-            if (RaidRemainCounter >= RaidRemainTime)
-            {
-                IsRaidExisted = false;
-                RaidRemainCounter = 0;
-                RaidEvent.RaidBar.SetActive(false);
-                RaidEvent.RaidMarkRef.SetActive(false);
-
-                RaidEvent.SetRaidBackGround(false, curRaidTeam);
-                Wall.SetIsAttacked(false, curRaidTeam);
-            }
-        }
-        else
-        {
-            RaidSpawnCounter += Time.deltaTime;
-            if (RaidSpawnCounter >= RaidSpawnTime)
-            {
-                if (RaidMissedCount >= RaidMaxCount)
-                {
-                    System.Random rand = new System.Random();
-                    int res = rand.Next(2);
-
-                    //Set current RaidTeam
-                    curRaidTeam = RaidTeams[res];
-
-                    StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
-                    Wall.SetIsAttacked(true, curRaidTeam );
-                    RaidMissedCount = 0;
-                }
-                else
-                {
-                    System.Random rand = new System.Random();
-                    int res = rand.Next(3);
-
-                    if (res == 2)
-                    {
-                        RaidMissedCount++;
-                    }
-                    else
-                    {
-                        //Set current RaidTeam
-                        curRaidTeam = RaidTeams[res];
-
-                        StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
-                        Wall.SetIsAttacked(true, curRaidTeam);
-                    }
-                }
-
-
-                RaidSpawnCounter = 0;
-            }
-        }
-
-
-
         if (ScoreTexts != null)
         {
             Score = (int)(ScoreCounter / 0.2f);
@@ -212,6 +153,92 @@ public class Timer : MonoBehaviour
                 text.text = Score + "m";
             }
         }
+
+
+        //Raid Counter
+        if (IsRaidFirstSpawned)
+        {
+            if (IsRaidExisted)
+            {
+                RaidRemainCounter += Time.deltaTime;
+                MonsterSpawnCounter += Time.deltaTime;
+                RaidEvent.Bar.Value = RaidRemainTime - RaidRemainCounter;
+
+                if (RaidRemainCounter >= RaidRemainTime)
+                {
+                    IsRaidExisted = false;
+                    RaidRemainCounter = 0;
+                    RaidEvent.RaidBar.SetActive(false);
+                    RaidEvent.RaidMarkRef.SetActive(false);
+
+                    RaidEvent.SetRaidBackGround(false, curRaidTeam);
+                    Wall.SetIsAttacked(false, curRaidTeam);
+                }
+            }
+            else
+            {
+                RaidSpawnCounter += Time.deltaTime;
+                if (RaidSpawnCounter >= RaidSpawnTime)
+                {
+                    if (RaidMissedCount >= RaidMaxCount)
+                    {
+                        System.Random rand = new System.Random();
+                        int res = rand.Next(2);
+
+                        //Set current RaidTeam
+                        curRaidTeam = RaidTeams[res];
+
+                        StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
+                        Wall.SetIsAttacked(true, curRaidTeam);
+                        RaidMissedCount = 0;
+                    }
+                    else
+                    {
+                        System.Random rand = new System.Random();
+                        int res = rand.Next(3);
+
+                        if (res == 2)
+                        {
+                            RaidMissedCount++;
+                        }
+                        else
+                        {
+                            //Set current RaidTeam
+                            curRaidTeam = RaidTeams[res];
+
+                            StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
+                            Wall.SetIsAttacked(true, curRaidTeam);
+                        }
+                    }
+
+
+                    RaidSpawnCounter = 0;
+                }
+            }
+        }
+        else
+        {
+            if(Score >= FirstSpawnScore)
+            {
+                System.Random rand = new System.Random();
+                int res = rand.Next(2);
+
+                //Set current RaidTeam
+                curRaidTeam = RaidTeams[res];
+
+                StartCoroutine(RaidEvent.IE_Warning(curRaidTeam));
+                Wall.SetIsAttacked(true, curRaidTeam);
+
+                RaidSpawnCounter = 0;
+                IsRaidExisted = true;
+                IsRaidFirstSpawned = true;
+            }
+        }
+       
+
+
+
+        
 
         if (Score >= CurSpeedPeriod)
         {

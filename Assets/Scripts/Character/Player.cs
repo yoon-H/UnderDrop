@@ -100,6 +100,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     protected bool Reloading = false;
 
+    protected Coroutine RunningCoroutine;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -222,23 +224,27 @@ public class Player : MonoBehaviour
             CanShoot = true;
             if(CurBulletNum > 0 && !IsWaitingForAttack)
             {
-                StopCoroutine(IE_ReloadBullet());
-                StopCoroutine(IE_WaitForReloading());
-
-                StartCoroutine(IE_ShootBullet());
-
+                if(RunningCoroutine != null)
+                {
+                    StopCoroutine(RunningCoroutine);
+                }
+                
+                RunningCoroutine = StartCoroutine(IE_ShootBullet());
             }
         }
         else if(!flag && CanShoot != flag)
         {
             CanShoot = false;
 
-            StopCoroutine(IE_ShootBullet());
+            if (RunningCoroutine != null)
+            {
+                StopCoroutine(RunningCoroutine);
+            }
             CancelTarget();
             
             if(CurBulletNum < MaxBulletNum)
             {
-                StartCoroutine(IE_WaitForReloading());
+                RunningCoroutine = StartCoroutine(IE_WaitForReloading());
             }
         }
     }
@@ -292,15 +298,18 @@ public class Player : MonoBehaviour
         if(CurBulletNum <=0 )
         {
             Reloading = true;
-
-            StopCoroutine(IE_ShootBullet());
-            StartCoroutine(IE_ReloadBullet());
+            if(RunningCoroutine != null)
+            {
+                StopCoroutine(RunningCoroutine);
+            }    
+            
+            RunningCoroutine = StartCoroutine(IE_ReloadBullet());
         }
     }
 
     protected IEnumerator IE_ShootBullet()
     {
-        if(CanShoot && !Reloading)
+        if(CanShoot && !Reloading && !IsWaitingForAttack)
         {
             bool flag = Shoot();
             if (!flag)
@@ -309,6 +318,10 @@ public class Player : MonoBehaviour
                 yield break;
             }
             IsWaitingForAttack = true;
+        }
+        else
+        {
+            yield break;
         }
 
         yield return new WaitForSeconds(AttackTime);
@@ -332,18 +345,18 @@ public class Player : MonoBehaviour
         if (!BulletText) { yield break; }
         BulletText.text = CurBulletNum.ToString();
         BulletSlider.value = CurBulletNum;
-
-        if (CanShoot) 
-        {
-            StartCoroutine(IE_ShootBullet());
-        }
-
     }
 
     IEnumerator IE_WaitForReloading()
     {
         yield return new WaitForSeconds(ReloadWaitingTime);
-        StartCoroutine(IE_ReloadBullet());
+
+        if(RunningCoroutine != null)
+        {
+            StopCoroutine(RunningCoroutine);
+        }
+       
+        RunningCoroutine = StartCoroutine(IE_ReloadBullet());
     }
 
 
